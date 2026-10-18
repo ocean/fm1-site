@@ -1,0 +1,177 @@
+/* Cooper Hewitt (SIL OFL 1.1), self-hosted from Fontsource. */
+@font-face {
+  font-family: "Cooper Hewitt";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("fonts/cooper-hewitt-latin-300-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Cooper Hewitt";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/cooper-hewitt-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Cooper Hewitt";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/cooper-hewitt-latin-400-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Cooper Hewitt";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/cooper-hewitt-latin-600-normal.woff2") format("woff2");
+}
+
+:root {
+  /* Swap this one variable to try another typeface. */
+  --font: "Cooper Hewitt", "Avenir Next", "Gill Sans", sans-serif;
+
+  --bg: #1a110b;
+  --bg-glow: #2a1b11;
+  --text: #f1e6d4;
+  --muted: #b8a58c;
+  --rule: #4a3524;
+  --accent: #e8a35a;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 0 16px;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, var(--bg-glow), transparent 70%),
+    var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-weight: 300;
+  font-size: 1.125rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: clamp(3rem, 14vh, 9rem) 0 4rem;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: var(--rule);
+  text-underline-offset: 0.2em;
+  transition: color 0.15s, text-decoration-color 0.15s;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--accent);
+  text-decoration-color: currentColor;
+}
+
+h1 {
+  margin: 0;
+  font-weight: 600;
+  font-size: clamp(2.75rem, 9vw, 4rem);
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.lede {
+  margin: 0.75rem 0 3rem;
+  color: var(--muted);
+}
+
+/* The project list. */
+.projects {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.projects li {
+  border-bottom: 1px solid var(--rule);
+}
+
+.projects a {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.15rem 1rem;
+  padding: 1.25rem 0;
+  text-decoration: none;
+}
+
+.projects .name {
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: 0.01em;
+}
+
+.projects .kind {
+  align-self: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+}
+
+.projects .about {
+  grid-column: 1 / -1;
+  color: var(--muted);
+}
+
+.projects a:hover .about,
+.projects a:focus-visible .about {
+  color: var(--text);
+}
+
+/* Project pages. */
+.back {
+  display: inline-block;
+  margin-bottom: 2.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.prose p {
+  margin: 0 0 1.25rem;
+}
+
+.prose em {
+  font-style: italic;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+footer {
+  margin-top: 4rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
