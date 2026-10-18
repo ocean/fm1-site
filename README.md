@@ -28,8 +28,38 @@ into a scroll cancels the preview.
 `web/make_site.py` (see its BUILDING.md, "The site") and copied here in place of the placeholder
 (including `estampie/llms-full.txt`, which that build should then provide).
 
-## Previewing
+## Working on it
+
+Needs Node 24 (`.nvmrc`).
 
 ```bash
-python3 -m http.server -d . 8000
+npm install
+npx playwright install chromium   # once, for the checks
+npm run lint      # ESLint, Stylelint and html-validate
+npm run build     # copies the public files into dist/
+npm run check     # accessibility, contrast, links and console errors, in a real browser
+npm run ci        # all three, as CI runs them
+npm run preview   # build, then serve dist/ locally with Wrangler
 ```
+
+`npm run check` loads every page in headless Chromium: the index plain and in each project's theme, at
+desktop and phone sizes, FM1Kit's page in light and dark, and the 404 page. In each it runs axe (WCAG 2.2
+A and AA, and best practice), measures text contrast itself wherever axe can't (text over the themes'
+gradients and textures), and fails on any file that doesn't load, any broken link inside the site
+(including those in `llms.txt` and `llms-full.txt`) and any console error. Screenshots of each state go to
+`.artifacts/check/`.
+
+## Deploying
+
+The site is served by Cloudflare Workers static assets (`wrangler.jsonc`): just the files in `dist/`,
+with `_headers` for caching and a `404.html` for unknown paths, on the custom domain `fm-1.drewr.dev`.
+
+GitHub Actions (`.github/workflows/ci.yml`) lints, builds and checks every push and pull request, and
+deploys `main` once the checks pass. Screenshots from the checks are kept as a build artefact. It needs
+two repository secrets:
+
+- `CLOUDFLARE_API_TOKEN`: an API token from the "Edit Cloudflare Workers" template, with the drewr.dev
+  zone included.
+- `CLOUDFLARE_ACCOUNT_ID`: the account's ID.
+
+`npm run deploy` deploys from a local machine the same way, after `npm run build`.
