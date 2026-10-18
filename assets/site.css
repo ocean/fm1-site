@@ -6,6 +6,7 @@
   font-display: swap;
   src: url("fonts/cooper-hewitt-latin-300-normal.woff2") format("woff2");
 }
+
 @font-face {
   font-family: "Cooper Hewitt";
   font-style: normal;
@@ -13,6 +14,7 @@
   font-display: swap;
   src: url("fonts/cooper-hewitt-latin-400-normal.woff2") format("woff2");
 }
+
 @font-face {
   font-family: "Cooper Hewitt";
   font-style: italic;
@@ -20,6 +22,7 @@
   font-display: swap;
   src: url("fonts/cooper-hewitt-latin-400-italic.woff2") format("woff2");
 }
+
 @font-face {
   font-family: "Cooper Hewitt";
   font-style: normal;
@@ -31,7 +34,6 @@
 :root {
   /* Swap this one variable to try another typeface. */
   --font: "Cooper Hewitt", "Avenir Next", "Gill Sans", sans-serif;
-
   --bg: #1a110b;
   --bg-glow: #2a1b11;
   --text: #f1e6d4;
@@ -81,7 +83,7 @@ a {
 a:hover,
 a:focus-visible {
   color: var(--accent);
-  text-decoration-color: currentColor;
+  text-decoration-color: currentcolor;
 }
 
 h1 {

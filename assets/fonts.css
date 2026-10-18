@@ -2,17 +2,19 @@
 
 /* Pixel fonts, as in FM-SWITCH (SIL OFL 1.1). */
 @font-face {
-  font-family: "Silkscreen";
+  font-family: Silkscreen;
   font-weight: 400;
   font-display: swap;
   src: url("fonts/silkscreen-latin-400-normal.woff2") format("woff2");
 }
+
 @font-face {
   font-family: "Departure Mono";
   font-weight: 400;
   font-display: swap;
   src: url("fonts/departure-mono-regular.woff2") format("woff2");
 }
+
 @font-face {
   font-family: "VT323";
   font-weight: 400;
@@ -28,6 +30,7 @@
   font-display: swap;
   src: url("fonts/im-fell-english-latin-400-normal.woff2") format("woff2");
 }
+
 @font-face {
   font-family: "IM Fell English";
   font-style: italic;
@@ -35,6 +38,7 @@
   font-display: swap;
   src: url("fonts/im-fell-english-latin-400-italic.woff2") format("woff2");
 }
+
 @font-face {
   font-family: "IM Fell English SC";
   font-weight: 400;

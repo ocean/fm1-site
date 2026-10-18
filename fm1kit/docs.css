@@ -7,12 +7,11 @@
 :root {
   --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
-
-  --bg: #ffffff;
+  --bg: #fff;
   --text: #1d1d1f;
   --muted: #6e6e73;
   --rule: #d2d2d7;
-  --link: #0066cc;
+  --link: #06c;
   --code-bg: #f5f5f7;
   --aside-bg: #fff8e6;
   --aside-rule: #c98b00;
@@ -32,7 +31,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #000000;
+    --bg: #000;
     --text: #f5f5f7;
     --muted: #a1a1a6;
     --rule: #424245;
@@ -41,7 +40,6 @@
     --aside-bg: #2b2210;
     --aside-rule: #f0b429;
     --hero-bg: #1c1c1e;
-
     --syntax-keyword: #ff7ab2;
     --syntax-type: #dabaff;
     --syntax-string: #ff8170;
@@ -76,6 +74,7 @@ a:hover,
 a:focus-visible {
   text-decoration: underline;
 }
+
 
 .wrap {
   max-width: calc(47rem + 44px);
@@ -161,7 +160,7 @@ h1 {
   height: 6px;
   margin-right: 7px;
   border-radius: 50%;
-  background: currentColor;
+  background: currentcolor;
   vertical-align: 2px;
 }
 
@@ -219,11 +218,28 @@ pre code {
   font-size: inherit;
 }
 
-.k { color: var(--syntax-keyword); font-weight: 600; }
-.t { color: var(--syntax-type); }
-.s { color: var(--syntax-string); }
-.c { color: var(--syntax-comment); }
-.n { color: var(--syntax-number); }
+
+/* Syntax colours: keywords, types, strings, comments and numbers. */
+.k {
+  color: var(--syntax-keyword);
+  font-weight: 600;
+}
+
+.t {
+  color: var(--syntax-type);
+}
+
+.s {
+  color: var(--syntax-string);
+}
+
+.c {
+  color: var(--syntax-comment);
+}
+
+.n {
+  color: var(--syntax-number);
+}
 
 /* Asides, as Apple's Important and Note boxes. */
 .aside {

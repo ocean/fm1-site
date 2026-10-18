@@ -6,13 +6,13 @@
 
 :root {
   --green: #7be39a;
-  --dim: rgb(123 227 154 / 0.5);
-  --faint: rgb(123 227 154 / 0.2);
+  --dim: rgb(123 227 154 / 50%);
+  --faint: rgb(123 227 154 / 20%);
   --bg: #0d100e;
   --surface: #161b18;
   --ink: #e6eadf;
   --muted: #9aa59b;
-  --shadow: rgb(0 0 0 / 0.55);
+  --shadow: rgb(0 0 0 / 55%);
   --notch: polygon(
     3px 0, calc(100% - 3px) 0, calc(100% - 3px) 3px, 100% 3px,
     100% calc(100% - 3px), calc(100% - 3px) calc(100% - 3px), calc(100% - 3px) 100%, 3px 100%,
@@ -30,8 +30,8 @@ body {
   margin: 0;
   padding: 0 16px;
   background:
-    radial-gradient(ellipse at center, transparent 50%, rgb(0 0 0 / 0.3) 100%) fixed,
-    radial-gradient(circle, rgb(123 227 154 / 0.08) 1px, transparent 1.5px) 0 0 / 12px 12px,
+    radial-gradient(ellipse at center, transparent 50%, rgb(0 0 0 / 30%) 100%) fixed,
+    radial-gradient(circle, rgb(123 227 154 / 8%) 1px, transparent 1.5px) 0 0 / 12px 12px,
     var(--bg);
   color: var(--ink);
   font: 15px/1.75 "Departure Mono", ui-monospace, monospace;
@@ -61,7 +61,7 @@ a:focus-visible {
   margin-bottom: 2.5rem;
   border: 0;
   color: var(--muted);
-  font: 12px/1.4 "Silkscreen", monospace;
+  font: 12px/1.4 Silkscreen, monospace;
 }
 
 .back:hover,
@@ -87,8 +87,8 @@ a:focus-visible {
 h1 {
   margin: 0;
   color: var(--green);
-  font: clamp(2rem, 8vw, 3rem)/1 "Silkscreen", monospace;
-  text-shadow: 0 0 6px rgb(123 227 154 / 0.2);
+  font: clamp(2rem, 8vw, 3rem)/1 Silkscreen, monospace;
+  text-shadow: 0 0 6px rgb(123 227 154 / 20%);
 }
 
 .lede {
@@ -110,7 +110,7 @@ h1 {
   padding: 1px 7px;
   outline: 1px solid var(--muted);
   color: var(--muted);
-  font: 10px/1.6 "Silkscreen", monospace;
+  font: 10px/1.6 Silkscreen, monospace;
 }
 
 .tags .solid {
@@ -142,7 +142,7 @@ h1 {
   padding: 1px 7px;
   background: var(--green);
   color: var(--bg);
-  font: 11px/1.5 "Silkscreen", monospace;
+  font: 11px/1.5 Silkscreen, monospace;
 }
 
 .panel p {
@@ -222,7 +222,7 @@ footer p {
   }
 }
 
-@media (max-width: 480px) {
+@media (width <= 480px) {
   .masthead img {
     width: 64px;
     height: 64px;

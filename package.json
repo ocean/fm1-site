@@ -1,0 +1,26 @@
+{
+  "name": "fm1-site",
+  "private": true,
+  "description": "fm-1.drewr.dev: the site for Drew's M-VAVE FM-1 projects.",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
+    "lint:js": "eslint .",
+    "lint:css": "stylelint \"**/*.css\"",
+    "lint:html": "html-validate index.html \"*/index.html\""
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@eslint/js": "10.0.1",
+    "eslint": "10.13.0",
+    "globals": "17.13.0",
+    "html-validate": "11.16.2",
+    "playwright": "1.64.1",
+    "stylelint": "17.16.0",
+    "stylelint-config-standard": "40.0.0",
+    "wrangler": "4.151.1"
+  }
+}
