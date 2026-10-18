@@ -1,0 +1,33 @@
+# ESTAMPIE
+
+> A mediæval groovebox: custom firmware for the M-VAVE FM-1 tiny hardware synthesiser. Version 0.1, early work. GPL-3.0-only, not affiliated with M-VAVE.
+
+Part of Drew Robinson's FM-1 projects: https://fm-1.drewr.dev/ (see /llms-full.txt there for the others). Source: https://github.com/ocean/estampie
+
+This is a placeholder until ESTAMPIE's site (built by `web/make_site.py` in the estampie repository) is published here; that build should provide the full version of this file.
+
+## What it is
+
+Named after the estampie, a fast dance of the 13th and 14th centuries. A groovebox for lively mediæval music: tavern and court dances rather than the crypt, with plucked lutes and citoles, buzzing hurdy-gurdies, shawms and bagpipes over drones, frame drums, tabors and nakers, chant, and the church modes.
+
+It is a fork of GHOULBOX by Jason Persinger (dungeon-synth firmware), itself a fork of Felucca by Leo Kuroshita (Hügelton Instruments), on Felucca 1.6.1. Nearly everything is their work.
+
+## Features
+
+- Thirteen engines: virtual analog, 6-operator FM, phase distortion, chiptune, real recordings, sung vowels, three oscillators, tonewheel organ, granular, physical models, GHOULBOX's hurdy-gurdy, noise and drums.
+- Four tracks, each with a 64-step sequencer, an arpeggiator, chord keys, scales and mediæval temperaments (Pythagorean, meantone, just).
+- The hurdy-gurdy's drones can keep sounding through the sequencer's rests (RING).
+- Felucca 1.5–1.6.1's insert effects, step detail (chance, ratchet, nudge, velocity), conditional steps, Euclidean patterns, MIDI learn and more.
+- The VELLUM look on the FM-1's screen: parchment, iron-gall ink, vermilion rubrics and lapis, with Alegreya Sans and Cinzel, and an illuminated boot screen.
+
+## Status
+
+0.1, early work. The sounds are still mostly GHOULBOX's, with ESTAMPIE's TROTTO scene, DANCE drum kit and mediæval presets.
+
+## Site (coming soon)
+
+A browser emulator of the firmware, a web installer (Web MIDI), a sound editor, the user guide, and firmware downloads.
+
+## Safety
+
+Installing custom firmware is at the owner's own risk. M-VAVE's own updater returns an FM-1 to stock firmware.

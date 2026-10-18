@@ -1,0 +1,79 @@
+# FM-1 projects
+
+> Drew Robinson's open-source projects for the M-VAVE FM-1, a tiny hardware synthesiser: ESTAMPIE (custom firmware), FM-SWITCH (an iPhone, iPad and Mac app for swapping firmwares) and FM1Kit (the Swift package for installing firmware that the app is built on). None of them is affiliated with M-VAVE.
+
+This file is for language models and other software reading the site at https://fm-1.drewr.dev/. It explains what each project is, how they fit together, and where to find more. Each project's folder also has its own llms-full.txt with more detail.
+
+## The FM-1
+
+The M-VAVE FM-1 is a small, inexpensive hardware synthesiser with a screen, a keyboard and USB-MIDI. It runs on a JieLi AC791N chip. M-VAVE publishes official firmware (V15 is the current official release) and an open-source firmware and updater (fm1_open, Apache-2.0), and a community of custom firmwares has grown around the device: Felucca by Leo Kuroshita (Hügelton Instruments), GHOULBOX by Jason Persinger, X0X, Melodee, Jangada and others. Firmware is distributed as `.fwsc` packages and installed over USB-MIDI by an update protocol, which the community has reverse-engineered (FM-1-RE, https://github.com/AL-255/FM-1-RE).
+
+## How the projects fit together
+
+- ESTAMPIE is a firmware: it runs on the FM-1 itself.
+- FM1Kit is a library: it installs any FM-1 firmware (ESTAMPIE, Felucca, M-VAVE's V15 and others) from Apple devices.
+- FM-SWITCH is an app built on FM1Kit: it lists the community's firmwares, saves them and installs them, from an iPhone, iPad or Mac.
+
+## Site layout
+
+- `/` : the index, linking to each project.
+- `/estampie/` : ESTAMPIE's site, built from the estampie repository: a browser emulator, a web installer, a sound editor, the user guide and firmware downloads.
+- `/fm-switch/` : FM-SWITCH's page.
+- `/fm1kit/` : FM1Kit's page, an overview of the package's API.
+- `/llms.txt` : a short index of this file.
+
+---
+
+## ESTAMPIE
+
+A mediæval groovebox: custom firmware for the M-VAVE FM-1, named after the estampie, a fast dance of the 13th and 14th centuries. It's for lively mediæval music: tavern and court dances rather than the crypt, with plucked lutes and citoles, buzzing hurdy-gurdies, shawms and bagpipes over drones, frame drums, tabors and nakers, chant, and the church modes.
+
+- Status: 0.1, early work. The look (VELLUM: parchment, iron-gall ink, vermilion rubrics, lapis), the screen's type, the illuminated boot screen and the browser emulator are done. The sounds are still mostly GHOULBOX's, with ESTAMPIE's TROTTO scene, DANCE drum kit and mediæval presets.
+- Lineage: a fork of GHOULBOX (Jason Persinger's dungeon-synth firmware), itself a fork of Felucca (Leo Kuroshita, Hügelton Instruments), on Felucca 1.6.1. Nearly everything is their work.
+- Features: thirteen engines (virtual analog, 6-operator FM, phase distortion, chiptune, real recordings, sung vowels, three oscillators, tonewheel organ, granular, physical models, GHOULBOX's hurdy-gurdy, noise and drums) on four tracks, each with a 64-step sequencer, an arpeggiator, chord keys, scales and mediæval temperaments (Pythagorean, meantone, just). The hurdy-gurdy's drones can keep sounding through the sequencer's rests.
+- Licence: GPL-3.0-only, as GHOULBOX and Felucca. Engines from Felucca-Engines are MIT; the Hügelton Sample Pack is CC0 1.0.
+- Source: https://github.com/ocean/estampie
+- Site: https://fm-1.drewr.dev/estampie/
+
+Inspired by the idea of teenage engineering's EP-1320 medieval; not affiliated with them, and none of their sounds are used.
+
+---
+
+## FM-SWITCH
+
+An app for iPhone, iPad and Mac for swapping M-VAVE FM-1 firmwares over USB.
+
+- Firmwares come from the firmware hub's catalogue (thefirmwarehub.com) merged with fm1-editor.com's list. The app finds each one's package (GitHub releases, publisher manifests, project pages, M-VAVE's downloads), checks for newer releases, and saves firmwares on the device for offline flashing.
+- M-VAVE's official V15 comes with the app, unmodified (from fm1_open, Apache-2.0), so there's always a known-good firmware to go back to.
+- Flashing checks the package first, asks before switching firmware (which can erase the FM-1's projects and samples), keeps the screen awake, resumes an interrupted write, and confirms the FM-1 reports the new firmware afterwards.
+- Look: an 8-bit handheld-console screen with a green phosphor accent (#7BE39A), Silkscreen, Departure Mono and VT323.
+- Platforms: iOS and iPadOS 17+, macOS (native SwiftUI). Connects by USB-C, Lightning with Apple's camera adapter, or a Mac's USB.
+- Status: in development, not on the App Store. Build from source with XcodeGen and Xcode.
+- Source: https://github.com/ocean/FM-SWITCH
+- Page: https://fm-1.drewr.dev/fm-switch/
+
+---
+
+## FM1Kit
+
+A Swift package for installing firmware on the M-VAVE FM-1 over USB-MIDI, from iOS and macOS.
+
+- It reads `.fwsc` firmware packages, finds the device, answers its read requests while it stages and writes the new firmware, and checks the device reports the new firmware afterwards. It can finish an update that was cut off, or one started from USB recovery mode, and can restore V15's 128 factory voices.
+- Main types: `FwscPackage`, `OfficialFirmware`, `FM1Identity`, `FM1Updater` (an actor), `InstallCheck`, `InstallOptions`, `UpdateEvent`, `FM1Capability`, `FM1BuildID`, `CoreMIDITransport`, `SimulatedFM1`.
+- Also ships `fm1probe`, a Mac command-line tool for listing ports, identifying the device, inspecting packages and installing.
+- Requirements: iOS 17 or macOS 14, Swift 6.1 or later.
+- Install: `.package(url: "https://github.com/ocean/FM1Kit.git", .upToNextMinor(from: "0.1.0"))`
+- Status: 0.1.0, tested on one FM-1 from a Mac so far.
+- Licence: MIT. Contains no M-VAVE firmware and no code from GPL-licensed installers.
+- Source: https://github.com/ocean/FM1Kit
+- Page: https://fm-1.drewr.dev/fm1kit/
+
+---
+
+## Safety and affiliation
+
+Installing custom firmware on an FM-1 is at the owner's own risk. If an FM-1 doesn't start after an update, some firmwares offer USB recovery mode (hold OCT− while switching it on), and FM1Kit's resume can install a firmware whenever the device is in its update loader. M-VAVE's own updater returns an FM-1 to stock firmware. M-VAVE and FM-1 are trademarks of their respective owners; none of these projects is affiliated with or endorsed by M-VAVE.
+
+## Author
+
+Drew Robinson (GitHub: ocean). Contributions and hardware reports are welcome through each project's GitHub repository.

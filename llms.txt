@@ -1,0 +1,18 @@
+# FM-1 projects
+
+> Drew Robinson's open-source projects for the M-VAVE FM-1, a tiny hardware synthesiser: ESTAMPIE (custom firmware), FM-SWITCH (an iPhone, iPad and Mac app for swapping firmwares) and FM1Kit (the Swift package for installing firmware that the app is built on). None of them is affiliated with M-VAVE.
+
+All three are on GitHub under github.com/ocean. Installing custom firmware on an FM-1 is at the owner's own risk.
+
+## Projects
+
+- [ESTAMPIE](https://fm-1.drewr.dev/estampie/): a mediæval groovebox firmware for the FM-1, forked from GHOULBOX and Felucca (GPL-3.0). Source: https://github.com/ocean/estampie
+- [FM-SWITCH](https://fm-1.drewr.dev/fm-switch/): a SwiftUI app for iOS, iPadOS and macOS that installs FM-1 firmwares over USB. In development. Source: https://github.com/ocean/FM-SWITCH
+- [FM1Kit](https://fm-1.drewr.dev/fm1kit/): a Swift package (MIT) that speaks the FM-1's firmware update protocol over USB-MIDI. Source: https://github.com/ocean/FM1Kit
+
+## Full text
+
+- [llms-full.txt](https://fm-1.drewr.dev/llms-full.txt): everything below in one file
+- [ESTAMPIE in full](https://fm-1.drewr.dev/estampie/llms-full.txt)
+- [FM-SWITCH in full](https://fm-1.drewr.dev/fm-switch/llms-full.txt)
+- [FM1Kit in full](https://fm-1.drewr.dev/fm1kit/llms-full.txt)

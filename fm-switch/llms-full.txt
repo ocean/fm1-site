@@ -1,0 +1,41 @@
+# FM-SWITCH
+
+> An app for iPhone, iPad and Mac for swapping M-VAVE FM-1 firmwares over USB. In development, open source, not affiliated with M-VAVE.
+
+Part of Drew Robinson's FM-1 projects: https://fm-1.drewr.dev/ (see /llms-full.txt there for the others). Source: https://github.com/ocean/FM-SWITCH
+
+## What it's for
+
+The M-VAVE FM-1 is a tiny hardware synthesiser with a lively community of custom firmwares (Felucca, GHOULBOX, ESTAMPIE, X0X, Melodee and more). Installing them has usually meant a computer and a Chrome-based web installer. FM-SWITCH lets someone plug their FM-1 into an iPhone, iPad or Mac, pick a firmware and install it, and switch back whenever they like.
+
+## Features
+
+- Firmware list: the firmware hub's catalogue (thefirmwarehub.com) merged with fm1-editor.com's list.
+- Package discovery: finds each firmware's `.fwsc` package from GitHub releases, publisher manifests, project pages or M-VAVE's downloads, with live checks for newer releases and their builds.
+- Saved firmwares: kept on the device for offline flashing.
+- M-VAVE's official V15 comes with the app, unmodified (from M-VAVE's open-source fm1_open, Apache-2.0), so there's always a known-good firmware to go back to.
+- Flashing, through FM1Kit: checks the package before anything is sent and that exactly one FM-1 is connected; asks before switching to a different firmware (which can erase the FM-1's projects and samples); refuses V15 over V15; pauses auto-lock and asks iOS for background time during a flash; RESUME finishes a write that was cut off; afterwards confirms the FM-1 reports the new firmware.
+- An install takes about 20 seconds for V15 and under 40 seconds for Felucca 1.6.1 on the FM-1 tested.
+- Flash history, and a simulated FM-1 for the iOS Simulator (it can start in USB rescue mode, or "pull the cable" at 45% to test RESUME).
+
+## Platforms
+
+- iOS and iPadOS 17 or later, and macOS (native SwiftUI, sandboxed).
+- Connects by an iPhone or iPad's USB-C port, a Lightning device through Apple's camera adapter, or a Mac's USB.
+- iPad (landscape, or a 13-inch in either orientation) and the Mac get a wide layout: a sidebar, and lists with the picked item beside them.
+
+## Look
+
+An 8-bit handheld-console screen: near-black background (#0C0E0D), an accent colour the user picks (green #7BE39A by default; amber, ice, rose and paper presets), Silkscreen pixel capitals for headings, Departure Mono for reading, VT323 for large readouts. Notched pixel boxes with hard offset shadows, a segmented 20-block progress bar, and optional subtle CRT effects (scanlines, flicker), off by default.
+
+## Building
+
+Not on the App Store yet. To build: install XcodeGen, run `xcodegen generate`, open `FMSwitch.xcodeproj` in Xcode and run on a simulator, a device or My Mac. `scripts/check.sh` runs every check CI runs (formatting, SwiftLint, builds with warnings as errors, tests on iOS and macOS, DocC, unused-code analysis).
+
+## Under the hood
+
+Talking to the FM-1 (the update protocol, `.fwsc` packages, CoreMIDI and the simulated FM-1) is FM1Kit, an open-source Swift package by the same author: https://fm-1.drewr.dev/fm1kit/
+
+## Safety
+
+Not affiliated with M-VAVE. Installing custom firmware is at the owner's own risk.
