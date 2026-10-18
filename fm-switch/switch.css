@@ -1,0 +1,230 @@
+/*
+ * FM-SWITCH's page, in the app's look: a dark handheld-console screen with a green phosphor
+ * accent, pixel capitals for headings and a pixel monospace for reading. Kept calm: off-white
+ * body text, subtle glow, no scanlines or flicker.
+ */
+
+:root {
+  --green: #7be39a;
+  --dim: rgb(123 227 154 / 0.5);
+  --faint: rgb(123 227 154 / 0.2);
+  --bg: #0d100e;
+  --surface: #161b18;
+  --ink: #e6eadf;
+  --muted: #9aa59b;
+  --shadow: rgb(0 0 0 / 0.55);
+  --notch: polygon(
+    3px 0, calc(100% - 3px) 0, calc(100% - 3px) 3px, 100% 3px,
+    100% calc(100% - 3px), calc(100% - 3px) calc(100% - 3px), calc(100% - 3px) 100%, 3px 100%,
+    3px calc(100% - 3px), 0 calc(100% - 3px), 0 3px, 3px 3px
+  );
+
+  color-scheme: dark;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  padding: 0 16px;
+  background:
+    radial-gradient(ellipse at center, transparent 50%, rgb(0 0 0 / 0.3) 100%) fixed,
+    radial-gradient(circle, rgb(123 227 154 / 0.08) 1px, transparent 1.5px) 0 0 / 12px 12px,
+    var(--bg);
+  color: var(--ink);
+  font: 15px/1.75 "Departure Mono", ui-monospace, monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: clamp(2rem, 8vh, 5rem) 0 4rem;
+}
+
+a {
+  color: var(--green);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--dim);
+}
+
+a:hover,
+a:focus-visible {
+  border-bottom-style: solid;
+  border-bottom-color: var(--green);
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 2.5rem;
+  border: 0;
+  color: var(--muted);
+  font: 12px/1.4 "Silkscreen", monospace;
+}
+
+.back:hover,
+.back:focus-visible {
+  color: var(--green);
+}
+
+/* The header: the app icon beside the name. */
+.masthead {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.masthead img {
+  flex: none;
+  width: 96px;
+  height: 96px;
+  image-rendering: pixelated;
+}
+
+h1 {
+  margin: 0;
+  color: var(--green);
+  font: clamp(2rem, 8vw, 3rem)/1 "Silkscreen", monospace;
+  text-shadow: 0 0 6px rgb(123 227 154 / 0.2);
+}
+
+.lede {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+}
+
+/* Tags: solid for the important one, outlined for the rest. */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 1.5rem 0 3rem;
+  padding: 0;
+  list-style: none;
+}
+
+.tags li {
+  padding: 1px 7px;
+  outline: 1px solid var(--muted);
+  color: var(--muted);
+  font: 10px/1.6 "Silkscreen", monospace;
+}
+
+.tags .solid {
+  outline-color: var(--green);
+  background: var(--green);
+  color: var(--bg);
+}
+
+/* Panels: a notched outline, a title tab across the top border and a hard shadow. */
+.panel {
+  position: relative;
+  margin: 0 0 2.25rem;
+  filter: drop-shadow(4px 4px 0 var(--shadow));
+}
+
+.panel-body {
+  padding: 1.5rem 1.25rem 1.1rem;
+  border: 2px solid var(--dim);
+  background: var(--surface);
+  clip-path: var(--notch);
+}
+
+.panel h2 {
+  position: absolute;
+  top: -9px;
+  left: 12px;
+  z-index: 1;
+  margin: 0;
+  padding: 1px 7px;
+  background: var(--green);
+  color: var(--bg);
+  font: 11px/1.5 "Silkscreen", monospace;
+}
+
+.panel p {
+  margin: 0 0 1rem;
+}
+
+.panel ul {
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.panel li {
+  position: relative;
+  padding-left: 1.6em;
+  margin-bottom: 0.35rem;
+}
+
+.panel li::before {
+  content: "\25A0";
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-size: 0.8em;
+  line-height: 2.2;
+}
+
+.panel .note {
+  color: var(--muted);
+}
+
+/* The segmented bar, used here as a divider. */
+.meter {
+  height: 12px;
+  margin: 0 0 2.5rem;
+  background: repeating-linear-gradient(to right, var(--faint) 0 9px, transparent 9px 12px);
+}
+
+.meter span {
+  display: block;
+  width: 60%;
+  height: 100%;
+  background: repeating-linear-gradient(to right, var(--green) 0 9px, transparent 9px 12px);
+}
+
+.cursor {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.1em;
+  margin-left: 0.2em;
+  vertical-align: -0.2em;
+  background: var(--green);
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 2px dashed var(--faint);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+footer p {
+  margin: 0 0 0.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .masthead img {
+    width: 64px;
+    height: 64px;
+  }
+}
