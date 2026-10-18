@@ -149,6 +149,10 @@ function measureContrast({ selectors, backdrops }) {
     if (!element) {
       return { selector, missing: true };
     }
+    // Text hidden from assistive technology is decoration, which WCAG exempts from contrast.
+    if (element.closest('[aria-hidden="true"]')) {
+      return { selector, decorative: true };
+    }
     const style = getComputedStyle(element);
     const size = parseFloat(style.fontSize);
     const bold = parseInt(style.fontWeight, 10) >= 700;
@@ -243,7 +247,9 @@ async function checkState(browser, base, state, linksFound) {
       ));
     const measured = await page.evaluate(measureContrast, { selectors: undecided, backdrops });
     for (const result of measured) {
-      if (result.missing) {
+      if (result.decorative) {
+        continue;
+      } else if (result.missing) {
         problems.push(`contrast: couldn't find ${result.selector}`);
       } else if (result.ratio < result.required) {
         problems.push(
