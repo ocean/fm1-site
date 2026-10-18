@@ -1,0 +1,15 @@
+// Cloudflare Workers static assets: serves dist/ at fm-1.drewr.dev. No Worker code; just files.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "fm1-site",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    // /fm1kit serves /fm1kit/, and unknown paths get 404.html.
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "routes": [{ "pattern": "fm-1.drewr.dev", "custom_domain": true }],
+  // Only the custom domain, not a workers.dev address.
+  "workers_dev": false
+}

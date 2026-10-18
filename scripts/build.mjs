@@ -8,6 +8,8 @@ const dist = join(root, "dist");
 
 const publicPaths = [
   "index.html",
+  "404.html",
+  "_headers",
   "llms.txt",
   "llms-full.txt",
   "assets",

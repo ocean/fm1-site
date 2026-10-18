@@ -10,10 +10,12 @@
     "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
     "lint:js": "eslint .",
     "lint:css": "stylelint \"**/*.css\"",
-    "lint:html": "html-validate index.html \"*/index.html\"",
+    "lint:html": "html-validate index.html 404.html \"*/index.html\"",
     "build": "node scripts/build.mjs",
     "check": "node scripts/check-site.mjs",
-    "ci": "npm run lint && npm run build && npm run check"
+    "ci": "npm run lint && npm run build && npm run check",
+    "preview": "npm run build && wrangler dev",
+    "deploy": "wrangler deploy"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",
