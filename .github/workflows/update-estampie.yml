@@ -1,0 +1,66 @@
+# Checks daily (and on demand) for a new ESTAMPIE release, and opens a pull request pinning its site
+# in estampie.json. CI then lints and checks the site with it, and merging deploys it.
+#
+# Opening the pull request needs Settings > Actions > General > "Allow GitHub Actions to create and
+# approve pull requests". Without it, the branch is still pushed, ready to open a pull request from.
+name: Update ESTAMPIE
+
+on:
+  schedule:
+    - cron: "23 22 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: update-estampie
+  cancel-in-progress: false
+
+jobs:
+  update:
+    name: Pin the latest ESTAMPIE release
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write # push the update branch
+      pull-requests: write # open its pull request
+      actions: write # start CI on it (pushes made with this token don't trigger workflows)
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+
+      - name: Look for a newer release
+        id: update
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/update-estampie.mjs
+
+      - name: Push a branch and open a pull request
+        if: steps.update.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.update.outputs.version }}
+        run: |
+          branch="update-estampie-$VERSION"
+          remote="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          if git ls-remote --exit-code --heads "$remote" "$branch" > /dev/null; then
+            echo "The branch $branch already exists: nothing to do."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch --create "$branch"
+          git commit --all --message "Publish ESTAMPIE $VERSION" \
+            --message "Pins ESTAMPIE $VERSION's site zip in estampie.json, from its GitHub release."
+          git push "$remote" "$branch"
+          gh workflow run ci.yml --ref "$branch"
+          if ! gh pr create --head "$branch" --title "Publish ESTAMPIE $VERSION" \
+            --body "Pins the site from [ESTAMPIE $VERSION](https://github.com/ocean/estampie/releases) into /estampie/. CI checks it; merging deploys it."; then
+            echo "::warning title=No pull request::Pushed $branch, but couldn't open a pull request. Allow GitHub Actions to create pull requests in the repository settings, or open one from the branch."
+          fi

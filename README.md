@@ -24,9 +24,25 @@ On touch screens, pressing a project previews its look for as long as the finger
 plays it for about half a second before opening the page, like a transition into it. A press that turns
 into a scroll cancels the preview.
 
-`estampie/` holds a placeholder for now. The real pages are built in the estampie repo by
-`web/make_site.py` (see its BUILDING.md, "The site") and copied here in place of the placeholder
-(including `estampie/llms-full.txt`, which that build should then provide).
+## ESTAMPIE's folder
+
+ESTAMPIE's site (its front page, browser emulator, installer, sound editor, guide and firmware) is built
+and released from the [estampie repository](https://github.com/ocean/estampie): each release attaches the
+whole site as `estampie-site-X.Y.zip`. `estampie.json` pins the release published here:
+
+```json
+{ "version": "X.Y", "url": "https://github.com/.../estampie-site-X.Y.zip", "sha256": "..." }
+```
+
+`npm run build` downloads that zip (cached in `.artifacts/cache/`), checks its SHA-256 and unpacks it into
+`dist/estampie/`, in place of the placeholder in `estampie/`, which is used while no release is pinned.
+`npm run check` then also checks ESTAMPIE's guide, installer, editor and emulator pages.
+
+The "Update ESTAMPIE" workflow (`.github/workflows/update-estampie.yml`) looks for a newer release every
+day, or when run by hand, and opens a pull request updating `estampie.json` (`npm run update:estampie` does
+the same locally). CI checks the pull request, and merging it deploys the new version. Opening the pull
+request needs Settings › Actions › General › "Allow GitHub Actions to create and approve pull requests";
+without it the workflow pushes the branch and leaves opening the pull request to you.
 
 ## Working on it
 

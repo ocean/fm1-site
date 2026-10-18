@@ -15,7 +15,8 @@
     "check": "node scripts/check-site.mjs",
     "ci": "npm run lint && npm run build && npm run check",
     "preview": "npm run build && wrangler dev",
-    "deploy": "wrangler deploy"
+    "deploy": "wrangler deploy",
+    "update:estampie": "node scripts/update-estampie.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",
