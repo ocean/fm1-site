@@ -1,0 +1,290 @@
+/*
+ * FM1Kit's page, in the manner of Apple's developer documentation: a dark hero with the
+ * framework's abstract and availability, then plain reference pages in the system typeface.
+ * Light and dark follow the system setting.
+ */
+
+:root {
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+
+  --bg: #ffffff;
+  --text: #1d1d1f;
+  --muted: #6e6e73;
+  --rule: #d2d2d7;
+  --link: #0066cc;
+  --code-bg: #f5f5f7;
+  --aside-bg: #fff8e6;
+  --aside-rule: #c98b00;
+  --hero-bg: #1d1d1f;
+  --hero-text: #f5f5f7;
+  --hero-muted: #a1a1a6;
+
+  /* Xcode's default theme. */
+  --syntax-keyword: #ad3da4;
+  --syntax-type: #703daa;
+  --syntax-string: #d12f1b;
+  --syntax-comment: #707f8c;
+  --syntax-number: #272ad8;
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --text: #f5f5f7;
+    --muted: #a1a1a6;
+    --rule: #424245;
+    --link: #2997ff;
+    --code-bg: #1c1c1e;
+    --aside-bg: #2b2210;
+    --aside-rule: #f0b429;
+    --hero-bg: #1c1c1e;
+
+    --syntax-keyword: #ff7ab2;
+    --syntax-type: #dabaff;
+    --syntax-string: #ff8170;
+    --syntax-comment: #7f8c98;
+    --syntax-number: #d9c97c;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.47 var(--font);
+  letter-spacing: -0.022em;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+.wrap {
+  max-width: calc(47rem + 44px);
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+/* The navigation bar. */
+.nav {
+  border-bottom: 1px solid var(--rule);
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+
+.nav .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 52px;
+}
+
+.nav .crumbs a {
+  color: var(--muted);
+}
+
+.nav .crumbs .sep {
+  margin: 0 0.45em;
+  color: var(--muted);
+}
+
+.nav .version {
+  color: var(--muted);
+}
+
+/* The hero. */
+.hero {
+  padding: 48px 0 40px;
+  background: var(--hero-bg);
+  color: var(--hero-text);
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: var(--hero-muted);
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: 0.011em;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(40px, 7vw, 48px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.003em;
+}
+
+.abstract {
+  max-width: 40rem;
+  margin: 12px 0 0;
+  font-size: 21px;
+  line-height: 1.38;
+  letter-spacing: 0.011em;
+}
+
+.availability {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--hero-muted);
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+
+.availability li::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  vertical-align: 2px;
+}
+
+/* The content. */
+.content {
+  padding-top: 40px;
+  padding-bottom: 64px;
+}
+
+h2 {
+  margin: 48px 0 16px;
+  padding-top: 32px;
+  border-top: 1px solid var(--rule);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.125;
+  letter-spacing: 0.004em;
+}
+
+.content > h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+h3 {
+  margin: 32px 0 8px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.17;
+  letter-spacing: 0.009em;
+}
+
+p {
+  margin: 0 0 16px;
+}
+
+code {
+  font-family: var(--mono);
+  font-size: 0.88em;
+  letter-spacing: 0;
+}
+
+pre {
+  margin: 0 0 24px;
+  padding: 16px 18px;
+  overflow-x: auto;
+  border-radius: 12px;
+  background: var(--code-bg);
+  font: 14px/1.55 var(--mono);
+  letter-spacing: 0;
+}
+
+pre code {
+  font-size: inherit;
+}
+
+.k { color: var(--syntax-keyword); font-weight: 600; }
+.t { color: var(--syntax-type); }
+.s { color: var(--syntax-string); }
+.c { color: var(--syntax-comment); }
+.n { color: var(--syntax-number); }
+
+/* Asides, as Apple's Important and Note boxes. */
+.aside {
+  margin: 0 0 24px;
+  padding: 14px 18px;
+  border-left: 4px solid var(--aside-rule);
+  border-radius: 6px;
+  background: var(--aside-bg);
+  font-size: 15px;
+}
+
+.aside p {
+  margin: 0;
+}
+
+.aside .label {
+  display: block;
+  margin-bottom: 2px;
+  font-weight: 600;
+}
+
+/* Topics: symbol name, then its abstract. */
+.topics {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.topics li {
+  margin: 0 0 18px;
+}
+
+.topics .symbol {
+  display: block;
+  font: 600 15px/1.4 var(--mono);
+  letter-spacing: 0;
+}
+
+.topics .symbol .kind {
+  margin-right: 0.4em;
+  color: var(--syntax-keyword);
+}
+
+.topics p {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+footer {
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: -0.01em;
+}
+
+footer .wrap {
+  padding-top: 16px;
+  padding-bottom: 24px;
+}
+
+footer p {
+  margin: 0 0 6px;
+}

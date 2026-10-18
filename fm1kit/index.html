@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FM1Kit</title>
+  <meta name="description" content="A Swift package for installing firmware on the M-VAVE FM-1 over USB-MIDI, from iOS and macOS.">
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="docs.css">
+</head>
+<body>
+  <nav class="nav" aria-label="Breadcrumbs">
+    <div class="wrap">
+      <span class="crumbs"><a href="../">FM-1 projects</a><span class="sep" aria-hidden="true">/</span>FM1Kit</span>
+      <span class="version">Swift package &middot; 0.1.0</span>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Framework</p>
+      <h1>FM1Kit</h1>
+      <p class="abstract">Install firmware on the M-VAVE FM-1 over USB-MIDI, from iOS and macOS.</p>
+      <ul class="availability" aria-label="Availability">
+        <li>iOS 17.0+</li>
+        <li>iPadOS 17.0+</li>
+        <li>macOS 14.0+</li>
+        <li>Swift 6.1+</li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="wrap content">
+    <h2>Overview</h2>
+    <p>FM1Kit speaks the FM-1's update protocol. It reads <code>.fwsc</code> firmware packages, finds the device, answers its read requests while it stages and writes the new firmware, and checks the device reports the new firmware afterwards. It can also finish an update that was cut off, or one started from USB recovery mode.</p>
+    <p>It sticks to the device: finding and downloading firmwares is left to your app. <a href="../fm-switch/">FM-SWITCH</a> is built on it.</p>
+
+    <div class="aside">
+      <p><span class="label">Important</span>FM1Kit has been tested on one FM-1 so far, from a Mac. It isn't affiliated with M-VAVE, and installing custom firmware is at your own risk.</p>
+    </div>
+
+    <h3>Install the package</h3>
+    <p>Add FM1Kit with Swift Package Manager. Until 1.0, minor versions may change the API, so take 0.1.x fixes but not 0.2.0.</p>
+<pre><code><span class="t">.package</span>(url: <span class="s">"https://github.com/ocean/FM1Kit.git"</span>, <span class="t">.upToNextMinor</span>(from: <span class="s">"0.1.0"</span>)),</code></pre>
+
+    <h3>Install a firmware</h3>
+    <p>Read the package, check what installing it would do, then install it and follow its progress. Switching to a different firmware can erase the FM-1's projects and samples, so it needs confirming.</p>
+<pre><code><span class="k">import</span> FM1Kit
+
+<span class="k">let</span> package = <span class="k">try</span> <span class="t">FwscPackage</span>(data: <span class="t">Data</span>(contentsOf: fileURL))
+<span class="k">let</span> updater = <span class="t">FM1Updater</span>(transport: <span class="k">try</span> <span class="t">CoreMIDITransport</span>(clientName: <span class="s">"My App"</span>))
+
+<span class="k">let</span> check = <span class="k">try await</span> updater.check(package)
+<span class="k">let</span> confirmed = check.kind != .switchingFirmware || askToSwitch(from: check.device)
+
+<span class="k">try await</span> updater.install(package, options: <span class="t">InstallOptions</span>(confirmsSwitchingFirmware: confirmed)) { event <span class="k">in</span>
+    <span class="k">switch</span> event {
+    <span class="k">case</span> .writing(<span class="k">let</span> fraction, <span class="k">_</span>): print(<span class="s">"Writing </span>\(<span class="t">Int</span>(fraction * <span class="n">100</span>))<span class="s">%"</span>)
+    <span class="k">case</span> .finished(<span class="k">let</span> identity): print(<span class="s">"Now running </span>\(identity)<span class="s">"</span>)
+    <span class="k">default</span>: <span class="k">break</span>
+    }
+}
+
+<span class="c">// Finish an update that was cut off, or one started in USB recovery mode.</span>
+<span class="k">if let</span> identity = <span class="k">await</span> updater.identify(), identity.isLoader {
+    <span class="k">try await</span> updater.resume(package)
+}</code></pre>
+
+    <h2>Topics</h2>
+
+    <h3>Packages</h3>
+    <ul class="topics">
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>FwscPackage</a><p>Reads a <code>.fwsc</code> package: its identity, the image the device reads, and its SHA-256.</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>OfficialFirmware</a><p>Recognises M-VAVE's official releases, V15 and Open V12, by size and checksum.</p></li>
+    </ul>
+
+    <h3>Devices</h3>
+    <ul class="topics">
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>FM1Identity</a><p>Parses what a device reports, such as <code>FM-1_916</code>, or <code>ota-FM-1_015</code> for the update loader.</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>FM1Capability</a><p>What M-VAVE's open firmware reports about itself.</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>FM1BuildID</a><p>The build ID open firmware is armed with before an update.</p></li>
+    </ul>
+
+    <h3>Updating</h3>
+    <ul class="topics">
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">actor</span>FM1Updater</a><p>Finds the device, checks and installs, resumes, restores V15's voices, and reports progress.</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>InstallCheck</a><p>What an install would do, before it starts.</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>InstallOptions</a><p>Confirms a switch of firmware, or a reinstall of the identity already running.</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">enum</span>UpdateEvent</a><p>Progress: staging, writing, an optional checking pass, and finished.</p></li>
+    </ul>
+
+    <h3>Transports</h3>
+    <ul class="topics">
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">class</span>CoreMIDITransport</a><p>CoreMIDI connections to real devices.</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">class</span>SimulatedFM1</a><p>A software FM-1 that speaks the whole protocol, for the iOS Simulator and tests.</p></li>
+    </ul>
+
+    <h2>fm1probe</h2>
+    <p>A Mac command-line tool for checking a setup and watching an install closely. Only <code>install</code> and <code>restore-voices</code> write to the device, and only after you type YES.</p>
+<pre><code>swift run fm1probe ports                 <span class="c"># list MIDI ports</span>
+swift run fm1probe identify              <span class="c"># ask the FM-1 what it's running</span>
+swift run fm1probe inspect FILE.fwsc     <span class="c"># a package's identity, size and checksum</span>
+swift run fm1probe install FILE.fwsc     <span class="c"># install a firmware</span></code></pre>
+
+    <h2>Recovery</h2>
+    <p>Whenever the FM-1 is in its update loader, whether from USB recovery mode (hold <strong>OCT&minus;</strong> while switching it on, on firmwares that offer it) or an interrupted update, <code>resume(_:events:)</code> can install a firmware. Beyond that is the chip's ROM bootloader, which FM1Kit doesn't cover.</p>
+
+    <h2>See also</h2>
+    <p><a href="https://github.com/ocean/FM1Kit">Source, documentation and changelog on GitHub</a></p>
+    <p><a href="https://github.com/AL-255/FM-1-RE">FM-1-RE</a>: the reverse-engineering notes the protocol is written from.</p>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>MIT licence. Not affiliated with M-VAVE. FM1Kit doesn't include M-VAVE's firmware: get it from <a href="https://www.m-vave.com/download">M-VAVE's downloads</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>
