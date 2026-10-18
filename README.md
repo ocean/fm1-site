@@ -6,7 +6,7 @@ The site for Drew's M-VAVE FM-1 projects: a plain static site with no build step
 index.html               the index: links to each project
 llms.txt, llms-full.txt  what all this is, for language models (each project folder has its own llms-full.txt)
 assets/site.css          shared styles (swap the typeface with the --font variable)
-assets/flair.css         the index's hover themes: FM-SWITCH's 8-bit screen, ESTAMPIE's manuscript
+assets/flair.css, .js    the index's hover themes: FM-SWITCH's 8-bit screen, ESTAMPIE's manuscript
 assets/fonts.css         the projects' typefaces: Silkscreen, Departure Mono, VT323, IM Fell
 assets/fonts/            the font files, all SIL OFL 1.1 (licences alongside)
 assets/fm-switch-icon.svg  FM-SWITCH's 32 x 32 app icon, from the pixel map in FM-SWITCH's scripts/make-icon.py
@@ -15,9 +15,14 @@ fm1kit/                  FM1Kit, the Swift package under it (../FM1Kit), in the 
 estampie/                ESTAMPIE, the firmware (../estampie)
 ```
 
-Hovering a project on the index switches the whole page into that project's look (pure CSS, with
-`:has()`). Only fonts, colours and things that don't change the list's size are swapped, so the hovered
-card never moves out from under the pointer.
+Pointing at a project on the index switches the whole page into that project's look (CSS with
+`:has()`, keyed on an `.is-active` class that `assets/flair.js` sets; keyboard focus works without it).
+Only fonts, colours and things that don't change the list's size are swapped, so the hovered card never
+moves out from under the pointer.
+
+On touch screens, pressing a project previews its look for as long as the finger stays down, and a tap
+plays it for about half a second before opening the page, like a transition into it. A press that turns
+into a scroll cancels the preview.
 
 `estampie/` holds a placeholder for now. The real pages are built in the estampie repo by
 `web/make_site.py` (see its BUILDING.md, "The site") and copied here in place of the placeholder

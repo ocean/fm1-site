@@ -1,6 +1,7 @@
 /*
- * Hover flair for the index: hovering (or focusing) a project turns the whole page into that
- * project's world. FM-SWITCH: the app's dark 8-bit screen. ESTAMPIE: an illuminated manuscript.
+ * Hover flair for the index: pointing at, pressing or focusing a project turns the whole page into
+ * that project's world. FM-SWITCH: the app's dark 8-bit screen. ESTAMPIE: an illuminated
+ * manuscript. flair.js marks the project with .is-active (see there for touch).
  *
  * Only fonts, colours and things that don't change the list's size are swapped, so the
  * hovered card never moves out from under the pointer.
@@ -109,10 +110,15 @@ main {
   left: calc(50% + 17rem + 3rem);
 }
 
+/* Without margins, the side panels go and the left-hand art moves into the top corner. */
 @media (max-width: 1200px) {
-  .margin-left,
   .margin-right {
     display: none;
+  }
+
+  .margin-left {
+    top: 20px;
+    right: 16px;
   }
 }
 
@@ -273,39 +279,39 @@ main {
 }
 
 /* The theme itself. */
-body:has(.project--switch:is(:hover, :focus-visible)) {
+body:has(.project--switch:is(.is-active, :focus-visible)) {
   --text: var(--px-ink);
   --muted: var(--px-muted);
   --rule: var(--px-dim);
   --accent: var(--px-green);
 }
 
-body:has(.project--switch:is(:hover, :focus-visible)) .backdrop--switch {
+body:has(.project--switch:is(.is-active, :focus-visible)) .backdrop--switch {
   opacity: 1;
 }
 
-body:has(.project--switch:is(:hover, :focus-visible)) h1 {
+body:has(.project--switch:is(.is-active, :focus-visible)) h1 {
   color: var(--px-green);
   font-family: "Silkscreen", monospace;
   font-weight: 400;
   text-shadow: 0 0 6px rgb(123 227 154 / 0.25);
 }
 
-body:has(.project--switch:is(:hover, :focus-visible)) .projects li {
+body:has(.project--switch:is(.is-active, :focus-visible)) .projects li {
   border-bottom-style: dashed;
 }
 
-body:has(.project--switch:is(:hover, :focus-visible)) .projects {
+body:has(.project--switch:is(.is-active, :focus-visible)) .projects {
   border-top-style: dashed;
 }
 
-body:has(.project--switch:is(:hover, :focus-visible)) .projects .name {
+body:has(.project--switch:is(.is-active, :focus-visible)) .projects .name {
   font-family: "Silkscreen", monospace;
   font-weight: 400;
   font-size: 1.35rem;
 }
 
-body:has(.project--switch:is(:hover, :focus-visible)) .projects .kind {
+body:has(.project--switch:is(.is-active, :focus-visible)) .projects .kind {
   padding: 2px 6px;
   outline: 1px solid var(--px-muted);
   font: 0.65rem/1.4 "Silkscreen", monospace;
@@ -313,7 +319,7 @@ body:has(.project--switch:is(:hover, :focus-visible)) .projects .kind {
   letter-spacing: 0;
 }
 
-body:has(.project--switch:is(:hover, :focus-visible)) footer {
+body:has(.project--switch:is(.is-active, :focus-visible)) footer {
   font-family: "Departure Mono", monospace;
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -341,48 +347,48 @@ body:has(.project--switch:is(:hover, :focus-visible)) footer {
   background: var(--px-surface);
 }
 
-.project--switch:is(:hover, :focus-visible)::before,
-.project--switch:is(:hover, :focus-visible)::after {
+.project--switch:is(.is-active, :focus-visible)::before,
+.project--switch:is(.is-active, :focus-visible)::after {
   opacity: 1;
 }
 
-.project--switch:is(:hover, :focus-visible) .name {
+.project--switch:is(.is-active, :focus-visible) .name {
   color: var(--px-green);
 }
 
-.project--switch:is(:hover, :focus-visible) .kind {
+.project--switch:is(.is-active, :focus-visible) .kind {
   outline-color: var(--px-green);
   background: var(--px-green);
   color: var(--px-bg);
 }
 
-.project--switch:is(:hover, :focus-visible) .about {
+.project--switch:is(.is-active, :focus-visible) .about {
   font-family: "Departure Mono", monospace;
   font-size: 1rem;
 }
 
 /* The FLASH panel plays through an install each time the theme comes on. */
-body:has(.project--switch:is(:hover, :focus-visible)) .switch-fill {
+body:has(.project--switch:is(.is-active, :focus-visible)) .switch-fill {
   animation: switch-fill 2.4s steps(20, end) 0.3s forwards;
 }
 
-body:has(.project--switch:is(:hover, :focus-visible)) .switch-status {
+body:has(.project--switch:is(.is-active, :focus-visible)) .switch-status {
   animation: switch-count 2.4s linear 0.3s forwards;
 }
 
-body:has(.project--switch:is(:hover, :focus-visible)) .switch-writing {
+body:has(.project--switch:is(.is-active, :focus-visible)) .switch-writing {
   animation: switch-hide 0s 2.7s forwards;
 }
 
-body:has(.project--switch:is(:hover, :focus-visible)) .switch-done {
+body:has(.project--switch:is(.is-active, :focus-visible)) .switch-done {
   animation: switch-show 0s 2.7s forwards;
 }
 
-body:has(.project--switch:is(:hover, :focus-visible)) .switch-cursor {
+body:has(.project--switch:is(.is-active, :focus-visible)) .switch-cursor {
   animation: switch-blink 1s steps(1) infinite;
 }
 
-body:has(.project--switch:is(:hover, :focus-visible)) .switch-icon {
+body:has(.project--switch:is(.is-active, :focus-visible)) .switch-icon {
   animation: switch-bob 1.2s steps(1) infinite;
 }
 
@@ -423,6 +429,21 @@ body:has(.project--switch:is(:hover, :focus-visible)) .switch-icon {
     var(--quatrefoil) bottom right / 38px no-repeat;
 }
 
+@media (max-width: 600px) {
+  .estampie-frame {
+    inset: 6px;
+  }
+
+  .estampie-frame::before {
+    inset: -12px;
+    background-size: 24px;
+  }
+
+  .project--estampie .name::before {
+    display: none;
+  }
+}
+
 /* Dry-point ruling around the text block, as a scribe would prick and rule the leaf. */
 .estampie-ruling {
   position: absolute;
@@ -434,11 +455,11 @@ body:has(.project--switch:is(:hover, :focus-visible)) .switch-icon {
   background: repeating-linear-gradient(to bottom, transparent 0 27px, rgb(91 69 50 / 0.07) 27px 28px);
 }
 
+/* Sliced from the top, so a small square shows just the initial without its vine. */
 .estampie-initial {
   display: block;
   width: 150px;
   height: auto;
-  overflow: visible;
 }
 
 .estampie-gloss {
@@ -464,54 +485,54 @@ body:has(.project--switch:is(:hover, :focus-visible)) .switch-icon {
 }
 
 /* The theme itself. */
-body:has(.project--estampie:is(:hover, :focus-visible)) {
+body:has(.project--estampie:is(.is-active, :focus-visible)) {
   --text: var(--mss-ink);
   --muted: var(--mss-ink-soft);
   --rule: rgb(150 32 18 / 0.35);
   --accent: var(--mss-vermilion);
 }
 
-body:has(.project--estampie:is(:hover, :focus-visible)) .backdrop--estampie {
+body:has(.project--estampie:is(.is-active, :focus-visible)) .backdrop--estampie {
   opacity: 1;
 }
 
-body:has(.project--estampie:is(:hover, :focus-visible)) .estampie-initial,
-body:has(.project--estampie:is(:hover, :focus-visible)) .estampie-gloss {
+body:has(.project--estampie:is(.is-active, :focus-visible)) .estampie-initial,
+body:has(.project--estampie:is(.is-active, :focus-visible)) .estampie-gloss {
   animation: estampie-gild 0.8s ease-out both;
 }
 
-body:has(.project--estampie:is(:hover, :focus-visible)) h1 {
+body:has(.project--estampie:is(.is-active, :focus-visible)) h1 {
   color: var(--mss-vermilion);
   font-family: "IM Fell English SC", serif;
   font-weight: 400;
   letter-spacing: 0.02em;
 }
 
-body:has(.project--estampie:is(:hover, :focus-visible)) h1::first-letter {
+body:has(.project--estampie:is(.is-active, :focus-visible)) h1::first-letter {
   color: var(--mss-lapis);
 }
 
-body:has(.project--estampie:is(:hover, :focus-visible)) .lede,
-body:has(.project--estampie:is(:hover, :focus-visible)) footer {
+body:has(.project--estampie:is(.is-active, :focus-visible)) .lede,
+body:has(.project--estampie:is(.is-active, :focus-visible)) footer {
   font-family: "IM Fell English", serif;
   font-style: italic;
 }
 
-body:has(.project--estampie:is(:hover, :focus-visible)) .projects .name {
+body:has(.project--estampie:is(.is-active, :focus-visible)) .projects .name {
   font-family: "IM Fell English SC", serif;
   font-weight: 400;
   font-size: 1.65rem;
   line-height: calc(1.5rem * 1.55);
 }
 
-body:has(.project--estampie:is(:hover, :focus-visible)) .projects .kind {
+body:has(.project--estampie:is(.is-active, :focus-visible)) .projects .kind {
   font-family: "IM Fell English", serif;
   font-style: italic;
   font-size: 1rem;
   letter-spacing: 0;
 }
 
-body:has(.project--estampie:is(:hover, :focus-visible)) .projects .about {
+body:has(.project--estampie:is(.is-active, :focus-visible)) .projects .about {
   font-family: "IM Fell English", serif;
   font-size: 1.15rem;
 }
@@ -531,19 +552,32 @@ body:has(.project--estampie:is(:hover, :focus-visible)) .projects .about {
   transition: opacity var(--fade);
 }
 
-.project--estampie:is(:hover, :focus-visible) .name::before {
+.project--estampie:is(.is-active, :focus-visible) .name::before {
   opacity: 1;
 }
 
-.project--estampie:is(:hover, :focus-visible) .name {
+.project--estampie:is(.is-active, :focus-visible) .name {
   color: var(--mss-lapis);
 }
 
-.project--estampie:is(:hover, :focus-visible) .about {
+.project--estampie:is(.is-active, :focus-visible) .about {
   color: var(--mss-ink);
 }
 
 /* ------------------------------------------------------------------------------------------ */
+
+/* Small versions of the corner art, for the top corner on narrow screens. */
+@media (max-width: 1200px) {
+  .switch-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .estampie-initial {
+    width: 72px;
+    height: 72px;
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
   :root {
