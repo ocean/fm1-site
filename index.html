@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FM-1 projects</title>
+  <meta name="description" content="Drew's projects for the M-VAVE FM-1: ESTAMPIE firmware, the FM-SWITCH app and the FM1Kit library.">
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/fonts.css">
+  <link rel="stylesheet" href="assets/flair.css">
+</head>
+<body>
+  <div class="backdrop backdrop--switch" aria-hidden="true">
+    <div class="margin-left">
+      <img class="switch-icon" src="assets/fm-switch-icon.svg" alt="" width="192" height="192">
+    </div>
+    <div class="margin-right">
+      <div class="switch-panel-wrap">
+        <span class="switch-tab">FLASH</span>
+        <div class="switch-panel">
+          <p class="switch-title">SWITCH FIRMWARE?</p>
+          <p>V15 <span class="switch-muted">&rarr;</span> ESTAMPIE 0.1</p>
+          <div class="switch-bar"><span class="switch-fill"></span></div>
+          <p class="switch-status"><span class="switch-pct"></span> <span class="switch-writing">WRITING</span><span class="switch-done">DONE</span><span class="switch-cursor"></span></p>
+          <p class="switch-checks">[&#9632;] KEEP VOICES<br>[ ] RECOVERY MODE</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="backdrop backdrop--estampie" aria-hidden="true">
+    <div class="estampie-ruling"></div>
+    <div class="estampie-frame"></div>
+    <div class="margin-left">
+      <svg class="estampie-initial" viewBox="0 0 120 330" width="150" height="412">
+        <defs>
+          <pattern id="diaper" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <path d="M0 0H12M0 0V12" stroke="#b8892a" stroke-width="0.7" opacity="0.55"/>
+            <circle cx="6" cy="6" r="1.1" fill="#eee2c4" opacity="0.6"/>
+          </pattern>
+        </defs>
+        <!-- The initial: a lapis field with a gold lattice, framed in gold and vermilion. -->
+        <rect x="2" y="2" width="116" height="116" fill="#b8892a"/>
+        <rect x="7" y="7" width="106" height="106" fill="#962012"/>
+        <rect x="10" y="10" width="100" height="100" fill="#1a3e94"/>
+        <rect x="10" y="10" width="100" height="100" fill="url(#diaper)"/>
+        <text x="60" y="92" text-anchor="middle" font-family="IM Fell English SC, serif" font-size="92" fill="#eee2c4" stroke="#b8892a" stroke-width="1.2">E</text>
+        <!-- A vine trailing down the margin, with leaves and gold bezants. -->
+        <path d="M24 118 C 8 150, 44 168, 26 204 S 12 262, 34 290 S 30 318, 22 326" fill="none" stroke="#3f6b3a" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M26 204 C 44 214, 52 230, 46 246" fill="none" stroke="#3f6b3a" stroke-width="1.8" stroke-linecap="round"/>
+        <ellipse cx="12" cy="150" rx="9" ry="4.5" transform="rotate(-35 12 150)" fill="#962012"/>
+        <ellipse cx="40" cy="176" rx="9" ry="4.5" transform="rotate(30 40 176)" fill="#1a3e94"/>
+        <ellipse cx="13" cy="232" rx="9" ry="4.5" transform="rotate(-30 13 232)" fill="#3f6b3a"/>
+        <ellipse cx="52" cy="226" rx="8" ry="4" transform="rotate(60 52 226)" fill="#962012"/>
+        <ellipse cx="38" cy="300" rx="8" ry="4" transform="rotate(25 38 300)" fill="#1a3e94"/>
+        <circle cx="34" cy="136" r="4" fill="#b8892a" stroke="#5b4532" stroke-width="0.6"/>
+        <circle cx="46" cy="246" r="4.5" fill="#b8892a" stroke="#5b4532" stroke-width="0.6"/>
+        <circle cx="18" cy="270" r="4" fill="#b8892a" stroke="#5b4532" stroke-width="0.6"/>
+        <circle cx="22" cy="326" r="3.5" fill="#b8892a" stroke="#5b4532" stroke-width="0.6"/>
+      </svg>
+    </div>
+    <div class="margin-right">
+      <p class="estampie-gloss"><span class="rubric">&para;</span> Here begynneth the <em>estampie</em>, a daunce right merrie, for lute &amp; hurdy-gurdy, shawm &amp; tabor.</p>
+      <p class="estampie-gloss"><span class="rubric">&para;</span> In the moodes of the chirche, &amp; tuned after Pythagoras.</p>
+    </div>
+  </div>
+
+  <main>
+    <h1>FM-1</h1>
+    <p class="lede">Things I've made for the M-VAVE FM-1, a tiny synth.</p>
+
+    <ul class="projects">
+      <li>
+        <a class="project--estampie" href="estampie/">
+          <span class="name">ESTAMPIE</span>
+          <span class="kind">Firmware</span>
+          <span class="about">A mediæval groovebox: lutes, hurdy-gurdies, shawms and frame drums, in the church modes.</span>
+        </a>
+      </li>
+      <li>
+        <a class="project--switch" href="fm-switch/">
+          <span class="name">FM-SWITCH</span>
+          <span class="kind">iOS &amp; macOS</span>
+          <span class="about">Swap FM-1 firmwares over USB from an iPhone, iPad or Mac.</span>
+        </a>
+      </li>
+      <li>
+        <a href="fm1kit/">
+          <span class="name">FM1Kit</span>
+          <span class="kind">Swift package</span>
+          <span class="about">The library under FM-SWITCH, speaking the <span class="nowrap">FM-1's</span> update protocol.</span>
+        </a>
+      </li>
+    </ul>
+
+    <footer>Not affiliated with M-VAVE.</footer>
+  </main>
+</body>
+</html>

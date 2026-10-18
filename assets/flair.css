@@ -1,0 +1,573 @@
+/*
+ * Hover flair for the index: hovering (or focusing) a project turns the whole page into that
+ * project's world. FM-SWITCH: the app's dark 8-bit screen. ESTAMPIE: an illuminated manuscript.
+ *
+ * Only fonts, colours and things that don't change the list's size are swapped, so the
+ * hovered card never moves out from under the pointer.
+ */
+
+/* Registered so the colours fade between themes rather than jumping. */
+@property --text {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #f1e6d4;
+}
+@property --muted {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #b8a58c;
+}
+@property --rule {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #4a3524;
+}
+@property --accent {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #e8a35a;
+}
+@property --pct {
+  syntax: "<integer>";
+  inherits: true;
+  initial-value: 0;
+}
+
+:root {
+  /* FM-SWITCH's Phosphor theme, green preset. */
+  --px-green: #7be39a;
+  --px-dim: rgb(123 227 154 / 0.5);
+  --px-faint: rgb(123 227 154 / 0.2);
+  --px-bg: #0d100e;
+  --px-surface: #161b18;
+  --px-ink: #e6eadf;
+  --px-muted: #8e9a8f;
+
+  /* ESTAMPIE's VELLUM palette. */
+  --mss-vellum: #eee2c4;
+  --mss-vellum-dark: #dfcca0;
+  --mss-ink: #2e1e14;
+  --mss-ink-soft: #5b4532;
+  --mss-vermilion: #962012;
+  --mss-lapis: #1a3e94;
+  --mss-gold: #b8892a;
+  --mss-verdigris: #3f6b3a;
+
+  --fade: 0.4s;
+  --notch: polygon(
+    3px 0, calc(100% - 3px) 0, calc(100% - 3px) 3px, 100% 3px,
+    100% calc(100% - 3px), calc(100% - 3px) calc(100% - 3px), calc(100% - 3px) 100%, 3px 100%,
+    3px calc(100% - 3px), 0 calc(100% - 3px), 0 3px, 3px 3px
+  );
+}
+
+body {
+  transition: --text var(--fade), --muted var(--fade), --rule var(--fade), --accent var(--fade);
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+.projects li {
+  transition: border-color var(--fade);
+}
+
+.projects a {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Backdrops sit behind everything and fade in with their theme. */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--fade);
+}
+
+.backdrop p {
+  margin: 0;
+}
+
+/* Decorations live in the side margins, so only appear when there's room. */
+.margin-left,
+.margin-right {
+  position: absolute;
+  top: clamp(3rem, 14vh, 9rem);
+}
+
+.margin-left {
+  right: calc(50% + 17rem + 3rem);
+}
+
+.margin-right {
+  left: calc(50% + 17rem + 3rem);
+}
+
+@media (max-width: 1200px) {
+  .margin-left,
+  .margin-right {
+    display: none;
+  }
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/* FM-SWITCH: a dark handheld-console screen.                                                 */
+/* ------------------------------------------------------------------------------------------ */
+
+.backdrop--switch {
+  background:
+    radial-gradient(ellipse at center, transparent 45%, rgb(0 0 0 / 0.3) 100%),
+    radial-gradient(circle, var(--px-faint) 1px, transparent 1.5px) 0 0 / 12px 12px,
+    var(--px-bg);
+}
+
+/* Faint scanlines: 1px every 3px, kept quieter than the app's optional ones. */
+.backdrop--switch::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(to bottom, rgb(0 0 0 / 0.08) 0 1px, transparent 1px 3px);
+}
+
+.switch-icon {
+  display: block;
+  width: 192px;
+  height: 192px;
+  image-rendering: pixelated;
+}
+
+.switch-panel-wrap {
+  position: relative;
+  width: 268px;
+  margin-top: 2.5rem;
+  /* The hard offset shadow under panels: no blur. */
+  filter: drop-shadow(4px 4px 0 rgb(0 0 0 / 0.55));
+}
+
+.switch-tab {
+  position: absolute;
+  top: -8px;
+  left: 12px;
+  z-index: 1;
+  padding: 1px 6px;
+  background: var(--px-green);
+  color: var(--px-bg);
+  font: 10px/1.4 "Silkscreen", monospace;
+}
+
+.switch-panel {
+  padding: 18px 14px 14px;
+  border: 2px solid var(--px-dim);
+  background: var(--px-surface);
+  clip-path: var(--notch);
+  color: var(--px-ink);
+  font: 13px/1.6 "Departure Mono", monospace;
+}
+
+.switch-title {
+  padding-bottom: 8px;
+  margin-bottom: 10px !important;
+  border-bottom: 2px dashed var(--px-dim);
+  color: var(--px-green);
+  font: 16px/1.2 "Silkscreen", monospace;
+  text-shadow: 0 0 4px rgb(123 227 154 / 0.18);
+}
+
+.switch-muted {
+  color: var(--px-muted);
+}
+
+/* The segmented progress bar: 20 blocks with 3px gaps, like the FM-1's level meters. */
+.switch-bar {
+  position: relative;
+  width: 237px;
+  height: 16px;
+  margin: 12px 0 8px;
+  background: repeating-linear-gradient(to right, var(--px-faint) 0 9px, transparent 9px 12px);
+}
+
+.switch-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0;
+  background: repeating-linear-gradient(to right, var(--px-green) 0 9px, transparent 9px 12px);
+}
+
+.switch-status {
+  position: relative;
+  font: 22px/1 "VT323", monospace;
+  color: var(--px-green);
+}
+
+.switch-pct {
+  counter-reset: pct var(--pct);
+}
+
+.switch-pct::before {
+  content: counter(pct) "%";
+}
+
+.switch-done {
+  position: absolute;
+  left: 2.55em;
+  opacity: 0;
+}
+
+.switch-cursor {
+  display: inline-block;
+  width: 9px;
+  height: 16px;
+  margin-left: 4px;
+  vertical-align: -1px;
+  background: var(--px-green);
+}
+
+.switch-checks {
+  margin-top: 12px !important;
+  color: var(--px-muted);
+}
+
+@keyframes switch-fill {
+  to {
+    width: 240px;
+  }
+}
+
+@keyframes switch-count {
+  from {
+    --pct: 0;
+  }
+  to {
+    --pct: 100;
+  }
+}
+
+@keyframes switch-show {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes switch-hide {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes switch-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes switch-bob {
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* The theme itself. */
+body:has(.project--switch:is(:hover, :focus-visible)) {
+  --text: var(--px-ink);
+  --muted: var(--px-muted);
+  --rule: var(--px-dim);
+  --accent: var(--px-green);
+}
+
+body:has(.project--switch:is(:hover, :focus-visible)) .backdrop--switch {
+  opacity: 1;
+}
+
+body:has(.project--switch:is(:hover, :focus-visible)) h1 {
+  color: var(--px-green);
+  font-family: "Silkscreen", monospace;
+  font-weight: 400;
+  text-shadow: 0 0 6px rgb(123 227 154 / 0.25);
+}
+
+body:has(.project--switch:is(:hover, :focus-visible)) .projects li {
+  border-bottom-style: dashed;
+}
+
+body:has(.project--switch:is(:hover, :focus-visible)) .projects {
+  border-top-style: dashed;
+}
+
+body:has(.project--switch:is(:hover, :focus-visible)) .projects .name {
+  font-family: "Silkscreen", monospace;
+  font-weight: 400;
+  font-size: 1.35rem;
+}
+
+body:has(.project--switch:is(:hover, :focus-visible)) .projects .kind {
+  padding: 2px 6px;
+  outline: 1px solid var(--px-muted);
+  font: 0.65rem/1.4 "Silkscreen", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+body:has(.project--switch:is(:hover, :focus-visible)) footer {
+  font-family: "Departure Mono", monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+/* The hovered card becomes a panel with a notched outline and a hard shadow. */
+.project--switch::before,
+.project--switch::after {
+  content: "";
+  position: absolute;
+  inset: -2px -1rem;
+  z-index: -1;
+  clip-path: var(--notch);
+  opacity: 0;
+  transition: opacity var(--fade);
+}
+
+.project--switch::before {
+  translate: 4px 4px;
+  background: rgb(0 0 0 / 0.55);
+}
+
+.project--switch::after {
+  border: 2px solid var(--px-dim);
+  background: var(--px-surface);
+}
+
+.project--switch:is(:hover, :focus-visible)::before,
+.project--switch:is(:hover, :focus-visible)::after {
+  opacity: 1;
+}
+
+.project--switch:is(:hover, :focus-visible) .name {
+  color: var(--px-green);
+}
+
+.project--switch:is(:hover, :focus-visible) .kind {
+  outline-color: var(--px-green);
+  background: var(--px-green);
+  color: var(--px-bg);
+}
+
+.project--switch:is(:hover, :focus-visible) .about {
+  font-family: "Departure Mono", monospace;
+  font-size: 1rem;
+}
+
+/* The FLASH panel plays through an install each time the theme comes on. */
+body:has(.project--switch:is(:hover, :focus-visible)) .switch-fill {
+  animation: switch-fill 2.4s steps(20, end) 0.3s forwards;
+}
+
+body:has(.project--switch:is(:hover, :focus-visible)) .switch-status {
+  animation: switch-count 2.4s linear 0.3s forwards;
+}
+
+body:has(.project--switch:is(:hover, :focus-visible)) .switch-writing {
+  animation: switch-hide 0s 2.7s forwards;
+}
+
+body:has(.project--switch:is(:hover, :focus-visible)) .switch-done {
+  animation: switch-show 0s 2.7s forwards;
+}
+
+body:has(.project--switch:is(:hover, :focus-visible)) .switch-cursor {
+  animation: switch-blink 1s steps(1) infinite;
+}
+
+body:has(.project--switch:is(:hover, :focus-visible)) .switch-icon {
+  animation: switch-bob 1.2s steps(1) infinite;
+}
+
+/* ------------------------------------------------------------------------------------------ */
+/* ESTAMPIE: an illuminated manuscript on vellum.                                             */
+/* ------------------------------------------------------------------------------------------ */
+
+.backdrop--estampie {
+  background:
+    /* Fine grain of the skin. */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .36 0 0 0 0 .25 0 0 0 0 .12 .16 0 0 0 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"),
+    /* Broad mottling and foxing. */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='900'%3E%3Cfilter id='m'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.004' numOctaves='3' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .38 0 0 0 0 .16 .5 0 0 0 -.12'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)'/%3E%3C/svg%3E"),
+    /* Darkened, handled edges. */
+    radial-gradient(ellipse at center, transparent 40%, rgb(150 105 45 / 0.35) 100%),
+    var(--mss-vellum);
+}
+
+/* The leaf's border: a vermilion rule and a gold rule, with quatrefoils at the corners. */
+.estampie-frame {
+  position: absolute;
+  inset: 22px;
+  border: 2px solid rgb(150 32 18 / 0.75);
+  box-shadow:
+    inset 0 0 0 4px transparent,
+    inset 0 0 0 5px var(--mss-gold);
+}
+
+.estampie-frame::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  --quatrefoil: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cg fill='%231a3e94' stroke='%23b8892a' stroke-width='1.5'%3E%3Ccircle cx='18' cy='9' r='7'/%3E%3Ccircle cx='18' cy='27' r='7'/%3E%3Ccircle cx='9' cy='18' r='7'/%3E%3Ccircle cx='27' cy='18' r='7'/%3E%3C/g%3E%3Ccircle cx='18' cy='18' r='7' fill='%23962012' stroke='%23b8892a' stroke-width='1.5'/%3E%3Ccircle cx='18' cy='18' r='2.5' fill='%23b8892a'/%3E%3C/svg%3E");
+  background:
+    var(--quatrefoil) top left / 38px no-repeat,
+    var(--quatrefoil) top right / 38px no-repeat,
+    var(--quatrefoil) bottom left / 38px no-repeat,
+    var(--quatrefoil) bottom right / 38px no-repeat;
+}
+
+/* Dry-point ruling around the text block, as a scribe would prick and rule the leaf. */
+.estampie-ruling {
+  position: absolute;
+  inset: 0 auto;
+  left: 50%;
+  width: calc(34rem + 3rem);
+  translate: -50% 0;
+  border-inline: 1px solid rgb(91 69 50 / 0.16);
+  background: repeating-linear-gradient(to bottom, transparent 0 27px, rgb(91 69 50 / 0.07) 27px 28px);
+}
+
+.estampie-initial {
+  display: block;
+  width: 150px;
+  height: auto;
+  overflow: visible;
+}
+
+.estampie-gloss {
+  width: 13rem;
+  color: var(--mss-ink-soft);
+  font: italic 1.05rem/1.45 "IM Fell English", serif;
+}
+
+.estampie-gloss .rubric {
+  color: var(--mss-vermilion);
+  font-style: normal;
+}
+
+.estampie-gloss + .estampie-gloss {
+  margin-top: 1.25rem;
+}
+
+@keyframes estampie-gild {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+/* The theme itself. */
+body:has(.project--estampie:is(:hover, :focus-visible)) {
+  --text: var(--mss-ink);
+  --muted: var(--mss-ink-soft);
+  --rule: rgb(150 32 18 / 0.35);
+  --accent: var(--mss-vermilion);
+}
+
+body:has(.project--estampie:is(:hover, :focus-visible)) .backdrop--estampie {
+  opacity: 1;
+}
+
+body:has(.project--estampie:is(:hover, :focus-visible)) .estampie-initial,
+body:has(.project--estampie:is(:hover, :focus-visible)) .estampie-gloss {
+  animation: estampie-gild 0.8s ease-out both;
+}
+
+body:has(.project--estampie:is(:hover, :focus-visible)) h1 {
+  color: var(--mss-vermilion);
+  font-family: "IM Fell English SC", serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+body:has(.project--estampie:is(:hover, :focus-visible)) h1::first-letter {
+  color: var(--mss-lapis);
+}
+
+body:has(.project--estampie:is(:hover, :focus-visible)) .lede,
+body:has(.project--estampie:is(:hover, :focus-visible)) footer {
+  font-family: "IM Fell English", serif;
+  font-style: italic;
+}
+
+body:has(.project--estampie:is(:hover, :focus-visible)) .projects .name {
+  font-family: "IM Fell English SC", serif;
+  font-weight: 400;
+  font-size: 1.65rem;
+  line-height: calc(1.5rem * 1.55);
+}
+
+body:has(.project--estampie:is(:hover, :focus-visible)) .projects .kind {
+  font-family: "IM Fell English", serif;
+  font-style: italic;
+  font-size: 1rem;
+  letter-spacing: 0;
+}
+
+body:has(.project--estampie:is(:hover, :focus-visible)) .projects .about {
+  font-family: "IM Fell English", serif;
+  font-size: 1.15rem;
+}
+
+/* A rubricated pilcrow in the margin marks the hovered entry. */
+.project--estampie .name {
+  position: relative;
+}
+
+.project--estampie .name::before {
+  content: "\00B6";
+  position: absolute;
+  right: calc(100% + 0.4em);
+  color: var(--mss-vermilion);
+  font-family: "IM Fell English", serif;
+  opacity: 0;
+  transition: opacity var(--fade);
+}
+
+.project--estampie:is(:hover, :focus-visible) .name::before {
+  opacity: 1;
+}
+
+.project--estampie:is(:hover, :focus-visible) .name {
+  color: var(--mss-lapis);
+}
+
+.project--estampie:is(:hover, :focus-visible) .about {
+  color: var(--mss-ink);
+}
+
+/* ------------------------------------------------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --fade: 0.01s;
+  }
+
+  .backdrop *,
+  .backdrop *::before {
+    animation: none !important;
+  }
+
+  .switch-fill {
+    width: 240px;
+  }
+
+  .switch-status {
+    --pct: 100;
+  }
+
+  .switch-writing {
+    opacity: 0;
+  }
+
+  .switch-done {
+    opacity: 1;
+  }
+}
