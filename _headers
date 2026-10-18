@@ -4,3 +4,18 @@
 
 /assets/fonts/*
   Cache-Control: public, max-age=31536000, immutable
+
+# ESTAMPIE's site: its emulator streams WebAssembly, its installer reads firmware packages, and its
+# licence files should show in the browser. (No Permissions-Policy anywhere: the installer and
+# editor need Web MIDI with SysEx.)
+/estampie/*.wasm
+  Content-Type: application/wasm
+
+/estampie/*.fwsc
+  Content-Type: application/octet-stream
+
+/estampie/*.md
+  Content-Type: text/plain; charset=utf-8
+
+/estampie/firmware/LICENSE
+  Content-Type: text/plain; charset=utf-8

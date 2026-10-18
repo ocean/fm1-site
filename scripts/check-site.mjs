@@ -24,7 +24,8 @@ const desktop = { width: 1440, height: 900 };
 const phone = { width: 390, height: 844 };
 
 // What to check. `activate` marks a project as pointed at, as flair.js does. `backdrops` are the
-// colours painted behind the text in that state, for contrast checks axe can't make itself.
+// colours painted behind the text in that state, for contrast checks axe can't make itself; without
+// them, the page's own background colour is used.
 const states = [
   { name: "index", path: "/", viewport: desktop, backdrops: ["#1a110b", "#2a1b11"] },
   { name: "index-phone", path: "/", viewport: phone, backdrops: ["#1a110b", "#2a1b11"] },
@@ -61,9 +62,21 @@ const states = [
   { name: "fm1kit-light", path: "/fm1kit/", viewport: desktop, colorScheme: "light", backdrops: ["#fff"] },
   { name: "fm1kit-dark", path: "/fm1kit/", viewport: desktop, colorScheme: "dark", backdrops: ["#000"] },
   { name: "fm1kit-phone", path: "/fm1kit/", viewport: phone, colorScheme: "light", backdrops: ["#fff"] },
-  { name: "estampie", path: "/estampie/", viewport: desktop, backdrops: ["#1a110b", "#2a1b11"] },
+  { name: "estampie", path: "/estampie/", viewport: desktop },
+  { name: "estampie-phone", path: "/estampie/", viewport: phone },
   { name: "not-found", path: "/404.html", viewport: phone, backdrops: ["#1a110b", "#2a1b11"] },
 ];
+
+// ESTAMPIE's own site, when estampie.json pins a release: its other pages too.
+const estampiePin = JSON.parse(await readFile(join(root, "estampie.json"), "utf8"));
+if (estampiePin.version) {
+  states.push(
+    { name: "estampie-guide", path: "/estampie/guide/", viewport: desktop },
+    { name: "estampie-installer", path: "/estampie/webapp/installer/", viewport: desktop },
+    { name: "estampie-editor", path: "/estampie/webapp/editor/", viewport: desktop },
+    { name: "estampie-emulator", path: "/estampie/webapp/emu/", viewport: desktop },
+  );
+}
 
 const contentTypes = {
   ".html": "text/html; charset=utf-8",
@@ -73,6 +86,11 @@ const contentTypes = {
   ".woff2": "font/woff2",
   ".txt": "text/plain; charset=utf-8",
   ".png": "image/png",
+  ".jpg": "image/jpeg",
+  ".ico": "image/x-icon",
+  ".wasm": "application/wasm",
+  ".json": "application/json",
+  ".md": "text/plain; charset=utf-8",
 };
 
 // A minimal static server for dist/, resolving folders to their index.html as Cloudflare does.
@@ -187,7 +205,12 @@ async function checkState(browser, base, state, linksFound) {
   });
   page.on("requestfailed", (request) => problems.push(`failed to load ${request.url().replace(base, "")}`));
 
-  await page.goto(base + state.path, { waitUntil: "load" });
+  // Waiting for the network to go quiet also follows any redirect, such as a meta refresh.
+  await page.goto(base + state.path, { waitUntil: "networkidle" });
+  const landedOn = new URL(page.url()).pathname;
+  if (landedOn !== state.path) {
+    console.log(`     ${state.path} redirects to ${landedOn}`);
+  }
   if (state.activate) {
     await page.locator(state.activate).evaluate((link) => link.classList.add("is-active"));
   }
@@ -210,7 +233,15 @@ async function checkState(browser, base, state, linksFound) {
     .filter((result) => result.id === "color-contrast")
     .flatMap((result) => result.nodes.map((node) => node.target.join(" ")));
   if (undecided.length > 0) {
-    const measured = await page.evaluate(measureContrast, { selectors: undecided, backdrops: state.backdrops });
+    const backdrops =
+      state.backdrops ??
+      (await page.evaluate(() =>
+        [document.body, document.documentElement]
+          .map((element) => getComputedStyle(element).backgroundColor)
+          .filter((colour) => colour !== "rgba(0, 0, 0, 0)")
+          .slice(0, 1),
+      ));
+    const measured = await page.evaluate(measureContrast, { selectors: undecided, backdrops });
     for (const result of measured) {
       if (result.missing) {
         problems.push(`contrast: couldn't find ${result.selector}`);
