@@ -21,4 +21,11 @@ export default [
       globals: globals.node,
     },
   },
+  {
+    // The check script also passes functions to the browser to run in the page.
+    files: ["scripts/check-site.mjs"],
+    languageOptions: {
+      globals: { ...globals.node, ...globals.browser },
+    },
+  },
 ];

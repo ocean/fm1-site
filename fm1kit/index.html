@@ -41,11 +41,11 @@
 
     <h3>Install the package</h3>
     <p>Add FM1Kit with Swift Package Manager. Until 1.0, minor versions may change the API, so take 0.1.x fixes but not 0.2.0.</p>
-<pre><code><span class="t">.package</span>(url: <span class="s">"https://github.com/ocean/FM1Kit.git"</span>, <span class="t">.upToNextMinor</span>(from: <span class="s">"0.1.0"</span>)),</code></pre>
+<pre tabindex="0"><code><span class="t">.package</span>(url: <span class="s">"https://github.com/ocean/FM1Kit.git"</span>, <span class="t">.upToNextMinor</span>(from: <span class="s">"0.1.0"</span>)),</code></pre>
 
     <h3>Install a firmware</h3>
     <p>Read the package, check what installing it would do, then install it and follow its progress. Switching to a different firmware can erase the FM-1's projects and samples, so it needs confirming.</p>
-<pre><code><span class="k">import</span> FM1Kit
+<pre tabindex="0"><code><span class="k">import</span> FM1Kit
 
 <span class="k">let</span> package = <span class="k">try</span> <span class="t">FwscPackage</span>(data: <span class="t">Data</span>(contentsOf: fileURL))
 <span class="k">let</span> updater = <span class="t">FM1Updater</span>(transport: <span class="k">try</span> <span class="t">CoreMIDITransport</span>(clientName: <span class="s">"My App"</span>))
@@ -97,7 +97,7 @@
 
     <h2>fm1probe</h2>
     <p>A Mac command-line tool for checking a setup and watching an install closely. Only <code>install</code> and <code>restore-voices</code> write to the device, and only after you type YES.</p>
-<pre><code>swift run fm1probe ports                 <span class="c"># list MIDI ports</span>
+<pre tabindex="0"><code>swift run fm1probe ports                 <span class="c"># list MIDI ports</span>
 swift run fm1probe identify              <span class="c"># ask the FM-1 what it's running</span>
 swift run fm1probe inspect FILE.fwsc     <span class="c"># a package's identity, size and checksum</span>
 swift run fm1probe install FILE.fwsc     <span class="c"># install a firmware</span></code></pre>

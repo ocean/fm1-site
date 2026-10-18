@@ -23,7 +23,7 @@
   --syntax-keyword: #ad3da4;
   --syntax-type: #703daa;
   --syntax-string: #d12f1b;
-  --syntax-comment: #707f8c;
+  --syntax-comment: #5d6a76;
   --syntax-number: #272ad8;
 
   color-scheme: light dark;
@@ -75,6 +75,13 @@ a:focus-visible {
   text-decoration: underline;
 }
 
+/* Links in running text are underlined, so they don't rely on colour alone. */
+p a,
+.aside a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
 
 .wrap {
   max-width: calc(47rem + 44px);
@@ -218,6 +225,11 @@ pre code {
   font-size: inherit;
 }
 
+/* Code blocks can scroll sideways, so they take keyboard focus. */
+pre:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
 
 /* Syntax colours: keywords, types, strings, comments and numbers. */
 .k {
