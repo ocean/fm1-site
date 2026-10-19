@@ -75,6 +75,8 @@ if (estampiePin.version) {
     { name: "estampie-installer", path: "/estampie/webapp/installer/", viewport: desktop },
     { name: "estampie-editor", path: "/estampie/webapp/editor/", viewport: desktop },
     { name: "estampie-emulator", path: "/estampie/webapp/emu/", viewport: desktop },
+    { name: "estampie-sound-lab", path: "/estampie/webapp/emu/lab.html", viewport: desktop },
+    { name: "estampie-sound-lab-phone", path: "/estampie/webapp/emu/lab.html", viewport: phone },
   );
 }
 
