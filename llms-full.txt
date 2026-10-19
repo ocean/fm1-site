@@ -62,8 +62,8 @@ A Swift package for installing firmware on the M-VAVE FM-1 over USB-MIDI, from i
 - Main types: `FwscPackage`, `OfficialFirmware`, `FM1Identity`, `FM1Updater` (an actor), `InstallCheck`, `InstallOptions`, `UpdateEvent`, `FM1Capability`, `FM1BuildID`, `CoreMIDITransport`, `SimulatedFM1`.
 - Also ships `fm1probe`, a Mac command-line tool for listing ports, identifying the device, inspecting packages and installing.
 - Requirements: iOS 17 or macOS 14, Swift 6.1 or later.
-- Install: `.package(url: "https://github.com/ocean/FM1Kit.git", .upToNextMinor(from: "0.1.0"))`
-- Status: 0.1.0, tested on one FM-1 from a Mac so far.
+- Install: `.package(url: "https://github.com/ocean/FM1Kit.git", .upToNextMinor(from: "0.2.0"))`
+- Status: 0.2.0, tested on one FM-1 from a Mac so far.
 - Licence: MIT. Contains no M-VAVE firmware and no code from GPL-licensed installers.
 - Source: https://github.com/ocean/FM1Kit
 - Page: https://fm-1.drewr.dev/fm1kit/
