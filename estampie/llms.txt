@@ -1,0 +1,11 @@
+# ESTAMPIE
+
+> A mediæval groovebox: custom firmware for the M-VAVE FM-1 synthesiser. GPL-3.0-only; not affiliated with M-VAVE.
+
+Part of Drew Robinson's FM-1 projects: https://fm-1.drewr.dev/ . Source: https://github.com/ocean/estampie
+
+This is a placeholder until ESTAMPIE's first release publishes its site here, with this file listing its pages.
+
+## Optional
+
+- [Full text](https://fm-1.drewr.dev/estampie/llms-full.txt): what ESTAMPIE is, in more detail

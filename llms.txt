@@ -13,6 +13,7 @@ All three are on GitHub under github.com/ocean. Installing custom firmware on an
 ## Full text
 
 - [llms-full.txt](https://fm-1.drewr.dev/llms-full.txt): everything below in one file
+- [ESTAMPIE's own index](https://fm-1.drewr.dev/estampie/llms.txt): its pages, the firmware download and the licences
 - [ESTAMPIE in full](https://fm-1.drewr.dev/estampie/llms-full.txt)
 - [FM-SWITCH in full](https://fm-1.drewr.dev/fm-switch/llms-full.txt)
 - [FM1Kit in full](https://fm-1.drewr.dev/fm1kit/llms-full.txt)

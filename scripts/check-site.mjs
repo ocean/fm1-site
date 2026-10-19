@@ -275,8 +275,9 @@ async function checkState(browser, base, state, linksFound) {
   return problems.map((problem) => `${state.name}: ${problem}`);
 }
 
-// Links in the llms.txt and llms-full.txt files (the site's own and the projects') point at the live
-// site; check the files they name exist here.
+// Links in the llms.txt and llms-full.txt files (the site's own and the projects'): absolute ones to
+// the live site, and Markdown links relative to the file, which resolve as a browser would. Check the
+// files they name exist here.
 async function llmsLinks() {
   const found = new Map();
   const entries = await readdir(dist, { recursive: true });
@@ -284,6 +285,11 @@ async function llmsLinks() {
     const text = await readFile(join(dist, file), "utf8");
     for (const [url] of text.matchAll(/https:\/\/fm-1\.drewr\.dev\/[^\s)>"`]*/g)) {
       found.set(url.slice(siteOrigin.length), `/${file}`);
+    }
+    for (const [, target] of text.matchAll(/\]\(([^)\s]+)\)/g)) {
+      if (!/^([a-z]+:|#|\/\/)/i.test(target)) {
+        found.set(new URL(target, `${siteOrigin}/${file}`).pathname, `/${file}`);
+      }
     }
   }
   return found;
