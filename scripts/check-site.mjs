@@ -77,6 +77,7 @@ if (estampiePin.version) {
     { name: "estampie-emulator", path: "/estampie/webapp/emu/", viewport: desktop },
     { name: "estampie-sound-lab", path: "/estampie/webapp/emu/lab.html", viewport: desktop },
     { name: "estampie-sound-lab-phone", path: "/estampie/webapp/emu/lab.html", viewport: phone },
+    { name: "estampie-emulator-tools", path: "/estampie/webapp/emu/tools.html", viewport: desktop },
   );
 }
 
@@ -189,6 +190,54 @@ async function settle(page) {
   });
 }
 
+async function checkPreviewCard(page, base, path, linksFound) {
+  const tags = await page.$$eval('meta[property^="og:"], meta[name^="twitter:"]', (metas) =>
+    Object.fromEntries(metas.map((meta) => [meta.getAttribute("property") ?? meta.name, meta.content])),
+  );
+  if (Object.keys(tags).length === 0) {
+    return [];
+  }
+  const problems = [];
+  const live = (url) => (url?.startsWith(`${siteOrigin}/`) ? url.slice(siteOrigin.length) : null);
+
+  const ownUrl = live(tags["og:url"]);
+  if (!tags["og:url"]) {
+    problems.push("preview card: no og:url");
+  } else if (ownUrl !== path) {
+    problems.push(`preview card: og:url is ${tags["og:url"]}, but this page is ${siteOrigin}${path}`);
+  }
+  for (const required of ["og:title", "og:description", "og:image"]) {
+    if (!tags[required]) {
+      problems.push(`preview card: no ${required}`);
+    }
+  }
+
+  for (const key of ["og:image", "twitter:image"]) {
+    const imagePath = live(tags[key]);
+    if (tags[key] && !imagePath) {
+      problems.push(`preview card: ${key} ${tags[key]} isn't on ${siteOrigin}`);
+    }
+    if (imagePath) {
+      linksFound.set(imagePath, path);
+    }
+  }
+
+  const imagePath = live(tags["og:image"]);
+  if (imagePath && tags["og:image:width"] && tags["og:image:height"]) {
+    const size = await page.evaluate(async (url) => {
+      const image = new Image();
+      image.src = url;
+      await image.decode().catch(() => {});
+      return { width: image.naturalWidth, height: image.naturalHeight };
+    }, base + imagePath);
+    const stated = `${tags["og:image:width"]} x ${tags["og:image:height"]}`;
+    if (`${size.width} x ${size.height}` !== stated) {
+      problems.push(`preview card: ${imagePath} is ${size.width} x ${size.height}, but the tags say ${stated}`);
+    }
+  }
+  return problems;
+}
+
 async function checkState(browser, base, state, linksFound) {
   const problems = [];
   const context = await browser.newContext({
@@ -268,6 +317,10 @@ async function checkState(browser, base, state, linksFound) {
       linksFound.set(link.replace(base, ""), state.path);
     }
   }
+
+  // Link previews (Open Graph and Twitter cards) use the live site's addresses: og:url must be this
+  // page's own address, and the card image must exist here at the size the tags give.
+  problems.push(...(await checkPreviewCard(page, base, landedOn, linksFound)));
 
   await page.screenshot({ path: join(shots, `${state.name}.png`), fullPage: true });
   await context.close();
