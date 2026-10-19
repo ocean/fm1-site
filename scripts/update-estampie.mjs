@@ -6,70 +6,35 @@
 // Actions it also sets the outputs `changed` and `version`.
 //
 // Run locally with: npm run update:estampie (set GH_TOKEN to avoid GitHub's rate limits).
-import { createHash } from "node:crypto";
-import { appendFile, readFile, writeFile } from "node:fs/promises";
-import { join } from "node:path";
+import { download, github, readPin, setOutputs, sha256Of, writePin } from "./pinned.mjs";
 
-const root = new URL("..", import.meta.url).pathname;
-const pinPath = join(root, "estampie.json");
 const repository = "ocean/estampie";
-const token = process.env.GH_TOKEN ?? process.env.GITHUB_TOKEN;
 
-async function github(path) {
-  const response = await fetch(`https://api.github.com/${path}`, {
-    headers: {
-      Accept: "application/vnd.github+json",
-      ...(token ? { Authorization: `Bearer ${token}` } : {}),
-    },
-  });
-  if (response.status === 404) {
-    return null;
-  }
-  if (!response.ok) {
-    throw new Error(`GitHub API ${path}: ${response.status} ${await response.text()}`);
-  }
-  return response.json();
+async function finish(message, outputs) {
+  console.log(message);
+  await setOutputs(outputs);
+  process.exit(0);
 }
 
-async function download(url) {
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error(`Couldn't download ${url}: ${response.status}`);
-  }
-  return Buffer.from(await response.arrayBuffer());
-}
-
-async function setOutputs(outputs) {
-  if (process.env.GITHUB_OUTPUT) {
-    const lines = Object.entries(outputs).map(([name, value]) => `${name}=${value}\n`);
-    await appendFile(process.env.GITHUB_OUTPUT, lines.join(""));
-  }
-}
-
-const pin = JSON.parse(await readFile(pinPath, "utf8"));
+const pin = await readPin("estampie.json");
 const release = await github(`repos/${repository}/releases/latest`);
 if (!release) {
-  console.log(`${repository} has no releases yet: nothing to do.`);
-  await setOutputs({ changed: "false" });
-  process.exit(0);
+  await finish(`${repository} has no releases yet: nothing to do.`, { changed: "false" });
 }
 
 const siteAsset = release.assets.find((asset) => /^estampie-site-.+\.zip$/.test(asset.name));
 if (!siteAsset) {
-  console.log(`${repository} ${release.tag_name} has no estampie-site-*.zip asset: nothing to do.`);
-  await setOutputs({ changed: "false" });
-  process.exit(0);
+  await finish(`${repository} ${release.tag_name} has no estampie-site-*.zip asset: nothing to do.`, {
+    changed: "false",
+  });
 }
 
 const version = siteAsset.name.replace(/^estampie-site-/, "").replace(/\.zip$/, "");
 if (version === pin.version) {
-  console.log(`ESTAMPIE ${version} is already pinned.`);
-  await setOutputs({ changed: "false", version });
-  process.exit(0);
+  await finish(`ESTAMPIE ${version} is already pinned.`, { changed: "false", version });
 }
 
-const zip = await download(siteAsset.browser_download_url);
-const sha256 = createHash("sha256").update(zip).digest("hex");
+const sha256 = sha256Of(await download(siteAsset.browser_download_url));
 const hashAsset = release.assets.find((asset) => asset.name === `${siteAsset.name}.sha256`);
 if (hashAsset) {
   const published = (await download(hashAsset.browser_download_url)).toString("utf8").trim().split(/\s+/)[0];
@@ -78,9 +43,6 @@ if (hashAsset) {
   }
 }
 
-await writeFile(
-  pinPath,
-  `${JSON.stringify({ version, url: siteAsset.browser_download_url, sha256 }, null, 2)}\n`,
-);
+await writePin("estampie.json", { version, url: siteAsset.browser_download_url, sha256 });
 console.log(`Pinned ESTAMPIE ${version} (was ${pin.version ?? "none"}): ${sha256}`);
 await setOutputs({ changed: "true", version });

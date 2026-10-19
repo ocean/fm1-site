@@ -24,25 +24,27 @@ On touch screens, pressing a project previews its look for as long as the finger
 plays it for about half a second before opening the page, like a transition into it. A press that turns
 into a scroll cancels the preview.
 
-## ESTAMPIE's folder
+## Files the projects publish here
 
-ESTAMPIE's site (its front page, browser emulator, installer, sound editor, guide and firmware) is built
-and released from the [estampie repository](https://github.com/ocean/estampie): each release attaches the
-whole site as `estampie-site-X.Y.zip`. `estampie.json` pins the release published here:
+Two projects publish their own files into this site, each pinned to a release and checked by SHA-256.
+While nothing is pinned, this repository's placeholder files are used.
 
-```json
-{ "version": "X.Y", "url": "https://github.com/.../estampie-site-X.Y.zip", "sha256": "..." }
-```
+- **ESTAMPIE's site** (its front page, browser emulator, installer, sound editor, guide, firmware and llms
+  files) is built and released from the [estampie repository](https://github.com/ocean/estampie): each
+  release attaches the whole site as `estampie-site-X.Y.zip`. `estampie.json` pins one:
+  `{ "version", "url", "sha256" }`. The build downloads the zip, checks it and unpacks it into
+  `dist/estampie/`, and the checks then cover ESTAMPIE's guide, installer, editor and emulator too.
+- **FM1Kit's `llms.txt` and `llms-full.txt`** are kept by the [FM1Kit repository](https://github.com/ocean/FM1Kit)
+  alongside its README and DocC. `fm1kit.json` pins a release tag and each file's SHA-256:
+  `{ "tag", "files": { "llms.txt": "...", "llms-full.txt": "..." } }`. The build fetches them from that
+  tag (never `main`, which can describe unreleased features) into `dist/fm1kit/`.
 
-`npm run build` downloads that zip (cached in `.artifacts/cache/`), checks its SHA-256 and unpacks it into
-`dist/estampie/`, in place of the placeholder in `estampie/`, which is used while no release is pinned.
-`npm run check` then also checks ESTAMPIE's guide, installer, editor and emulator pages.
-
-The "Update ESTAMPIE" workflow (`.github/workflows/update-estampie.yml`) looks for a newer release every
-day, or when run by hand, and opens a pull request updating `estampie.json` (`npm run update:estampie` does
-the same locally). CI checks the pull request, and merging it deploys the new version. Opening the pull
-request needs Settings › Actions › General › "Allow GitHub Actions to create and approve pull requests";
-without it the workflow pushes the branch and leaves opening the pull request to you.
+Downloads are cached in `.artifacts/cache/`. The "Update projects" workflow
+(`.github/workflows/update-projects.yml`) looks for newer releases every day, or when run by hand, and
+opens a pull request updating the pin (`npm run update:estampie` and `npm run update:fm1kit` do the same
+locally). CI checks the pull request, and merging it deploys. Opening the pull request needs Settings ›
+Actions › General › "Allow GitHub Actions to create and approve pull requests"; without it the workflow
+pushes the branch and leaves opening the pull request to you.
 
 ## Working on it
 

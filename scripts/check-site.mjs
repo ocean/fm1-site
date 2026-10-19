@@ -10,7 +10,7 @@
 //
 // Screenshots of every state go to .artifacts/check/ (CI keeps them as a build artefact).
 import { createServer } from "node:http";
-import { mkdir, readFile, stat } from "node:fs/promises";
+import { mkdir, readFile, readdir, stat } from "node:fs/promises";
 import { extname, join, normalize } from "node:path";
 import { chromium } from "playwright";
 import { AxeBuilder } from "@axe-core/playwright";
@@ -275,12 +275,14 @@ async function checkState(browser, base, state, linksFound) {
   return problems.map((problem) => `${state.name}: ${problem}`);
 }
 
-// Links in llms.txt and llms-full.txt point at the live site; check the files they name exist here.
+// Links in the llms.txt and llms-full.txt files (the site's own and the projects') point at the live
+// site; check the files they name exist here.
 async function llmsLinks() {
   const found = new Map();
-  for (const file of ["llms.txt", "llms-full.txt"]) {
+  const entries = await readdir(dist, { recursive: true });
+  for (const file of entries.filter((entry) => /(^|\/)llms(-full)?\.txt$/.test(entry))) {
     const text = await readFile(join(dist, file), "utf8");
-    for (const [url] of text.matchAll(/https:\/\/fm-1\.drewr\.dev\/[^\s)>"]*/g)) {
+    for (const [url] of text.matchAll(/https:\/\/fm-1\.drewr\.dev\/[^\s)>"`]*/g)) {
       found.set(url.slice(siteOrigin.length), `/${file}`);
     }
   }
