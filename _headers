@@ -19,3 +19,9 @@
 
 /estampie/firmware/LICENSE
   Content-Type: text/plain; charset=utf-8
+
+# FM-SWITCH's firmware list: public data the app (and anyone) can fetch, refreshed daily.
+/firmwares.json
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: public, max-age=3600
+  Access-Control-Allow-Origin: *

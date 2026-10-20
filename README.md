@@ -46,6 +46,16 @@ locally). CI checks the pull request, and merging it deploys. Opening the pull r
 Actions › General › "Allow GitHub Actions to create and approve pull requests"; without it the workflow
 pushes the branch and leaves opening the pull request to you.
 
+## The firmware list
+
+`firmwares.json` (served at https://fm-1.drewr.dev/firmwares.json, open to any site, cached for an hour)
+is the FM-1 firmware list FM-SWITCH downloads. FM-SWITCH's `fm1-catalogue` tool builds it from the firmware
+hub, fm1-editor.com and aroum's FM1 Resource Hub. The "Update the firmware list" workflow
+(`.github/workflows/update-firmwares.yml`) runs it on macOS, then a separate job running only this
+repository's code checks the result (`scripts/validate-firmwares.mjs`: the format the app reads, https for
+anything it downloads, real SHA-256 values, sane sizes) and commits it to `main` only when the list itself
+has changed. CI then checks and deploys it. FM-SWITCH's code never gets a token that can write here.
+
 ## Working on it
 
 Needs Node 24 (`.nvmrc`).

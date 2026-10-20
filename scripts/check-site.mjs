@@ -14,6 +14,7 @@ import { mkdir, readFile, readdir, stat } from "node:fs/promises";
 import { extname, join, normalize } from "node:path";
 import { chromium } from "playwright";
 import { AxeBuilder } from "@axe-core/playwright";
+import { validateFirmwares } from "./validate-firmwares.mjs";
 
 const root = new URL("..", import.meta.url).pathname;
 const dist = join(root, "dist");
@@ -92,7 +93,7 @@ const contentTypes = {
   ".jpg": "image/jpeg",
   ".ico": "image/x-icon",
   ".wasm": "application/wasm",
-  ".json": "application/json",
+  ".json": "application/json; charset=utf-8",
   ".md": "text/plain; charset=utf-8",
 };
 
@@ -368,6 +369,14 @@ try {
     }
   }
   console.log(`Checked ${linksFound.size} links inside the site.`);
+
+  // FM-SWITCH's firmware list, when there is one: the format the app reads, served as JSON.
+  const firmwaresResponse = await fetch(`${base}/firmwares.json`);
+  if (firmwaresResponse.ok) {
+    const firmwareProblems = validateFirmwares(await firmwaresResponse.text());
+    problems.push(...firmwareProblems.map((problem) => `firmwares.json: ${problem}`));
+    console.log(`${firmwareProblems.length === 0 ? "ok  " : "FAIL"} firmwares.json`);
+  }
 } finally {
   await browser.close();
   server.close();

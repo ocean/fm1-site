@@ -5,6 +5,7 @@
 // (downloads are cached in .artifacts/cache/):
 // - estampie.json: ESTAMPIE's whole site, a zip unpacked into dist/estampie/;
 // - fm1kit.json: FM1Kit's llms.txt and llms-full.txt, from its release tag, into dist/fm1kit/.
+// FM-SWITCH's firmwares.json is committed here by its own workflow and copied as it is.
 // While nothing is pinned, the placeholder files in this repository are used instead.
 import { execFile } from "node:child_process";
 import { cp, mkdir, readFile, readdir, rm } from "node:fs/promises";
@@ -59,6 +60,12 @@ await rm(dist, { recursive: true, force: true });
 await mkdir(dist);
 for (const path of publicPaths) {
   await cp(join(root, path), join(dist, path), { recursive: true });
+}
+
+// FM-SWITCH's firmware list, committed daily by the "Update the firmware list" workflow (once it has run).
+const firmwares = await readFile(join(root, "firmwares.json")).catch(() => null);
+if (firmwares) {
+  await cp(join(root, "firmwares.json"), join(dist, "firmwares.json"));
 }
 
 const estampie = await readPin("estampie.json");
