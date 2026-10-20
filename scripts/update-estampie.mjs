@@ -19,7 +19,8 @@ async function finish(message, outputs) {
 const pin = await readPin("estampie.json");
 const release = await github(`repos/${repository}/releases/latest`);
 if (!release) {
-  await finish(`${repository} has no releases yet: nothing to do.`, { changed: "false" });
+  // GitHub answers 404 for a private repository too, so this can also mean it isn't public.
+  await finish(`${repository} has no releases, or isn't public: nothing to do.`, { changed: "false" });
 }
 
 const siteAsset = release.assets.find((asset) => /^estampie-site-.+\.zip$/.test(asset.name));
