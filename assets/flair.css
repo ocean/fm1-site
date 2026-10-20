@@ -374,6 +374,14 @@ body:has(.project--switch:is(.is-active, :focus-visible)) footer {
   opacity: 1;
 }
 
+/* On narrow screens the panel's edges sit closer, so its offset shadow stays inside the screen. */
+@media (width <= 600px) {
+  .project--switch::before,
+  .project--switch::after {
+    inset: -2px -12px;
+  }
+}
+
 .project--switch:is(.is-active, :focus-visible) .name {
   color: var(--px-green);
 }

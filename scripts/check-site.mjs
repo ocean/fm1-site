@@ -294,6 +294,12 @@ async function checkState(browser, base, state, linksFound) {
   }
   await settle(page);
 
+  // Nothing may make the page scroll sideways (WCAG reflow, and it shows as a gap on phones).
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+  if (overflow > 0) {
+    problems.push(`the page scrolls sideways by ${overflow}px`);
+  }
+
   const results = await new AxeBuilder({ page })
     .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa", "best-practice"])
     // The themes' decorative backdrops are hidden from assistive technology on purpose.
