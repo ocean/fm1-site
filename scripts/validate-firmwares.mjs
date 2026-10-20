@@ -11,6 +11,8 @@ export const knownFormatVersions = [1];
 const maximumBytes = 2 * 1024 * 1024;
 const entryCount = { minimum: 50, maximum: 1000 };
 const packageOrigins = ["hub", "githubRelease", "publisherManifest", "projectPage", "mvave"];
+// Where an entry's description (what) came from, when it isn't the hub or fm1-editor.com.
+const whatSources = ["gitHub"];
 const sha256Pattern = /^[0-9a-f]{64}$/;
 
 function urlWithScheme(value, schemes) {
@@ -75,6 +77,10 @@ export function validateFirmwares(text) {
       check(entry[key] === undefined || urlWithScheme(entry[key], ["https:"]), `${key} isn't https`);
     }
     check(entry.packageOrigin === undefined || packageOrigins.includes(entry.packageOrigin), "unknown packageOrigin");
+    check(
+      entry.whatSource === undefined || (whatSources.includes(entry.whatSource) && typeof entry.what === "string"),
+      "whatSource is unknown, or there's no what for it to describe",
+    );
     check(entry.sha256 === undefined || sha256Pattern.test(entry.sha256), "sha256 isn't 64 lowercase hex characters");
     for (const key of ["size", "stars"]) {
       check(entry[key] === undefined || (Number.isInteger(entry[key]) && entry[key] >= 0), `${key} isn't a whole number`);
