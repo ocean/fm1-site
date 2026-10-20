@@ -48,6 +48,13 @@ if (wasm) {
 async function problemsFor([path, requestHeaders, expected]) {
   const response = await fetch(site + path, { headers: requestHeaders, redirect: "manual" });
   const problems = [];
+  // Cloudflare's bot protection can challenge requests from data centres, such as CI runners. That
+  // says nothing about the headers real visitors get, so it's reported but isn't a failure.
+  const mitigated = response.headers.get("cf-mitigated");
+  if (mitigated) {
+    challenged.add(`${path} (cf-mitigated: ${mitigated}, status ${response.status})`);
+    return problems;
+  }
   if (response.status !== 200) {
     problems.push(`${path}: status ${response.status}`);
   }
@@ -60,8 +67,10 @@ async function problemsFor([path, requestHeaders, expected]) {
   return problems;
 }
 
+const challenged = new Set();
 let problems = [];
 for (let attempt = 1; attempt <= 6; attempt++) {
+  challenged.clear();
   problems = (await Promise.all(checks.map(problemsFor))).flat();
   if (problems.length === 0) {
     break;
@@ -70,7 +79,16 @@ for (let attempt = 1; attempt <= 6; attempt++) {
 }
 
 for (const [path] of checks) {
-  console.log(`${problems.some((problem) => problem.startsWith(`${path}:`)) ? "FAIL" : "ok  "} ${path}`);
+  const status = [...challenged].some((entry) => entry.startsWith(`${path} `))
+    ? "skip"
+    : problems.some((problem) => problem.startsWith(`${path}:`))
+      ? "FAIL"
+      : "ok  ";
+  console.log(`${status} ${path}`);
+}
+if (challenged.size > 0) {
+  const list = [...challenged].join("; ");
+  console.log(`::warning title=Cloudflare challenged the check::Couldn't see the real headers for: ${list}`);
 }
 if (problems.length > 0) {
   console.error(`\nThe live site's headers aren't right:\n${problems.map((problem) => `  - ${problem}`).join("\n")}`);
