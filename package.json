@@ -17,7 +17,8 @@
     "preview": "npm run build && wrangler dev",
     "deploy": "wrangler deploy",
     "update:estampie": "node scripts/update-estampie.mjs",
-    "update:fm1kit": "node scripts/update-fm1kit.mjs"
+    "update:fm1kit": "node scripts/update-fm1kit.mjs",
+    "check:live": "node scripts/check-live.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",
