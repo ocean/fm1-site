@@ -10,7 +10,7 @@ FM1Kit speaks the FM-1's firmware update protocol. It reads `.fwsc` firmware pac
 
 It sticks to the device. Finding and downloading firmwares is left to the app using it (FM-SWITCH does that: https://fm-1.drewr.dev/fm-switch/).
 
-Tested on one FM-1 so far, from a Mac: installing M-VAVE's official V15, Felucca 1.6.1, M-VAVE's open firmware V12 and ESTAMPIE 0.1 (including ESTAMPIE over itself), switching between them, pulling the cable part-way through writing and resuming, and restoring V15's factory voices.
+Tested on one FM-1 so far, from both a Mac and an iPhone. The tests include installing M-VAVE's official V15, Felucca 1.6.1, M-VAVE's open firmware V12 and ESTAMPIE 0.1 (including ESTAMPIE over itself), switching between them, pulling the cable part-way through writing and resuming, and restoring V15's factory voices.
 
 ## Requirements
 
