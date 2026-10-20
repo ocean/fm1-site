@@ -51,7 +51,9 @@ jobs:
   deploy:
     name: Deploy to Cloudflare
     needs: check
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    # Pushes to main, and runs started on main by hand or by the update workflows (whose own
+    # commits can't trigger a push run).
+    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     environment:
