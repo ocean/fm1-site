@@ -9,7 +9,7 @@
  */
 (() => {
   const transitionDelay = matchMedia("(prefers-reduced-motion: reduce)").matches ? 250 : 550;
-  const projects = document.querySelectorAll(".project--switch, .project--estampie");
+  const projects = document.querySelectorAll(".project--switch, .project--estampie, .project--fm1kit");
 
   const clearAll = () => projects.forEach((project) => project.classList.remove("is-active"));
 

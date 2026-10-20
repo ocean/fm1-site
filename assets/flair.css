@@ -1,7 +1,8 @@
 /*
  * Hover flair for the index: pointing at, pressing or focusing a project turns the whole page into
  * that project's world. FM-SWITCH: the app's dark 8-bit screen. ESTAMPIE: an illuminated
- * manuscript. flair.js marks the project with .is-active (see there for touch).
+ * manuscript. FM1Kit: plain reference documentation, like Apple's. flair.js marks the project
+ * with .is-active (see there for touch).
  *
  * Only fonts, colours and things that don't change the list's size are swapped, so the
  * hovered card never moves out from under the pointer.
@@ -63,6 +64,20 @@
     100% calc(100% - 3px), calc(100% - 3px) calc(100% - 3px), calc(100% - 3px) 100%, 3px 100%,
     3px calc(100% - 3px), 0 calc(100% - 3px), 0 3px, 3px 3px
   );
+
+  /* FM1Kit's page: Apple's developer documentation, light (dark below). */
+  --docs-font: -apple-system, blinkmacsystemfont, "SF Pro Text", "Helvetica Neue", helvetica, arial, sans-serif;
+  --docs-mono: ui-monospace, "SF Mono", sfmono-regular, menlo, consolas, monospace;
+  --docs-bg: #fff;
+  --docs-panel: #f5f5f7;
+  --docs-text: #1d1d1f;
+  --docs-muted: #6e6e73;
+  --docs-rule: #d2d2d7;
+  --docs-link: #06c;
+  --docs-struct: #ad3da4;
+  --docs-class: #703daa;
+  --docs-enum: #b45309;
+  --docs-actor: #0e7c7b;
 }
 
 body {
@@ -573,6 +588,180 @@ body:has(.project--estampie:is(.is-active, :focus-visible)) .projects .about {
 
 .project--estampie:is(.is-active, :focus-visible) .about {
   color: var(--mss-ink);
+}
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* FM1Kit: plain reference documentation, in the manner of Apple's developer docs.            */
+
+/* ------------------------------------------------------------------------------------------ */
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --docs-bg: #000;
+    --docs-panel: #1c1c1e;
+    --docs-text: #f5f5f7;
+    --docs-muted: #a1a1a6;
+    --docs-rule: #424245;
+    --docs-link: #2997ff;
+  }
+}
+
+.backdrop--fm1kit {
+  background: var(--docs-bg);
+  color: var(--docs-text);
+  font: 14px/1.4 var(--docs-font);
+  letter-spacing: -0.01em;
+}
+
+/* The navigation bar across the top. */
+.docs-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 44px;
+  padding: 0 22px;
+  border-bottom: 1px solid var(--docs-rule);
+  font-size: 13px;
+}
+
+.docs-crumb {
+  color: var(--docs-muted);
+}
+
+/* The navigator: FM1Kit's types, as in the documentation's sidebar. */
+.docs-navigator {
+  width: 220px;
+}
+
+.docs-navigator-title {
+  margin-bottom: 10px !important;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.docs-group {
+  margin: 14px 0 4px !important;
+  color: var(--docs-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.docs-symbol {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 8px;
+  margin-left: -8px !important;
+  border-radius: 6px;
+  font: 13px/1.5 var(--docs-mono);
+  letter-spacing: 0;
+}
+
+.docs-symbol--selected {
+  background: var(--docs-panel);
+}
+
+.docs-badge {
+  display: inline-grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  color: #fff;
+  font: 600 10px/1 var(--docs-font);
+}
+
+.docs-badge--struct {
+  background: var(--docs-struct);
+}
+
+.docs-badge--class {
+  background: var(--docs-class);
+}
+
+.docs-badge--enum {
+  background: var(--docs-enum);
+}
+
+.docs-badge--actor {
+  background: var(--docs-actor);
+}
+
+.docs-availability {
+  width: 180px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--docs-panel);
+}
+
+.docs-availability .docs-group {
+  margin-top: 0 !important;
+}
+
+.docs-availability p + p {
+  margin-top: 2px;
+}
+
+/* The theme itself. */
+body:has(.project--fm1kit:is(.is-active, :focus-visible)) {
+  --text: var(--docs-text);
+  --muted: var(--docs-muted);
+  --rule: var(--docs-rule);
+  --accent: var(--docs-link);
+}
+
+body:has(.project--fm1kit:is(.is-active, :focus-visible)) .backdrop--fm1kit {
+  opacity: 1;
+}
+
+body:has(.project--fm1kit:is(.is-active, :focus-visible)) h1 {
+  font-family: var(--docs-font);
+  font-weight: 600;
+  letter-spacing: -0.003em;
+}
+
+body:has(.project--fm1kit:is(.is-active, :focus-visible)) .projects .name {
+  font-family: var(--docs-font);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+body:has(.project--fm1kit:is(.is-active, :focus-visible)) .projects .kind {
+  font-family: var(--docs-font);
+  font-weight: 400;
+  font-size: 0.85rem;
+  letter-spacing: 0;
+}
+
+/* The hovered card sits on a light grey rounded panel, as Apple's cards do. */
+.project--fm1kit::before {
+  content: "";
+  position: absolute;
+  inset: 0 -1rem;
+  z-index: -1;
+  border-radius: 12px;
+  background: var(--docs-panel);
+  opacity: 0;
+  transition: opacity var(--fade);
+}
+
+.project--fm1kit:is(.is-active, :focus-visible)::before {
+  opacity: 1;
+}
+
+/* The page's light weight is too thin in the system font; Apple's text is regular. */
+.project--fm1kit:is(.is-active, :focus-visible) .about {
+  font-family: var(--docs-font);
+  font-weight: 400;
+}
+
+/* Without margins, the navigator and availability go; the bar stays. */
+@media (width <= 1200px) {
+  .backdrop--fm1kit .margin-left {
+    display: none;
+  }
 }
 
 /* ------------------------------------------------------------------------------------------ */
