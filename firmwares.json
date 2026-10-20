@@ -1,5 +1,5 @@
 {
-  "builtAt" : "2026-10-20T03:34:18Z",
+  "builtAt" : "2026-10-20T04:29:18Z",
   "entries" : [
     {
       "author" : "zvenson",
@@ -5098,7 +5098,9 @@
         }
       ],
       "listing" : 4,
-      "name" : "REGGAE-OS"
+      "name" : "REGGAE-OS",
+      "what" : "REGGAE-OS: hardware-first reggae synthesizer firmware for M-VAVE FM-1, based on Felucca",
+      "whatSource" : "gitHub"
     },
     {
       "author" : "Erik de Vos",
@@ -5120,7 +5122,9 @@
         }
       ],
       "listing" : 4,
-      "name" : "Glitchbox"
+      "name" : "Glitchbox",
+      "what" : "M-VAVE FM-1 software",
+      "whatSource" : "gitHub"
     },
     {
       "author" : "Tensor-Programming",
@@ -5142,7 +5146,9 @@
         }
       ],
       "listing" : 4,
-      "name" : "FM-1 T1"
+      "name" : "FM-1 T1",
+      "what" : "Fm1 firmware with Torso T1 functionality.",
+      "whatSource" : "gitHub"
     },
     {
       "author" : "gaumondp",
@@ -5164,7 +5170,9 @@
         }
       ],
       "listing" : 4,
-      "name" : "Patricktronics"
+      "name" : "Patricktronics",
+      "what" : "Generative Patricktronics layer on the Felucca FM-1 firmware (GPL-3.0 fork)",
+      "whatSource" : "gitHub"
     },
     {
       "author" : "Nicodesy06",
@@ -5235,7 +5243,9 @@
       "releaseURL" : "https://github.com/catacombius/NoteSorcery/releases/tag/botanica-v0.2",
       "sha256" : "cb6a0fe8e1b6ecaa7c766696fa5ac15ea3ffed00c6558c0b58dd68f2e5ca9a66",
       "size" : 610027,
-      "version" : "botanica-v0.2"
+      "version" : "botanica-v0.2",
+      "what" : "custom FM-1 Firmware with android / ableton integration",
+      "whatSource" : "gitHub"
     },
     {
       "author" : "Floydus (y6zkcqnf5r-hue)",
@@ -5257,7 +5267,9 @@
         }
       ],
       "listing" : 4,
-      "name" : "FM80S"
+      "name" : "FM80S",
+      "what" : "FM80S : un synthé-looper ludique pour le M-VAVE FM-1 (firmware libre, GPL-3.0)",
+      "whatSource" : "gitHub"
     },
     {
       "author" : "jeymadcat-ops",
@@ -5331,7 +5343,9 @@
         }
       ],
       "listing" : 4,
-      "name" : "Lunar Modulator"
+      "name" : "Lunar Modulator",
+      "what" : "Lunar Modulator — INTERGALACTIC MODULATION STATION. Open firmware for the M-VAVE FM-1: sound engines, a sequencer and a playable browser simulator. Preview: Lunar has not run on an FM-1 yet.",
+      "whatSource" : "gitHub"
     },
     {
       "author" : "friendsmakenoise-prog",
@@ -5375,7 +5389,9 @@
         }
       ],
       "listing" : 4,
-      "name" : "fm1-polyseq"
+      "name" : "fm1-polyseq",
+      "what" : "Polyphonic 16-step sequencer and HAL for the M-VAVE FM-1 synthesizer (JieLi AC7911B8, pi32v2). Strict C99, zero-malloc.",
+      "whatSource" : "gitHub"
     },
     {
       "author" : "MilkBoyG / JalopyMusic",
@@ -5397,7 +5413,9 @@
         }
       ],
       "listing" : 4,
-      "name" : "AMBII"
+      "name" : "AMBII",
+      "what" : "A Melodee/Felluca/Sloop inspired M-VAVE FM-1 Firmware",
+      "whatSource" : "gitHub"
     },
     {
       "author" : "TerkWerX",
@@ -5430,7 +5448,9 @@
       "releaseURL" : "https://github.com/TerkWerX/FM1-TERKINSTEIN-Firmware/releases/tag/v0.22.0-dev",
       "sha256" : "01f8ca331bad56649640bc368eaf7b26c97721695f3a9f17a5adfbd851f23efd",
       "size" : 610110,
-      "version" : "v0.22.0-dev"
+      "version" : "v0.22.0-dev",
+      "what" : "TERKINSTEIN open-source performance firmware for the M-VAVE FM-1",
+      "whatSource" : "gitHub"
     },
     {
       "author" : "sirpearson",
@@ -5452,7 +5472,9 @@
         }
       ],
       "listing" : 4,
-      "name" : "MNM-1"
+      "name" : "MNM-1",
+      "what" : "A custom firmware for FM-1 mimmiking the infamous monomachine by elektron",
+      "whatSource" : "gitHub"
     },
     {
       "author" : "Denis Sablic (dsablic)",
@@ -5481,7 +5503,9 @@
       "releaseURL" : "https://github.com/dsablic/sidou/releases/tag/v0.2.0-m2-preview",
       "sha256" : "4132aa0b1f5cdfde82e1c4ff410186f6fd45d253c4ddec33d08ef2b20857ee96",
       "size" : 610090,
-      "version" : "v0.2.0-m2-preview"
+      "version" : "v0.2.0-m2-preview",
+      "what" : "C64 SID tracker-synth firmware for the M-VAVE FM-1: faithful SID emulation with chip character, step/tracker/live views, .sid playback, MIDI",
+      "whatSource" : "gitHub"
     },
     {
       "author" : "anonymousacademe",
@@ -5503,7 +5527,9 @@
         }
       ],
       "listing" : 4,
-      "name" : "TripDeck"
+      "name" : "TripDeck",
+      "what" : "Psychedelic synth firmware for the M-VAVE FM-1. Every screen is an animated picture, and its four knobs change the sound and the picture together. Sitar and tamboura, pads, organ and Leslie, FM bells, shimmer reverb, vowel filter, spiral echo.",
+      "whatSource" : "gitHub"
     },
     {
       "author" : "RedtailWorks",
@@ -5617,7 +5643,9 @@
         }
       ],
       "listing" : 4,
-      "name" : "P6"
+      "name" : "P6",
+      "what" : "Polysix EMU for Mvave FM1",
+      "whatSource" : "gitHub"
     },
     {
       "author" : "genkigenki",
@@ -5684,7 +5712,9 @@
       "releaseURL" : "https://github.com/genkigenki/Speak37/releases/tag/v1.0",
       "sha256" : "033f23bf63de35f60ba6e2b98a3fd264b4a34aafb790c178f9ad7c1d5db11cce",
       "size" : 651060,
-      "version" : "v1.0"
+      "version" : "v1.0",
+      "what" : "Speak37: a talking synth firmware for the M-Vave SMK-37 and the FM-1, with MOPE, a gloomy robot who judges your chords",
+      "whatSource" : "gitHub"
     },
     {
       "author" : "RedtailWorks",
@@ -5744,7 +5774,9 @@
         }
       ],
       "listing" : 4,
-      "name" : "MD-One"
+      "name" : "MD-One",
+      "what" : "MD-1 - a Mutable-derived drone machine for the M-VAVE FM-1 (JieLi AC791N). Firmware, fixed-point DSP, and the measurements behind both.",
+      "whatSource" : "gitHub"
     },
     {
       "author" : "genkigenki",
@@ -5778,7 +5810,9 @@
         }
       ],
       "listing" : 4,
-      "name" : "Erik37"
+      "name" : "Erik37",
+      "what" : "A grand piano for the M-Vave SMK-37: a sampled concert grand with velocity layers, dampers, pedals, string resonance and four rooms (MPL-2.0)",
+      "whatSource" : "gitHub"
     },
     {
       "author" : "cmlarsen",
@@ -5800,7 +5834,9 @@
         }
       ],
       "listing" : 4,
-      "name" : "fm1-rocket-os"
+      "name" : "fm1-rocket-os",
+      "what" : "Clip-launching performance firmware for the M-VAVE FM-1 (GPL-3.0, forked from X0X)",
+      "whatSource" : "gitHub"
     },
     {
       "author" : "w0ts",
@@ -5871,7 +5907,9 @@
       "releaseURL" : "https://github.com/w0ts/optimist/releases/tag/v0.1",
       "sha256" : "73f80329a8dddf783a07b1606944ef4b6062af4205a6a930ac0ddd33d0a15871",
       "size" : 610819,
-      "version" : "v0.1"
+      "version" : "v0.1",
+      "what" : "Optimist: an open, modular firmware platform for the M-VAVE FM-1 (from SLOOP / Felucca)",
+      "whatSource" : "gitHub"
     },
     {
       "author" : "morgulbrut",
@@ -5942,7 +5980,9 @@
         }
       ],
       "listing" : 4,
-      "name" : "fm1-mdx"
+      "name" : "fm1-mdx",
+      "what" : "Experimental MDX/PDX karaoke player for the M-VAVE FM-1",
+      "whatSource" : "gitHub"
     },
     {
       "author" : "Chance The Maker",
@@ -5968,7 +6008,9 @@
         }
       ],
       "listing" : 4,
-      "name" : "GameDude"
+      "name" : "GameDude",
+      "what" : "GameDude: Game Boy emulator, ROM-to-firmware tools and browser simulator for FM-1 and SMK37.",
+      "whatSource" : "gitHub"
     },
     {
       "author" : "ignis32",
@@ -6001,7 +6043,9 @@
       "releaseURL" : "https://github.com/ignis32/trireme_fm1/releases/tag/v0.1",
       "sha256" : "9e7028d1d65398aa6d7f2c883a95b6dbe7ded4f0cbaaf88197c81684d347fded",
       "size" : 610086,
-      "version" : "v0.1"
+      "version" : "v0.1",
+      "what" : "VIAL compatible macros keyboard firmware for Mvave FM1",
+      "whatSource" : "gitHub"
     }
   ],
   "formatVersion" : 1,
