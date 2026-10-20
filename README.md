@@ -34,6 +34,11 @@ While nothing is pinned, this repository's placeholder files are used.
   release attaches the whole site as `estampie-site-X.Y.zip`. `estampie.json` pins one:
   `{ "version", "url", "sha256" }`. The build downloads the zip, checks it and unpacks it into
   `dist/estampie/`, and the checks then cover ESTAMPIE's guide, installer, editor and emulator too.
+  Before a new release is pinned, its zip's build attestation must verify (`gh attestation verify`): built
+  on GitHub's runners from `ocean/estampie` at the release's tag, by a version of the FM-1 Firmware Hub's
+  shared workflow (`zvenson/fm1-build`) listed in `trustedSignerDigests` in `scripts/update-estampie.mjs`.
+  That workflow lives in a repository this site doesn't control, so when it releases a new version,
+  review it and add its digest there; until then, releases built with it aren't pinned.
 - **FM1Kit's `llms.txt` and `llms-full.txt`** are kept by the [FM1Kit repository](https://github.com/ocean/FM1Kit)
   alongside its README and DocC. `fm1kit.json` pins a release tag and each file's SHA-256:
   `{ "tag", "files": { "llms.txt": "...", "llms-full.txt": "..." } }`. The build fetches them from that
