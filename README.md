@@ -53,7 +53,7 @@ pushes the branch and leaves opening the pull request to you.
 
 ## The firmware list
 
-`firmwares.json` (served at https://fm-1.drewr.dev/firmwares.json, open to any site, cached for an hour)
+`firmwares.json` (served at https://fm-1.drewr.dev/firmwares.json, open to any site)
 is the FM-1 firmware list FM-SWITCH downloads. FM-SWITCH's `fm1-catalogue` tool builds it from the firmware
 hub, fm1-editor.com and aroum's FM1 Resource Hub. The "Update the firmware list" workflow
 (`.github/workflows/update-firmwares.yml`) runs it on macOS, then a separate job running only this
@@ -72,7 +72,7 @@ npm run lint      # ESLint, Stylelint and html-validate
 npm run build     # copies the public files into dist/
 npm run check     # accessibility, contrast, links and console errors, in a real browser
 npm run ci        # all three, as CI runs them
-npm run preview   # build, then serve dist/ locally with Wrangler
+npm run preview   # build, then serve dist/ at http://localhost:8788
 ```
 
 `npm run check` loads every page in headless Chromium: the index plain and in each project's theme, at
@@ -84,15 +84,14 @@ gradients and textures), and fails on any file that doesn't load, any broken lin
 
 ## Deploying
 
-The site is served by Cloudflare Workers static assets (`wrangler.jsonc`): just the files in `dist/`,
-with `_headers` for caching and a `404.html` for unknown paths, on the custom domain `fm-1.drewr.dev`.
+The site is served by GitHub Pages: just the files in `dist/`, with `404.html` for unknown paths, on
+the custom domain `fm-1.drewr.dev` (set in the repository's Pages settings). Its DNS record at Cloudflare
+is a DNS-only (grey-cloud) CNAME to `ocean.github.io`, so Cloudflare's bot protection, which is on for
+the rest of drewr.dev and can't be turned off for one host, doesn't challenge agents and scripts
+fetching the site from data centres. Pages sets the headers itself: every file is cached for ten
+minutes and open to any site (`Access-Control-Allow-Origin: *`), which `firmwares.json` and ESTAMPIE's
+words files need.
 
 GitHub Actions (`.github/workflows/ci.yml`) lints, builds and checks every push and pull request, and
-deploys `main` once the checks pass. Screenshots from the checks are kept as a build artefact. It needs
-two repository secrets:
-
-- `CLOUDFLARE_API_TOKEN`: an API token from the "Edit Cloudflare Workers" template, with the drewr.dev
-  zone included.
-- `CLOUDFLARE_ACCOUNT_ID`: the account's ID.
-
-`npm run deploy` deploys from a local machine the same way, after `npm run build`.
+deploys `main` once the checks pass, then checks the live site (`scripts/check-live.mjs`: content types,
+CORS and the 404 page). Screenshots from the checks are kept as a build artefact. No secrets are needed.

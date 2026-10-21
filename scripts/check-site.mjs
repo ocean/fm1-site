@@ -119,7 +119,7 @@ const contentTypes = {
   ".md": "text/plain; charset=utf-8",
 };
 
-// A minimal static server for dist/, resolving folders to their index.html as Cloudflare does.
+// A minimal static server for dist/, resolving folders to their index.html as GitHub Pages does.
 function serve() {
   const server = createServer(async (request, response) => {
     const url = new URL(request.url, "http://localhost");

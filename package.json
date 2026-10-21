@@ -14,8 +14,7 @@
     "build": "node scripts/build.mjs",
     "check": "node scripts/check-site.mjs",
     "ci": "npm run lint && npm run build && npm run check",
-    "preview": "npm run build && wrangler dev",
-    "deploy": "wrangler deploy",
+    "preview": "npm run build && python3 -m http.server --directory dist 8788",
     "update:estampie": "node scripts/update-estampie.mjs",
     "update:fm1kit": "node scripts/update-fm1kit.mjs",
     "check:live": "node scripts/check-live.mjs"
@@ -28,7 +27,6 @@
     "html-validate": "11.16.2",
     "playwright": "1.64.1",
     "stylelint": "17.16.0",
-    "stylelint-config-standard": "40.0.0",
-    "wrangler": "4.151.1"
+    "stylelint-config-standard": "40.0.0"
   }
 }

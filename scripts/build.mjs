@@ -1,4 +1,4 @@
-// Copies the site's public files into dist/, the folder Cloudflare serves. Anything not listed
+// Copies the site's public files into dist/, the folder GitHub Pages serves. Anything not listed
 // here (READMEs, configs, scripts, node_modules) stays out of the deploy.
 //
 // Two projects publish their own files here, each pinned to a release and checked by SHA-256
@@ -19,7 +19,6 @@ const dist = join(root, "dist");
 const publicPaths = [
   "index.html",
   "404.html",
-  "_headers",
   "llms.txt",
   "llms-full.txt",
   "assets",

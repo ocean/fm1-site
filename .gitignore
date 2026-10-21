@@ -3,4 +3,3 @@
 /.playwright-mcp/
 /node_modules/
 /dist/
-/.wrangler/
