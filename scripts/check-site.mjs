@@ -206,10 +206,17 @@ function measureContrast({ selectors, backdrops }) {
 async function settle(page) {
   await page.evaluate(async () => {
     await document.fonts.ready;
-    const finite = document
-      .getAnimations()
-      .filter((animation) => animation.effect?.getComputedTiming().iterations !== Infinity);
-    await Promise.all(finite.map((animation) => animation.finished.catch(() => {})));
+    // Again until none are left: a transition can start another as it runs (a link's colour
+    // transition restarts on each frame of the inherited colour's, and so ends after it).
+    for (let round = 0; round < 20; round++) {
+      const finite = document
+        .getAnimations()
+        .filter((animation) => animation.effect?.getComputedTiming().iterations !== Infinity);
+      if (finite.length === 0) {
+        break;
+      }
+      await Promise.all(finite.map((animation) => animation.finished.catch(() => {})));
+    }
   });
 }
 
