@@ -2,7 +2,7 @@
 
 > Drew Robinson's open-source projects for the M-VAVE FM-1, a tiny hardware synthesiser: ESTAMPIE (custom firmware), FM-SWITCH (an iPhone, iPad and Mac app for swapping firmwares) and FM1Kit (the Swift package for installing firmware that the app is built on). None of them is affiliated with M-VAVE.
 
-All three are on GitHub under github.com/ocean. Installing custom firmware on an FM-1 is at the owner's own risk.
+All three are on GitHub under github.com/ocean. Installing custom firmware on an FM-1 is at the owner's own risk. This site itself is under CC BY 4.0: reuse it with credit to Drew Robinson.
 
 ## Projects
 

@@ -77,3 +77,5 @@ Installing custom firmware on an FM-1 is at the owner's own risk. If an FM-1 doe
 ## Author
 
 Drew Robinson (GitHub: ocean). Contributions and hardware reports are welcome through each project's GitHub repository.
+
+This site's own text, design and code are under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/): reuse or adapt them for any purpose, crediting Drew Robinson with a link to https://fm-1.drewr.dev/. The fonts and each project keep their own licences.
