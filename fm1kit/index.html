@@ -12,7 +12,7 @@
   <nav class="nav" aria-label="Breadcrumbs">
     <div class="wrap">
       <span class="crumbs"><a href="../">FM-1 projects</a><span class="sep" aria-hidden="true">/</span>FM1Kit</span>
-      <span class="version">Swift package &middot; 0.2.0</span>
+      <span class="version">Swift package &middot; 0.3.0</span>
     </div>
   </nav>
 
@@ -32,7 +32,7 @@
 
   <main class="wrap content">
     <h2>Overview</h2>
-    <p>FM1Kit speaks the FM-1's update protocol. It reads <code>.fwsc</code> firmware packages, finds the device, answers its read requests while it stages and writes the new firmware, and checks the device reports the new firmware afterwards. It can also finish an update that was cut off, or one started from USB recovery mode.</p>
+    <p>FM1Kit speaks the FM-1's update protocol. It reads <code>.fwsc</code> firmware packages, finds the device, answers its read requests while it stages and writes the new firmware, and checks the device reports the new firmware afterwards. It can also finish an update that was cut off, or one started from USB recovery mode, and back up M-VAVE's open firmware before switching away from it.</p>
     <p>It sticks to the device: finding and downloading firmwares is left to your app. <a href="../fm-switch/">FM-SWITCH</a> is built on it.</p>
 
     <div class="aside">
@@ -40,8 +40,8 @@
     </div>
 
     <h3>Install the package</h3>
-    <p>Add FM1Kit with Swift Package Manager. Until 1.0, minor versions may change the API, so take 0.2.x fixes but not 0.3.0.</p>
-<pre tabindex="0"><code><span class="t">.package</span>(url: <span class="s">"https://github.com/ocean/FM1Kit.git"</span>, <span class="t">.upToNextMinor</span>(from: <span class="s">"0.2.0"</span>)),</code></pre>
+    <p>Add FM1Kit with Swift Package Manager. Until 1.0, minor versions may change the API, so take 0.3.x fixes but not 0.4.0.</p>
+<pre tabindex="0"><code><span class="t">.package</span>(url: <span class="s">"https://github.com/ocean/FM1Kit.git"</span>, <span class="t">.upToNextMinor</span>(from: <span class="s">"0.3.0"</span>)),</code></pre>
 
     <h3>Install a firmware</h3>
     <p>Read the package, check what installing it would do, then install it and follow its progress. Switching to a different firmware can erase the FM-1's projects and samples, so it needs confirming.</p>
@@ -83,24 +83,31 @@
 
     <h3>Updating</h3>
     <ul class="topics">
-      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">actor</span>FM1Updater</a><p>Finds the device, checks and installs, resumes, restores V15's voices, and reports progress.</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">actor</span>FM1Updater</a><p>Finds the device, checks and installs, resumes, restores V15's voices, backs up open firmware, and reports progress.</p></li>
       <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>InstallCheck</a><p>What an install would do, before it starts.</p></li>
       <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>InstallOptions</a><p>Confirms a switch of firmware, or a reinstall of the identity already running.</p></li>
       <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">enum</span>UpdateEvent</a><p>Progress: staging, writing, an optional checking pass, and finished.</p></li>
     </ul>
 
+    <h3>Backups</h3>
+    <ul class="topics">
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>OpenFirmwareBackup</a><p>Open firmware's 16 project slots, the project being edited and its sample bank, saved as files M-VAVE's workbench can restore.</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>OpenFirmwareProject</a><p>One project, as a <code>.fm1</code> file.</p></li>
+    </ul>
+
     <h3>Transports</h3>
     <ul class="topics">
       <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">class</span>CoreMIDITransport</a><p>CoreMIDI connections to real devices.</p></li>
-      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">class</span>SimulatedFM1</a><p>A software FM-1 that speaks the whole protocol, for the iOS Simulator and tests.</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">class</span>SimulatedFM1</a><p>A software FM-1 that speaks the whole protocol and open firmware's project library, for the iOS Simulator and tests.</p></li>
     </ul>
 
     <h2>fm1probe</h2>
-    <p>A Mac command-line tool for checking a setup and watching an install closely. Only <code>install</code> and <code>restore-voices</code> write to the device, and only after you type YES.</p>
+    <p>A Mac command-line tool for checking a setup and watching an install closely. Only <code>install</code> and <code>restore-voices</code> write to the device, and <code>backup</code> changes which project open firmware shows while it reads. Each asks you to type YES first.</p>
 <pre tabindex="0"><code>swift run fm1probe ports                 <span class="c"># list MIDI ports</span>
 swift run fm1probe identify              <span class="c"># ask the FM-1 what it's running</span>
 swift run fm1probe inspect FILE.fwsc     <span class="c"># a package's identity, size and checksum</span>
-swift run fm1probe install FILE.fwsc     <span class="c"># install a firmware</span></code></pre>
+swift run fm1probe install FILE.fwsc     <span class="c"># install a firmware</span>
+swift run fm1probe backup FOLDER         <span class="c"># back up open firmware's projects and samples</span></code></pre>
 
     <h2>Recovery</h2>
     <p>Whenever the FM-1 is in its update loader, whether from USB recovery mode (hold <strong>OCT&minus;</strong> while switching it on, on firmwares that offer it) or an interrupted update, <code>resume(_:events:)</code> can install a firmware. Beyond that is the chip's ROM bootloader, which FM1Kit doesn't cover.</p>

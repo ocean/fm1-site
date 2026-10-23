@@ -58,12 +58,12 @@ An app for iPhone, iPad and Mac for swapping M-VAVE FM-1 firmwares over USB.
 
 A Swift package for installing firmware on the M-VAVE FM-1 over USB-MIDI, from iOS and macOS.
 
-- It reads `.fwsc` firmware packages, finds the device, answers its read requests while it stages and writes the new firmware, and checks the device reports the new firmware afterwards. It can finish an update that was cut off, or one started from USB recovery mode, and can restore V15's 128 factory voices.
-- Main types: `FwscPackage`, `OfficialFirmware`, `FM1Identity`, `FM1Updater` (an actor), `InstallCheck`, `InstallOptions`, `UpdateEvent`, `FM1Capability`, `FM1BuildID`, `CoreMIDITransport`, `SimulatedFM1`.
-- Also ships `fm1probe`, a Mac command-line tool for listing ports, identifying the device, inspecting packages and installing.
+- It reads `.fwsc` firmware packages, finds the device, answers its read requests while it stages and writes the new firmware, and checks the device reports the new firmware afterwards. It can finish an update that was cut off, or one started from USB recovery mode, can restore V15's 128 factory voices, and can back up M-VAVE's open firmware (its 16 project slots, the project being edited and the sample bank) as files M-VAVE's workbench can restore.
+- Main types: `FwscPackage`, `OfficialFirmware`, `FM1Identity`, `FM1Updater` (an actor), `InstallCheck`, `InstallOptions`, `UpdateEvent`, `FM1Capability`, `FM1BuildID`, `OpenFirmwareBackup`, `OpenFirmwareProject`, `CoreMIDITransport`, `SimulatedFM1`.
+- Also ships `fm1probe`, a Mac command-line tool for listing ports, identifying the device, inspecting packages, installing and backing up open firmware.
 - Requirements: iOS 17 or macOS 14, Swift 6.1 or later.
-- Install: `.package(url: "https://github.com/ocean/FM1Kit.git", .upToNextMinor(from: "0.2.0"))`
-- Status: 0.2.0, tested on one FM-1 so far, from both a Mac and an iPhone.
+- Install: `.package(url: "https://github.com/ocean/FM1Kit.git", .upToNextMinor(from: "0.3.0"))`
+- Status: 0.3.0, tested on one FM-1 so far, from both a Mac and an iPhone.
 - Licence: MIT. Contains no M-VAVE firmware and no code from GPL-licensed installers.
 - Source: https://github.com/ocean/FM1Kit
 - Page: https://fm-1.drewr.dev/fm1kit/
