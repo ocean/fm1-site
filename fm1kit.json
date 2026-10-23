@@ -1,4 +1,7 @@
 {
-  "tag": null,
-  "files": {}
+  "tag": "0.3.0",
+  "files": {
+    "llms.txt": "337c5ed5d678395eb38e89ef5698809e4941b386b0088903c98ccba525342fa5",
+    "llms-full.txt": "4abba36ec5c2b3b36db7a36d389ab993e9b3ffca8e44c1a942b6fcaef45cfd99"
+  }
 }
