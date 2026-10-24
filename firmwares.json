@@ -1,5 +1,5 @@
 {
-  "builtAt" : "2026-10-24T12:46:45Z",
+  "builtAt" : "2026-10-24T22:44:50Z",
   "entries" : [
     {
       "author" : "zvenson",
@@ -45,7 +45,7 @@
       "repo" : "zvenson/zp12",
       "sha256" : "fb1e6bfc01a74f145f93793fbeace8483888391be48f75aec7d423f05b6fac9d",
       "size" : 612200,
-      "stars" : 31,
+      "stars" : 30,
       "version" : "2.5",
       "what" : "A 12-bit sampler after the E-mu SP-1200: sample on the FM-1 itself (a computer or phone plays into it over USB) or in the browser (mic, line-in or a file), and it plays on its own. Gritty and unsmoothed, with loops and songs."
     },
@@ -58,7 +58,6 @@
       "kinds" : [
         "drums"
       ],
-      "licence" : "Open Source (GPL-3.0)",
       "links" : [
         {
           "label" : "Project site",
@@ -158,7 +157,7 @@
       "repo" : "hugelton/Felucca",
       "sha256" : "dff3a38f7e5b9833e15aba322558c9485e9e422e3ff813c616c91b3584a2d909",
       "size" : 610090,
-      "stars" : 579,
+      "stars" : 580,
       "version" : "1.6.1",
       "what" : "The custom firmware the others build on: the FM-1's own synth engines, a sequencer, effects and a better panel, with an editor in the browser."
     },
@@ -171,7 +170,6 @@
       "kinds" : [
         "groove"
       ],
-      "licence" : "Open Source (GPL-3.0-only)",
       "links" : [
         {
           "label" : "Project site",
@@ -223,7 +221,6 @@
       "kinds" : [
         "groove"
       ],
-      "licence" : "Open Source (GPL-3.0)",
       "links" : [
         {
           "label" : "Project site",
@@ -273,13 +270,12 @@
     {
       "author" : "Jason Persinger",
       "beta" : false,
-      "date" : "2026-10-17",
+      "date" : "2026-10-24",
       "id" : "ghoulbox",
       "isOfficial" : false,
       "kinds" : [
         "groove"
       ],
-      "licence" : "Open Source (GPL-3.0)",
       "links" : [
         {
           "label" : "Project site",
@@ -287,11 +283,11 @@
         },
         {
           "label" : "Source code",
-          "url" : "https://github.com/jasonpersinger/ghoulbox-fm1-dungeon-synth/tree/ghoulbox-v2.3.2"
+          "url" : "https://github.com/jasonpersinger/ghoulbox-fm1-dungeon-synth/tree/ghoulbox-v2.4"
         },
         {
           "label" : "Release",
-          "url" : "https://github.com/jasonpersinger/ghoulbox-fm1-dungeon-synth/releases/tag/ghoulbox-v2.3.2"
+          "url" : "https://github.com/jasonpersinger/ghoulbox-fm1-dungeon-synth/releases/tag/ghoulbox-v2.4"
         },
         {
           "label" : "Editor",
@@ -321,19 +317,19 @@
       "listing" : 7,
       "name" : "GHOULBOX",
       "packageOrigin" : "hub",
-      "packageURL" : "https://thefirmwarehub.com/fw/ghoulbox-2.3.2.fwsc",
+      "packageURL" : "https://thefirmwarehub.com/fw/ghoulbox-2.4.fwsc",
       "product" : "FM-1_900",
       "repo" : "jasonpersinger/ghoulbox-fm1-dungeon-synth",
-      "sha256" : "069f6d783db1e05776a89006ecba07a0abfcd2cc7a0fe6fa64db096b5ecad4c8",
+      "sha256" : "92630ae278d4a0b4233ff2512b62ad9b5dbe976a4c9083046222d9293a8df749",
       "size" : 610086,
-      "stars" : 69,
-      "version" : "2.3.2",
+      "stars" : 68,
+      "version" : "2.4",
       "what" : "Dungeon synth: a cathedral hall reverb, tape and crush, a hurdy-gurdy engine, choirs, organs and recorded psaltery and harp, an old-RPG screen with wall torches."
     },
     {
       "author" : "keremimo",
-      "beta" : false,
-      "date" : "2026-10-19",
+      "beta" : true,
+      "date" : "2026-10-24",
       "id" : "melodee",
       "isOfficial" : false,
       "kinds" : [
@@ -347,11 +343,11 @@
         },
         {
           "label" : "Source code",
-          "url" : "https://github.com/keremimo/melodee/tree/v1.4.5"
+          "url" : "https://github.com/keremimo/melodee/tree/v1.5.0-rc.2"
         },
         {
           "label" : "Release",
-          "url" : "https://github.com/keremimo/melodee/releases/tag/v1.4.5"
+          "url" : "https://github.com/keremimo/melodee/releases/tag/v1.5.0-rc.2"
         },
         {
           "label" : "Editor",
@@ -373,19 +369,19 @@
       "listing" : 7,
       "name" : "Melodee",
       "packageOrigin" : "hub",
-      "packageURL" : "https://thefirmwarehub.com/fw/melodee-1.4.5.fwsc",
-      "product" : "FM-1_91045",
+      "packageURL" : "https://thefirmwarehub.com/fw/melodee-1.5.0-rc.2.fwsc",
+      "product" : "FM-1_91050",
       "repo" : "keremimo/melodee",
-      "sha256" : "a18f40d6f8c8087b25f115ab11286f85c7f04383de836227c463c6ce4745ce20",
+      "sha256" : "899116020c62c16176e0b84f24202e61347fcaf648f70ae6864d41e2e02d167d",
       "size" : 610545,
       "sourceBuild" : {
-        "commit" : "398ada1e09d864c12f3b778a43e45c7c2a8031b8",
+        "commit" : "8c3508d6ff0a24a83523436e21b62b4fa80f264b",
         "repo" : "keremimo/melodee",
-        "run" : "https://github.com/keremimo/melodee/actions/runs/39265590833/attempts/1",
-        "sha256" : "a18f40d6f8c8087b25f115ab11286f85c7f04383de836227c463c6ce4745ce20"
+        "run" : "https://github.com/keremimo/melodee/actions/runs/40133168053/attempts/1",
+        "sha256" : "899116020c62c16176e0b84f24202e61347fcaf648f70ae6864d41e2e02d167d"
       },
-      "stars" : 145,
-      "version" : "1.4.5",
+      "stars" : 148,
+      "version" : "1.5.0-rc.2",
       "what" : "Total playing pleasure, far beyond Felucca: recording without quantize, microtonal scales, a Casio CZ-1, a bit-by-bit Dexed, scale modes made for an MPC Sample as its companion."
     },
     {
@@ -436,7 +432,7 @@
       "repo" : "isod89/sloop-fm1",
       "sha256" : "64c9dfa7e75312debeae01a7c96e4ad3801eaffff9c81cb76ece9c48daf0501d",
       "size" : 610035,
-      "stars" : 622,
+      "stars" : 627,
       "version" : "2.8.1",
       "what" : "A live groovebox: tracks, layers, a step sequencer, song mode, punch-in effects and samples, played on the FM-1 in real time."
     },
@@ -449,7 +445,6 @@
       "kinds" : [
         "synth"
       ],
-      "licence" : "Open Source (GPL-3.0-only)",
       "links" : [
         {
           "label" : "Project site",
@@ -492,7 +487,7 @@
       "repo" : "isod89/clipper-fm1",
       "sha256" : "3a23a37c431c813bcdf97321f49722c7328d1f9134ba469ff3ba194ad9f05206",
       "size" : 610055,
-      "stars" : 54,
+      "stars" : 55,
       "version" : "1.1-experimental",
       "what" : "A deep synth grown out of SLOOP: 23 engines and 407 sounds, from HYBRID (three oscillators, two filters, a mod matrix) to six-operator FM, wavetables, wave sequencing, a Juno and physical models; arp, step sequencer, MPE and a web editor for every parameter."
     },
@@ -740,7 +735,6 @@
       "kinds" : [
         "groove"
       ],
-      "licence" : "Open Source (GPL-3.0)",
       "links" : [
         {
           "label" : "Project site",
@@ -783,7 +777,7 @@
       "repo" : "charlesvestal/fm1-x0x",
       "sha256" : "a0c29deb930c65f1d40b5691b7d673f861418b438b7e65027cb9c671e6f44f5b",
       "size" : 609684,
-      "stars" : 197,
+      "stars" : 198,
       "version" : "1.1.0",
       "what" : "A groovebox: 909 and 808 drums, two 303s with TB-3PO, a breakbeat generator and song mode."
     },
@@ -796,7 +790,6 @@
       "kinds" : [
         "groove"
       ],
-      "licence" : "Open Source (GPL-3.0)",
       "links" : [
         {
           "label" : "Project site",
@@ -946,18 +939,18 @@
       "listing" : 7,
       "name" : "ChoralRoot",
       "packageOrigin" : "hub",
-      "packageURL" : "https://thefirmwarehub.com/fw/choralroot-0.26.1.fwsc",
+      "packageURL" : "https://thefirmwarehub.com/fw/choralroot-0.26.1+f118c4e7.fwsc",
       "product" : "FM-1_920",
       "repo" : "Quixotic7/ChoralRootFM1",
-      "sha256" : "7fec6a729c2d05d1f19e8b6ab3e2101affb8d9b11e4835cb412b11625289ace2",
+      "sha256" : "f118c4e7efc500d7dcf69df1685960b417870865c9a327aed9ec5443eeae8db1",
       "size" : 610313,
       "sourceBuild" : {
         "commit" : "7d97982a7db3dad2da456a3e4d4478548b6571d9",
         "repo" : "Quixotic7/ChoralRootFM1",
         "run" : "https://github.com/Quixotic7/ChoralRootFM1/actions/runs/39384856606/attempts/1",
-        "sha256" : "7fec6a729c2d05d1f19e8b6ab3e2101affb8d9b11e4835cb412b11625289ace2"
+        "sha256" : "f118c4e7efc500d7dcf69df1685960b417870865c9a327aed9ec5443eeae8db1"
       },
-      "stars" : 79,
+      "stars" : 80,
       "version" : "0.26.1",
       "what" : "A Telepathic Orchid-style chord instrument: one hand plays roots, the other shapes chords; voicings, performance modes, bass and a looper."
     },
@@ -970,7 +963,6 @@
       "kinds" : [
         "groove"
       ],
-      "licence" : "Open Source (GPL-3.0)",
       "links" : [
         {
           "label" : "Project site",
@@ -1013,7 +1005,7 @@
       "repo" : "ELI7VH/Felucca",
       "sha256" : "e9529deb7ff626ee64b08fe06a550e39cd2a99c3cc1697bfcb65828f030cf22d",
       "size" : 609849,
-      "stars" : 9,
+      "stars" : 8,
       "version" : "1.0.5.2-midi23",
       "what" : "Felucca played from an Arturia MiniLab 3: track faders, a DJ filter, momentary effect pads; 32 patches a bank, 12 evolving songs, revoiced 808 and CR78 kits."
     },
@@ -1071,7 +1063,7 @@
         "run" : "https://github.com/zvenson/obervave/actions/runs/40016175460/attempts/1",
         "sha256" : "51d6a75588cad7e0e4c1b65ecbab502a1ce6325abbf0e35e6e9e7a23a6ddb2c8"
       },
-      "stars" : 39,
+      "stars" : 38,
       "version" : "3.0.1",
       "what" : "An 8-voice analog-style poly in the spirit of the classic American polys of 1979-84, now on four tracks: each its own sound, arp and sequence; a mixer with chorus, delay, plate reverb and drive sends, a master with DJ filter and compressor. Tracks start on the bar, patterns keep their sounds."
     },
@@ -1133,7 +1125,7 @@
         "run" : "https://github.com/zvenson/shineon/actions/runs/40016184650/attempts/1",
         "sha256" : "72070fba5d9c27b67ae8d62d663d41c9adf0992556ea3c36f1762eeccee5d835"
       },
-      "stars" : 2,
+      "stars" : 4,
       "version" : "3.0.1",
       "what" : "A string ensemble in the spirit of the late-70s machines, grown out of OberVave: divide-down keyers with 16', 8' and 4' footages, register filters, a BBD ensemble and a phaser per sound. Now on four tracks with a mixer, delay, reverb, drive, a master and the step sequencer."
     },
@@ -1188,7 +1180,7 @@
         "run" : "https://github.com/zvenson/dinghy/actions/runs/40021278264/attempts/1",
         "sha256" : "5e7dc80d186528cf71a2e6dd2ade8a176325aa20c62334e0fdb9256789d58838"
       },
-      "stars" : 38,
+      "stars" : 39,
       "version" : "0.4",
       "what" : "Your base for your own FM-1 or SMK-37 firmware: everything under it done and documented (updates, USB rescue, MIDI over USB and the TRS jack with clock, USB audio, keys, screen, flash storage, an update screen), a 4-voice sine on top, tests and a CI that releases with attestation. Fork it, replace the sine."
     },
@@ -1236,7 +1228,7 @@
       "repo" : "jadamsowers/fm1-fimba",
       "sha256" : "2ce744411ab6142a27e5c6238b8eb2f3875ccaa1e6fc47726211bf09f1393fa7",
       "size" : 609657,
-      "stars" : 20,
+      "stars" : 19,
       "version" : "0.6.1",
       "what" : "A physically modelled kalimba: tines laid out like the real one, thumb-roll chords, mbira patterns, a sound hole to cover, grains, tape and a plate reverb. Play it in the browser first."
     },
@@ -1257,7 +1249,7 @@
         },
         {
           "label" : "Source code",
-          "url" : "https://github.com/juanjiant-bit/JIANT/tree/813869d"
+          "url" : "https://github.com/juanjiant-bit/JIANT/tree/fe81db8"
         },
         {
           "label" : "Editor",
@@ -1283,13 +1275,13 @@
       "listing" : 7,
       "name" : "JIANT FM",
       "packageOrigin" : "hub",
-      "packageURL" : "https://thefirmwarehub.com/fw/jiant-0.9.9-beta4a-813869d+b1ea5705.fwsc",
+      "packageURL" : "https://thefirmwarehub.com/fw/jiant-0.9.9-gen2-fe81db8.fwsc",
       "product" : "FM-1_909",
       "repo" : "juanjiant-bit/JIANT",
-      "sha256" : "b1ea57059b722b1a984c1e618499fba50169888b1a7a180c1fd5095b151be54e",
+      "sha256" : "4b34a10c4f4620bff564475e8b7763c6c87b8c37fc4ee4945f40d29e094eb0cc",
       "size" : 610235,
-      "stars" : 160,
-      "version" : "0.9.9-beta4a-813869d",
+      "stars" : 162,
+      "version" : "0.9.9-gen2-fe81db8",
       "what" : "A bio-synthetic groovebox: six tracks drawn as living beings in thermal colours, eight engines (FM6 with Dexed, analog, phase, voice…), mutating macros, song mode from SLOOP. Not yet tested much on a real FM-1."
     },
     {
@@ -1301,7 +1293,6 @@
       "kinds" : [
         "chords"
       ],
-      "licence" : "Open Source (GPL-3.0)",
       "links" : [
         {
           "label" : "Project site",
@@ -1401,7 +1392,6 @@
       "kinds" : [
         "groove"
       ],
-      "licence" : "Open Source (GPL-3.0-only)",
       "links" : [
         {
           "label" : "Project site",
@@ -1453,7 +1443,6 @@
       "kinds" : [
         "other"
       ],
-      "licence" : "Open Source (GPL-3.0)",
       "links" : [
         {
           "label" : "Project site",
@@ -1548,7 +1537,7 @@
       "repo" : "charlesvestal/fm1-amb",
       "sha256" : "59dbc6b688e3a64bb0da912c1e40890da7bc214b2a3269704627369b776707cb",
       "size" : 610108,
-      "stars" : 89,
+      "stars" : 90,
       "version" : "1.3",
       "what" : "A generative ambient machine after Music for Airports: it plays itself from the start, breathing voices, bells on tape loops of unequal length, a gliding bass. You do not perform it, you tend it."
     },
@@ -1725,7 +1714,6 @@
       "kinds" : [
         "groove"
       ],
-      "licence" : "Open Source (GPL-3.0)",
       "links" : [
         {
           "label" : "Project site",
@@ -1827,7 +1815,7 @@
     {
       "author" : "PatttF",
       "beta" : true,
-      "date" : "2026-10-15",
+      "date" : "2026-10-24",
       "id" : "fm106",
       "isOfficial" : false,
       "kinds" : [
@@ -1841,11 +1829,11 @@
         },
         {
           "label" : "Source code",
-          "url" : "https://github.com/PatttF/fm-106/tree/Beta4"
+          "url" : "https://github.com/PatttF/fm-106/tree/Beta6"
         },
         {
           "label" : "Release",
-          "url" : "https://github.com/PatttF/fm-106/releases/tag/Beta4"
+          "url" : "https://github.com/PatttF/fm-106/releases/tag/Beta6"
         },
         {
           "label" : "Releases",
@@ -1867,13 +1855,13 @@
       "listing" : 7,
       "name" : "FM-106",
       "packageOrigin" : "hub",
-      "packageURL" : "https://thefirmwarehub.com/fw/fm106-Beta4.fwsc",
+      "packageURL" : "https://thefirmwarehub.com/fw/fm106-Beta6.fwsc",
       "product" : "FM-1_907",
       "repo" : "PatttF/fm-106",
-      "sha256" : "2339bd6438ed23fa95bb1f60b1ff888c9fe2861e28608ce5de904aad1e288baf",
+      "sha256" : "ddc663cb4b54812b5ab9e6d3b6386f5dfb63ccaeac475531426f0b324208e83a",
       "size" : 610265,
       "stars" : 14,
-      "version" : "Beta4",
+      "version" : "Beta6",
       "what" : "The Juno-106 emulation of KR-106 ported to the FM-1: six voices on both cores, the BBD stereo chorus, 128 factory presets and a 1980s Roland look."
     },
     {
@@ -1885,7 +1873,6 @@
       "kinds" : [
         "groove"
       ],
-      "licence" : "Open Source (GPL-3.0-only)",
       "links" : [
         {
           "label" : "Project site",
@@ -1941,7 +1928,6 @@
       "kinds" : [
         "synth"
       ],
-      "licence" : "Open Source (GPL-3.0)",
       "links" : [
         {
           "label" : "Project site",
@@ -1997,7 +1983,6 @@
       "kinds" : [
         "groove"
       ],
-      "licence" : "Open Source (GPL-3.0)",
       "links" : [
         {
           "label" : "Project site",
@@ -2048,7 +2033,7 @@
       "repo" : "illuminus5/skiff",
       "sha256" : "0622a752e8304777c042ccea0732ba023e1413baa6dbc8724576e2ec76de02e0",
       "size" : 610337,
-      "stars" : 73,
+      "stars" : 78,
       "version" : "1.4",
       "what" : "Six tracks of synths and drums with a groovebox's workflow: fourteen engines, a 64-step sequencer with chords, ratchets, trig conditions and locks, songs, PERFORM with scenes, six themes and a browser editor; FM6 sounds built from scratch on the unit. Built on Felucca, with most of Felucca 1.6.1's work brought over (the second core, MIDI LEARN, INSERT); Felucca's sounds and projects load. Also runs on the SMK-37 Pro."
     },
@@ -2093,7 +2078,7 @@
       "repo" : "adamcharleswilsonmusic-code/Fart-Machine-One",
       "sha256" : "b9e380061ddc086d5c45cfa4d4e583249a9bfb45869e1fcd6fdaf5249c7ee7e2",
       "size" : 609657,
-      "stars" : 19,
+      "stars" : 20,
       "version" : "1.1.0",
       "what" : "A questionable musical instrument: ten artisanal farts, reverb, delay and a sixteen-step sequencer."
     },
@@ -2162,7 +2147,6 @@
       "kinds" : [
         "groove"
       ],
-      "licence" : "Open Source (GPL-3.0)",
       "links" : [
         {
           "label" : "Project site",
@@ -2218,7 +2202,6 @@
       "kinds" : [
         "drums"
       ],
-      "licence" : "Open Source (GPL-3.0-only)",
       "links" : [
         {
           "label" : "Project site",
@@ -2250,15 +2233,15 @@
         },
         {
           "label" : "Web Installer",
-          "url" : "http://theshrimpblimp.com/webapp/installer/"
+          "url" : "https://theshrimpblimp.github.io/pigeon-website/webapp/installer/"
         },
         {
           "label" : "Web Sample Tool",
-          "url" : "http://theshrimpblimp.com/webapp/pigeon/"
+          "url" : "https://theshrimpblimp.github.io/pigeon-website/webapp/pigeon/"
         },
         {
           "label" : "Web Emulator",
-          "url" : "http://theshrimpblimp.com/webapp/emu/"
+          "url" : "https://theshrimpblimp.github.io/pigeon-website/webapp/emu/"
         },
         {
           "label" : "FM1 Resource Hub listing",
@@ -2443,7 +2426,7 @@
       "repo" : "nzimas/tonitor",
       "sha256" : "20e85fbd0a7361fd4375a446c97c9b2ca98c17ac0098f2609174569976a195dd",
       "size" : 609992,
-      "stars" : 18,
+      "stars" : 19,
       "version" : "2026.10.23",
       "what" : "Six tracks for live ambient and experimental music: three synth engines, patches generated by algorithm, free-length loops with up to ten overdubs each, a granulator, filters and a lush reverb."
     },
@@ -2456,7 +2439,6 @@
       "kinds" : [
         "synth"
       ],
-      "licence" : "Open Source",
       "links" : [
         {
           "label" : "Project site",
@@ -2491,7 +2473,7 @@
       "repo" : "SPIKE-the-Percussionist/noiz_demons",
       "sha256" : "b1c14859d45bd8ea1d5ea6ca630083e2a647178f1a45b33865e92da7a01e9b8a",
       "size" : 610086,
-      "stars" : 5,
+      "stars" : 6,
       "version" : "666",
       "what" : "Felucca with randomization as a ritual: every new sound summons one of 30 demons of the Ars Goetia, its sigil takes the screen and its rank decides how wild the sound gets."
     },
@@ -2551,7 +2533,7 @@
       "repo" : "FicusFicusov/CoralFlower",
       "sha256" : "ab7d0744eed0c83d62be39da9d63c5618e1bccc94de2931a9145a7d4b723b0bb",
       "size" : 610313,
-      "stars" : 11,
+      "stars" : 13,
       "version" : "0.5",
       "what" : "Chords after the Orchid, with controls made for the FM-1: one key plays a chord with a bass note. Also 27 scales, an arpeggiator, a sequencer with drums and a song mode, and a pixel flower that grows as you play."
     },
@@ -2690,7 +2672,7 @@
     {
       "author" : "Joppe Sikken (SikkenWorks)",
       "beta" : false,
-      "date" : "2026-10-23",
+      "date" : "2026-10-24",
       "id" : "beetle",
       "isOfficial" : false,
       "kinds" : [
@@ -2704,11 +2686,11 @@
         },
         {
           "label" : "Source code",
-          "url" : "https://github.com/SikkenWorks/BEETLE/tree/V1.4.25"
+          "url" : "https://github.com/SikkenWorks/BEETLE/tree/V1.4.31"
         },
         {
           "label" : "Release",
-          "url" : "https://github.com/SikkenWorks/BEETLE/releases/tag/V1.4.25"
+          "url" : "https://github.com/SikkenWorks/BEETLE/releases/tag/V1.4.31"
         },
         {
           "label" : "Install",
@@ -2742,13 +2724,13 @@
       "listing" : 7,
       "name" : "BEETLE",
       "packageOrigin" : "hub",
-      "packageURL" : "https://thefirmwarehub.com/fw/beetle-1.4.25.fwsc",
+      "packageURL" : "https://thefirmwarehub.com/fw/beetle-1.4.31.fwsc",
       "product" : "FM-1_2123",
       "repo" : "SikkenWorks/BEETLE",
-      "sha256" : "2495f3b9a265c1999b8345d2e3304d23b6c427ae6e763c1eea3fe4876649f17e",
+      "sha256" : "a918648680519796cb339090b11de96bb55675f8e7379840d46d402b8930b6f9",
       "size" : 610086,
       "stars" : 3,
-      "version" : "1.4.25",
+      "version" : "1.4.31",
       "what" : "A tracker for the FM-1: patterns written top to bottom, step by step, with note, instrument, chord and effect columns, the way trackers have always worked."
     },
     {
@@ -2863,7 +2845,7 @@
       "repo" : "Quixotic7/PurpleMonkeyFM1",
       "sha256" : "edf961e7a85e8795747d1624b828a70bc8f6b0e065bdb019c106ee9a7d43b606",
       "size" : 609857,
-      "stars" : 4,
+      "stars" : 5,
       "version" : "0.11",
       "what" : "A first instrument for toddlers: random key bashing and knob turning are rewarded with dancing animated pets and little musical sequences. Press a key, any key."
     },
@@ -2944,7 +2926,6 @@
       "kinds" : [
         "other"
       ],
-      "licence" : "Open Source",
       "links" : [
         {
           "label" : "Project site",
@@ -3031,7 +3012,7 @@
       "repo" : "leonardoMirabal/frodhes",
       "sha256" : "3c02a239d87ecfca6fbddf74b273f3caf2dfc782205f7a1c6edda49fa1c3260f",
       "size" : 610110,
-      "stars" : 7,
+      "stars" : 6,
       "version" : "0.9.4",
       "what" : "A Rhodes electric piano, physically modelled, no samples: four piano types, compressor, drive, tremolo or wah, phaser, chorus, delay and reverb, tap tempo, MIDI clock, scales and presets. Built on Dinghy."
     },
@@ -3131,7 +3112,7 @@
       "repo" : "Guizmoh/Kawa-Tracker-Fm1",
       "sha256" : "6a990a08bf3861a6a40100f877bf47c407489662dbfc63a7342026b7ab8c4a25",
       "size" : 610266,
-      "stars" : 4,
+      "stars" : 6,
       "version" : "0.5",
       "what" : "A pocket tracker for any style: six tracks with an engine each (pulse, 4-bit wave, noise, 6-operator FM, drum kit or sample), patterns chained into a song, 32 live effects and tools that write beats for you. A beta, not yet tried on a real FM-1 by its maker."
     },
@@ -3417,7 +3398,7 @@
     {
       "author" : "jartificer",
       "beta" : false,
-      "date" : "2026-10-23",
+      "date" : "2026-10-24",
       "id" : "fm1gm",
       "isOfficial" : false,
       "kinds" : [
@@ -3431,11 +3412,11 @@
         },
         {
           "label" : "Source code",
-          "url" : "https://github.com/jartificer/fm1-gm/tree/v1.0.2"
+          "url" : "https://github.com/jartificer/fm1-gm/tree/v1.0.3"
         },
         {
           "label" : "Release",
-          "url" : "https://github.com/jartificer/fm1-gm/releases/tag/v1.0.2"
+          "url" : "https://github.com/jartificer/fm1-gm/releases/tag/v1.0.3"
         },
         {
           "label" : "Editor",
@@ -3461,13 +3442,13 @@
       "listing" : 7,
       "name" : "FM1-GM",
       "packageOrigin" : "hub",
-      "packageURL" : "https://thefirmwarehub.com/fw/fm1gm-1.0.2.fwsc",
+      "packageURL" : "https://thefirmwarehub.com/fw/fm1gm-1.0.3.fwsc",
       "product" : "FM-1_600",
       "repo" : "jartificer/fm1-gm",
-      "sha256" : "20a62a3cedcc561bc03d2e89822e2ac793d1fad6502081fe6a7f9364a1e62c50",
+      "sha256" : "153749bbdb802fd6c8f736e9d73a9486bee3a4041d01f3a877b46fad0e03fe22",
       "size" : 609661,
       "stars" : 8,
-      "version" : "1.0.2",
+      "version" : "1.0.3",
       "what" : "A General MIDI sequencer with 16 tracks, 128 General MIDI instruments to choose from and a drum kit (on track 10). It can store up to 64 songs, each containing up to 128 measures."
     },
     {
@@ -3697,7 +3678,7 @@
     {
       "author" : "Stéphane Schmitz",
       "beta" : false,
-      "date" : "2026-10-23",
+      "date" : "2026-10-24",
       "id" : "minitone",
       "isOfficial" : false,
       "kinds" : [
@@ -3710,11 +3691,11 @@
         },
         {
           "label" : "Source code",
-          "url" : "https://github.com/eldontyrellcorp/Mini-Tone/tree/minitone-1.0.2"
+          "url" : "https://github.com/eldontyrellcorp/Mini-Tone/tree/minitone-1.0.3"
         },
         {
           "label" : "Release",
-          "url" : "https://github.com/eldontyrellcorp/Mini-Tone/releases/tag/minitone-1.0.2"
+          "url" : "https://github.com/eldontyrellcorp/Mini-Tone/releases/tag/minitone-1.0.3"
         },
         {
           "label" : "Release",
@@ -3728,13 +3709,13 @@
       "listing" : 3,
       "name" : "Mini-Tone",
       "packageOrigin" : "hub",
-      "packageURL" : "https://thefirmwarehub.com/fw/minitone-1.0.2.fwsc",
+      "packageURL" : "https://thefirmwarehub.com/fw/minitone-1.0.3.fwsc",
       "product" : "FM-1_900",
       "repo" : "eldontyrellcorp/Mini-Tone",
-      "sha256" : "41ed3ac6287c34527da2401bf13e3ba0df61c13212d64f10061e09990e0637a1",
+      "sha256" : "d898a892d41a3bb0f316fe54c1ee2f8d1e516f6866619811ab2f90353031156f",
       "size" : 610086,
       "stars" : 5,
-      "version" : "1.0.2",
+      "version" : "1.0.3",
       "what" : "Felucca with six tracks and new engines: SID, Braids' 48 models, a TB-303 and engines after Elektron's Analog Four, SY Chip and Digitone 2, a ping-pong delay and a new reverb. Built on Felucca 1.5."
     },
     {
@@ -3793,7 +3774,6 @@
       "kinds" : [
         "synth"
       ],
-      "licence" : "Open Source (GPL-3.0-only)",
       "links" : [
         {
           "label" : "Project site",
@@ -3845,7 +3825,6 @@
       "kinds" : [
         "groove"
       ],
-      "licence" : "Open Source (GPL-3.0)",
       "links" : [
         {
           "label" : "Project site",
@@ -4051,7 +4030,7 @@
       "repo" : "aceyprime/zen-1",
       "sha256" : "e3c51c045b1a763b6d16d2a7e783289ee874b25790e9010c0a5a084ddb65a125",
       "size" : 609657,
-      "stars" : 6,
+      "stars" : 7,
       "version" : "1.2",
       "what" : "Ambient as a living window: cherry petals on a river, koi in a pond, fireflies under a real moon, and every movement a note. Set it down and let it play; the keys play along, the knobs shape the scene."
     },
@@ -4064,7 +4043,6 @@
       "kinds" : [
         "synth"
       ],
-      "licence" : "Open Source (GPL-3.0)",
       "links" : [
         {
           "label" : "Project site",
@@ -4259,7 +4237,7 @@
       "repo" : "evanyerburgh/niagara-drift",
       "sha256" : "63525a135cc8168c5c183648f04da7f2154f6be7d6d97bb46bca93c19934476e",
       "size" : 609657,
-      "stars" : 4,
+      "stars" : 5,
       "version" : "0.2",
       "what" : "A drone synth: two drifting virtual-analog drones, each with its own part, swells, LFOs, effects and a sequencer."
     },
@@ -4272,7 +4250,6 @@
       "kinds" : [
         "synth"
       ],
-      "licence" : "Open Source (GPL-3.0)",
       "links" : [
         {
           "label" : "Project site",
@@ -4498,7 +4475,7 @@
         "run" : "https://github.com/charlesvestal/fm1-loom/actions/runs/40083764739/attempts/1",
         "sha256" : "be9c64a8275b5dd5e99b8b137330e2988e4b0fb660cb5ad8f657ae62b82aca94"
       },
-      "stars" : 38,
+      "stars" : 41,
       "version" : "0.7",
       "what" : "A groovebox inspired by the OP-XY: eight tracks on nine engines, step tricks and locks, weave, a conductor and throws."
     },
@@ -4715,7 +4692,7 @@
     {
       "author" : "Styves Goupil",
       "beta" : false,
-      "date" : "2026-10-23",
+      "date" : "2026-10-24",
       "id" : "frasil",
       "isOfficial" : false,
       "kinds" : [
@@ -4728,11 +4705,15 @@
         },
         {
           "label" : "Source code",
-          "url" : "https://github.com/styvesgoupil/frasil/tree/v1.0"
+          "url" : "https://github.com/styvesgoupil/frasil/tree/v2.0"
         },
         {
           "label" : "Release",
-          "url" : "https://github.com/styvesgoupil/frasil/releases/tag/v1.0"
+          "url" : "https://github.com/styvesgoupil/frasil/releases/tag/v2.0"
+        },
+        {
+          "label" : "Editor",
+          "url" : "https://river.frasilsynth.com/"
         },
         {
           "label" : "Try it in the browser",
@@ -4742,13 +4723,13 @@
       "listing" : 1,
       "name" : "FRASIL",
       "packageOrigin" : "hub",
-      "packageURL" : "https://thefirmwarehub.com/fw/frasil-1.0.fwsc",
-      "product" : "FM-1_47010000",
+      "packageURL" : "https://thefirmwarehub.com/fw/frasil-2.0.fwsc",
+      "product" : "FM-1_47020000",
       "repo" : "styvesgoupil/frasil",
-      "sha256" : "a05a471e467aa38e99a139c0895cd05df1b8242be3442d3fad5cbe5329fdaf4d",
+      "sha256" : "8484be5cdc97144fb496fcff7492284f6d29bdc08ab339745f4c4bee95731d47",
       "size" : 610136,
       "stars" : 0,
-      "version" : "1.0",
+      "version" : "2.0",
       "what" : "An ambient drone and texture instrument: tap a key to latch a drone, a note or a chord in your key, press to swell it. Three layers a voice into a big reverb with shimmer and freeze; GLINT plays icy FM bells on top, by hand, by arpeggiator or a 32-step sequencer, and BASS holds a deep note below."
     },
     {
@@ -4788,9 +4769,17 @@
         {
           "label" : "fm1-editor.com listing",
           "url" : "https://fm1-editor.com/firmware/#melodee-tess"
+        },
+        {
+          "label" : "Releases",
+          "url" : "https://github.com/Rastapopolix/tessera/releases"
+        },
+        {
+          "label" : "FM1 Resource Hub listing",
+          "url" : "https://github.com/aroum/fm1-custom-fw"
         }
       ],
-      "listing" : 3,
+      "listing" : 7,
       "name" : "Tessera",
       "packageOrigin" : "hub",
       "packageURL" : "https://thefirmwarehub.com/fw/tessera-2.0.1.fwsc",
@@ -4846,6 +4835,7 @@
       "kinds" : [
         "synth"
       ],
+      "licence" : "Open Source (GPL-3.0)",
       "links" : [
         {
           "label" : "Project site",
@@ -4858,9 +4848,21 @@
         {
           "label" : "Try it in the browser",
           "url" : "https://owenkirby.github.io/carnac-os/play/"
+        },
+        {
+          "label" : "Source code",
+          "url" : "https://github.com/OwenKirby/carnac-os"
+        },
+        {
+          "label" : "Web Installer",
+          "url" : "https://owenkirby.github.io/carnac-os/install/"
+        },
+        {
+          "label" : "FM1 Resource Hub listing",
+          "url" : "https://github.com/aroum/fm1-custom-fw"
         }
       ],
-      "listing" : 1,
+      "listing" : 5,
       "name" : "Carnac OS",
       "packageOrigin" : "hub",
       "packageURL" : "https://thefirmwarehub.com/fw/carnac-0.9.3.fwsc",
@@ -4868,14 +4870,14 @@
       "repo" : "OwenKirby/carnac-os",
       "sha256" : "cb76875d78a3d43207749d4177ff894c0d9d157fde4ad1bfac007de9635ce7f6",
       "size" : 609680,
-      "stars" : 10,
+      "stars" : 12,
       "version" : "0.9.3",
       "what" : "A dual-timbral wavetable synth after Carnac's standing stones: 15 morphing wavetable banks, seven voice architectures, a MAQ 16/3-style sequencer for modulated sequences and a chord sequencer for progressions, spring, tomb and tank reverbs. Its own installer also writes its wavetables. Built on X0X and Felucca."
     },
     {
       "author" : "FBNFRTG",
       "beta" : true,
-      "date" : "2026-10-23",
+      "date" : "2026-10-24",
       "id" : "drift",
       "isOfficial" : false,
       "kinds" : [
@@ -4888,11 +4890,11 @@
         },
         {
           "label" : "Source code",
-          "url" : "https://github.com/FBNFRTG/drift-fm1/tree/v0.8"
+          "url" : "https://github.com/FBNFRTG/drift-fm1/tree/v0.9"
         },
         {
           "label" : "Release",
-          "url" : "https://github.com/FBNFRTG/drift-fm1/releases/tag/v0.8"
+          "url" : "https://github.com/FBNFRTG/drift-fm1/releases/tag/v0.9"
         },
         {
           "label" : "Try it in the browser",
@@ -4902,13 +4904,13 @@
       "listing" : 1,
       "name" : "DRIFT",
       "packageOrigin" : "hub",
-      "packageURL" : "https://thefirmwarehub.com/fw/drift-0.8.fwsc",
+      "packageURL" : "https://thefirmwarehub.com/fw/drift-0.9.fwsc",
       "product" : "FM-1_983",
       "repo" : "FBNFRTG/drift-fm1",
-      "sha256" : "62ca5664c4a00f805bf191b9004c49b274733f516f8a05cab57f4c2d30eeda4e",
+      "sha256" : "2857f9fe656d54c0a73a6c02cf0ca2375bff1fdefa9887b76c5b11db52305301",
       "size" : 610090,
-      "stars" : 0,
-      "version" : "0.8",
+      "stars" : 1,
+      "version" : "0.9",
       "what" : "An ambient instrument for live sessions: warm synths, spacious pads and delicate plucks over a generative Euclidean sequencer on one track, with delays and reverbs from spring to shimmer. Built on Felucca."
     },
     {
@@ -4920,7 +4922,7 @@
       "kinds" : [
         "tracker"
       ],
-      "licence" : "Open Source (GPL-3.0-or-later)",
+      "licence" : "Open Source (GPL-3.0-only for the firmware image; SIDOU's own code GPL-3.0-or-later)",
       "links" : [
         {
           "label" : "Project site",
@@ -4945,6 +4947,10 @@
         {
           "label" : "fm1-editor.com listing",
           "url" : "https://fm1-editor.com/firmware/#sidou"
+        },
+        {
+          "label" : "Releases",
+          "url" : "https://github.com/dsablic/sidou/releases"
         },
         {
           "label" : "FM1 Resource Hub listing",
@@ -5129,7 +5135,6 @@
       "kinds" : [
 
       ],
-      "licence" : "Open Source (GPL-3.0)",
       "links" : [
         {
           "label" : "Install",
@@ -5172,7 +5177,6 @@
       "kinds" : [
 
       ],
-      "licence" : "Open Source (MIT)",
       "links" : [
         {
           "label" : "April OS",
@@ -5453,7 +5457,6 @@
       "kinds" : [
 
       ],
-      "licence" : "Open Source (GPL-3.0)",
       "links" : [
         {
           "label" : "Install",
@@ -5895,9 +5898,17 @@
         {
           "label" : "fm1-editor.com listing",
           "url" : "https://fm1-editor.com/firmware/#gnomad"
+        },
+        {
+          "label" : "Releases",
+          "url" : "https://github.com/kpalaniuk/gnomad-firmware/releases"
+        },
+        {
+          "label" : "FM1 Resource Hub listing",
+          "url" : "https://github.com/aroum/fm1-custom-fw"
         }
       ],
-      "listing" : 2,
+      "listing" : 6,
       "name" : "Gnomad",
       "packageOrigin" : "githubRelease",
       "packageURL" : "https://github.com/kpalaniuk/gnomad-firmware/releases/download/v1.0.0-r12/gnomad-v1-115e11e.fwsc",
@@ -6138,7 +6149,6 @@
       "kinds" : [
 
       ],
-      "licence" : "Open Source (GPL-3.0)",
       "links" : [
         {
           "label" : "Install",
@@ -6260,8 +6270,9 @@
       "id" : "fm1-editor-matryoshka",
       "isOfficial" : false,
       "kinds" : [
-
+        "platform"
       ],
+      "licence" : "Open Source",
       "links" : [
         {
           "label" : "Install",
@@ -6282,9 +6293,13 @@
         {
           "label" : "fm1-editor.com listing",
           "url" : "https://fm1-editor.com/firmware/#matryoshka"
+        },
+        {
+          "label" : "FM1 Resource Hub listing",
+          "url" : "https://github.com/aroum/fm1-custom-fw"
         }
       ],
-      "listing" : 2,
+      "listing" : 6,
       "name" : "Matryoshka",
       "packageOrigin" : "githubRelease",
       "packageURL" : "https://github.com/glvno/matryoshka/releases/download/v1.2.0/matryoshka-1.2.fwsc",
@@ -6668,7 +6683,6 @@
       "kinds" : [
 
       ],
-      "licence" : "Open Source (GPL-3.0)",
       "links" : [
         {
           "label" : "Install",
@@ -7130,24 +7144,10 @@
       "what" : "A fork of X0X that keeps its 909, 808, two 303s, and breakbeat player and adds song blocks and variations, per-sound filters and limiters, and finer timing divisions. Sequences copy whole or one part at a time, any single drum row or either 303, keeping the destination's accents and swing, and each paste can be undone. Tested on only one FM1 so far."
     },
     {
-      "author" : "Rastapopolix",
+      "author" : "bonszaimusic",
       "beta" : false,
-      "builds" : [
-        {
-          "name" : "1core",
-          "sha256" : "cc80c26e89dbbd6b02ae6e7c55b57a87e74d0a4a2c08dd09a5d29dfccd4ea0f1",
-          "size" : 610534,
-          "url" : "https://github.com/Rastapopolix/tessera/releases/download/v2.0.1/tessera-2.0.1-1core.fwsc"
-        },
-        {
-          "name" : "standard",
-          "sha256" : "f00df5266b41d4f8d9a17d457b78d749e94236c61e05a8bd4fc3d7dcc88ada92",
-          "size" : 610534,
-          "url" : "https://github.com/Rastapopolix/tessera/releases/download/v2.0.1/tessera-2.0.1.fwsc"
-        }
-      ],
-      "date" : "2026-10-23",
-      "id" : "resource-hub-melodee-tess",
+      "date" : "2026-10-21",
+      "id" : "resource-hub-caravel",
       "isOfficial" : false,
       "kinds" : [
 
@@ -7156,11 +7156,11 @@
       "links" : [
         {
           "label" : "Source code",
-          "url" : "https://github.com/Rastapopolix/melodee-tess"
+          "url" : "https://github.com/bonszaimusic/caravel"
         },
         {
-          "label" : "Releases",
-          "url" : "https://github.com/Rastapopolix/melodee-tess/releases"
+          "label" : "Web Installer & Studio",
+          "url" : "https://bonszaimusic.github.io/caravel/webapp/installer/"
         },
         {
           "label" : "FM1 Resource Hub listing",
@@ -7168,14 +7168,14 @@
         }
       ],
       "listing" : 4,
-      "name" : "Melodee (Tess)",
+      "name" : "Caravel",
       "packageOrigin" : "githubRelease",
-      "packageURL" : "https://github.com/Rastapopolix/tessera/releases/download/v2.0.1/tessera-2.0.1.fwsc",
-      "releaseURL" : "https://github.com/Rastapopolix/tessera/releases/tag/v2.0.1",
-      "sha256" : "f00df5266b41d4f8d9a17d457b78d749e94236c61e05a8bd4fc3d7dcc88ada92",
-      "size" : 610534,
-      "version" : "v2.0.1",
-      "what" : "Tessera: generative firmware for the M-Vave FM-1. 13 generators, song forms, modulation on four tracks.",
+      "packageURL" : "https://github.com/bonszaimusic/caravel/releases/download/v0.3.3/caravel-0.3.3.fwsc",
+      "releaseURL" : "https://github.com/bonszaimusic/caravel/releases/tag/v0.3.3",
+      "sha256" : "473f3fd7833b731322df74f692b540fc7f2cfac66f321d3e725ad1f5e019db5d",
+      "size" : 610074,
+      "version" : "v0.3.3",
+      "what" : "Caravel synthesizer firmware; independent Felucca fork.",
       "whatSource" : "gitHub"
     },
     {
@@ -7186,7 +7186,6 @@
       "kinds" : [
 
       ],
-      "licence" : "Open Source (GPL-3.0)",
       "links" : [
         {
           "label" : "Source code",
@@ -7210,7 +7209,6 @@
       "kinds" : [
 
       ],
-      "licence" : "Open Source (GPL-3.0)",
       "links" : [
         {
           "label" : "Source code",
@@ -7234,7 +7232,6 @@
       "kinds" : [
 
       ],
-      "licence" : "Open Source (GPL-3.0)",
       "links" : [
         {
           "label" : "Source code",
@@ -7258,7 +7255,6 @@
       "kinds" : [
 
       ],
-      "licence" : "Open Source (GPL-3.0)",
       "links" : [
         {
           "label" : "Source code",
@@ -7282,7 +7278,6 @@
       "kinds" : [
 
       ],
-      "licence" : "Open Source (GPL-3.0)",
       "links" : [
         {
           "label" : "Source code",
@@ -7314,7 +7309,6 @@
       "kinds" : [
 
       ],
-      "licence" : "Open Source (GPL-3.0)",
       "links" : [
         {
           "label" : "Source code",
@@ -7494,11 +7488,11 @@
       "listing" : 4,
       "name" : "Ravel FM-1",
       "packageOrigin" : "githubRelease",
-      "packageURL" : "https://github.com/De-Pattern/Ravel_FM1/releases/download/v0.8.4/Ravel-FM1.fwsc",
-      "releaseURL" : "https://github.com/De-Pattern/Ravel_FM1/releases/tag/v0.8.4",
-      "sha256" : "1335fe83e542526dbc04a66915cfca720ff70874e84191afd8e113d523a45476",
+      "packageURL" : "https://github.com/De-Pattern/Ravel_FM1/releases/download/v0.8.3-1/Ravel-FM1.fwsc",
+      "releaseURL" : "https://github.com/De-Pattern/Ravel_FM1/releases/tag/v0.8.3-1",
+      "sha256" : "a1c88252348e64ab7ae014bfd4ef8e22680407fb0a4bbe7543194f0ebecf1742",
       "size" : 609684,
-      "version" : "v0.8.4",
+      "version" : "v0.8.3-1",
       "what" : "Ravel is a custom firmware for the M-VAVE FM-1 that turns the FM-1 into a pocket groovebox for sound design. It has 8 tracks that synthesize, catch what they play onto a shared tape, cut it up & rebuild it with tracks that can play, excite, and reshape one another",
       "whatSource" : "gitHub"
     },
@@ -8013,6 +8007,32 @@
       "whatSource" : "gitHub"
     },
     {
+      "author" : "sinscum",
+      "beta" : false,
+      "id" : "resource-hub-dirge",
+      "isOfficial" : false,
+      "kinds" : [
+
+      ],
+      "licence" : "Open Source",
+      "links" : [
+        {
+          "label" : "Project site",
+          "url" : "https://sinscum.github.io/DIRGE/"
+        },
+        {
+          "label" : "FM1 Resource Hub listing",
+          "url" : "https://github.com/aroum/fm1-custom-fw"
+        }
+      ],
+      "listing" : 4,
+      "name" : "DIRGE",
+      "packageOrigin" : "projectPage",
+      "packageURL" : "https://sinscum.github.io/DIRGE/firmware/dirge-0.2.fwsc",
+      "product" : "FM-1_660",
+      "size" : 610090
+    },
+    {
       "author" : "cmlarsen",
       "beta" : false,
       "id" : "resource-hub-fm1-rocket-os",
@@ -8086,6 +8106,36 @@
       "name" : "Hexagon Console"
     },
     {
+      "author" : "Khantipol Kasemsant",
+      "beta" : false,
+      "id" : "resource-hub-forge-one",
+      "isOfficial" : false,
+      "kinds" : [
+        "platform"
+      ],
+      "licence" : "Open Source (GPL-3.0-only)",
+      "links" : [
+        {
+          "label" : "Project site",
+          "url" : "https://forge.kktp.net/"
+        },
+        {
+          "label" : "Guide & Install",
+          "url" : "https://forge.kktp.net/one/"
+        },
+        {
+          "label" : "FM1 Resource Hub listing",
+          "url" : "https://github.com/aroum/fm1-custom-fw"
+        }
+      ],
+      "listing" : 4,
+      "name" : "FORGE ONE",
+      "packageOrigin" : "projectPage",
+      "packageURL" : "https://forge.kktp.net/firmware/forge-one-0.17.fwsc",
+      "product" : "FM-1_900",
+      "size" : 610090
+    },
+    {
       "author" : "Keitark",
       "beta" : false,
       "id" : "resource-hub-fm1-mdx",
@@ -8134,10 +8184,111 @@
       ],
       "listing" : 4,
       "name" : "RemoteFM1"
+    },
+    {
+      "author" : "DeadActive",
+      "beta" : false,
+      "id" : "resource-hub-fmdj",
+      "isOfficial" : false,
+      "kinds" : [
+        "game"
+      ],
+      "licence" : "Open Source (GPL-3.0-only)",
+      "links" : [
+        {
+          "label" : "Source code",
+          "url" : "https://github.com/DeadActive/FMDj"
+        },
+        {
+          "label" : "Web Installer",
+          "url" : "https://deadactive.github.io/FMDj/webapp/lsdj-install/"
+        },
+        {
+          "label" : "Web Simulator",
+          "url" : "https://deadactive.github.io/FMDj/webapp/lsdj-sim/"
+        },
+        {
+          "label" : "FM1 Resource Hub listing",
+          "url" : "https://github.com/aroum/fm1-custom-fw"
+        }
+      ],
+      "listing" : 4,
+      "name" : "FMDj",
+      "packageOrigin" : "projectPage",
+      "packageURL" : "https://deadactive.github.io/FMDj/firmware/lsdj-base-fmdj-2026.10.22.fwsc",
+      "product" : "FM-1_900",
+      "size" : 609849,
+      "what" : "LSDj and DMGo! on the M-VAVE FM-1: Game Boy music programs in the FM-1's firmware (bring your own ROM)",
+      "whatSource" : "gitHub"
+    },
+    {
+      "author" : "snpwball",
+      "beta" : false,
+      "id" : "resource-hub-neverhood-for-fm-1",
+      "isOfficial" : false,
+      "kinds" : [
+        "game"
+      ],
+      "licence" : "Open Source",
+      "links" : [
+        {
+          "label" : "Source code",
+          "url" : "https://github.com/snpwball/fm1-neverhood"
+        },
+        {
+          "label" : "Web Player & Installer",
+          "url" : "https://snpwball.github.io/fm1/neverhood/"
+        },
+        {
+          "label" : "FM1 Resource Hub listing",
+          "url" : "https://github.com/aroum/fm1-custom-fw"
+        }
+      ],
+      "listing" : 4,
+      "name" : "Neverhood for FM-1",
+      "packageOrigin" : "projectPage",
+      "packageURL" : "https://snpwball.github.io/fm1/neverhood/neverhood.fwsc",
+      "product" : "FM-1_731800",
+      "size" : 610136
+    },
+    {
+      "author" : "Charles Vestal",
+      "beta" : true,
+      "date" : "2026-10-24",
+      "id" : "resource-hub-fm1-radio",
+      "isOfficial" : false,
+      "kinds" : [
+        "game"
+      ],
+      "licence" : "Open Source (GPL-3.0)",
+      "links" : [
+        {
+          "label" : "Source code",
+          "url" : "https://github.com/charlesvestal/fm1-radio"
+        },
+        {
+          "label" : "Reddit Announcement",
+          "url" : "https://www.reddit.com/r/MVaveFM1/comments/1xee57d/fm1_radio_wifi_internet_radio_with_live_fx_and/"
+        },
+        {
+          "label" : "FM1 Resource Hub listing",
+          "url" : "https://github.com/aroum/fm1-custom-fw"
+        }
+      ],
+      "listing" : 4,
+      "name" : "fm1-radio",
+      "packageOrigin" : "githubRelease",
+      "packageURL" : "https://github.com/charlesvestal/fm1-radio/releases/download/v1.3/radio-1.3.fwsc",
+      "releaseURL" : "https://github.com/charlesvestal/fm1-radio/releases/tag/v1.3",
+      "sha256" : "8849cff2068bc47f118db3c85d76a5ff07f56b0f310ef9f0465bfd9591fd51f4",
+      "size" : 611496,
+      "version" : "v1.3",
+      "what" : "FM-1 internet radio: WiFi, Radio Garden, punch-in FX (source only)",
+      "whatSource" : "gitHub"
     }
   ],
   "formatVersion" : 1,
-  "hubUpdated" : "2026-10-24 11:02 UTC",
+  "hubUpdated" : "2026-10-24 22:34 UTC",
   "problems" : [
 
   ]
