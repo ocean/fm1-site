@@ -1,6 +1,6 @@
 # FM-SWITCH
 
-> An app for iPhone, iPad and Mac for swapping M-VAVE FM-1 firmwares over USB. On TestFlight soon for iPhone and iPad, open source, free, not affiliated with M-VAVE.
+> An app for iPhone, iPad and Mac for swapping M-VAVE FM-1 firmwares over USB. In TestFlight for iPhone and iPad, open source, free, not affiliated with M-VAVE.
 
 Part of Drew Robinson's FM-1 projects: https://fm-1.drewr.dev/ (see /llms-full.txt there for the others). Source: https://github.com/ocean/FM-SWITCH
 
@@ -41,7 +41,7 @@ Every feature is free, and tips unlock nothing. On iPhone and iPad tips are in-a
 
 ## Building
 
-iPhone and iPad: on TestFlight soon. The Mac app will come later, from the website, signed with Developer ID. To build: install XcodeGen, run `xcodegen generate`, open `FMSwitch.xcodeproj` in Xcode and run on a simulator, a device or My Mac. `scripts/check.sh` runs every check CI runs (formatting, SwiftLint, builds with warnings as errors, tests on iOS and macOS, DocC, unused-code analysis).
+iPhone and iPad: in TestFlight now; ask on the FM-1 Discord for more. The Mac app is coming soon, from the website, signed with Developer ID.
 
 ## Under the hood
 
