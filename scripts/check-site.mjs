@@ -24,7 +24,8 @@ const siteOrigin = "https://fm-1.drewr.dev";
 const desktop = { width: 1440, height: 900 };
 const phone = { width: 390, height: 844 };
 
-// What to check. `activate` marks a project as pointed at, as flair.js does. `backdrops` are the
+// What to check. `activate` marks a project as pointed at, as flair.js does. `look` is the FM-SWITCH
+// look the browser remembers (look.js), which the index's FM-SWITCH hover follows. `backdrops` are the
 // colours painted behind the text in that state, for contrast checks axe can't make itself; without
 // them, the page's own background colour is used.
 const states = [
@@ -35,12 +36,36 @@ const states = [
     path: "/",
     viewport: desktop,
     activate: ".project--switch",
-    backdrops: ["#0d100e", "#161b18"],
+    backdrops: ["#eee8dd", "#fff"],
+  },
+  {
+    name: "index-fm-switch-dark",
+    path: "/",
+    viewport: desktop,
+    colorScheme: "dark",
+    activate: ".project--switch",
+    backdrops: ["#141413", "#232321"],
   },
   {
     name: "index-fm-switch-phone",
     path: "/",
     viewport: phone,
+    activate: ".project--switch",
+    backdrops: ["#eee8dd", "#fff"],
+  },
+  {
+    name: "index-fm-switch-retro",
+    path: "/",
+    viewport: desktop,
+    look: "retro",
+    activate: ".project--switch",
+    backdrops: ["#0d100e", "#161b18"],
+  },
+  {
+    name: "index-fm-switch-retro-phone",
+    path: "/",
+    viewport: phone,
+    look: "retro",
     activate: ".project--switch",
     backdrops: ["#0d100e", "#161b18"],
   },
@@ -80,8 +105,11 @@ const states = [
     activate: ".project--fm1kit",
     backdrops: ["#fff", "#f5f5f7"],
   },
-  { name: "fm-switch", path: "/fm-switch/", viewport: desktop, backdrops: ["#0d100e", "#161b18"] },
-  { name: "fm-switch-phone", path: "/fm-switch/", viewport: phone, backdrops: ["#0d100e", "#161b18"] },
+  { name: "fm-switch", path: "/fm-switch/", viewport: desktop, backdrops: ["#eee8dd", "#fff"] },
+  { name: "fm-switch-dark", path: "/fm-switch/", viewport: desktop, colorScheme: "dark", backdrops: ["#141413", "#232321"] },
+  { name: "fm-switch-phone", path: "/fm-switch/", viewport: phone, backdrops: ["#eee8dd", "#fff"] },
+  { name: "fm-switch-retro", path: "/fm-switch/retro/", viewport: desktop, backdrops: ["#0d100e", "#161b18"] },
+  { name: "fm-switch-retro-phone", path: "/fm-switch/retro/", viewport: phone, backdrops: ["#0d100e", "#161b18"] },
   { name: "fm1kit-light", path: "/fm1kit/", viewport: desktop, colorScheme: "light", backdrops: ["#fff"] },
   { name: "fm1kit-dark", path: "/fm1kit/", viewport: desktop, colorScheme: "dark", backdrops: ["#000"] },
   { name: "fm1kit-phone", path: "/fm1kit/", viewport: phone, colorScheme: "light", backdrops: ["#fff"] },
@@ -276,6 +304,9 @@ async function checkState(browser, base, state, linksFound) {
     reducedMotion: "reduce",
   });
   const page = await context.newPage();
+  if (state.look) {
+    await page.addInitScript((look) => localStorage.setItem("fm-switch-look", look), state.look);
+  }
 
   page.on("console", (message) => {
     if (message.type() === "error") {
