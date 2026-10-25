@@ -8,7 +8,9 @@
   <link rel="icon" href="assets/favicon.svg">
   <link rel="stylesheet" href="assets/site.css">
   <link rel="stylesheet" href="assets/fonts.css">
+  <link rel="stylesheet" href="assets/fm1.css">
   <link rel="stylesheet" href="assets/flair.css">
+  <script src="assets/look.js"></script>
   <script src="assets/flair.js" defer></script>
 </head>
 <body>
@@ -25,6 +27,44 @@
           <div class="switch-bar"><span class="switch-fill"></span></div>
           <p class="switch-status"><span class="switch-pct"></span> <span class="switch-writing">WRITING</span><span class="switch-done">DONE</span><span class="switch-cursor"></span></p>
           <p class="switch-checks">[&#9632;] KEEP VOICES<br>[ ] RECOVERY MODE</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="backdrop backdrop--switch-standard" aria-hidden="true">
+    <div class="margin-left">
+      <div class="standard-drawing">
+        <div class="fm1">
+          <div class="fm1-knobs fm1-knobs--left"><span></span><span></span><span></span><span></span></div>
+          <span class="fm1-oct fm1-oct--down">OCT&minus;</span>
+          <span class="fm1-oct fm1-oct--up">OCT+</span>
+          <div class="fm1-screen">
+            <div class="fm1-stage fm1-stage--ready"><b>FM-1_900</b><small>Ready</small></div>
+            <div class="fm1-stage"><b>ESTAMPIE</b><small>Getting ready&hellip;</small><span class="fm1-bar fm1-bar--8"></span></div>
+            <div class="fm1-stage"><b>ESTAMPIE</b><small>Installing&hellip;</small><span class="fm1-bar fm1-bar--50"></span></div>
+            <div class="fm1-stage"><b>ESTAMPIE</b><small>Checking&hellip;</small><span class="fm1-bar fm1-bar--90"></span></div>
+            <div class="fm1-stage"><b>ESTAMPIE</b><small>Restarting&hellip;</small><span class="fm1-bar fm1-bar--98"></span></div>
+            <div class="fm1-stage fm1-stage--done"><b>ESTAMPIE</b><small>Done</small></div>
+          </div>
+          <div class="fm1-knobs fm1-knobs--right"><span></span><span></span><span></span><span></span></div>
+          <div class="fm1-buttons"><span>FX</span><span>SCL</span><span>ENV</span><span>LFO</span><span>EDIT</span><span>GLO</span><span class="fm1-home">HOME</span><span>SAVE</span><span>ARP</span><span>SEQ</span><span class="fm1-play">PLAY</span><span class="fm1-rec">REC</span></div>
+          <div class="fm1-keys"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        </div>
+      </div>
+      <img class="standard-icon" src="assets/fm-switch-app-icon.png" alt="" width="72" height="72">
+    </div>
+    <div class="margin-right">
+      <div class="standard-side">
+        <img class="standard-icon" src="assets/fm-switch-app-icon.png" alt="" width="72" height="72">
+        <p class="standard-pill">Connected, reporting FM-1_900</p>
+        <div class="standard-card standard-card--change">
+          <svg viewBox="0 0 44 44"><rect width="44" height="44" rx="11" fill="#fff" fill-opacity="0.18"/><path d="M29 14H14m0 0 4-4m-4 4 4 4M15 30h15m0 0-4-4m4 4-4 4" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p><b>Change firmware</b><span>Synths, grooveboxes and games to try, or the official one.</span></p>
+        </div>
+        <div class="standard-card">
+          <svg viewBox="0 0 44 44"><rect width="44" height="44" rx="11" fill="#2563eb"/><path d="M22 12v14m0 0-5-5m5 5 5-5M14 31h16" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p><b>Save my FM-1</b><span>Keep a copy of your projects and samples.</span></p>
         </div>
       </div>
     </div>
@@ -114,7 +154,7 @@
         </a>
       </li>
       <li>
-        <a class="project--switch" href="fm-switch/">
+        <a class="project--switch" href="fm-switch/" data-standard-href="fm-switch/" data-retro-href="fm-switch/retro/">
           <span class="name">FM-SWITCH</span>
           <span class="kind">iOS &amp; macOS</span>
           <span class="about">Swap FM-1 firmwares over USB from an iPhone, iPad or Mac.</span>
