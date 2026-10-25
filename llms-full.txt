@@ -50,7 +50,7 @@ An app for iPhone, iPad and Mac for swapping M-VAVE FM-1 firmwares over USB.
 - Look: Standard is friendly and plain, with a warm parchment ground (#EEE8DD), white cards, the system font, purple for firmware (#6D28D9) and a drawn FM-1, in light or dark. Retro, the original 8-bit handheld-console look (green #7BE39A, Silkscreen, Departure Mono and VT323), is hidden until found, then chosen in Settings. The website's FM-SWITCH page has both looks too: https://fm-1.drewr.dev/fm-switch/retro/
 - Free: every feature is free, and tips unlock nothing.
 - Platforms: iOS and iPadOS 17+, macOS (native SwiftUI). Connects by USB-C, Lightning with Apple's camera adapter, or a Mac's USB.
-- Status: iPhone and iPad on TestFlight soon; the Mac app will come later, from the website. Build from source with XcodeGen and Xcode.
+- Status: iPhone and iPad in TestFlight (more on the FM-1 Discord); the Mac app is coming soon, from the website.
 - Source: https://github.com/ocean/FM-SWITCH
 - Page: https://fm-1.drewr.dev/fm-switch/
 
