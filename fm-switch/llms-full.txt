@@ -1,6 +1,6 @@
 # FM-SWITCH
 
-> An app for iPhone, iPad and Mac for swapping M-VAVE FM-1 firmwares over USB. In development, open source, not affiliated with M-VAVE.
+> An app for iPhone, iPad and Mac for swapping M-VAVE FM-1 firmwares over USB. On TestFlight soon for iPhone and iPad, open source, free, not affiliated with M-VAVE.
 
 Part of Drew Robinson's FM-1 projects: https://fm-1.drewr.dev/ (see /llms-full.txt there for the others). Source: https://github.com/ocean/FM-SWITCH
 
@@ -10,13 +10,16 @@ The M-VAVE FM-1 is a tiny hardware synthesiser with a lively community of custom
 
 ## Features
 
-- Firmware list: the firmware hub's catalogue (thefirmwarehub.com) merged with fm1-editor.com's list.
+- Firmware list: the firmware hub's catalogue (thefirmwarehub.com), fm1-editor.com's list and aroum's FM1 Resource Hub, with filters for kinds (grooveboxes, synths and so on) and for firmwares built from source.
+- Firmware pages: each firmware's own page, with its author, description, pictures from its README, an Install button, Save to this phone for later, and its links (project site, source code, release, editor, try it in the browser, and the lists it's on).
 - Package discovery: finds each firmware's `.fwsc` package from GitHub releases, publisher manifests, project pages or M-VAVE's downloads, with live checks for newer releases and their builds.
 - Saved firmwares: kept on the device for offline flashing.
 - M-VAVE's official V15 comes with the app, unmodified (from M-VAVE's open-source fm1_open, Apache-2.0), so there's always a known-good firmware to go back to.
-- Flashing, through FM1Kit: checks the package before anything is sent and that exactly one FM-1 is connected; asks before switching to a different firmware (which can erase the FM-1's projects and samples); refuses V15 over V15; pauses auto-lock and asks iOS for background time during a flash; RESUME finishes a write that was cut off; afterwards confirms the FM-1 reports the new firmware.
+- Flashing, through FM1Kit: checks the package before anything is sent and that exactly one FM-1 is connected; asks before switching to a different firmware (which can erase the FM-1's projects and samples); refuses V15 over V15; pauses auto-lock and asks iOS for background time during a flash; if it stops for any reason, the person can carry on where it left off; afterwards confirms the FM-1 reports the new firmware.
+- Installing shows one progress bar through four stages: getting ready, installing, checking and restarting.
+- Save my FM-1: on M-VAVE's open firmware, keeps a copy of every saved project, the project being edited (with unsaved changes) and the samples, before switching away.
 - An install takes about 20 seconds for V15 and under 40 seconds for Felucca 1.6.1 on the FM-1 tested.
-- Flash history, and a simulated FM-1 for the iOS Simulator (it can start in USB rescue mode, or "pull the cable" at 45% to test RESUME).
+- Flash history, and a simulated FM-1 for the iOS Simulator (it can start in USB rescue mode, or "pull the cable" at 45% to test carrying on).
 
 ## Platforms
 
@@ -26,11 +29,19 @@ The M-VAVE FM-1 is a tiny hardware synthesiser with a lively community of custom
 
 ## Look
 
-An 8-bit handheld-console screen: near-black background (#0C0E0D), an accent colour the user picks (green #7BE39A by default; amber, ice, rose and paper presets), Silkscreen pixel capitals for headings, Departure Mono for reading, VT323 for large readouts. Notched pixel boxes with hard offset shadows, a segmented 20-block progress bar, and optional subtle CRT effects (scanlines, flicker), off by default.
+Standard, the app's everyday look: a warm parchment ground (#EEE8DD; #141413 in dark mode), white cards, the system font, purple for firmware (#6D28D9), orange for buttons and switches (#C2410C), and a drawn FM-1 on the home screen that shows each install's progress. Light, dark or following the device. The app icon is that FM-1 on purple, with swap arrows on its screen.
+
+Retro, hidden until found and then chosen in Settings: the original 8-bit handheld-console screen, near-black (#0C0E0D) with a green accent (#7BE39A), Silkscreen pixel capitals, Departure Mono and VT323, notched pixel boxes and a segmented progress bar. It has its own app icon.
+
+The website's FM-SWITCH page has both looks: https://fm-1.drewr.dev/fm-switch/ and https://fm-1.drewr.dev/fm-switch/retro/
+
+## Tips
+
+Every feature is free, and tips unlock nothing. On iPhone and iPad tips are in-app purchases; on the Mac, Ko-fi (https://ko-fi.com/oceanicity).
 
 ## Building
 
-Not on the App Store yet. To build: install XcodeGen, run `xcodegen generate`, open `FMSwitch.xcodeproj` in Xcode and run on a simulator, a device or My Mac. `scripts/check.sh` runs every check CI runs (formatting, SwiftLint, builds with warnings as errors, tests on iOS and macOS, DocC, unused-code analysis).
+iPhone and iPad: on TestFlight soon. The Mac app will come later, from the website, signed with Developer ID. To build: install XcodeGen, run `xcodegen generate`, open `FMSwitch.xcodeproj` in Xcode and run on a simulator, a device or My Mac. `scripts/check.sh` runs every check CI runs (formatting, SwiftLint, builds with warnings as errors, tests on iOS and macOS, DocC, unused-code analysis).
 
 ## Under the hood
 
