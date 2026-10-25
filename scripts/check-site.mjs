@@ -115,6 +115,7 @@ const states = [
   { name: "fm1kit-phone", path: "/fm1kit/", viewport: phone, colorScheme: "light", backdrops: ["#fff"] },
   { name: "estampie", path: "/estampie/", viewport: desktop },
   { name: "estampie-phone", path: "/estampie/", viewport: phone },
+  { name: "privacy", path: "/privacy/", viewport: phone, backdrops: ["#1a110b", "#2a1b11"] },
   { name: "not-found", path: "/404.html", viewport: phone, backdrops: ["#1a110b", "#2a1b11"] },
 ];
 
