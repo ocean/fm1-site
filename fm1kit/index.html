@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FM1Kit</title>
-  <meta name="description" content="A Swift package for installing firmware on the M-VAVE FM-1 over USB-MIDI, from iOS and macOS.">
+  <meta name="description" content="A Swift package for installing firmware on the M-VAVE FM-1 over USB-MIDI, from iOS and macOS, and for rescuing it in download mode from a Mac.">
   <link rel="icon" href="../assets/favicon.svg">
   <link rel="stylesheet" href="docs.css">
 </head>
@@ -12,7 +12,7 @@
   <nav class="nav" aria-label="Breadcrumbs">
     <div class="wrap">
       <span class="crumbs"><a href="../">FM-1 projects</a><span class="sep" aria-hidden="true">/</span>FM1Kit</span>
-      <span class="version">Swift package &middot; 0.3.0</span>
+      <span class="version">Swift package &middot; 0.4.0</span>
     </div>
   </nav>
 
@@ -33,6 +33,7 @@
   <main class="wrap content">
     <h2>Overview</h2>
     <p>FM1Kit speaks the FM-1's update protocol. It reads <code>.fwsc</code> firmware packages, finds the device, answers its read requests while it stages and writes the new firmware, and checks the device reports the new firmware afterwards. It can also finish an update that was cut off, or one started from USB recovery mode, and back up M-VAVE's open firmware before switching away from it.</p>
+    <p>From V15, it can install <a href="https://github.com/jvitkauskas/m-bootloader">m-bootloader</a>, which adds a recovery menu and the chip's USB download mode. A second library, FM1Rescue, uses download mode from a Mac to back up, restore and write the FM-1's whole flash, whatever firmware is installed.</p>
     <p>It sticks to the device: finding and downloading firmwares is left to your app. <a href="../fm-switch/">FM-SWITCH</a> is built on it.</p>
 
     <div class="aside">
@@ -40,8 +41,10 @@
     </div>
 
     <h3>Install the package</h3>
-    <p>Add FM1Kit with Swift Package Manager. Until 1.0, minor versions may change the API, so take 0.3.x fixes but not 0.4.0.</p>
-<pre tabindex="0"><code><span class="t">.package</span>(url: <span class="s">"https://github.com/ocean/FM1Kit.git"</span>, <span class="t">.upToNextMinor</span>(from: <span class="s">"0.3.0"</span>)),</code></pre>
+    <p>Add FM1Kit with Swift Package Manager. Until 1.0, minor versions may change the API, so take 0.4.x fixes but not 0.5.0.</p>
+<pre tabindex="0"><code><span class="t">.package</span>(url: <span class="s">"https://github.com/ocean/FM1Kit.git"</span>, <span class="t">.upToNextMinor</span>(from: <span class="s">"0.4.0"</span>)),</code></pre>
+
+    <p>The package has two libraries: <code>FM1Kit</code> for iOS and macOS, and <code>FM1Rescue</code> for download mode, which works on macOS only and is empty on iOS.</p>
 
     <h3>Install a firmware</h3>
     <p>Read the package, check what installing it would do, then install it and follow its progress. Switching to a different firmware can erase the FM-1's projects and samples, so it needs confirming.</p>
@@ -65,6 +68,25 @@
 <span class="k">if let</span> identity = <span class="k">await</span> updater.identify(), identity.isLoader {
     <span class="k">try await</span> updater.resume(package)
 }</code></pre>
+    <p>For apps aimed at everyone, <code>InstallProgress</code> folds those events into one bar that never goes backwards, in four stages: getting ready, installing, checking and restarting. <code>FM1Advice(for: error)</code> turns any error into a headline, an explanation, whether the FM-1 is still fine, and one thing to do next. <code>summary()</code> describes the connected FM-1: its firmware's name and version, whether it's waiting part-way through an update, and its USB serial number.</p>
+
+    <h3>Install m-bootloader</h3>
+    <p><code>installBootloader(_:events:)</code> installs m-bootloader from its <code>fm1-uboot.fwsc</code> package on an FM-1 running V15, keeping the firmware. With it, holding <strong>PLAY</strong> while switching on opens a recovery menu, holding <strong>REC</strong> starts download mode, and the firmware is checked before it starts. FM1Kit can't read the bootloader back over USB-MIDI, so the FM-1's screen confirms it. Installing V15 later puts M-VAVE's bootloader back.</p>
+
+    <h3>Rescue an FM-1 in download mode</h3>
+    <p>In download mode the FM-1 shows up as a USB disk. Taking it from macOS's disk driver needs root, so apps reach FM1Rescue through a privileged helper. A backup reads the 1 MB flash twice and checks both reads against the chip's CRC-32, and is saved as <a href="https://github.com/jvitkauskas/m-flasher">M-Flasher</a> saves it, so either tool can restore it.</p>
+<pre tabindex="0"><code><span class="k">import</span> FM1Rescue
+
+<span class="k">try await</span> updater.enterDownloadMode()  <span class="c">// V15 or Felucca; or hold REC with m-bootloader</span>
+<span class="k">let</span> session = <span class="k">try</span> <span class="t">FlashSession</span>(connection: <span class="t">USBDownloadModeConnection</span>.open())
+<span class="k">let</span> backup = <span class="k">try</span> session.backUp { print(<span class="s">"</span>\(<span class="t">Int</span>($0 * <span class="n">100</span>))<span class="s">%"</span>) }
+<span class="k">try</span> backup.write(to: backupsFolder)
+
+<span class="k">let</span> plan = <span class="k">try</span> <span class="t">FlashPlan</span>.restoring(otherBackup, onto: backup)
+print(plan.notes, plan.warnings, plan.sectors.count)  <span class="c">// show it, then ask to confirm</span>
+<span class="k">try</span> session.write(plan) { print(<span class="s">"</span>\(<span class="t">Int</span>($0 * <span class="n">100</span>))<span class="s">%"</span>) }
+session.close()  <span class="c">// switch the FM-1 off and on to leave</span></code></pre>
+    <p>A <code>FlashPlan</code> restores a backup, installs m-bootloader or M-VAVE's bootloader, or installs a firmware, changing only the 4 KB sectors that differ. Writing checks the flash is still what was read, then checks every change against the chip's CRC-32. Another FM-1's backup never replaces this one's factory data, and nothing is written to flash from another model. If writing stops part-way, don't switch the FM-1 off: restore the backup.</p>
 
     <h2>Topics</h2>
 
@@ -83,10 +105,19 @@
 
     <h3>Updating</h3>
     <ul class="topics">
-      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">actor</span>FM1Updater</a><p>Finds the device, checks and installs, resumes, restores V15's voices, backs up open firmware, and reports progress.</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">actor</span>FM1Updater</a><p>Finds the device, checks and installs, resumes, restores V15's voices, backs up open firmware, installs m-bootloader, and reports progress.</p></li>
       <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>InstallCheck</a><p>What an install would do, before it starts.</p></li>
       <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>InstallOptions</a><p>Confirms a switch of firmware, or a reinstall of the identity already running.</p></li>
       <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">enum</span>UpdateEvent</a><p>Progress: staging, writing, an optional checking pass, and finished.</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>InstallProgress</a><p>An install's events as one bar that never goes backwards, in four stages.</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>FM1Advice</a><p>Any error in plain words: what happened, whether the FM-1 is fine, and what to do.</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>FM1DeviceSummary</a><p>The connected FM-1's firmware, version, update state and serial number.</p></li>
+    </ul>
+
+    <h3>Bootloaders</h3>
+    <ul class="topics">
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>BootloaderInstaller</a><p>m-bootloader's installer package, checked as the bootloader checks it.</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>BootloaderImage</a><p>The bootloader an installer carries, or a <code>.boot</code> file.</p></li>
     </ul>
 
     <h3>Backups</h3>
@@ -101,20 +132,36 @@
       <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">class</span>SimulatedFM1</a><p>A software FM-1 that speaks the whole protocol and open firmware's project library, for the iOS Simulator and tests.</p></li>
     </ul>
 
+    <h3>FM1Rescue (macOS)</h3>
+    <ul class="topics">
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">class</span>USBDownloadModeConnection</a><p>Download mode over USB mass storage. Needs root.</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">class</span>FlashSession</a><p>Uploads m-bootloader's flash loader, then reads, backs up and writes the flash.</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>FlashBackup</a><p>A whole-flash backup: which bootloader and firmware it holds, saved as M-Flasher saves it.</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>FlashPlan</a><p>A checked change to the flash, listing the sectors it writes, with notes and warnings.</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">class</span>SimulatedDownloadMode</a><p>The chip in software, erasing and writing as NOR flash does, for tests and previews.</p></li>
+    </ul>
+
     <h2>fm1probe</h2>
-    <p>A Mac command-line tool for checking a setup and watching an install closely. Only <code>install</code> and <code>restore-voices</code> write to the device, and <code>backup</code> changes which project open firmware shows while it reads. Each asks you to type YES first.</p>
+    <p>A Mac command-line tool for checking a setup and watching an install closely. Only <code>install</code>, <code>install-bootloader</code>, <code>restore-voices</code> and the <code>flash-</code> commands write to the device, and <code>backup</code> changes which project open firmware shows while it reads. Each asks you to type YES first, and the <code>flash-</code> commands save a backup before writing.</p>
 <pre tabindex="0"><code>swift run fm1probe ports                 <span class="c"># list MIDI ports</span>
 swift run fm1probe identify              <span class="c"># ask the FM-1 what it's running</span>
 swift run fm1probe inspect FILE.fwsc     <span class="c"># a package's identity, size and checksum</span>
 swift run fm1probe install FILE.fwsc     <span class="c"># install a firmware</span>
-swift run fm1probe backup FOLDER         <span class="c"># back up open firmware's projects and samples</span></code></pre>
+swift run fm1probe backup FOLDER         <span class="c"># back up open firmware's projects and samples</span>
+swift run fm1probe install-bootloader fm1-uboot.fwsc  <span class="c"># install m-bootloader from V15</span>
+swift run fm1probe download-mode         <span class="c"># ask V15 or Felucca to restart into download mode</span>
+sudo .build/debug/fm1probe flash-backup FOLDER  <span class="c"># read the whole flash</span>
+sudo .build/debug/fm1probe flash-restore BACKUP.bin FOLDER  <span class="c"># put a backup back</span>
+sudo .build/debug/fm1probe flash-install FILE.fwsc FOLDER   <span class="c"># install a firmware in download mode</span></code></pre>
 
     <h2>Recovery</h2>
-    <p>Whenever the FM-1 is in its update loader, whether from USB recovery mode (hold <strong>OCT&minus;</strong> while switching it on, on firmwares that offer it) or an interrupted update, <code>resume(_:events:)</code> can install a firmware. Beyond that is the chip's ROM bootloader, which FM1Kit doesn't cover.</p>
+    <p>Whenever the FM-1 is in its update loader, whether from USB recovery mode (hold <strong>OCT&minus;</strong> while switching it on, on firmwares that offer it) or an interrupted update, <code>resume(_:events:)</code> can install a firmware.</p>
+    <p>Beyond that is the chip's USB download mode, from a computer, which works whatever the firmware. FM1Rescue uses it on a Mac; iPhones and iPads can't. V15 and Felucca can be asked to switch to it, and with m-bootloader installed, holding <strong>REC</strong> while switching on starts it. m-bootloader also opens its recovery menu by itself when the firmware fails its checks.</p>
 
     <h2>See also</h2>
     <p><a href="https://github.com/ocean/FM1Kit">Source, documentation and changelog on GitHub</a></p>
     <p><a href="https://github.com/AL-255/FM-1-RE">FM-1-RE</a>: the reverse-engineering notes the protocol is written from.</p>
+    <p><a href="https://github.com/jvitkauskas/m-bootloader">m-bootloader</a> and <a href="https://github.com/jvitkauskas/m-flasher">M-Flasher</a>: the bootloader and download mode tools FM1Rescue follows. It bundles m-bootloader's flash loader (MIT).</p>
   </main>
 
   <footer>
