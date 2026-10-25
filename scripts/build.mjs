@@ -25,6 +25,7 @@ const publicPaths = [
   "estampie",
   "fm-switch",
   "fm1kit",
+  "privacy",
 ];
 
 async function unpackEstampie(pin) {

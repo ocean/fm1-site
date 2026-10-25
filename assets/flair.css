@@ -65,6 +65,19 @@
     3px calc(100% - 3px), 0 calc(100% - 3px), 0 3px, 3px 3px
   );
 
+  /* FM-SWITCH's Standard look: the app's palette, light (dark below). */
+  --std-ground: #eee8dd;
+  --std-card: #fff;
+  --std-ink: #1c1c1e;
+  --std-ink-2: #5e5e63;
+  --std-rule: #d8d0c2;
+  --std-link: #5b21b6;
+  --std-purple: #6d28d9;
+  --std-good: #1f8a45;
+  --std-good-ink: #17602f;
+  --std-good-bg: #e3f1e7;
+  --std-font: system-ui, -apple-system, "Segoe UI", sans-serif;
+
   /* FM1Kit's page: Apple's developer documentation, light (dark below). */
   --docs-font: -apple-system, blinkmacsystemfont, "SF Pro Text", "Helvetica Neue", helvetica, arial, sans-serif;
   --docs-mono: ui-monospace, "SF Mono", sfmono-regular, menlo, consolas, monospace;
@@ -300,40 +313,40 @@ main {
   }
 }
 
-/* The theme itself. */
-body:has(.project--switch:is(.is-active, :focus-visible)) {
+/* The theme itself, when Retro was the look last seen on FM-SWITCH's page (look.js). */
+:root[data-look="retro"] body:has(.project--switch:is(.is-active, :focus-visible)) {
   --text: var(--px-ink);
   --muted: var(--px-muted);
   --rule: var(--px-dim);
   --accent: var(--px-green);
 }
 
-body:has(.project--switch:is(.is-active, :focus-visible)) .backdrop--switch {
+:root[data-look="retro"] body:has(.project--switch:is(.is-active, :focus-visible)) .backdrop--switch {
   opacity: 1;
 }
 
-body:has(.project--switch:is(.is-active, :focus-visible)) h1 {
+:root[data-look="retro"] body:has(.project--switch:is(.is-active, :focus-visible)) h1 {
   color: var(--px-green);
   font-family: Silkscreen, monospace;
   font-weight: 400;
   text-shadow: 0 0 6px rgb(123 227 154 / 25%);
 }
 
-body:has(.project--switch:is(.is-active, :focus-visible)) .projects li {
+:root[data-look="retro"] body:has(.project--switch:is(.is-active, :focus-visible)) .projects li {
   border-bottom-style: dashed;
 }
 
-body:has(.project--switch:is(.is-active, :focus-visible)) .projects {
+:root[data-look="retro"] body:has(.project--switch:is(.is-active, :focus-visible)) .projects {
   border-top-style: dashed;
 }
 
-body:has(.project--switch:is(.is-active, :focus-visible)) .projects .name {
+:root[data-look="retro"] body:has(.project--switch:is(.is-active, :focus-visible)) .projects .name {
   font-family: Silkscreen, monospace;
   font-weight: 400;
   font-size: 1.35rem;
 }
 
-body:has(.project--switch:is(.is-active, :focus-visible)) .projects .kind {
+:root[data-look="retro"] body:has(.project--switch:is(.is-active, :focus-visible)) .projects .kind {
   padding: 2px 6px;
   outline: 1px solid var(--px-muted);
   font: 0.65rem/1.4 Silkscreen, monospace;
@@ -341,15 +354,15 @@ body:has(.project--switch:is(.is-active, :focus-visible)) .projects .kind {
   letter-spacing: 0;
 }
 
-body:has(.project--switch:is(.is-active, :focus-visible)) footer {
+:root[data-look="retro"] body:has(.project--switch:is(.is-active, :focus-visible)) footer {
   font-family: "Departure Mono", monospace;
   font-size: 0.8rem;
   text-transform: uppercase;
 }
 
 /* The hovered card becomes a panel with a notched outline and a hard shadow. */
-.project--switch::before,
-.project--switch::after {
+:root[data-look="retro"] .project--switch::before,
+:root[data-look="retro"] .project--switch::after {
   content: "";
   position: absolute;
   inset: -2px -1rem;
@@ -359,67 +372,247 @@ body:has(.project--switch:is(.is-active, :focus-visible)) footer {
   transition: opacity var(--fade);
 }
 
-.project--switch::before {
+:root[data-look="retro"] .project--switch::before {
   translate: 4px 4px;
   background: rgb(0 0 0 / 55%);
 }
 
-.project--switch::after {
+:root[data-look="retro"] .project--switch::after {
   border: 2px solid var(--px-dim);
   background: var(--px-surface);
 }
 
-.project--switch:is(.is-active, :focus-visible)::before,
-.project--switch:is(.is-active, :focus-visible)::after {
+:root[data-look="retro"] .project--switch:is(.is-active, :focus-visible)::before,
+:root[data-look="retro"] .project--switch:is(.is-active, :focus-visible)::after {
   opacity: 1;
 }
 
 /* On narrow screens the panel's edges sit closer, so its offset shadow stays inside the screen. */
 @media (width <= 600px) {
-  .project--switch::before,
-  .project--switch::after {
+  :root[data-look="retro"] .project--switch::before,
+  :root[data-look="retro"] .project--switch::after {
     inset: -2px -12px;
   }
 }
 
-.project--switch:is(.is-active, :focus-visible) .name {
+:root[data-look="retro"] .project--switch:is(.is-active, :focus-visible) .name {
   color: var(--px-green);
 }
 
-.project--switch:is(.is-active, :focus-visible) .kind {
+:root[data-look="retro"] .project--switch:is(.is-active, :focus-visible) .kind {
   outline-color: var(--px-green);
   background: var(--px-green);
   color: var(--px-bg);
 }
 
-.project--switch:is(.is-active, :focus-visible) .about {
+:root[data-look="retro"] .project--switch:is(.is-active, :focus-visible) .about {
   font-family: "Departure Mono", monospace;
   font-size: 1rem;
 }
 
 /* The FLASH panel plays through an install each time the theme comes on. */
-body:has(.project--switch:is(.is-active, :focus-visible)) .switch-fill {
+:root[data-look="retro"] body:has(.project--switch:is(.is-active, :focus-visible)) .switch-fill {
   animation: switch-fill 2.4s steps(20, end) 0.3s forwards;
 }
 
-body:has(.project--switch:is(.is-active, :focus-visible)) .switch-status {
+:root[data-look="retro"] body:has(.project--switch:is(.is-active, :focus-visible)) .switch-status {
   animation: switch-count 2.4s linear 0.3s forwards;
 }
 
-body:has(.project--switch:is(.is-active, :focus-visible)) .switch-writing {
+:root[data-look="retro"] body:has(.project--switch:is(.is-active, :focus-visible)) .switch-writing {
   animation: switch-hide 0s 2.7s forwards;
 }
 
-body:has(.project--switch:is(.is-active, :focus-visible)) .switch-done {
+:root[data-look="retro"] body:has(.project--switch:is(.is-active, :focus-visible)) .switch-done {
   animation: switch-show 0s 2.7s forwards;
 }
 
-body:has(.project--switch:is(.is-active, :focus-visible)) .switch-cursor {
+:root[data-look="retro"] body:has(.project--switch:is(.is-active, :focus-visible)) .switch-cursor {
   animation: switch-blink 1s steps(1) infinite;
 }
 
-body:has(.project--switch:is(.is-active, :focus-visible)) .switch-icon {
+:root[data-look="retro"] body:has(.project--switch:is(.is-active, :focus-visible)) .switch-icon {
   animation: switch-bob 1.2s steps(1) infinite;
+}
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* FM-SWITCH's Standard look: the app's home screen, light or dark as the device is.          */
+
+/* ------------------------------------------------------------------------------------------ */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --std-ground: #141413;
+    --std-card: #232321;
+    --std-ink: #f2f1ee;
+    --std-ink-2: #a8a6a1;
+    --std-rule: #33322f;
+    --std-link: #ff9259;
+    --std-good: #2e9e57;
+    --std-good-ink: #86d9a2;
+    --std-good-bg: #173322;
+  }
+}
+
+.backdrop--switch-standard {
+  background: var(--std-ground);
+  font-family: var(--std-font);
+}
+
+/* The drawn FM-1, as on the app's home screen. */
+.standard-drawing {
+  --fm1-time: 4.8s;
+
+  width: 300px;
+}
+
+.standard-icon {
+  display: block;
+  width: 72px;
+  height: 72px;
+  border-radius: 22.4%;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 18%);
+}
+
+.backdrop--switch-standard .margin-left .standard-icon {
+  display: none;
+}
+
+.standard-side {
+  display: grid;
+  gap: 14px;
+  width: 260px;
+}
+
+.standard-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--std-good-bg);
+  color: var(--std-good-ink);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.standard-pill::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--std-good);
+}
+
+.standard-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 14px;
+  border-radius: 16px;
+  background: var(--std-card);
+  color: var(--std-ink);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.standard-card b {
+  display: block;
+  font-size: 16px;
+}
+
+.standard-card span {
+  color: var(--std-ink-2);
+}
+
+.standard-card svg {
+  width: 40px;
+  height: 40px;
+}
+
+.standard-card--change {
+  background: var(--std-purple);
+  color: #fff;
+  box-shadow: 0 8px 18px rgb(109 40 217 / 25%);
+}
+
+.standard-card--change span {
+  color: rgb(255 255 255 / 88%);
+}
+
+/* The theme itself, unless Retro was the look last seen on FM-SWITCH's page (look.js). */
+:root:not([data-look="retro"]) body:has(.project--switch:is(.is-active, :focus-visible)) {
+  --text: var(--std-ink);
+  --muted: var(--std-ink-2);
+  --rule: var(--std-rule);
+  --accent: var(--std-link);
+}
+
+:root:not([data-look="retro"]) body:has(.project--switch:is(.is-active, :focus-visible)) .backdrop--switch-standard {
+  opacity: 1;
+}
+
+:root:not([data-look="retro"]) body:has(.project--switch:is(.is-active, :focus-visible)) h1,
+:root:not([data-look="retro"]) body:has(.project--switch:is(.is-active, :focus-visible)) .projects .name {
+  font-family: var(--std-font);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+:root:not([data-look="retro"]) body:has(.project--switch:is(.is-active, :focus-visible)) .projects .kind {
+  font-family: var(--std-font);
+  font-weight: 400;
+  font-size: 0.85rem;
+  letter-spacing: 0;
+}
+
+:root:not([data-look="retro"]) body:has(.project--switch:is(.is-active, :focus-visible)) .projects .about {
+  font-family: var(--std-font);
+  font-weight: 400;
+}
+
+/* The hovered card lifts into a white card, as the app's do. */
+:root:not([data-look="retro"]) .project--switch::before {
+  content: "";
+  position: absolute;
+  inset: 0 -1rem;
+  z-index: -1;
+  border-radius: 16px;
+  background: var(--std-card);
+  box-shadow: 0 6px 16px rgb(0 0 0 / 12%);
+  opacity: 0;
+  transition: opacity var(--fade);
+}
+
+:root:not([data-look="retro"]) .project--switch:is(.is-active, :focus-visible)::before {
+  opacity: 1;
+}
+
+/* The FM-1's screen plays through an install once, and stops on Done. */
+:root:not([data-look="retro"]) body:has(.project--switch:is(.is-active, :focus-visible)) .standard-drawing .fm1-stage {
+  animation: fm1-stage var(--fm1-time) linear calc(var(--fm1-time) * var(--fm1-at, 0) / 6) 1;
+}
+
+:root:not([data-look="retro"]) body:has(.project--switch:is(.is-active, :focus-visible)) .standard-drawing .fm1-stage--ready {
+  opacity: 0;
+}
+
+:root:not([data-look="retro"]) body:has(.project--switch:is(.is-active, :focus-visible)) .standard-drawing .fm1-stage--done {
+  animation: fm1-show 0s calc(var(--fm1-time) * 5 / 6) forwards;
+}
+
+/* Without margins, only the app icon shows, in the top corner. */
+@media (width <= 1200px) {
+  .standard-drawing {
+    display: none;
+  }
+
+  .backdrop--switch-standard .margin-left .standard-icon {
+    display: block;
+  }
 }
 
 /* ------------------------------------------------------------------------------------------ */

@@ -43,12 +43,14 @@ Inspired by the idea of teenage engineering's EP-1320 medieval; not affiliated w
 
 An app for iPhone, iPad and Mac for swapping M-VAVE FM-1 firmwares over USB.
 
-- Firmwares come from the firmware hub's catalogue (thefirmwarehub.com) merged with fm1-editor.com's list. The app finds each one's package (GitHub releases, publisher manifests, project pages, M-VAVE's downloads), checks for newer releases, and saves firmwares on the device for offline flashing.
+- Firmwares come from the firmware hub's catalogue (thefirmwarehub.com), fm1-editor.com's list and aroum's FM1 Resource Hub, with filters for kinds and for firmwares built from source. Each firmware has its own page, with pictures from its README and its links. The app finds each one's package (GitHub releases, publisher manifests, project pages, M-VAVE's downloads), checks for newer releases, and saves firmwares on the device for offline flashing.
 - M-VAVE's official V15 comes with the app, unmodified (from fm1_open, Apache-2.0), so there's always a known-good firmware to go back to.
-- Flashing checks the package first, asks before switching firmware (which can erase the FM-1's projects and samples), keeps the screen awake, resumes an interrupted write, and confirms the FM-1 reports the new firmware afterwards.
-- Look: an 8-bit handheld-console screen with a green phosphor accent (#7BE39A), Silkscreen, Departure Mono and VT323.
+- Flashing checks the package first, asks before switching firmware (which can erase the FM-1's projects and samples), keeps the screen awake, can carry on where an interrupted install left off, and confirms the FM-1 reports the new firmware afterwards. An install goes through four stages: getting ready, installing, checking and restarting.
+- Save my FM-1: on M-VAVE's open firmware, keeps a copy of the FM-1's projects and samples.
+- Look: Standard is friendly and plain, with a warm parchment ground (#EEE8DD), white cards, the system font, purple for firmware (#6D28D9) and a drawn FM-1, in light or dark. Retro, the original 8-bit handheld-console look (green #7BE39A, Silkscreen, Departure Mono and VT323), is hidden until found, then chosen in Settings. The website's FM-SWITCH page has both looks too: https://fm-1.drewr.dev/fm-switch/retro/
+- Free: every feature is free, and tips unlock nothing.
 - Platforms: iOS and iPadOS 17+, macOS (native SwiftUI). Connects by USB-C, Lightning with Apple's camera adapter, or a Mac's USB.
-- Status: in development, not on the App Store. Build from source with XcodeGen and Xcode.
+- Status: iPhone and iPad on TestFlight soon; the Mac app will come later, from the website. Build from source with XcodeGen and Xcode.
 - Source: https://github.com/ocean/FM-SWITCH
 - Page: https://fm-1.drewr.dev/fm-switch/
 

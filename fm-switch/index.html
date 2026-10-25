@@ -5,75 +5,181 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FM-SWITCH</title>
   <meta name="description" content="An app for iPhone, iPad and Mac for swapping M-VAVE FM-1 firmwares over USB.">
-  <link rel="icon" href="../assets/fm-switch-icon.svg">
-  <link rel="stylesheet" href="../assets/fonts.css">
-  <link rel="stylesheet" href="switch.css">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="../assets/fm-switch-app-icon.png">
+  <link rel="stylesheet" href="../assets/fm1.css">
+  <link rel="stylesheet" href="standard.css">
+  <script src="../assets/look.js"></script>
 </head>
 <body>
   <main>
-    <a class="back" href="../">&larr; FM-1 PROJECTS</a>
-
-    <header>
-      <div class="masthead">
-        <img src="../assets/fm-switch-icon.svg" alt="" width="96" height="96">
-        <div>
-          <h1>FM-SWITCH</h1>
-          <p class="lede">Swap your FM-1's firmware from an iPhone, iPad or Mac.</p>
-        </div>
+    <nav class="top" aria-label="FM-SWITCH">
+      <a class="back" href="../">&lsaquo; FM-1 projects</a>
+      <div class="look" role="group" aria-label="Look">
+        <a href="./" aria-current="page" data-choose-look="standard">Standard</a>
+        <a href="retro/" data-choose-look="retro">Retro</a>
       </div>
-      <ul class="tags" aria-label="Platforms and status">
-        <li class="solid">IN DEVELOPMENT</li>
-        <li>IPHONE</li>
-        <li>IPAD</li>
-        <li>MAC</li>
-        <li>USB</li>
-      </ul>
+    </nav>
+
+    <header class="head">
+      <picture>
+        <source srcset="../assets/fm-switch-app-icon-dark.png" media="(prefers-color-scheme: dark)">
+        <img src="../assets/fm-switch-app-icon.png" alt="" width="64" height="64">
+      </picture>
+      <h1>FM-SWITCH</h1>
     </header>
+    <p class="lede">Swap your FM-1's firmware over USB, from an iPhone, iPad or Mac.</p>
 
-    <section class="panel">
-      <h2>WHAT IT DOES</h2>
-      <div class="panel-body">
-        <p>Plug the M-VAVE FM-1 into your phone, tablet or Mac with a USB cable, pick a firmware and install it. Switch back whenever you like.</p>
-        <p>M-VAVE's official V15 comes with the app, so it's always there to go back to.</p>
+    <div class="drawing">
+      <div class="fm1 fm1--loop" aria-hidden="true">
+        <div class="fm1-knobs fm1-knobs--left"><span></span><span></span><span></span><span></span></div>
+        <span class="fm1-oct fm1-oct--down">OCT&minus;</span>
+        <span class="fm1-oct fm1-oct--up">OCT+</span>
+        <div class="fm1-screen">
+          <div class="fm1-stage fm1-stage--ready"><b>FM-1_900</b><small>Ready</small></div>
+          <div class="fm1-stage"><b>AMB-1</b><small>Getting ready&hellip;</small><span class="fm1-bar fm1-bar--8"></span></div>
+          <div class="fm1-stage"><b>AMB-1</b><small>Installing&hellip;</small><span class="fm1-bar fm1-bar--50"></span></div>
+          <div class="fm1-stage"><b>AMB-1</b><small>Checking&hellip;</small><span class="fm1-bar fm1-bar--90"></span></div>
+          <div class="fm1-stage"><b>AMB-1</b><small>Restarting&hellip;</small><span class="fm1-bar fm1-bar--98"></span></div>
+          <div class="fm1-stage fm1-stage--done"><b>AMB-1</b><small>Done</small></div>
+        </div>
+        <div class="fm1-knobs fm1-knobs--right"><span></span><span></span><span></span><span></span></div>
+        <div class="fm1-buttons"><span>FX</span><span>SCL</span><span>ENV</span><span>LFO</span><span>EDIT</span><span>GLO</span><span class="fm1-home">HOME</span><span>SAVE</span><span>ARP</span><span>SEQ</span><span class="fm1-play">PLAY</span><span class="fm1-rec">REC</span></div>
+        <div class="fm1-keys"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      </div>
+    </div>
+
+    <p class="status">iPhone and iPad: on TestFlight soon</p>
+
+    <section class="feature feature--change">
+      <svg viewBox="0 0 44 44" aria-hidden="true"><rect width="44" height="44" rx="11" fill="#fff" fill-opacity="0.18"/><path d="M29 14H14m0 0 4-4m-4 4 4 4M15 30h15m0 0-4-4m4 4-4 4" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <h2>Change firmware</h2>
+        <p>Synths, grooveboxes and games to try, or M-VAVE's official one.</p>
       </div>
     </section>
 
-    <section class="panel">
-      <h2>FIRMWARE</h2>
-      <div class="panel-body">
-        <ul>
-          <li>One list of FM-1 firmwares, from the firmware hub's catalogue merged with fm1-editor.com's.</li>
-          <li>Finds each firmware's package on GitHub releases, its project page or M-VAVE's downloads, and checks for newer releases.</li>
-          <li>Saves firmwares on the device, so you can flash without a connection.</li>
+    <section class="feature">
+      <svg viewBox="0 0 44 44" aria-hidden="true"><rect width="44" height="44" rx="11" fill="#2563eb"/><path d="M22 12v14m0 0-5-5m5 5 5-5M14 31h16" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <h2>Save my FM-1</h2>
+        <p>Keep a copy of your projects and samples, on M-VAVE's open firmware.</p>
+      </div>
+    </section>
+
+    <h2 class="label" id="install">How an install goes</h2>
+    <ol class="scroller steps" tabindex="0" aria-labelledby="install">
+      <li class="card step">
+        <p class="n">Step 1</p>
+        <h3>Choose</h3>
+        <p>Pick a firmware: synths, grooveboxes and games, each with its own page of pictures and links.</p>
+        <ul class="badges">
+          <li><span class="badge badge--v15" aria-hidden="true">V15</span>M-VAVE official</li>
+          <li><span class="badge badge--es" aria-hidden="true">ES</span>ESTAMPIE</li>
+          <li><span class="badge badge--aw" aria-hidden="true">AW</span>AmbWave</li>
         </ul>
-      </div>
-    </section>
-
-    <section class="panel">
-      <h2>FLASHING</h2>
-      <div class="panel-body">
-        <ul>
-          <li>Checks the package before anything is sent, and that exactly one FM-1 is connected.</li>
-          <li>Asks before switching to a different firmware, which can erase the FM-1's projects and samples.</li>
-          <li>Keeps the screen awake while it writes. If the cable comes out, <strong>RESUME</strong> finishes the job.</li>
-          <li>Afterwards, checks the FM-1 reports the new firmware.</li>
+      </li>
+      <li class="card step">
+        <p class="n">Step 2</p>
+        <h3>Before you start</h3>
+        <p>FM-SWITCH checks the package, and that exactly one FM-1 is connected.</p>
+        <p>Switching to a different firmware can erase the FM-1's projects and samples, so it asks first.</p>
+      </li>
+      <li class="card step">
+        <p class="n">Step 3</p>
+        <h3>Installing</h3>
+        <p>Keep it plugged in. Nearly there.</p>
+        <div class="bar" aria-hidden="true"><span></span></div>
+        <ul class="stages">
+          <li class="stage-done">Getting ready</li>
+          <li class="stage-done">Installing</li>
+          <li class="stage-now">Checking <small>Now</small></li>
+          <li class="stage-next">Restarting</li>
         </ul>
-        <p class="note">An install takes about 20 seconds for V15, and under 40 for Felucca.</p>
-      </div>
-    </section>
+      </li>
+      <li class="card step">
+        <p class="n">Step 4</p>
+        <h3>Done</h3>
+        <p>FM-SWITCH checks the FM-1 reports its new firmware.</p>
+        <p>About 20 seconds for V15, and under 40 for Felucca.</p>
+      </li>
+    </ol>
 
-    <div class="meter" aria-hidden="true"><span></span></div>
+    <h2 class="label">What it does</h2>
+    <ul class="cards">
+      <li class="card">
+        <h3>Every firmware in one list</h3>
+        <p>From the firmware hub, fm1-editor.com and aroum's FM1 Resource Hub, updated every day. Filter by kind, or show only firmwares built from source, and save the ones you like to install without a connection.</p>
+      </li>
+      <li class="card">
+        <h3>You can always go back</h3>
+        <p>M-VAVE's official V15 comes with the app.</p>
+      </li>
+      <li class="card">
+        <h3>If it stops</h3>
+        <p>Your phone stays awake while an install runs. If it stops for any reason, you can carry on where it left off.</p>
+      </li>
+      <li class="card">
+        <h3>Free</h3>
+        <p>Every feature is free. If you'd like to say thanks, there's <a href="https://ko-fi.com/oceanicity">Ko-fi</a>.</p>
+      </li>
+    </ul>
 
-    <section class="panel">
-      <h2>UNDER THE HOOD</h2>
-      <div class="panel-body">
-        <p>Native SwiftUI on every platform. Talking to the FM-1 is <a href="../fm1kit/">FM1Kit</a>, an open-source Swift package.</p>
-        <p>Not on the App Store yet. To try it now, build it from <a href="https://github.com/ocean/FM-SWITCH">the source on GitHub</a><span class="cursor" aria-hidden="true"></span></p>
-      </div>
-    </section>
+    <h2 class="label" id="screens">In the app</h2>
+    <ul class="scroller screens" tabindex="0" aria-labelledby="screens">
+      <li>
+        <figure>
+          <picture>
+            <source srcset="screens/my-fm1-dark.jpg" media="(prefers-color-scheme: dark)">
+            <img src="screens/my-fm1-light.jpg" alt="My FM-1: the drawn FM-1, the connection, and the Change firmware and Save my FM-1 cards." width="440" height="957" loading="lazy">
+          </picture>
+          <figcaption>My FM-1</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <picture>
+            <source srcset="screens/firmwares-dark.jpg" media="(prefers-color-scheme: dark)">
+            <img src="screens/firmwares-light.jpg" alt="Firmwares: filters for kinds, and the list with each firmware's badge." width="440" height="957" loading="lazy">
+          </picture>
+          <figcaption>Firmwares</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <picture>
+            <source srcset="screens/firmware-page-dark.jpg" media="(prefers-color-scheme: dark)">
+            <img src="screens/firmware-page-light.jpg" alt="A firmware's page: zp12, with pictures from its README, an Install button and its links." width="440" height="957" loading="lazy">
+          </picture>
+          <figcaption>A firmware's page</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <img src="screens/installing-light.jpg" alt="Installing AMB-1: the progress bar, with Getting ready and Installing done and Checking now." width="440" height="957" loading="lazy">
+          <figcaption>Installing</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <picture>
+            <source srcset="screens/save-my-fm1-dark.jpg" media="(prefers-color-scheme: dark)">
+            <img src="screens/save-my-fm1-light.jpg" alt="Save my FM-1: what a copy keeps, a note about what happens while it saves, and earlier saves." width="440" height="957" loading="lazy">
+          </picture>
+          <figcaption>Save my FM-1</figcaption>
+        </figure>
+      </li>
+    </ul>
+
+    <h2 class="label">Under the hood</h2>
+    <div class="card">
+      <p>Native SwiftUI on iPhone, iPad and Mac. Talking to the FM-1 is <a href="../fm1kit/">FM1Kit</a>, an open-source Swift package.</p>
+      <p>The Mac app will come later, from this site. To try it now, build it from <a href="https://github.com/ocean/FM-SWITCH">the source on GitHub</a>.</p>
+    </div>
 
     <footer>
       <p>Not affiliated with M-VAVE. Installing custom firmware is at your own risk.</p>
+      <p><a href="../privacy/">Privacy</a>: FM-SWITCH collects no data.</p>
     </footer>
   </main>
 </body>

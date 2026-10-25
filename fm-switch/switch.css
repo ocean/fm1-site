@@ -56,9 +56,43 @@ a:focus-visible {
   border-bottom-color: var(--green);
 }
 
+/* The top bar: back to the projects, and the look (Standard is the app's other look). */
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.look {
+  display: flex;
+  gap: 6px;
+}
+
+.look a {
+  padding: 1px 7px;
+  border: 0;
+  outline: 1px solid var(--muted);
+  color: var(--muted);
+  font: 10px/1.6 Silkscreen, monospace;
+}
+
+.look a:hover,
+.look a:focus-visible {
+  outline-color: var(--green);
+  color: var(--green);
+}
+
+.look a[aria-current="page"] {
+  outline-color: var(--green);
+  background: var(--green);
+  color: var(--bg);
+}
+
 .back {
   display: inline-block;
-  margin-bottom: 2.5rem;
   border: 0;
   color: var(--muted);
   font: 12px/1.4 Silkscreen, monospace;
