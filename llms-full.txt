@@ -56,14 +56,17 @@ An app for iPhone, iPad and Mac for swapping M-VAVE FM-1 firmwares over USB.
 
 ## FM1Kit
 
-A Swift package for installing firmware on the M-VAVE FM-1 over USB-MIDI, from iOS and macOS.
+A Swift package for installing firmware on the M-VAVE FM-1 over USB-MIDI, from iOS and macOS, with a second library, FM1Rescue, for rescuing it in the chip's USB download mode from a Mac.
 
 - It reads `.fwsc` firmware packages, finds the device, answers its read requests while it stages and writes the new firmware, and checks the device reports the new firmware afterwards. It can finish an update that was cut off, or one started from USB recovery mode, can restore V15's 128 factory voices, and can back up M-VAVE's open firmware (its 16 project slots, the project being edited and the sample bank) as files M-VAVE's workbench can restore.
-- Main types: `FwscPackage`, `OfficialFirmware`, `FM1Identity`, `FM1Updater` (an actor), `InstallCheck`, `InstallOptions`, `UpdateEvent`, `FM1Capability`, `FM1BuildID`, `OpenFirmwareBackup`, `OpenFirmwareProject`, `CoreMIDITransport`, `SimulatedFM1`.
-- Also ships `fm1probe`, a Mac command-line tool for listing ports, identifying the device, inspecting packages, installing and backing up open firmware.
+- From V15 it installs m-bootloader (https://github.com/jvitkauskas/m-bootloader, MIT), keeping the firmware: hold PLAY while switching on for its recovery menu, or REC for download mode. Installing V15 later puts M-VAVE's bootloader back.
+- For apps aimed at everyone: `InstallProgress` (one progress bar in four stages that never goes backwards), `FM1Advice` (any error as a headline, an explanation, whether the FM-1 is still fine, and one action) and `FM1Updater.summary()` (the firmware's name and version, whether it's waiting mid-update, and the USB serial number).
+- FM1Rescue (macOS only, empty on iOS, needs root, so apps reach it through a privileged helper) works whatever firmware is installed. It backs up the 1 MB flash, reading it twice and checking both against the chip's CRC-32, saved as M-Flasher saves it. `FlashPlan` restores a backup, installs m-bootloader or M-VAVE's bootloader, or installs a firmware, writing only the 4 KB sectors that change and checking each one. Another FM-1's backup never replaces this one's factory data.
+- Main types: `FwscPackage`, `OfficialFirmware`, `FM1Identity`, `FM1Updater` (an actor), `InstallCheck`, `InstallOptions`, `UpdateEvent`, `FM1Capability`, `FM1BuildID`, `OpenFirmwareBackup`, `OpenFirmwareProject`, `BootloaderInstaller`, `BootloaderImage`, `InstallProgress`, `FM1Advice`, `FM1DeviceSummary`, `CoreMIDITransport`, `SimulatedFM1`; in FM1Rescue, `USBDownloadModeConnection`, `FlashSession`, `FlashBackup`, `FlashPlan`, `SimulatedDownloadMode`.
+- Also ships `fm1probe`, a Mac command-line tool for listing ports, identifying the device, inspecting packages, installing, backing up open firmware, installing m-bootloader, and backing up, restoring and writing the flash in download mode.
 - Requirements: iOS 17 or macOS 14, Swift 6.1 or later.
-- Install: `.package(url: "https://github.com/ocean/FM1Kit.git", .upToNextMinor(from: "0.3.0"))`
-- Status: 0.3.0, tested on one FM-1 so far, from both a Mac and an iPhone.
+- Install: `.package(url: "https://github.com/ocean/FM1Kit.git", .upToNextMinor(from: "0.4.0"))`
+- Status: 0.4.0, tested on one FM-1 so far, from both a Mac and an iPhone. Download mode has been tested from a Mac: backups, restoring V15 over Felucca, installing Felucca, and swapping bootloaders, ending byte for byte as it started.
 - Licence: MIT. Contains no M-VAVE firmware and no code from GPL-licensed installers.
 - Source: https://github.com/ocean/FM1Kit
 - Page: https://fm-1.drewr.dev/fm1kit/
@@ -72,7 +75,7 @@ A Swift package for installing firmware on the M-VAVE FM-1 over USB-MIDI, from i
 
 ## Safety and affiliation
 
-Installing custom firmware on an FM-1 is at the owner's own risk. If an FM-1 doesn't start after an update, some firmwares offer USB recovery mode (hold OCT− while switching it on), and FM1Kit's resume can install a firmware whenever the device is in its update loader. M-VAVE's own updater returns an FM-1 to stock firmware. M-VAVE and FM-1 are trademarks of their respective owners; none of these projects is affiliated with or endorsed by M-VAVE.
+Installing custom firmware on an FM-1 is at the owner's own risk. If an FM-1 doesn't start after an update, some firmwares offer USB recovery mode (hold OCT− while switching it on), and FM1Kit's resume can install a firmware whenever the device is in its update loader. Beyond that, the chip's USB download mode works whatever the firmware, from a computer: FM1Kit's FM1Rescue on a Mac, or M-Flasher (https://github.com/jvitkauskas/m-flasher). M-VAVE's own updater returns an FM-1 to stock firmware. M-VAVE and FM-1 are trademarks of their respective owners; none of these projects is affiliated with or endorsed by M-VAVE.
 
 ## Author
 

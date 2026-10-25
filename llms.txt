@@ -8,7 +8,7 @@ All three are on GitHub under github.com/ocean. Installing custom firmware on an
 
 - [ESTAMPIE](https://fm-1.drewr.dev/estampie/): a mediæval groovebox firmware for the FM-1, forked from GHOULBOX and Felucca (GPL-3.0). Source: https://github.com/ocean/estampie
 - [FM-SWITCH](https://fm-1.drewr.dev/fm-switch/): a SwiftUI app for iOS, iPadOS and macOS that installs FM-1 firmwares over USB. In development. Source: https://github.com/ocean/FM-SWITCH
-- [FM1Kit](https://fm-1.drewr.dev/fm1kit/): a Swift package (MIT) that speaks the FM-1's firmware update protocol over USB-MIDI. Source: https://github.com/ocean/FM1Kit
+- [FM1Kit](https://fm-1.drewr.dev/fm1kit/): a Swift package (MIT) that speaks the FM-1's firmware update protocol over USB-MIDI, installs m-bootloader, and on a Mac backs up, restores and writes the whole flash in the chip's USB download mode. Source: https://github.com/ocean/FM1Kit
 
 ## Full text
 
