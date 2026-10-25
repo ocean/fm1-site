@@ -301,21 +301,46 @@ h1 {
   font-size: 1.1rem;
 }
 
-/* Two-letter badges, as the app's firmware list shows them. */
+/* The most starred firmwares, each with the badge the app gives it (scripts/firmware-badges.mjs). */
+.starred {
+  margin: 4px 0 0;
+  color: var(--ink-2);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
 .badges {
   display: grid;
   gap: 8px;
-  margin: 4px 0 0;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .badges li {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   gap: 10px;
+  align-items: center;
   font-size: 0.95rem;
   font-weight: 600;
+}
+
+.badges a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.badges a:hover,
+.badges a:focus-visible {
+  color: var(--link);
+  text-decoration: underline;
+}
+
+.badges .stars {
+  color: var(--ink-2);
+  font-size: 0.85rem;
+  font-weight: 400;
 }
 
 .badge {
@@ -324,27 +349,17 @@ h1 {
   width: 36px;
   height: 36px;
   border-radius: 25%;
+  background: linear-gradient(var(--badge-first) 50%, var(--badge-second) 50%);
+  color: var(--badge-ink);
   font: 700 14px/1 var(--rounded);
 }
 
-.badge--v15 {
-  background: #1c1c1e;
-  color: #fff;
-}
-
-.badge--es {
-  background: #e9e1d0;
-  color: #5b3d1e;
-}
-
-.badge--aw {
-  background: #1f5130;
-  color: #c8f5cf;
+.badge--diagonal {
+  background: linear-gradient(to bottom right, var(--badge-first) 50%, var(--badge-second) 50%);
 }
 
 @media (prefers-color-scheme: dark) {
-  .badge--v15,
-  .badge--aw {
+  .badge {
     box-shadow: inset 0 0 0 1px rgb(255 255 255 / 22%);
   }
 }
