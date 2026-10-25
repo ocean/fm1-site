@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FM-SWITCH</title>
+  <meta name="description" content="An app for iPhone, iPad and Mac for swapping M-VAVE FM-1 firmwares over USB.">
+  <link rel="canonical" href="https://fm-1.drewr.dev/fm-switch/">
+  <link rel="icon" href="../../assets/fm-switch-icon.svg">
+  <link rel="stylesheet" href="../../assets/fonts.css">
+  <link rel="stylesheet" href="../switch.css">
+  <script src="../../assets/look.js"></script>
+</head>
+<body>
+  <main>
+    <nav class="top" aria-label="FM-SWITCH">
+      <a class="back" href="../../">&larr; FM-1 PROJECTS</a>
+      <div class="look" role="group" aria-label="Look">
+        <a href="../" data-choose-look="standard">STANDARD</a>
+        <a href="./" aria-current="page" data-choose-look="retro">RETRO</a>
+      </div>
+    </nav>
+
+    <header>
+      <div class="masthead">
+        <img src="../../assets/fm-switch-icon.svg" alt="" width="96" height="96">
+        <div>
+          <h1>FM-SWITCH</h1>
+          <p class="lede">Swap your FM-1's firmware from an iPhone, iPad or Mac.</p>
+        </div>
+      </div>
+      <ul class="tags" aria-label="Platforms and status">
+        <li class="solid">TESTFLIGHT SOON</li>
+        <li>IPHONE</li>
+        <li>IPAD</li>
+        <li>MAC</li>
+        <li>USB</li>
+      </ul>
+    </header>
+
+    <section class="panel">
+      <h2>WHAT IT DOES</h2>
+      <div class="panel-body">
+        <p>Plug the M-VAVE FM-1 into your phone, tablet or Mac with a USB cable, pick a firmware and install it. Switch back whenever you like.</p>
+        <p>M-VAVE's official V15 comes with the app, so it's always there to go back to.</p>
+        <p>On M-VAVE's open firmware, <strong>SAVE MY FM-1</strong> keeps a copy of your projects and samples first.</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>FIRMWARE</h2>
+      <div class="panel-body">
+        <ul>
+          <li>One list of FM-1 firmwares, from the firmware hub, fm1-editor.com and aroum's FM1 Resource Hub, with filters for kinds and for firmwares built from source.</li>
+          <li>Finds each firmware's package on GitHub releases, its project page or M-VAVE's downloads, and checks for newer releases.</li>
+          <li>Saves firmwares on the device, so you can flash without a connection.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>FLASHING</h2>
+      <div class="panel-body">
+        <ul>
+          <li>Checks the package before anything is sent, and that exactly one FM-1 is connected.</li>
+          <li>Asks before switching to a different firmware, which can erase the FM-1's projects and samples.</li>
+          <li>Keeps the screen awake while it writes. If it stops for any reason, <strong>CARRY ON</strong> finishes the job.</li>
+          <li>Afterwards, checks the FM-1 reports the new firmware.</li>
+        </ul>
+        <p class="note">An install takes about 20 seconds for V15, and under 40 for Felucca.</p>
+      </div>
+    </section>
+
+    <div class="meter" aria-hidden="true"><span></span></div>
+
+    <section class="panel">
+      <h2>UNDER THE HOOD</h2>
+      <div class="panel-body">
+        <p>Native SwiftUI on every platform. Talking to the FM-1 is <a href="../../fm1kit/">FM1Kit</a>, an open-source Swift package.</p>
+        <p>Every feature is free. To say thanks, there's <a href="https://ko-fi.com/oceanicity">Ko-fi</a>.</p>
+        <p>iPhone and iPad: on TestFlight soon. The Mac app will come later, from this site. To try it now, build it from <a href="https://github.com/ocean/FM-SWITCH">the source on GitHub</a><span class="cursor" aria-hidden="true"></span></p>
+      </div>
+    </section>
+
+    <footer>
+      <p>Not affiliated with M-VAVE. Installing custom firmware is at your own risk.</p>
+    </footer>
+  </main>
+</body>
+</html>
