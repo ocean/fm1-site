@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "checkedAt": "2026-10-26T06:36:46.804Z",
+  "checkedAt": "2026-10-26T07:45:25.706Z",
   "method": "scan",
   "firmwares": [
     {
@@ -9,7 +9,7 @@
       "forkOf": null,
       "author": "isod89",
       "identity": "FM-1_900",
-      "stars": 635,
+      "stars": 636,
       "lastCommit": "2026-10-23",
       "source": {
         "status": "affected",
@@ -63,7 +63,7 @@
       "forkOf": "hugelton/Felucca",
       "author": "juanjiant-bit",
       "identity": "FM-1_909",
-      "stars": 170,
+      "stars": 171,
       "lastCommit": "2026-10-26",
       "source": {
         "status": "affected",
@@ -113,7 +113,7 @@
       "forkOf": null,
       "author": "illuminus5",
       "identity": "FM-1_714",
-      "stars": 89,
+      "stars": 90,
       "lastCommit": "2026-10-25",
       "source": {
         "status": "affected",
@@ -204,14 +204,14 @@
       "author": "charlesvestal",
       "identity": "FM-1_10000700",
       "stars": 44,
-      "lastCommit": "2026-10-25",
+      "lastCommit": "2026-10-26",
       "source": {
         "status": "ok",
         "basis": "fixed-base"
       },
       "release": {
-        "tag": "v0.8",
-        "date": "2026-10-25",
+        "tag": "v0.8.1",
+        "date": "2026-10-26",
         "package": "ok"
       }
     },
@@ -289,7 +289,7 @@
       "forkOf": null,
       "author": "DeadActive",
       "identity": "FM-1_900",
-      "stars": 27,
+      "stars": 28,
       "lastCommit": "2026-10-25",
       "source": {
         "status": "affected",
@@ -672,7 +672,7 @@
       "repo": "bonszaimusic/caravel",
       "forkOf": null,
       "author": "bonszaimusic",
-      "identity": null,
+      "identity": "FM-1_999",
       "stars": 13,
       "lastCommit": "2026-10-25",
       "source": {
@@ -812,7 +812,7 @@
       "repo": "InigoHernandez/mono2k",
       "forkOf": null,
       "author": "InigoHernandez",
-      "identity": null,
+      "identity": "FM-1_980",
       "stars": 9,
       "lastCommit": "2026-10-25",
       "source": {
@@ -1492,6 +1492,24 @@
         "basis": "own-copy"
       },
       "release": null
+    },
+    {
+      "name": "MIDIMON",
+      "repo": "ignis32/midimonitor_fm1",
+      "forkOf": null,
+      "author": "ignis32",
+      "identity": "FM-1_88000400",
+      "stars": 4,
+      "lastCommit": "2026-10-25",
+      "source": {
+        "status": "ok",
+        "basis": "fixed-base"
+      },
+      "release": {
+        "tag": "v0.4",
+        "date": "2026-10-25",
+        "package": "ok"
+      }
     },
     {
       "name": "FMER",
@@ -2266,6 +2284,24 @@
       }
     },
     {
+      "name": "Demake synth",
+      "repo": "InigoHernandez/demake-synth",
+      "forkOf": null,
+      "author": "InigoHernandez",
+      "identity": null,
+      "stars": 1,
+      "lastCommit": "2026-10-25",
+      "source": {
+        "status": "affected",
+        "basis": "own-copy"
+      },
+      "release": {
+        "tag": "v0.4.11",
+        "date": "2026-10-25",
+        "package": "affected"
+      }
+    },
+    {
       "name": "AMBII",
       "repo": "JalopyMusic/fm1-milkboyg-ambii",
       "forkOf": null,
@@ -2298,6 +2334,24 @@
       }
     },
     {
+      "name": "FM-1 SID",
+      "repo": "joakimeriksson/fm1-sid",
+      "forkOf": null,
+      "author": "joakimeriksson",
+      "identity": null,
+      "stars": 1,
+      "lastCommit": "2026-10-25",
+      "source": {
+        "status": "affected",
+        "basis": "own-copy"
+      },
+      "release": {
+        "tag": "v0.3",
+        "date": "2026-10-25",
+        "package": "affected"
+      }
+    },
+    {
       "name": "DriftSeq",
       "repo": "johnskiller/driftseq",
       "forkOf": null,
@@ -2308,6 +2362,20 @@
       "source": {
         "status": "affected",
         "basis": "own-copy"
+      },
+      "release": null
+    },
+    {
+      "name": "Album",
+      "repo": "joshbartlettband-web/album-fm1",
+      "forkOf": null,
+      "author": "joshbartlettband-web",
+      "identity": "FM-1_2701000117",
+      "stars": 1,
+      "lastCommit": "2026-10-25",
+      "source": {
+        "status": "ok",
+        "basis": "fixed-base"
       },
       "release": null
     },
@@ -2352,7 +2420,7 @@
       "repo": "ocean/estampie",
       "forkOf": null,
       "author": "ocean",
-      "identity": null,
+      "identity": "FM-1_378009",
       "stars": 1,
       "lastCommit": "2026-10-25",
       "source": {
@@ -2378,6 +2446,24 @@
         "basis": "own-copy"
       },
       "release": null
+    },
+    {
+      "name": "FIZZ",
+      "repo": "Quixotic7/FIZZ",
+      "forkOf": null,
+      "author": "Quixotic7",
+      "identity": "FM-1_46001200",
+      "stars": 1,
+      "lastCommit": "2026-10-26",
+      "source": {
+        "status": "ok",
+        "basis": "fixed-base"
+      },
+      "release": {
+        "tag": "v0.12.0-beta.6",
+        "date": "2026-10-26",
+        "package": "ok"
+      }
     },
     {
       "name": "RemoteFM1",
@@ -2416,7 +2502,7 @@
       "repo": "sinscum/DIRGE",
       "forkOf": null,
       "author": "sinscum",
-      "identity": null,
+      "identity": "FM-1_660",
       "stars": 1,
       "lastCommit": "2026-10-24",
       "source": {
@@ -2680,6 +2766,24 @@
       }
     },
     {
+      "name": "Makohai",
+      "repo": "delirioux/makohai",
+      "forkOf": null,
+      "author": "delirioux",
+      "identity": "FM-1_960",
+      "stars": 0,
+      "lastCommit": "2026-10-25",
+      "source": {
+        "status": "affected",
+        "basis": "own-copy"
+      },
+      "release": {
+        "tag": "v1.0",
+        "date": "2026-10-25",
+        "package": "affected"
+      }
+    },
+    {
       "name": "CRT-4",
       "repo": "devrvega/CRT-4",
       "forkOf": null,
@@ -2848,7 +2952,7 @@
       "repo": "galfaroth/mnm1",
       "forkOf": null,
       "author": "galfaroth",
-      "identity": null,
+      "identity": "FM-1_900",
       "stars": 0,
       "lastCommit": "2026-10-25",
       "source": {
@@ -2942,24 +3046,6 @@
       "release": null
     },
     {
-      "name": "FM-1 SID",
-      "repo": "joakimeriksson/fm1-sid",
-      "forkOf": null,
-      "author": "joakimeriksson",
-      "identity": null,
-      "stars": 0,
-      "lastCommit": "2026-10-25",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "v0.3",
-        "date": "2026-10-25",
-        "package": "affected"
-      }
-    },
-    {
       "name": "Scintilla",
       "repo": "joakimeriksson/scintilla-fm1",
       "forkOf": null,
@@ -2998,7 +3084,7 @@
       "author": "Joolo09",
       "identity": null,
       "stars": 0,
-      "lastCommit": "2026-10-25",
+      "lastCommit": "2026-10-26",
       "source": {
         "status": "affected",
         "basis": "own-copy"
@@ -3288,8 +3374,8 @@
         "basis": "own-copy"
       },
       "release": {
-        "tag": "v1.2",
-        "date": "2026-10-23",
+        "tag": "v1.3",
+        "date": "2026-10-26",
         "package": "affected"
       }
     },
@@ -3472,6 +3558,24 @@
         "basis": "own-copy"
       },
       "release": null
+    },
+    {
+      "name": "MOPE-1",
+      "repo": "slothpallas/mope-1",
+      "forkOf": null,
+      "author": "slothpallas",
+      "identity": null,
+      "stars": 0,
+      "lastCommit": "2026-10-24",
+      "source": {
+        "status": "affected",
+        "basis": "own-copy"
+      },
+      "release": {
+        "tag": "v0.1.0",
+        "date": "2026-10-24",
+        "package": "affected"
+      }
     },
     {
       "name": "spiralfm1",
