@@ -7,12 +7,15 @@
 // - fm1kit.json: FM1Kit's llms.txt and llms-full.txt, from its release tag, into dist/fm1kit/.
 // FM-SWITCH's firmwares.json is committed here by its own workflow and copied as it is, and its
 // three most starred firmwares are written into FM-SWITCH's page.
+// The bootloader check's data (bootloader-check/data.json, committed by its own workflow) is
+// rendered into its page, with the hand-edited corrections in overrides.json applied.
 // While nothing is pinned, the placeholder files in this repository are used instead.
 import { execFile } from "node:child_process";
 import { cp, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import { join, relative } from "node:path";
 import { promisify } from "node:util";
 import { firmwareBadge } from "./firmware-badges.mjs";
+import { fillMarkers, renderBootloaderCheck } from "./render-bootloader-check.mjs";
 import { fetchPinned, readPin, root } from "./pinned.mjs";
 
 const run = promisify(execFile);
@@ -24,6 +27,7 @@ const publicPaths = [
   "llms.txt",
   "llms-full.txt",
   "assets",
+  "bootloader-check",
   "estampie",
   "fm-switch",
   "fm1kit",
@@ -71,6 +75,17 @@ async function writeMostStarred(firmwares) {
   console.log(`Listed ${starred.length} most starred firmwares on FM-SWITCH's page.`);
 }
 
+// The bootloader check's list, totals and date, from its data and hand-edited corrections.
+async function writeBootloaderCheck() {
+  const folder = join(dist, "bootloader-check");
+  const [page, data, overrides] = await Promise.all(
+    ["index.html", "data.json", "overrides.json"].map((file) => readFile(join(folder, file), "utf8")),
+  );
+  const sections = renderBootloaderCheck(JSON.parse(data), JSON.parse(overrides));
+  await writeFile(join(folder, "index.html"), fillMarkers(page, sections));
+  console.log("Filled in the bootloader check's page.");
+}
+
 async function unpackEstampie(pin) {
   const zipPath = await fetchPinned(pin.url, pin.sha256, `estampie-site-${pin.version}.zip`);
   const folder = join(dist, "estampie");
@@ -111,6 +126,7 @@ if (firmwares) {
   await cp(join(root, "firmwares.json"), join(dist, "firmwares.json"));
 }
 await writeMostStarred(firmwares && firmwares.toString("utf8"));
+await writeBootloaderCheck();
 
 const estampie = await readPin("estampie.json");
 if (estampie.version) {

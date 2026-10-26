@@ -8,7 +8,7 @@ export default [
   js.configs.recommended,
   {
     // The site's own scripts run in the browser.
-    files: ["assets/**/*.js"],
+    files: ["assets/**/*.js", "bootloader-check/**/*.js"],
     languageOptions: {
       sourceType: "script",
       globals: globals.browser,

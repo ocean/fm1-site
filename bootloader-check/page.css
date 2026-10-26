@@ -1,0 +1,428 @@
+/*
+ * The bootloader check: the site's own look (site.css), widened for the list. Prose keeps a
+ * reading measure; the list and the agent prompt take the full width. Code is in Departure Mono.
+ */
+
+:root {
+  --mono: "Departure Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --surface: #23170f;
+  --bad: #f2937c;
+  --bad-bg: #3d1f17;
+  --good: #9bd59f;
+  --good-bg: #1c2e1d;
+  --warn: #ecc46a;
+  --warn-bg: #362a14;
+}
+
+main {
+  max-width: 72rem;
+  padding-top: clamp(2rem, 8vh, 5rem);
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.15;
+}
+
+code,
+pre {
+  font-family: var(--mono);
+  font-size: 0.85em;
+}
+
+code {
+  overflow-wrap: anywhere;
+}
+
+.prose {
+  max-width: 42rem;
+}
+
+.prose ul {
+  margin: 0 0 1.25rem;
+  padding-left: 1.2rem;
+}
+
+.prose li + li {
+  margin-top: 0.6rem;
+}
+
+.prose strong {
+  font-weight: 600;
+}
+
+section {
+  margin-top: 3.5rem;
+}
+
+.intro {
+  max-width: 48rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--accent);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.intro h1 {
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.intro .lede {
+  margin-bottom: 1rem;
+}
+
+.checked {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* The totals. */
+.tally {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: 0.75rem;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tally li {
+  display: grid;
+  align-content: start;
+  gap: 0.35rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.tally b {
+  font-weight: 600;
+  font-size: 2.4rem;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.tally span {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.tally--affected b {
+  color: var(--bad);
+}
+
+.tally--ok b {
+  color: var(--good);
+}
+
+.tally--unclear b {
+  color: var(--warn);
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+  gap: 0 3rem;
+}
+
+/* The FM-1's screen as the check leaves it. */
+.screen {
+  display: inline-grid;
+  gap: 0.1rem;
+  padding: 0.7rem 1rem;
+  border: 3px solid #2b2f33;
+  border-radius: 8px;
+  background: #12171a;
+  color: #f2b483;
+  font: 0.95rem/1.3 var(--mono);
+  letter-spacing: 0.08em;
+}
+
+.tested {
+  padding-left: 1.25rem;
+  border-left: 3px solid var(--good);
+}
+
+.tested h2 {
+  font-size: 1.3rem;
+}
+
+/* The agent prompt. */
+.promptbox {
+  position: relative;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.promptbox pre {
+  max-height: 26rem;
+  margin: 0;
+  padding: 3.25rem 1.1rem 1.1rem;
+  overflow-y: auto;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.promptbox pre:focus-visible,
+.tablewrap:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.copy {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* The list's search and filters. */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  align-items: center;
+  margin: 0 0 1rem;
+}
+
+.controls[hidden] {
+  display: none;
+}
+
+.search {
+  display: flex;
+  flex: 1 1 18rem;
+  gap: 0.6rem;
+  align-items: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.search input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 1rem;
+}
+
+.search input:focus-visible,
+.filters button:focus-visible,
+.copy:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.filters button {
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.filters button[aria-pressed="true"] {
+  border-color: var(--text);
+  background: var(--text);
+  color: var(--bg);
+  font-weight: 600;
+}
+
+.count {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The tables. */
+.tablewrap {
+  overflow-x: auto;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+table {
+  width: 100%;
+  min-width: 52rem;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+th,
+td {
+  padding: 0.65rem 0.8rem;
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+  vertical-align: top;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+tbody th {
+  font-weight: 600;
+}
+
+tbody th a {
+  text-decoration: none;
+}
+
+.repo,
+.why,
+.corrected {
+  display: block;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 300;
+}
+
+.repo {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  overflow-wrap: anywhere;
+}
+
+.corrected {
+  color: var(--warn);
+}
+
+.why {
+  margin-top: 0.3rem;
+}
+
+.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.date,
+.muted {
+  color: var(--muted);
+}
+
+.date {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.tag {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+}
+
+.pill {
+  display: inline-block;
+  margin-top: 0.15rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.pill--affected {
+  background: var(--bad-bg);
+  color: var(--bad);
+}
+
+.pill--ok {
+  background: var(--good-bg);
+  color: var(--good);
+}
+
+.pill--unclear {
+  background: var(--warn-bg);
+  color: var(--warn);
+}
+
+.pill--other,
+.pill--unchecked {
+  border: 1px solid var(--rule);
+  color: var(--muted);
+}
+
+.forks {
+  margin-top: 1.5rem;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+}
+
+.forks summary {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.forks p {
+  margin: 0.75rem 0 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.forks table {
+  min-width: 36rem;
+}
+
+.fine {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.fine h2 {
+  color: var(--text);
+}
+
+.fine strong {
+  color: var(--text);
+}
