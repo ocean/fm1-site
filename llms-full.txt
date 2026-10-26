@@ -20,6 +20,7 @@ The M-VAVE FM-1 is a small, inexpensive hardware synthesiser with a screen, a ke
 - `/estampie/` : ESTAMPIE's site, built from the estampie repository: a browser emulator, a web installer, a sound editor, the user guide and firmware downloads.
 - `/fm-switch/` : FM-SWITCH's page.
 - `/fm1kit/` : FM1Kit's page, an overview of the package's API.
+- `/bootloader-check/` : for firmware developers, which firmwares on Felucca's update code refuse V15 on a changed bootloader. Its data is `/bootloader-check/data.json`, with corrections in `/bootloader-check/overrides.json`.
 - `/llms.txt` : a short index of this file.
 
 ---
@@ -72,6 +73,16 @@ A Swift package for installing firmware on the M-VAVE FM-1 over USB-MIDI, from i
 - Licence: MIT. Contains no M-VAVE firmware and no code from GPL-licensed installers.
 - Source: https://github.com/ocean/FM1Kit
 - Page: https://fm-1.drewr.dev/fm1kit/
+
+---
+
+## Bootloader check
+
+A page for FM-1 firmware developers, at https://fm-1.drewr.dev/bootloader-check/.
+
+- The problem: Felucca's update code, in `ota_stage()` (`firmware/src/ota.c`), compares the first 0x4000 bytes of a package that brings M-VAVE's update loader with the FM-1's boot area, and returns -5 ("UPDATE / CHECK HEAD / FAILED") at the first difference. So an FM-1 whose bootloader has changed (m-bootloader, or M-VAVE's Open V12 and V14 packages) can't install V15 over USB from that firmware. Nothing is written before the check.
+- The fix: felucca-bsp commit afd83ede (https://github.com/hugelton/felucca-bsp/commit/afd83ede, by Charles Vestal) adds `ota_boot_valid()`, which accepts any well-formed FM-1 bootloader. Port it into your `ota.c`, or update fm1-base to 6c0b47e or felucca-bsp to afd83ede or later. Felucca's main branch doesn't have it.
+- The list: every public FM-1 firmware on Felucca's update code, with its main branch's status and its latest release package's status, rechecked by a scheduled job. Corrections go in by pull request to `bootloader-check/overrides.json` in https://github.com/ocean/fm1-site.
 
 ---
 
