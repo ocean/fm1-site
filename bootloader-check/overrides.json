@@ -1,0 +1,39 @@
+{
+  "formatVersion": 1,
+  "overrides": {
+    "twochannels/CS-1": {
+      "source": {
+        "status": "unclear",
+        "basis": "chip-key"
+      },
+      "reason": "Compares the chip key instead of the boot area: not tested on hardware.",
+      "release": {
+        "package": "unclear"
+      }
+    },
+    "Quixotic7/TransitFM1": {
+      "source": {
+        "status": "ok",
+        "basis": "own-loader"
+      },
+      "reason": "Installs every package with its own loader, so it never runs the check.",
+      "release": {
+        "package": "ok"
+      }
+    },
+    "Quixotic7/RemoteFM1": {
+      "source": {
+        "status": "ok",
+        "basis": "own-loader"
+      },
+      "reason": "Installs every package with its own loader, so it never runs the check."
+    },
+    "keremimo/saadet": {
+      "source": {
+        "status": "ok",
+        "basis": "fixed-base"
+      },
+      "reason": "Builds from fm1-base with felucca-bsp 0f08fca, which has the fix (tools/build_base.py); its firmware/src/ota.c is a leftover legacy copy."
+    }
+  }
+}

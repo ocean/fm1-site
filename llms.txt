@@ -10,6 +10,10 @@ All three are on GitHub under github.com/ocean. Installing custom firmware on an
 - [FM-SWITCH](https://fm-1.drewr.dev/fm-switch/): a SwiftUI app for iOS, iPadOS and macOS that installs FM-1 firmwares over USB. In TestFlight. Source: https://github.com/ocean/FM-SWITCH
 - [FM1Kit](https://fm-1.drewr.dev/fm1kit/): a Swift package (MIT) that speaks the FM-1's firmware update protocol over USB-MIDI, installs m-bootloader, and on a Mac backs up, restores and writes the whole flash in the chip's USB download mode. Source: https://github.com/ocean/FM1Kit
 
+## For firmware developers
+
+- [Bootloader check](https://fm-1.drewr.dev/bootloader-check/): which FM-1 firmwares on Felucca's update code refuse to install M-VAVE's V15 when the FM-1's bootloader has changed, and how to fix yours (port felucca-bsp afd83ede). Data: https://fm-1.drewr.dev/bootloader-check/data.json
+
 ## Full text
 
 - [llms-full.txt](https://fm-1.drewr.dev/llms-full.txt): everything below in one file
