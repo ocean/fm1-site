@@ -379,6 +379,9 @@ for (const candidate of candidates.values()) {
     // Not checked this run (skipped or failed): keep what was found for the same release.
     release = { ...release, package: before.release.package ?? null };
   }
+  // The identity users install is in the release package's header: take it when the packages agree.
+  const products = new Set((entry.packages ?? []).filter((result) => result.status && result.product).map((result) => result.product));
+  const packaged = products.size === 1 ? [...products][0] : null;
   let basis = source?.basis;
   // The scan can't tell an independent rewrite from a copy: keep what the survey found.
   if (before?.source.basis === "rewrite" && source?.status === "affected" && basis === "own-copy") basis = "rewrite";
@@ -387,7 +390,7 @@ for (const candidate of candidates.values()) {
     repo,
     forkOf: meta.parent?.nameWithOwner ?? null,
     author: meta.owner.login,
-    identity: before?.identity ?? listing?.product ?? null,
+    identity: packaged ?? before?.identity ?? listing?.product ?? null,
     stars: meta.stargazerCount,
     lastCommit: day(meta.defaultBranchRef?.target?.committedDate) ?? before?.lastCommit ?? null,
     commits: entry.commits ?? before?.commits ?? null,
