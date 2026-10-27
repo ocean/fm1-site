@@ -5,9 +5,11 @@
 // - formatVersion: 1; checkedAt: when the scan ran (ISO 8601); method: "survey" or "scan".
 // - firmwares: one per FM-1 firmware on Felucca's update code, each with
 //   - name, repo ("owner/name"), forkOf (a repo, or null), author, identity (its product string,
-//     or null), stars, lastCommit (YYYY-MM-DD, or null);
-//   - source: what its default branch does now: status ("affected", "ok" or "unclear"), and basis,
-//     one of the bases below;
+//     or null), stars, lastCommit (YYYY-MM-DD, or null), commits (its default branch's commits, or
+//     for a fork, the ones its parent doesn't have; null when not known);
+//   - source: what its default branch does now: status ("affected", "ok" or "unclear"), basis,
+//     one of the bases below, and sizeCheck: whether its update code has Felucca 1.6.1's
+//     board-size check (-15), or null when there's no update code to look at (or not checked yet);
 //   - release: its latest release, or null: tag, date (YYYY-MM-DD, or null), and package, what its
 //     .fwsc does ("affected", "ok", "other" for not Felucca's update code, "none" for no .fwsc,
 //     "unclear", which only an override sets, or null when it hasn't been checked).
@@ -22,12 +24,12 @@ import { fileURLToPath } from "node:url";
 
 export const statuses = ["affected", "ok", "unclear"];
 export const bases = {
-  "own-copy": "Own copy of the old check",
-  "old-base": "Pins fm1-base or felucca-bsp from before the fix",
-  submodule: "Old check from a Felucca or X0X submodule",
+  "own-copy": "Own copy of the original check",
+  "old-base": "Pins fm1-base or felucca-bsp from before the update",
+  submodule: "Original check, from a Felucca or X0X submodule",
   rewrite: "Independent rewrite with the same check",
-  "fixed-code": "Has the fix (ota_boot_valid)",
-  "fixed-base": "On a fixed fm1-base or felucca-bsp",
+  "fixed-code": "Has the updated check (ota_boot_valid)",
+  "fixed-base": "On an updated fm1-base or felucca-bsp",
   "pinned-v15": "Accepts the exact V15 package (puts the stock bootloader back)",
   "own-loader": "Installs every package with its own loader",
   "chip-key": "Compares the chip key instead: untested",
@@ -43,6 +45,7 @@ const isDate = (value) => value === null || (typeof value === "string" && datePa
 function checkSource(source, check) {
   check(source && statuses.includes(source.status), "source.status isn't affected, ok or unclear");
   check(source && Object.hasOwn(bases, source.basis), "source.basis is unknown");
+  check(source?.sizeCheck == null || typeof source.sizeCheck === "boolean", "source.sizeCheck isn't true, false or null");
 }
 
 function checkRelease(release, check) {
@@ -83,6 +86,7 @@ export function validateBootloaderCheck(dataText, overridesText) {
     check(entry.identity === null || typeof entry.identity === "string", "identity isn't text or null");
     check(Number.isInteger(entry.stars) && entry.stars >= 0, "stars isn't a whole number");
     check(isDate(entry.lastCommit), "lastCommit isn't YYYY-MM-DD or null");
+    check(entry.commits == null || (Number.isInteger(entry.commits) && entry.commits >= 0), "commits isn't a whole number or null");
     checkSource(entry.source, check);
     checkRelease(entry.release, check);
   }

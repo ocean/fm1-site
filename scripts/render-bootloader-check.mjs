@@ -4,9 +4,9 @@ import { applyOverrides, bases } from "./validate-bootloader-check.mjs";
 
 const escapeHtml = (text) => String(text).replace(/[&<>"']/g, (character) => `&#${character.codePointAt(0)};`);
 
-const sourceLabels = { affected: "Refuses V15", ok: "Takes V15", unclear: "Unclear" };
+const sourceLabels = { affected: "Original check", ok: "Takes V15", unclear: "Unclear" };
 const packageLabels = {
-  affected: ["affected", "Refuses V15"],
+  affected: ["affected", "Original check"],
   ok: ["ok", "Takes V15"],
   other: ["other", "Own update code: see main branch"],
   none: ["other", "No .fwsc package"],
@@ -20,10 +20,11 @@ const longDate = (iso) =>
 
 // What the firmware's developer needs to do.
 function toFix(entry) {
+  const sizeStep = entry.source.sizeCheck ? ", then check −15 only when there's a flash.bin" : "";
   const { status, basis } = entry.source;
   if (status === "unclear") return "Test on hardware";
   if (status === "ok") {
-    return entry.release?.package === "affected" ? "Release a new version: the fix isn't in one yet" : "Nothing";
+    return entry.release?.package === "affected" ? "Release a new version: the update isn't in one yet" : "Nothing";
   }
   switch (basis) {
     case "old-base":
@@ -33,7 +34,7 @@ function toFix(entry) {
     case "rewrite":
       return "Apply afd83ede's check in its own update code";
     default:
-      return "Port afd83ede into ota.c";
+      return `Port afd83ede into ota.c${sizeStep}`;
   }
 }
 
@@ -48,14 +49,24 @@ function row(entry) {
   const repoUrl = `https://github.com/${entry.repo}`;
   const fork = entry.forkOf ? ` &middot; fork of ${escapeHtml(entry.forkOf)}` : "";
   const corrected = entry.corrected ? `<span class="corrected">Corrected: ${escapeHtml(entry.corrected)}</span>` : "";
-  const search = [entry.name, entry.repo, entry.author].join(" ").toLowerCase();
+  const search = [entry.name, entry.repo, entry.author, entry.source.sizeCheck ? "1.6.1" : ""].join(" ").toLowerCase();
+  const sizeNote = entry.source.sizeCheck ? `<span class="why">Based on Felucca 1.6.1: has its board-size check</span>` : "";
+  // For table.js's sorting and filters: an unknown commit count is left out.
+  const commits = entry.commits ?? null;
+  const sorting = [
+    `data-name="${escapeHtml(entry.name.toLowerCase())}"`,
+    `data-stars="${entry.stars}"`,
+    `data-last="${escapeHtml(entry.lastCommit ?? "")}"`,
+    commits === null ? "" : `data-commits="${commits}"`,
+  ].filter(Boolean);
   return [
-    `<tr data-status="${entry.source.status}" data-search="${escapeHtml(search)}">`,
+    `<tr data-status="${entry.source.status}" data-search="${escapeHtml(search)}" ${sorting.join(" ")}>`,
     `<th scope="row"><a href="${escapeHtml(repoUrl)}">${escapeHtml(entry.name)}</a><span class="repo">${escapeHtml(entry.repo)}${fork}</span>${corrected}</th>`,
-    `<td>${pill(entry.source.status, sourceLabels[entry.source.status])}<span class="why">${escapeHtml(bases[entry.source.basis])}</span></td>`,
+    `<td>${pill(entry.source.status, sourceLabels[entry.source.status])}<span class="why">${escapeHtml(bases[entry.source.basis])}</span>${sizeNote}</td>`,
     `<td>${releaseCell(entry.release)}</td>`,
     `<td>${escapeHtml(toFix(entry))}</td>`,
     `<td class="date">${escapeHtml(entry.lastCommit ?? "")}</td>`,
+    `<td class="num">${commits === null ? "" : commits.toLocaleString("en-AU")}</td>`,
     `<td class="num">${entry.stars.toLocaleString("en-AU")}</td>`,
     `</tr>`,
   ].join("");
@@ -63,7 +74,7 @@ function row(entry) {
 
 function forkRow(fork) {
   const status =
-    fork.status === "affected" ? pill("affected", "Refuses V15") : `<span class="muted">No update code</span>`;
+    fork.status === "affected" ? pill("affected", "Original check") : `<span class="muted">No update code</span>`;
   return [
     `<tr>`,
     `<th scope="row"><a href="https://github.com/${escapeHtml(fork.repo)}">${escapeHtml(fork.repo)}</a></th>`,
@@ -84,16 +95,22 @@ export function renderBootloaderCheck(data, overrides) {
   const firmwares = shown.firmwares.toSorted((one, two) => two.stars - one.stars || one.name.localeCompare(two.name));
   const count = (status) => firmwares.filter((entry) => entry.source.status === status).length;
   const checkedReleases = firmwares.filter((entry) => ["affected", "ok"].includes(entry.release?.package));
-  const refusingReleases = checkedReleases.filter((entry) => entry.release.package === "affected").length;
+  const originalReleases = checkedReleases.filter((entry) => entry.release.package === "affected").length;
+  const sizeChecked = firmwares.filter((entry) => entry.source.status === "affected" && entry.source.sizeCheck).length;
   const forksAffected = shown.forks.filter((fork) => fork.status === "affected").length;
 
   const tallies = [
-    tally(count("affected"), `of ${firmwares.length} firmwares still have the check on their main branch`, "affected"),
-    tally(count("ok"), "already take V15 over any bootloader", "ok"),
+    tally(count("affected"), `of ${firmwares.length} firmwares' main branches can trap users with a changed bootloader`, "affected"),
+    tally(count("ok"), "already install V15 on any bootloader", "ok"),
   ];
   if (checkedReleases.length > 0) {
     tallies.push(
-      tally(refusingReleases, `of ${checkedReleases.length} latest releases checked refuse V15`, "affected"),
+      tally(originalReleases, `of ${checkedReleases.length} latest releases checked have the original check`, "affected"),
+    );
+  }
+  if (sizeChecked > 0) {
+    tallies.push(
+      tally(sizeChecked, `of the ${count("affected")} are based on Felucca 1.6.1, with its board-size check too`, "affected"),
     );
   }
   tallies.push(tally(forksAffected, `of ${shown.forks.length} modified forks have it too`, "affected"));

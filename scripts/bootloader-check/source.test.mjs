@@ -1,7 +1,15 @@
 // Tests for the source classifier, on made-up C and a pretend GitHub.
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { blobId, candidateFiles, classifyText, createSourceClassifier, githubRepoOf, parseGitmodules } from "./source.mjs";
+import {
+  blobId,
+  candidateFiles,
+  classifyText,
+  createSourceClassifier,
+  githubRepoOf,
+  hasSizeCheck,
+  parseGitmodules,
+} from "./source.mjs";
 
 // Made-up update code with the same telltale parts as the real thing.
 const oldCheck = `
@@ -36,6 +44,20 @@ describe("classifyText", () => {
     assert.equal(classifyText(rewrite), "affected");
   });
   it("finds nothing in other code", () => assert.equal(classifyText("int main(void) { return 0; }"), null));
+});
+
+describe("hasSizeCheck", () => {
+  const sizeCheck = `#define OTA_FL_LEN 0x93000u
+    if (fl_len != OTA_FL_LEN)
+        return -15;                /* another board's package */`;
+  it("finds Felucca 1.6.1's board-size check", () => assert.equal(hasSizeCheck(oldCheck + sizeCheck), true));
+  it("finds it written as a number", () => {
+    assert.equal(hasSizeCheck("if (fl_len != 0x93000) return -15;"), true);
+  });
+  it("doesn't find it in earlier copies", () => assert.equal(hasSizeCheck(oldCheck), false));
+  it("needs the board's size", () => {
+    assert.equal(hasSizeCheck("#define OTA_FL_LEN 0x73000u\nif (fl_len != OTA_FL_LEN) return -15;"), false);
+  });
 });
 
 describe("candidateFiles", () => {
@@ -119,6 +141,7 @@ describe("createSourceClassifier", () => {
     assert.equal(result.status, "affected");
     assert.equal(result.basis, "own-copy");
     assert.equal(result.blob, blobId(Buffer.from(oldCheck)));
+    assert.equal(result.sizeCheck, false);
   });
 
   it("follows fm1-base to its felucca-bsp pin, once per commit", async () => {

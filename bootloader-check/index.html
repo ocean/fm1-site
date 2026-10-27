@@ -4,10 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bootloader check: FM-1 projects</title>
-  <meta name="description" content="Which FM-1 firmwares on Felucca's update code refuse to install M-VAVE's V15 when the bootloader has changed, and how to fix yours.">
+  <meta name="description" content="FM-1 firmwares built on Felucca's update code can trap users who have changed their bootloader (to m-bootloader, or with Open V12 or V14): they only install other Felucca-based firmwares. Which firmwares, and the one-file update that fixes it.">
   <link rel="icon" href="../assets/favicon.svg">
-  <link rel="stylesheet" href="../assets/site.css">
-  <link rel="stylesheet" href="../assets/fonts.css">
   <link rel="stylesheet" href="page.css">
   <script src="table.js" defer></script>
 </head>
@@ -17,8 +15,11 @@
 
     <header class="intro">
       <p class="eyebrow">For FM-1 firmware developers</p>
-      <h1>Can your firmware install V15 on a changed bootloader?</h1>
-      <p class="lede">Felucca's update code only lets M-VAVE's update loader run when the package's boot area matches the FM-1's byte for byte. So an FM-1 whose bootloader has changed (m-bootloader, or M-VAVE's own Open V12 and V14 packages) can never get back to V15 over USB from your firmware. There's a fix, and for most projects it's a change to one file.</p>
+      <h1>Does your firmware accidentally trap users who have changed their bootloader?</h1>
+      <p class="lede">Installing firmwares built on Felucca's update code can trap users who have changed their FM-1's bootloader, usually to m-bootloader, or by installing M-VAVE's Open V12 or V14. Their FM-1 will then refuse to install stock V15, and usually every other firmware not built on Felucca, over USB (from the browser or an app). The owner then has to either install a Felucca-based firmware that has the updated check, which can then install V15, or use a computer to put the FM-1 into the chip's download mode and reflash it with a tool such as M-Flasher.</p>
+      <p>Nobody did anything wrong: m-bootloader works correctly, and the cause is a careful safety check in the original Felucca update code that assumes M-VAVE's original bootloader is the only valid one.</p>
+      <h2>Help keep switching easy</h2>
+      <p>Good news: an updated check in <a href="https://github.com/hugelton/felucca-bsp/commit/afd83ede"><code>hugelton/felucca-bsp</code></a> keeps the protection and fixes this issue, and usually you can port this fix to your Felucca-based firmware with a change to <strong>one file</strong>.</p>
       <!-- bootloader-checked: filled in by scripts/build.mjs. -->
     </header>
 
@@ -26,72 +27,155 @@
 
     <div class="columns">
       <section class="prose" aria-labelledby="check">
-        <h2 id="check">The check</h2>
-        <p>In <code>ota_stage()</code> (<code>firmware/src/ota.c</code> in Felucca and its copies), a package that brings M-VAVE's loader, identified by its CRCs <code>0xEBAA</code> and <code>0x5881</code> and its length <code>0x4DE1</code>, has its first <code>0x4000</code> bytes compared with the FM-1's, 512 at a time. The first difference returns &minus;5:</p>
-        <p class="screen" role="img" aria-label="The FM-1's screen: UPDATE, CHECK HEAD, FAILED"><span>UPDATE</span><span>CHECK HEAD</span><span>FAILED</span></p>
-        <p>Some firmwares show nothing at all. Nothing has been written by then, so the FM-1 restarts into your firmware unharmed, but its owner's only way back to stock is the chip's USB download mode, from a computer. That's a dead end for anyone switching firmware from a phone.</p>
-        <p>To find it in your source, search for the comment <code>the official loader writes the head: it must equal ours</code>.</p>
+        <h2 id="check">The safety check</h2>
+        <p>In <code>ota_stage()</code> (<code>firmware/src/ota.c</code> in Felucca and its copies), what happens to a package depends on the update loader (the writer) it brings:</p>
+        <div class="points">
+          <details>
+            <summary><b>Felucca's own loader</b><span>Installs; the bootloader stays</span></summary>
+            <p><code>FELUCCA-LOADER-1</code>, used by the other Felucca-based firmwares. There's no boot-area check: it writes only the app area, so the bootloader stays as it is.</p>
+          </details>
+          <details>
+            <summary><b>M-VAVE's update loader</b><span>Refused (&minus;5) if the boot area has changed</span></summary>
+            <p>Used by V15, and by M-VAVE's open firmware V12 and V14, and identified by its CRCs <code>0xEBAA</code> and <code>0x5881</code> and its length <code>0x4DE1</code>. The package's first <code>0x4000</code> bytes must be byte for byte the same as the FM-1's boot area, compared 512 at a time. That assumes M-VAVE's original bootloader is the only one.</p>
+          </details>
+          <details>
+            <summary><b>Any other writer</b><span>Refused (&minus;3 or &minus;7), with any bootloader</span></summary>
+            <p>A package with no flash.bin, such as m-bootloader's own installer, gets &minus;3: tested on hardware, it's refused after the package header, and the running firmware keeps running. One with a flash.bin and an unknown writer gets &minus;7; that's from reading the code, since no such package has turned up.</p>
+          </details>
+        </div>
+        <h3>Two ways the boot area changes</h3>
+        <div class="points">
+          <details>
+            <summary><b>m-bootloader</b><span>Only Felucca-based firmwares install (tested on hardware)</span></summary>
+            <p>Its boot area never matches V15's or Open's, so every package with M-VAVE's loader is refused: the owner can't install V15 or Open, or any other firmware not built on Felucca. A Felucca-based firmware with the updated check installs, and can then install V15 (tested with ESTAMPIE 0.3.7 and LOOM-8).</p>
+          </details>
+          <details>
+            <summary><b>M-VAVE's Open V12 or V14</b><span>V15 is refused; a way out only before Felucca 1.6.1 (tested on hardware)</span></summary>
+            <p>Open's package writes Open's own boot area, and a Felucca-based firmware installed after it keeps that boot area. The original check then refuses V15 (&minus;5). Copies from before Felucca 1.6.1 can still install Open again over USB, since the boot areas match, and Open can then install V15, so there's a way out. Copies based on 1.6.1 also refuse Open (&minus;15), so the only way out over USB is through a firmware with the updated check. Tested on hardware with Open V12; V14's boot area is byte for byte the same.</p>
+          </details>
+          <details>
+            <summary><b>What the owner sees</b><span>&ldquo;CHECK HEAD / FAILED&rdquo;, an error code, or nothing</span></summary>
+            <p class="screen" role="img" aria-label="The FM-1's screen: UPDATE, CHECK HEAD, FAILED"><span>UPDATE</span><span>CHECK HEAD</span><span>FAILED</span></p>
+            <p>Copies based on Felucca 1.6.1 show the code instead: &ldquo;FAILED -5&rdquo;, or &ldquo;FAILED -15&rdquo; for the board-size check, but nothing for &minus;3. Some firmwares, such as ESTAMPIE, show nothing. Nothing has been written by then, and the running firmware keeps running. To switch away, its owner can install a Felucca-based firmware with the updated check, then V15; otherwise they have to use download mode, from a computer. With m-bootloader, hold REC while switching the FM-1 on. Otherwise, a flasher tool can ask the running firmware to restart into download mode (V15 and Felucca-based firmwares support this); the firmware's or the tool's instructions say how. Then a flasher such as M-Flasher can reflash V15 or Open.</p>
+          </details>
+        </div>
+        <table class="outcomes">
+          <caption>Installing over USB, on an FM-1 with a changed bootloader</caption>
+          <thead>
+            <tr>
+              <th scope="col">Package</th>
+              <th scope="col">Original check, with m-bootloader</th>
+              <th scope="col">Original check, after Open V12 or V14</th>
+              <th scope="col">Updated check</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">A Felucca-based firmware</th><td>Installs; the bootloader stays</td><td>Installs; Open's boot area stays</td><td>Installs; the bootloader stays</td></tr>
+            <tr><th scope="row">V15</th><td>Refused (&minus;5)</td><td>Refused (&minus;5)</td><td>Installs</td></tr>
+            <tr><th scope="row">Open V12 or V14</th><td>Refused (&minus;5)</td><td>The same Open installs; refused (&minus;15) in 1.6.1 copies</td><td>Installs*</td></tr>
+            <tr><th scope="row">Any other writer</th><td>Refused (&minus;3 or &minus;7)</td><td>Refused (&minus;3 or &minus;7)</td><td>Installs, if well formed*</td></tr>
+          </tbody>
+        </table>
+        <p class="note">* Copies based on Felucca 1.6.1 have one more check, which the update doesn't touch: a flash.bin that isn't <code>0x93000</code> bytes returns &minus;15, which stops Open V12 and V14 (<code>0x6F000</code> and <code>0x73000</code>). V15 and m-bootloader's installer install in both cases, as long as &minus;15 is checked only when there's a flash.bin. The column for Open was tested on hardware with Open V12.</p>
+        <p>Boot areas that don't match do happen in practice: see <a href="https://github.com/glvno/matryoshka/issues/183">glvno/matryoshka#183</a>, <a href="https://github.com/hugelton/Felucca/issues/296">hugelton/Felucca#296</a> and <a href="https://github.com/charlesvestal/fm1-amb/issues/4">charlesvestal/fm1-amb#4</a>.</p>
+        <p>To find the check in your source, search for the comment <code>the official loader writes the head: it must equal ours</code>.</p>
       </section>
 
       <section class="prose" aria-labelledby="fix">
-        <h2 id="fix">The fix</h2>
-        <p>Charles Vestal's felucca-bsp <a href="https://github.com/hugelton/felucca-bsp/commit/afd83ede"><code>afd83ede</code></a> replaces the comparison with <code>ota_boot_valid()</code>. It accepts any well-formed FM-1 bootloader, every M-VAVE version and m-bootloader, and still rejects broken ones and other boards'. It only touches <code>ota.c</code>. What to do depends on how your firmware is built:</p>
+        <h2 id="fix">The updated check</h2>
+        <p>Charles Vestal's felucca-bsp <a href="https://github.com/hugelton/felucca-bsp/commit/afd83ede"><code>afd83ede</code></a> replaces the byte-for-byte comparison with <code>ota_boot_valid()</code>, which keeps the protection: it accepts any package whose bootloader is a valid FM-1 one (every M-VAVE version and m-bootloader) and any well-formed writer, and still rejects damaged bootloaders and other boards'. It only touches <code>ota.c</code>. What to do depends on how your firmware is built:</p>
         <ul>
-          <li><strong>A Felucca fork, or your own copy of <code>ota.c</code></strong> (most projects): port that commit into your <code>ota.c</code>. You don't need to rebase onto anything. Applied to Felucca 1.6.1's copy, 11 of its 12 hunks go in cleanly; the twelfth is two declaration lines.</li>
+          <li><strong>A Felucca fork, or your own copy of <code>ota.c</code></strong> (most projects): port that commit into your <code>ota.c</code>. You don't need to rebase onto anything. Applied to Felucca 1.6.1's copy, 11 of its 12 hunks go in cleanly; the twelfth is two declaration lines. A 1.6.1-based copy also has a board-size check to look at (see the note under the table); the agent prompt below covers it.</li>
           <li><strong>On fm1-base:</strong> update it to <code>6c0b47e</code> or later.</li>
           <li><strong>On felucca-bsp directly:</strong> update it to <code>afd83ede</code> or later.</li>
-          <li><strong>A Felucca or X0X submodule:</strong> port the commit into the submodule's copy, or switch to a fixed base.</li>
+          <li><strong>A Felucca or X0X submodule:</strong> port the commit into the submodule's copy, or switch to an updated base.</li>
         </ul>
-        <p>Felucca's main branch doesn't have the fix, so take it from felucca-bsp. felucca-bsp is MPL-2.0; using it doesn't relicense a GPL fork (see its LICENSING.md).</p>
+        <p>Felucca's main branch doesn't include this change yet, so take it from felucca-bsp. felucca-bsp is MPL-2.0; using it doesn't relicense a GPL fork (see its LICENSING.md).</p>
       </section>
     </div>
 
-    <section class="prose tested" aria-labelledby="tested">
-      <h2 id="tested">Tested on hardware</h2>
-      <p>On an FM-1 with m-bootloader 1.2, DUB-1 1.3.0 (the old check) refused V15 after four reads: the package header, the loader header at <code>0xA5F00</code>, then the boot area at <code>0x400</code>. LOOM-8 0.8 (a fixed fm1-base) read the boot area's headers at <code>0x400</code>, checked the bootloader from <code>0x4A0</code>, and took V15 in 21 seconds.</p>
-    </section>
+    <details class="callout">
+      <summary><h2 id="tested">Tested on hardware</h2><span>On an FM-1 with m-bootloader 1.2, then with Open V12's boot area: Felucca-based firmwares installed one another, M-VAVE's packages were refused, and the updated check took V15, Open and m-bootloader's installer.</span></summary>
+      <div class="prose">
+        <ul>
+          <li><strong>Felucca-based firmwares installed one another</strong>, and m-bootloader stayed: DUB-1 from V15, AMB-1 from DUB-1, and ESTAMPIE from AMB-1.</li>
+          <li><strong>With the original check, M-VAVE's packages were refused:</strong> HYP-1 refused V15 (sent from FM-SWITCH on an iPhone); DUB-1 1.3.0 refused V15 after four reads (the package header, the loader header at <code>0xA5F00</code>, then the boot area at <code>0x400</code>); ESTAMPIE and Melodee refused V15; and AMB-1 refused Open V12.</li>
+          <li><strong>After Open V12,</strong> whose package wrote Open's boot area over m-bootloader: DUB-1 (on Felucca 0.8-beta code) installed, refused V15 (CHECK HEAD / FAILED) and took Open V12 again, since the boot areas match. Felucca 1.6.1 installed, then refused Open V12 (FAILED -15, the board-size check) and V15 (FAILED -5). LOOM-8 0.8 installed from Felucca 1.6.1 and took Open V12, and later V15 over Open's boot area. V14 wasn't tested; its boot area is byte for byte V12's.</li>
+          <li><strong>With the updated check,</strong> LOOM-8 0.8 (an updated fm1-base) read the boot area's headers at <code>0x400</code>, checked the bootloader from <code>0x4A0</code>, and took V15 in 21 seconds.</li>
+          <li><strong>m-bootloader's installer</strong> (a package with no flash.bin) was refused by DUB-1 1.3.0 and Felucca 1.6.1 after the package header, with nothing on Felucca's screen, and both kept running. ESTAMPIE 0.3.7, with the updated check, took it (the installer showed ALREADY INSTALLED, since 1.2 was already there), then took V15 over m-bootloader.</li>
+        </ul>
+      </div>
+    </details>
 
     <section class="agent" aria-labelledby="agent">
       <div class="prose">
         <h2 id="agent">Fix it with your coding agent</h2>
-        <p>Paste this into Claude Code, Codex, Cursor or similar, from your firmware's repository. It ports the fix, keeps your own changes, and stops for your review before anything is committed.</p>
+        <p>Paste this into Claude Code, Codex, Cursor or similar, from your firmware's repository. It ports the updated check, keeps your own changes, and stops for your review before anything is committed.</p>
       </div>
       <div class="promptbox">
         <button class="copy" type="button" data-copy="prompt" hidden>Copy prompt</button>
-        <pre id="prompt" tabindex="0">This FM-1 firmware uses Felucca's USB update code. Please port one upstream fix into it.
+        <pre id="prompt" tabindex="0">This FM-1 firmware uses Felucca's USB update code. Please port one upstream change into it.
 
-The problem: in ota_stage() (usually firmware/src/ota.c; search the repo for the comment "the official loader writes the head: it must equal ours"), a package that brings M-VAVE's official update loader has its first 0x4000 bytes of flash.bin compared with the FM-1's own boot area, and any difference returns -5 ("CHECK HEAD / FAILED"). So an FM-1 whose bootloader has changed (m-bootloader, or M-VAVE's Open V12/V14 packages) can never install M-VAVE's V15 over USB from this firmware.
+Background: in ota_stage() (usually firmware/src/ota.c; search the repo for the comment "the official loader writes the head: it must equal ours"), a package that brings M-VAVE's official update loader has its first 0x4000 bytes of flash.bin compared with the FM-1's own boot area, and any difference returns -5 ("CHECK HEAD / FAILED"); a package with any other loader that isn't Felucca's own is refused too: with -3 when it has no flash.bin (as m-bootloader's installer has none), or -7 when it has one. So on an FM-1 with a changed bootloader (m-bootloader, or the boot area M-VAVE's Open V12/V14 writes), this firmware refuses V15 over USB. With m-bootloader it only installs other Felucca-based firmwares: V15, M-VAVE's open firmware and every non-Felucca firmware are refused, and the only ways to switch are a Felucca-based firmware with the updated check, or download mode. (On an unmodified FM-1, it also refuses Open V12/V14, whose boot area is different.) The check is a sensible safeguard; it just assumes M-VAVE's original bootloader is the only one, and m-bootloader itself works correctly.
 
-The fix: port commit afd83ede from https://github.com/hugelton/felucca-bsp (chip/ota.c, by Charles Vestal, tested on hardware). Fetch it with: git fetch https://github.com/hugelton/felucca-bsp main, then git show afd83ede -- chip/ota.c (or open https://github.com/hugelton/felucca-bsp/commit/afd83ede). It:
-- adds ota_boot_valid(), which accepts any well-formed, bootable FM-1 boot area (every M-VAVE bootloader and m-bootloader) and rejects broken ones and other boards';
+The change: port commit afd83ede from https://github.com/hugelton/felucca-bsp (chip/ota.c, by Charles Vestal, tested on hardware). Fetch it with: git fetch https://github.com/hugelton/felucca-bsp main, then git show afd83ede -- chip/ota.c (or open https://github.com/hugelton/felucca-bsp/commit/afd83ede). It:
+- adds ota_boot_valid(), which accepts any well-formed, bootable FM-1 boot area (every M-VAVE bootloader and m-bootloader) and any well-formed writer, and rejects damaged ones and other boards';
 - replaces the byte-for-byte boot-area comparison with a call to it, for any package whose loader isn't Felucca's own;
 - adds ota_jl_enc_k() and removes the now-unused OTA_LDR_* constants and the "official" variable.
 
 How to do it:
-1. Find this repo's copy of ota_stage(). If the update code comes from a git submodule (Felucca, X0X, fm1-base or felucca-bsp), tell me which and stop: the fix is to update or patch that submodule, and I'll decide how.
+1. Find this repo's copy of ota_stage(). If the update code comes from a git submodule (Felucca, X0X, fm1-base or felucca-bsp), tell me which and stop: the change belongs in that submodule, and I'll decide how.
 2. Apply the commit's changes to that file only. Expect it to apply almost cleanly to Felucca-derived copies; resolve any conflict by hand, keeping this repo's own changes and code style.
-3. Keep any check this copy has that the commit doesn't touch, such as Felucca's "fl_len != OTA_FL_LEN" board-size check (-15). Tell me it's there: it also stops M-VAVE's Open V12/V14 packages and m-bootloader's installer, which upstream no longer refuses.
+3. Make sure the -3 line ends up as "if (!ota_off) return -3;", as in the commit: a package with no flash.bin, such as m-bootloader's installer, brings its own writer. If this copy is based on Felucca 1.6.1, that hunk may need applying by hand, because the "fl_len != OTA_FL_LEN" board-size check (-15) follows it. Make -15 apply only when the package has a flash.bin ("if (fl_off &amp;&amp; fl_len != OTA_FL_LEN)"), but leave it in, and tell me it's there: it still refuses M-VAVE's Open V12/V14 packages (Open V12's flash.bin is 0x6F000 bytes and V14's 0x73000, not 0x93000), which upstream accepts, and whether to relax it is my decision.
 4. Don't change the path for Felucca's own loader (FELUCCA-LOADER-1): it never writes the boot area and needs no check.
-5. Don't change licences or headers beyond crediting the fix: felucca-bsp is MPL-2.0, and this repo keeps its own licence. Add a short comment or commit message credit to felucca-bsp afd83ede.
+5. Don't change licences or headers beyond crediting the change: felucca-bsp is MPL-2.0, and this repo keeps its own licence. Add a short comment or commit message credit to felucca-bsp afd83ede.
 6. Build the firmware with the repo's normal build and fix any warnings you introduced.
 7. Show me the diff, and don't commit, push or release until I've reviewed it.
 
-Then tell me how to test it on an FM-1: install the new build, then install M-VAVE's V15 over USB from it. It should be accepted ("UPDATE / CHECK HEAD / UPDATING / RESTART"). Testing on an FM-1 with m-bootloader proves the fix; on a stock bootloader it should still work as before. Don't claim it's tested until I've done that.</pre>
+Then tell me how to test it on an FM-1: install the new build, then install M-VAVE's V15 over USB from it. It should be accepted ("UPDATE / CHECK HEAD / UPDATING / RESTART"). Testing on an FM-1 with m-bootloader proves the change; on a stock bootloader it should still work as before. Don't claim it's tested until I've done that.</pre>
       </div>
     </section>
 
     <section class="register" aria-labelledby="list">
       <div class="prose">
         <h2 id="list">Is yours on the list?</h2>
-        <p>Public FM-1 firmwares on GitHub that use Felucca's update code, most starred first, with what to do for each. <strong>Main branch</strong> is what each project's source does now; <strong>Latest release</strong> is what people actually install, from its <code>.fwsc</code> package, and can lag behind.</p>
+        <p>Public FM-1 firmwares on GitHub that use Felucca's update code, most starred first, with what to do for each. <strong>Main branch</strong> is what each project's source does now; <strong>Latest release</strong> is what people actually install, from its <code>.fwsc</code> package, and can be older. <strong>Commits</strong> is the work in each project: its main branch's commits since it went on GitHub, plus its owner's own from before then, or for a fork, only the ones it added. A copy or fork with only a few commits has had little work done on it.</p>
       </div>
       <div class="controls" hidden>
         <label class="search"><span>Search</span><input id="search" type="search" placeholder="Firmware, repository or author" autocomplete="off"></label>
         <div class="filters" role="group" aria-label="Show">
           <button type="button" data-filter="all" aria-pressed="true">All</button>
-          <button type="button" data-filter="affected" aria-pressed="false">Refuses V15</button>
+          <button type="button" data-filter="affected" aria-pressed="false">Original check</button>
           <button type="button" data-filter="ok" aria-pressed="false">Takes V15</button>
           <button type="button" data-filter="unclear" aria-pressed="false">Unclear</button>
+        </div>
+        <div class="picks">
+          <label class="pick"><span>Sort by</span>
+            <select id="sort">
+              <option value="stars">Most stars</option>
+              <option value="last">Latest commit</option>
+              <option value="commits">Most commits</option>
+              <option value="name">Name</option>
+            </select>
+          </label>
+          <label class="pick"><span>Stars</span>
+            <select id="stars">
+              <option value="0">Any</option>
+              <option value="1">1 or more</option>
+              <option value="10">10 or more</option>
+              <option value="50">50 or more</option>
+            </select>
+          </label>
+          <label class="pick"><span>Activity</span>
+            <select id="activity">
+              <option value="any">Any</option>
+              <option value="commits-5">5 or more commits</option>
+              <option value="commits-20">20 or more commits</option>
+              <option value="days-7">Committed in the last week</option>
+              <option value="days-30">Committed in the last month</option>
+              <option value="little">Little work: under 5 commits</option>
+            </select>
+          </label>
         </div>
         <p class="count" id="count" aria-live="polite"></p>
       </div>
@@ -104,6 +188,7 @@ Then tell me how to test it on an FM-1: install the new build, then install M-VA
               <th scope="col">Latest release</th>
               <th scope="col">To fix</th>
               <th scope="col">Last commit</th>
+              <th scope="col" class="num">Commits</th>
               <th scope="col" class="num">Stars</th>
             </tr>
           </thead>
@@ -136,9 +221,9 @@ Then tell me how to test it on an FM-1: install the new build, then install M-VA
 
     <section class="prose fine" aria-labelledby="method">
       <h2 id="method">How this is made</h2>
-      <p>The list began with a survey on 26 October 2026: GitHub code search for the update code's distinctive strings, the community firmware catalogues, and the fork lists of the most popular projects. Each project was classified by reading its source. Only DUB-1 and LOOM-8 were tested on hardware.</p>
-      <p>Since then, a scheduled job rechecks every project: its main branch's update code (following submodules and pinned bases), and its latest release's <code>.fwsc</code> package, which it unpacks and reads without running anything: Felucca's update code carries the string <code>FELUCCA-LOADER-1</code>, and the fixed code adds <code>AC79BLID</code>.</p>
-      <p><strong>Fixed your firmware, or spotted a mistake?</strong> The next check picks up a fix on its own. To correct anything sooner, or for a project the job gets wrong, send a pull request to <a href="https://github.com/ocean/fm1-site/blob/main/bootloader-check/overrides.json">bootloader-check/overrides.json</a>, with a reason. Corrections there are kept across every check.</p>
+      <p>The list began with a survey on 26 October 2026: GitHub code search for the update code's distinctive strings, the community firmware catalogues, and the fork lists of the most popular projects. Each project was classified by reading its source. Several firmwares have since been tested on hardware: see <a href="#tested">Tested on hardware</a> above.</p>
+      <p>Since then, a scheduled job rechecks every project: its main branch's update code (following submodules and pinned bases), and its latest release's <code>.fwsc</code> package, which it unpacks and reads without running anything: Felucca's update code carries the string <code>FELUCCA-LOADER-1</code>, and the updated check adds <code>AC79BLID</code>.</p>
+      <p><strong>Updated your firmware, or spotted a mistake?</strong> The next check picks up the change on its own. To correct anything sooner, or for a project the job gets wrong, send a pull request to <a href="https://github.com/ocean/fm1-site/blob/main/bootloader-check/overrides.json">bootloader-check/overrides.json</a>, with a reason. Corrections there are kept across every check.</p>
     </section>
 
     <footer>

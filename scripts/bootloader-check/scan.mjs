@@ -122,7 +122,8 @@ if (!options["skip-search"]) {
 // 2. Each repository's metadata, from GraphQL in batches.
 const releaseFields = `tagName publishedAt createdAt isDraft isPrerelease
   releaseAssets(first: 50) { nodes { name size downloadUrl } }`;
-const repoFields = `nameWithOwner isFork stargazerCount owner { login } parent { nameWithOwner }
+const repoFields = `nameWithOwner isFork stargazerCount createdAt owner { __typename id login }
+  parent { nameWithOwner defaultBranchRef { target { oid } } }
   defaultBranchRef { name target { ... on Commit { oid committedDate } } }
   latestRelease { ${releaseFields} }
   releases(first: 5, orderBy: { field: CREATED_AT, direction: DESC }) { nodes { ${releaseFields} } }`;
@@ -163,6 +164,60 @@ if (options.limit) {
 log(`Metadata for ${toScan.length} repositories`);
 const metadata = await metadataFor(toScan.map((candidate) => candidate.repo), repoFields);
 
+// How much work each repository has of its own: for a fork, the commits its parent doesn't have;
+// otherwise its default branch's commits since it was made on GitHub, plus its owner's own from
+// before then, which leaves out a copied project's history but keeps work pushed in one go. (An
+// organisation's commits can't be told apart, so only the later ones count.) Map of key -> count,
+// without the ones GitHub can't say for.
+async function ownCommits(entries) {
+  const counts = new Map();
+  const forks = entries.filter((meta) => meta.parent);
+  const others = entries.filter((meta) => !meta.parent);
+  await mapLimit(forks, 4, async (meta) => {
+    const head = meta.defaultBranchRef?.target?.oid;
+    const parentHead = meta.parent.defaultBranchRef?.target?.oid;
+    if (!head) {
+      counts.set(key(meta.nameWithOwner), 0);
+      return;
+    }
+    if (!parentHead) return;
+    try {
+      const comparison = await github.rest(`repos/${meta.nameWithOwner}/compare/${parentHead}...${head}`);
+      if (Number.isInteger(comparison?.ahead_by)) counts.set(key(meta.nameWithOwner), comparison.ahead_by);
+    } catch (error) {
+      note(meta.nameWithOwner, "commits", error);
+    }
+  });
+  const batchSize = 25;
+  for (let start = 0; start < others.length; start += batchSize) {
+    const batch = others.slice(start, start + batchSize);
+    const query = `query {\n${batch
+      .map((meta, index) => {
+        const [owner, name] = meta.nameWithOwner.split("/");
+        const created = JSON.stringify(meta.createdAt);
+        const before =
+          meta.owner.__typename === "User"
+            ? `before: history(until: ${created}, author: { id: ${JSON.stringify(meta.owner.id)} }) { totalCount }`
+            : "";
+        return `r${index}: repository(owner: ${JSON.stringify(owner)}, name: ${JSON.stringify(name)}) {
+          defaultBranchRef { target { ... on Commit { since: history(since: ${created}) { totalCount } ${before} } } } }`;
+      })
+      .join("\n")}\n}`;
+    try {
+      const { data } = await github.graphql(query);
+      batch.forEach((meta, index) => {
+        const repository = data[`r${index}`];
+        if (!repository) return;
+        const head = repository.defaultBranchRef?.target;
+        counts.set(key(meta.nameWithOwner), (head?.since?.totalCount ?? 0) + (head?.before?.totalCount ?? 0));
+      });
+    } catch (error) {
+      log(`  Commit counts: ${error.message}`);
+    }
+  }
+  return counts;
+}
+
 // 3. Source: each default branch's update code.
 log("Source");
 const scanned = new Map();
@@ -182,7 +237,7 @@ await mapLimit(toScan, 4, async (candidate) => {
   const commit = meta.defaultBranchRef?.target?.oid;
   let source = null;
   if (!commit) {
-    source = { status: "unclear", basis: "unknown", kind: null, detail: "empty repository" };
+    source = { status: "unclear", basis: "unknown", sizeCheck: null, kind: null, detail: "empty repository" };
   } else {
     try {
       source = await sources.classify(meta.nameWithOwner, commit);
@@ -192,6 +247,12 @@ await mapLimit(toScan, 4, async (candidate) => {
   }
   scanned.set(key(candidate.repo), { meta, source, commit });
 });
+
+log("Commits");
+const commitCounts = await ownCommits([...scanned.values()].filter((entry) => entry.meta).map((entry) => entry.meta));
+for (const entry of scanned.values()) {
+  if (entry.meta) entry.commits = commitCounts.get(key(entry.meta.nameWithOwner)) ?? null;
+}
 
 // 4. Packages: each latest release's .fwsc files.
 const hasAsset = (release, pattern) => (release.releaseAssets?.nodes ?? []).some((asset) => pattern.test(asset.name));
@@ -318,6 +379,9 @@ for (const candidate of candidates.values()) {
     // Not checked this run (skipped or failed): keep what was found for the same release.
     release = { ...release, package: before.release.package ?? null };
   }
+  // The identity users install is in the release package's header: take it when the packages agree.
+  const products = new Set((entry.packages ?? []).filter((result) => result.status && result.product).map((result) => result.product));
+  const packaged = products.size === 1 ? [...products][0] : null;
   let basis = source?.basis;
   // The scan can't tell an independent rewrite from a copy: keep what the survey found.
   if (before?.source.basis === "rewrite" && source?.status === "affected" && basis === "own-copy") basis = "rewrite";
@@ -326,10 +390,11 @@ for (const candidate of candidates.values()) {
     repo,
     forkOf: meta.parent?.nameWithOwner ?? null,
     author: meta.owner.login,
-    identity: before?.identity ?? listing?.product ?? null,
+    identity: packaged ?? before?.identity ?? listing?.product ?? null,
     stars: meta.stargazerCount,
     lastCommit: day(meta.defaultBranchRef?.target?.committedDate) ?? before?.lastCommit ?? null,
-    source: source ? { status: source.status, basis } : before.source,
+    commits: entry.commits ?? before?.commits ?? null,
+    source: source ? { status: source.status, basis, sizeCheck: source.sizeCheck ?? null } : before.source,
     release,
   });
   details[repo] ??= {

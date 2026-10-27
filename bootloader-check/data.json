@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "checkedAt": "2026-10-26T07:45:25.706Z",
+  "checkedAt": "2026-10-27T07:30:04.269Z",
   "method": "scan",
   "firmwares": [
     {
@@ -9,11 +9,13 @@
       "forkOf": null,
       "author": "isod89",
       "identity": "FM-1_900",
-      "stars": 636,
-      "lastCommit": "2026-10-23",
+      "stars": 649,
+      "lastCommit": "2026-10-26",
+      "commits": 25,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v2.8.1",
@@ -27,11 +29,13 @@
       "forkOf": null,
       "author": "hugelton",
       "identity": "FM-1_916",
-      "stars": 587,
+      "stars": 593,
       "lastCommit": "2026-10-25",
+      "commits": 51,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": true
       },
       "release": {
         "tag": "v1.6.1",
@@ -45,11 +49,13 @@
       "forkOf": null,
       "author": "charlesvestal",
       "identity": "FM-1_9010100",
-      "stars": 200,
+      "stars": 204,
       "lastCommit": "2026-10-18",
+      "commits": 181,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v1.1.0",
@@ -63,11 +69,13 @@
       "forkOf": "hugelton/Felucca",
       "author": "juanjiant-bit",
       "identity": "FM-1_909",
-      "stars": 171,
-      "lastCommit": "2026-10-26",
+      "stars": 177,
+      "lastCommit": "2026-10-27",
+      "commits": 749,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -76,16 +84,18 @@
       "repo": "keremimo/melodee",
       "forkOf": null,
       "author": "keremimo",
-      "identity": "FM-1_91050",
-      "stars": 151,
-      "lastCommit": "2026-10-25",
+      "identity": "FM-1_91051",
+      "stars": 155,
+      "lastCommit": "2026-10-26",
+      "commits": 623,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
-        "tag": "v1.5.0",
-        "date": "2026-10-25",
+        "tag": "v1.5.1",
+        "date": "2026-10-26",
         "package": "affected"
       }
     },
@@ -95,11 +105,13 @@
       "forkOf": null,
       "author": "charlesvestal",
       "identity": "FM-1_7010300",
-      "stars": 95,
-      "lastCommit": "2026-10-17",
+      "stars": 100,
+      "lastCommit": "2026-10-26",
+      "commits": 39,
       "source": {
-        "status": "affected",
-        "basis": "old-base"
+        "status": "ok",
+        "basis": "fixed-base",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v1.3",
@@ -113,15 +125,17 @@
       "forkOf": null,
       "author": "illuminus5",
       "identity": "FM-1_714",
-      "stars": 90,
-      "lastCommit": "2026-10-25",
+      "stars": 95,
+      "lastCommit": "2026-10-27",
+      "commits": 24,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": true
       },
       "release": {
-        "tag": "v2.0.1",
-        "date": "2026-10-25",
+        "tag": "v2.0.2",
+        "date": "2026-10-27",
         "package": "affected"
       }
     },
@@ -131,33 +145,17 @@
       "forkOf": null,
       "author": "Quixotic7",
       "identity": "FM-1_920",
-      "stars": 82,
+      "stars": 85,
       "lastCommit": "2026-10-26",
+      "commits": 605,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.27",
         "date": "2026-10-26",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "GHOULBOX",
-      "repo": "jasonpersinger/ghoulbox-fm1-dungeon-synth",
-      "forkOf": "hugelton/Felucca",
-      "author": "jasonpersinger",
-      "identity": "FM-1_900",
-      "stars": 70,
-      "lastCommit": "2026-10-24",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "ghoulbox-v2.4",
-        "date": "2026-10-24",
         "package": "affected"
       }
     },
@@ -167,15 +165,37 @@
       "forkOf": null,
       "author": "charlesvestal",
       "identity": "FM-1_8000400",
-      "stars": 69,
+      "stars": 72,
       "lastCommit": "2026-10-15",
+      "commits": 25,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.4",
         "date": "2026-10-15",
+        "package": "affected"
+      }
+    },
+    {
+      "name": "GHOULBOX",
+      "repo": "jasonpersinger/ghoulbox-fm1-dungeon-synth",
+      "forkOf": "hugelton/Felucca",
+      "author": "jasonpersinger",
+      "identity": "FM-1_900",
+      "stars": 71,
+      "lastCommit": "2026-10-24",
+      "commits": 149,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "ghoulbox-v2.4",
+        "date": "2026-10-24",
         "package": "affected"
       }
     },
@@ -187,9 +207,11 @@
       "identity": "FM-1_900",
       "stars": 58,
       "lastCommit": "2026-10-20",
+      "commits": 62,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v1.1-experimental",
@@ -202,16 +224,18 @@
       "repo": "charlesvestal/fm1-loom",
       "forkOf": null,
       "author": "charlesvestal",
-      "identity": "FM-1_10000700",
-      "stars": 44,
-      "lastCommit": "2026-10-26",
+      "identity": "FM-1_10000902",
+      "stars": 47,
+      "lastCommit": "2026-10-27",
+      "commits": 320,
       "source": {
         "status": "ok",
-        "basis": "fixed-base"
+        "basis": "fixed-base",
+        "sizeCheck": false
       },
       "release": {
-        "tag": "v0.8.1",
-        "date": "2026-10-26",
+        "tag": "v0.9.2",
+        "date": "2026-10-27",
         "package": "ok"
       }
     },
@@ -221,11 +245,13 @@
       "forkOf": null,
       "author": "zvenson",
       "identity": "FM-1_9530",
-      "stars": 41,
+      "stars": 42,
       "lastCommit": "2026-10-23",
+      "commits": 82,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v3.0.1",
@@ -239,11 +265,13 @@
       "forkOf": null,
       "author": "zvenson",
       "identity": "FM-1_994",
-      "stars": 40,
+      "stars": 41,
       "lastCommit": "2026-10-23",
+      "commits": 8,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.4",
@@ -257,11 +285,13 @@
       "forkOf": null,
       "author": "zednaked",
       "identity": "FM-1_910",
-      "stars": 34,
+      "stars": 35,
       "lastCommit": "2026-10-16",
+      "commits": 192,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v1.0.1",
@@ -275,11 +305,13 @@
       "forkOf": null,
       "author": "zvenson",
       "identity": "FM-1_975",
-      "stars": 31,
+      "stars": 32,
       "lastCommit": "2026-10-24",
+      "commits": 127,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -289,11 +321,13 @@
       "forkOf": null,
       "author": "DeadActive",
       "identity": "FM-1_900",
-      "stars": 28,
-      "lastCommit": "2026-10-25",
+      "stars": 31,
+      "lastCommit": "2026-10-26",
+      "commits": 532,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "drum-v0.24.0",
@@ -307,11 +341,13 @@
       "forkOf": null,
       "author": "sbegueria",
       "identity": "FM-1_8010300",
-      "stars": 27,
+      "stars": 29,
       "lastCommit": "2026-10-23",
+      "commits": 158,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v1.3.0",
@@ -325,33 +361,17 @@
       "forkOf": null,
       "author": "dspaudio",
       "identity": "FM-1_900",
-      "stars": 25,
-      "lastCommit": "2026-10-15",
+      "stars": 28,
+      "lastCommit": "2026-10-26",
+      "commits": 48,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.7.1",
         "date": "2026-10-15",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "MAKU",
-      "repo": "okumurari2/maku",
-      "forkOf": "hugelton/Felucca",
-      "author": "okumurari2",
-      "identity": "FM-1_910",
-      "stars": 25,
-      "lastCommit": "2026-10-19",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "maku-v1.0",
-        "date": "2026-10-16",
         "package": "affected"
       }
     },
@@ -361,13 +381,51 @@
       "forkOf": "charlesvestal/fm1-amb",
       "author": "RustyPawz",
       "identity": "FM-1_7010554",
-      "stars": 25,
+      "stars": 26,
       "lastCommit": "2026-10-22",
+      "commits": 88,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
+    },
+    {
+      "name": "Tonitor",
+      "repo": "nzimas/tonitor",
+      "forkOf": null,
+      "author": "nzimas",
+      "identity": "FM-1_700",
+      "stars": 25,
+      "lastCommit": "2026-10-27",
+      "commits": 124,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": null
+    },
+    {
+      "name": "MAKU",
+      "repo": "okumurari2/maku",
+      "forkOf": "hugelton/Felucca",
+      "author": "okumurari2",
+      "identity": "FM-1_910",
+      "stars": 25,
+      "lastCommit": "2026-10-19",
+      "commits": 230,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "maku-v1.0",
+        "date": "2026-10-16",
+        "package": "affected"
+      }
     },
     {
       "name": "sloopDX",
@@ -377,9 +435,11 @@
       "identity": "FM-1_940",
       "stars": 25,
       "lastCommit": "2026-10-16",
+      "commits": 126,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v4.0",
@@ -388,18 +448,24 @@
       }
     },
     {
-      "name": "Tonitor",
-      "repo": "nzimas/tonitor",
+      "name": "Optimist",
+      "repo": "w0ts/optimist",
       "forkOf": null,
-      "author": "nzimas",
-      "identity": "FM-1_700",
-      "stars": 23,
-      "lastCommit": "2026-10-23",
+      "author": "w0ts",
+      "identity": "FM-1_722",
+      "stars": 24,
+      "lastCommit": "2026-10-26",
+      "commits": 1842,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
-      "release": null
+      "release": {
+        "tag": "v0.2",
+        "date": "2026-10-25",
+        "package": "affected"
+      }
     },
     {
       "name": "Polly",
@@ -407,33 +473,17 @@
       "forkOf": null,
       "author": "charlesvestal",
       "identity": "FM-1_3000500",
-      "stars": 22,
-      "lastCommit": "2026-10-17",
+      "stars": 23,
+      "lastCommit": "2026-10-26",
+      "commits": 264,
       "source": {
-        "status": "affected",
-        "basis": "old-base"
+        "status": "ok",
+        "basis": "fixed-base",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.5",
         "date": "2026-10-17",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "Optimist",
-      "repo": "w0ts/optimist",
-      "forkOf": null,
-      "author": "w0ts",
-      "identity": null,
-      "stars": 22,
-      "lastCommit": "2026-10-26",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "v0.2",
-        "date": "2026-10-25",
         "package": "affected"
       }
     },
@@ -445,31 +495,15 @@
       "identity": "FM-1_703",
       "stars": 21,
       "lastCommit": "2026-10-23",
+      "commits": 5,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "V1.1.0",
         "date": "2026-10-23",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "CTL-1",
-      "repo": "charlesvestal/fm1-ctl",
-      "forkOf": null,
-      "author": "charlesvestal",
-      "identity": "FM-1_6010000",
-      "stars": 19,
-      "lastCommit": "2026-10-17",
-      "source": {
-        "status": "affected",
-        "basis": "old-base"
-      },
-      "release": {
-        "tag": "v1.0",
-        "date": "2026-10-17",
         "package": "affected"
       }
     },
@@ -479,11 +513,33 @@
       "forkOf": null,
       "author": "GRiMMBIENT",
       "identity": "FM-1_966",
-      "stars": 19,
+      "stars": 21,
       "lastCommit": "2026-10-20",
+      "commits": 4,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v1.0",
+        "date": "2026-10-17",
+        "package": "affected"
+      }
+    },
+    {
+      "name": "CTL-1",
+      "repo": "charlesvestal/fm1-ctl",
+      "forkOf": null,
+      "author": "charlesvestal",
+      "identity": "FM-1_6010000",
+      "stars": 20,
+      "lastCommit": "2026-10-26",
+      "commits": 65,
+      "source": {
+        "status": "ok",
+        "basis": "fixed-base",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v1.0",
@@ -497,11 +553,13 @@
       "forkOf": null,
       "author": "jadamsowers",
       "identity": "FM-1_8000601",
-      "stars": 19,
+      "stars": 20,
       "lastCommit": "2026-10-13",
+      "commits": 24,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.6.1",
@@ -517,9 +575,11 @@
       "identity": "FM-1_7010100",
       "stars": 18,
       "lastCommit": "2026-10-23",
+      "commits": 36,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "fumi-1.1.0",
@@ -535,9 +595,11 @@
       "identity": "FM-1_911",
       "stars": 18,
       "lastCommit": "2026-10-24",
+      "commits": 97,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "fm1-rescue-test",
@@ -553,9 +615,11 @@
       "identity": "FM-1_901",
       "stars": 17,
       "lastCommit": "2026-10-24",
+      "commits": 19,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v1.0",
@@ -569,15 +633,37 @@
       "forkOf": null,
       "author": "FicusFicusov",
       "identity": "FM-1_930",
-      "stars": 14,
+      "stars": 15,
       "lastCommit": "2026-10-22",
+      "commits": 113,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.5",
         "date": "2026-10-22",
+        "package": "affected"
+      }
+    },
+    {
+      "name": "Caravel",
+      "repo": "bonszaimusic/caravel",
+      "forkOf": null,
+      "author": "bonszaimusic",
+      "identity": "FM-1_999",
+      "stars": 14,
+      "lastCommit": "2026-10-25",
+      "commits": 79,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": true
+      },
+      "release": {
+        "tag": "v0.5.0",
+        "date": "2026-10-25",
         "package": "affected"
       }
     },
@@ -589,9 +675,11 @@
       "identity": "FM-1_700",
       "stars": 14,
       "lastCommit": "2026-10-23",
+      "commits": 16,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.3.2",
@@ -600,16 +688,38 @@
       }
     },
     {
+      "name": "FM1 Quest",
+      "repo": "hericdk/fm1-quest",
+      "forkOf": "isod89/sloop-fm1",
+      "author": "hericdk",
+      "identity": "FM-1_900",
+      "stars": 14,
+      "lastCommit": "2026-10-12",
+      "commits": 38,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "quest-38",
+        "date": "2026-10-12",
+        "package": "affected"
+      }
+    },
+    {
       "name": "FM Lab",
       "repo": "jsmith13/fm_lab",
       "forkOf": null,
       "author": "jsmith13",
-      "identity": null,
+      "identity": "FM-1_971",
       "stars": 14,
       "lastCommit": "2026-10-18",
+      "commits": 37,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v1.1.0",
@@ -625,9 +735,11 @@
       "identity": "FM-1_900",
       "stars": 14,
       "lastCommit": "2026-10-15",
+      "commits": 43,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -639,9 +751,11 @@
       "identity": "FM-1_900",
       "stars": 14,
       "lastCommit": "2026-10-25",
+      "commits": 19,
       "source": {
         "status": "affected",
-        "basis": "submodule"
+        "basis": "submodule",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.9.3",
@@ -657,31 +771,15 @@
       "identity": "FM-1_907",
       "stars": 14,
       "lastCommit": "2026-10-25",
+      "commits": 46,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "Beta6",
         "date": "2026-10-24",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "Caravel",
-      "repo": "bonszaimusic/caravel",
-      "forkOf": null,
-      "author": "bonszaimusic",
-      "identity": "FM-1_999",
-      "stars": 13,
-      "lastCommit": "2026-10-25",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "v0.5.0",
-        "date": "2026-10-25",
         "package": "affected"
       }
     },
@@ -693,31 +791,15 @@
       "identity": null,
       "stars": 13,
       "lastCommit": "2026-10-22",
+      "commits": 3,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v1.2",
         "date": "2026-10-22",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "FM1 Quest",
-      "repo": "hericdk/fm1-quest",
-      "forkOf": "isod89/sloop-fm1",
-      "author": "hericdk",
-      "identity": "FM-1_900",
-      "stars": 13,
-      "lastCommit": "2026-10-12",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "quest-38",
-        "date": "2026-10-12",
         "package": "affected"
       }
     },
@@ -729,9 +811,11 @@
       "identity": "FM-1_903",
       "stars": 12,
       "lastCommit": "2026-10-16",
+      "commits": 41,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.3",
@@ -747,13 +831,55 @@
       "identity": "FM-1_9000300",
       "stars": 11,
       "lastCommit": "2026-10-23",
+      "commits": 48,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.3-beta",
         "date": "2026-10-22",
+        "package": "affected"
+      }
+    },
+    {
+      "name": "Golana",
+      "repo": "Gadlele/Golana",
+      "forkOf": null,
+      "author": "Gadlele",
+      "identity": "FM-1_913",
+      "stars": 11,
+      "lastCommit": "2026-10-26",
+      "commits": 40,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "golana-v1.3",
+        "date": "2026-10-26",
+        "package": "affected"
+      }
+    },
+    {
+      "name": "Mutable Dreams",
+      "repo": "kidbee85-beep/mutable-dreams",
+      "forkOf": null,
+      "author": "kidbee85-beep",
+      "identity": "FM-1_710010100",
+      "stars": 11,
+      "lastCommit": "2026-10-26",
+      "commits": 8,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v1.1",
+        "date": "2026-10-25",
         "package": "affected"
       }
     },
@@ -765,9 +891,11 @@
       "identity": null,
       "stars": 11,
       "lastCommit": "2026-10-22",
+      "commits": 286,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": true
       },
       "release": {
         "tag": "v3.1",
@@ -783,9 +911,11 @@
       "identity": "FM-1_003",
       "stars": 10,
       "lastCommit": "2026-10-25",
+      "commits": 104,
       "source": {
         "status": "affected",
-        "basis": "rewrite"
+        "basis": "rewrite",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.10.0-beta",
@@ -801,9 +931,11 @@
       "identity": "FM-1_900",
       "stars": 10,
       "lastCommit": "2026-10-14",
+      "commits": 7,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -813,15 +945,17 @@
       "forkOf": null,
       "author": "InigoHernandez",
       "identity": "FM-1_980",
-      "stars": 9,
-      "lastCommit": "2026-10-25",
+      "stars": 10,
+      "lastCommit": "2026-10-27",
+      "commits": 173,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
-        "tag": "v1.0.1",
-        "date": "2026-10-25",
+        "tag": "v1.1",
+        "date": "2026-10-27",
         "package": "affected"
       }
     },
@@ -831,11 +965,13 @@
       "forkOf": null,
       "author": "jartificer",
       "identity": "FM-1_600",
-      "stars": 9,
+      "stars": 10,
       "lastCommit": "2026-10-25",
+      "commits": 154,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v1.1.0",
@@ -848,17 +984,39 @@
       "repo": "keremimo/saadet",
       "forkOf": null,
       "author": "keremimo",
-      "identity": null,
-      "stars": 9,
+      "identity": "FM-1_9000100",
+      "stars": 10,
       "lastCommit": "2026-10-23",
+      "commits": 546,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.1.0",
         "date": "2026-10-23",
         "package": "ok"
+      }
+    },
+    {
+      "name": "MONK-1",
+      "repo": "charlesvestal/fm1-monk",
+      "forkOf": null,
+      "author": "charlesvestal",
+      "identity": "FM-1_5000901",
+      "stars": 9,
+      "lastCommit": "2026-10-15",
+      "commits": 14,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v0.9.1",
+        "date": "2026-10-15",
+        "package": "affected"
       }
     },
     {
@@ -869,9 +1027,11 @@
       "identity": "FM-1_900",
       "stars": 9,
       "lastCommit": "2026-10-25",
+      "commits": 109,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": true
       },
       "release": {
         "tag": "v1.8.0",
@@ -887,9 +1047,11 @@
       "identity": "FM-1_1500",
       "stars": 9,
       "lastCommit": "2026-10-22",
+      "commits": 44,
       "source": {
         "status": "ok",
-        "basis": "pinned-v15"
+        "basis": "pinned-v15",
+        "sizeCheck": true
       },
       "release": {
         "tag": "V1.61",
@@ -905,9 +1067,11 @@
       "identity": "FM-1_950",
       "stars": 9,
       "lastCommit": "2026-10-22",
+      "commits": 53,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.3.2",
@@ -923,9 +1087,11 @@
       "identity": "FM-1_909",
       "stars": 8,
       "lastCommit": "2026-10-12",
+      "commits": 18,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.9-salt14",
@@ -934,88 +1100,18 @@
       }
     },
     {
-      "name": "MONK-1",
-      "repo": "charlesvestal/fm1-monk",
-      "forkOf": null,
-      "author": "charlesvestal",
-      "identity": "FM-1_5000901",
-      "stars": 8,
-      "lastCommit": "2026-10-15",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "v0.9.1",
-        "date": "2026-10-15",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "WaveLoop FM-1",
-      "repo": "ELI7VH/Felucca",
-      "forkOf": "hugelton/Felucca",
-      "author": "ELI7VH",
-      "identity": "FM-1_910",
-      "stars": 8,
-      "lastCommit": "2026-10-25",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "1.0.5.2-midi23",
-        "date": "2026-10-09",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "Golana",
-      "repo": "Gadlele/Golana",
-      "forkOf": null,
-      "author": "Gadlele",
-      "identity": "FM-1_912",
-      "stars": 8,
-      "lastCommit": "2026-10-20",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "golana-v1.2",
-        "date": "2026-10-20",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "ZEN-1",
-      "repo": "aceyprime/zen-1",
-      "forkOf": null,
-      "author": "aceyprime",
-      "identity": "FM-1_6010200",
-      "stars": 7,
-      "lastCommit": "2026-10-21",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "v1.2",
-        "date": "2026-10-21",
-        "package": "affected"
-      }
-    },
-    {
       "name": "FM1 Radio",
       "repo": "charlesvestal/fm1-radio",
       "forkOf": null,
       "author": "charlesvestal",
-      "identity": null,
-      "stars": 7,
+      "identity": "FM-1_13010300",
+      "stars": 8,
       "lastCommit": "2026-10-24",
+      "commits": 75,
       "source": {
         "status": "ok",
-        "basis": "fixed-base"
+        "basis": "fixed-base",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v1.3",
@@ -1028,16 +1124,38 @@
       "repo": "De-Pattern/Ravel_FM1",
       "forkOf": null,
       "author": "De-Pattern",
-      "identity": null,
-      "stars": 7,
-      "lastCommit": "2026-10-25",
+      "identity": "FM-1_82000900",
+      "stars": 8,
+      "lastCommit": "2026-10-26",
+      "commits": 101,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
-        "tag": "v0.8.3-1",
-        "date": "2026-10-23",
+        "tag": "v0.9.0",
+        "date": "2026-10-26",
+        "package": "affected"
+      }
+    },
+    {
+      "name": "WaveLoop FM-1",
+      "repo": "ELI7VH/Felucca",
+      "forkOf": "hugelton/Felucca",
+      "author": "ELI7VH",
+      "identity": "FM-1_910",
+      "stars": 8,
+      "lastCommit": "2026-10-25",
+      "commits": 44,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "1.0.5.2-midi23",
+        "date": "2026-10-09",
         "package": "affected"
       }
     },
@@ -1047,15 +1165,57 @@
       "forkOf": null,
       "author": "fvalente",
       "identity": "FM-1_981",
-      "stars": 7,
-      "lastCommit": "2026-10-25",
+      "stars": 8,
+      "lastCommit": "2026-10-26",
+      "commits": 75,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
-        "tag": "v1.2-GW",
+        "tag": "v1.2.1-GW",
+        "date": "2026-10-26",
+        "package": "affected"
+      }
+    },
+    {
+      "name": "fm1-dock",
+      "repo": "joakimeriksson/fm1-dock",
+      "forkOf": null,
+      "author": "joakimeriksson",
+      "identity": "FM-1_956",
+      "stars": 8,
+      "lastCommit": "2026-10-26",
+      "commits": 48,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v0.6",
         "date": "2026-10-25",
+        "package": "affected"
+      }
+    },
+    {
+      "name": "ZEN-1",
+      "repo": "aceyprime/zen-1",
+      "forkOf": null,
+      "author": "aceyprime",
+      "identity": "FM-1_6010200",
+      "stars": 7,
+      "lastCommit": "2026-10-21",
+      "commits": 6,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v1.2",
+        "date": "2026-10-21",
         "package": "affected"
       }
     },
@@ -1067,9 +1227,11 @@
       "identity": null,
       "stars": 7,
       "lastCommit": "2026-10-25",
+      "commits": 110,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -1078,16 +1240,38 @@
       "repo": "Rastapopolix/tessera",
       "forkOf": null,
       "author": "Rastapopolix",
-      "identity": "FM-1_83772002",
+      "identity": "FM-1_83772011",
       "stars": 7,
       "lastCommit": "2026-10-26",
+      "commits": 789,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": true
       },
       "release": {
-        "tag": "v2.1",
+        "tag": "v2.1.1",
         "date": "2026-10-26",
+        "package": "affected"
+      }
+    },
+    {
+      "name": "NOIZ DEMONS",
+      "repo": "SPIKE-the-Percussionist/noiz_demons",
+      "forkOf": "hugelton/Felucca",
+      "author": "SPIKE-the-Percussionist",
+      "identity": "FM-1_900",
+      "stars": 7,
+      "lastCommit": "2026-10-14",
+      "commits": 10,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v666",
+        "date": "2026-10-15",
         "package": "affected"
       }
     },
@@ -1099,13 +1283,35 @@
       "identity": "FM-1_900",
       "stars": 7,
       "lastCommit": "2026-10-21",
+      "commits": 61,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": true
       },
       "release": {
         "tag": "v0.5.0-beta.1",
         "date": "2026-10-21",
+        "package": "affected"
+      }
+    },
+    {
+      "name": "Trumpagotchi",
+      "repo": "adamcharleswilsonmusic-code/Trumpagotchi",
+      "forkOf": null,
+      "author": "adamcharleswilsonmusic-code",
+      "identity": "FM-1_710",
+      "stars": 6,
+      "lastCommit": "2026-10-13",
+      "commits": 2,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v1.0.0",
+        "date": "2026-10-13",
         "package": "affected"
       }
     },
@@ -1117,9 +1323,11 @@
       "identity": "FM-1_900",
       "stars": 6,
       "lastCommit": "2026-10-20",
+      "commits": 40,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v1.2.0",
@@ -1132,12 +1340,14 @@
       "repo": "Gadlele/Fantasma",
       "forkOf": null,
       "author": "Gadlele",
-      "identity": null,
+      "identity": "FM-1_911",
       "stars": 6,
       "lastCommit": "2026-10-19",
+      "commits": 10,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "fantasma-v1.1",
@@ -1153,9 +1363,27 @@
       "identity": "FM-1_955",
       "stars": 6,
       "lastCommit": "2026-10-26",
+      "commits": 15,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": null
+    },
+    {
+      "name": "No Man Sky FM",
+      "repo": "hericdk/nomanskyFM",
+      "forkOf": null,
+      "author": "hericdk",
+      "identity": "FM-1_900",
+      "stars": 6,
+      "lastCommit": "2026-10-20",
+      "commits": 3,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -1164,12 +1392,14 @@
       "repo": "kpalaniuk/gnomad-firmware",
       "forkOf": null,
       "author": "kpalaniuk",
-      "identity": null,
+      "identity": "FM-1_900",
       "stars": 6,
       "lastCommit": "2026-10-20",
+      "commits": 1,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v1.0.0-r12",
@@ -1184,14 +1414,36 @@
       "author": "leonardoMirabal",
       "identity": "FM-1_958",
       "stars": 6,
-      "lastCommit": "2026-10-25",
+      "lastCommit": "2026-10-26",
+      "commits": 507,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
-        "tag": "v0.9.5",
-        "date": "2026-10-25",
+        "tag": "v0.9.6",
+        "date": "2026-10-26",
+        "package": "affected"
+      }
+    },
+    {
+      "name": "PurpleMonkey",
+      "repo": "Quixotic7/PurpleMonkeyFM1",
+      "forkOf": null,
+      "author": "Quixotic7",
+      "identity": "FM-1_927",
+      "stars": 6,
+      "lastCommit": "2026-10-10",
+      "commits": 11,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v0.11",
+        "date": "2026-10-10",
         "package": "affected"
       }
     },
@@ -1200,12 +1452,14 @@
       "repo": "Quixotic7/TransitFM1",
       "forkOf": null,
       "author": "Quixotic7",
-      "identity": null,
+      "identity": "FM-1_015",
       "stars": 6,
       "lastCommit": "2026-10-18",
+      "commits": 15,
       "source": {
         "status": "unclear",
-        "basis": "unknown"
+        "basis": "unknown",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.1.3",
@@ -1221,9 +1475,11 @@
       "identity": "FM-1_5000201",
       "stars": 6,
       "lastCommit": "2026-10-16",
+      "commits": 3,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.2.1",
@@ -1232,20 +1488,22 @@
       }
     },
     {
-      "name": "NOIZ DEMONS",
-      "repo": "SPIKE-the-Percussionist/noiz_demons",
-      "forkOf": "hugelton/Felucca",
-      "author": "SPIKE-the-Percussionist",
-      "identity": "FM-1_900",
+      "name": "Ketch",
+      "repo": "risseraka/fm1-tracker-ketch",
+      "forkOf": null,
+      "author": "risseraka",
+      "identity": "FM-1_951",
       "stars": 6,
-      "lastCommit": "2026-10-14",
+      "lastCommit": "2026-10-22",
+      "commits": 9,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
-        "tag": "v666",
-        "date": "2026-10-15",
+        "tag": "v0.1-beta",
+        "date": "2026-10-12",
         "package": "affected"
       }
     },
@@ -1257,9 +1515,11 @@
       "identity": "FM-1_9630",
       "stars": 6,
       "lastCommit": "2026-10-23",
+      "commits": 17,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v3.0.1",
@@ -1275,30 +1535,14 @@
       "identity": "FM-1_80023",
       "stars": 5,
       "lastCommit": "2026-10-22",
+      "commits": 9,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.2.3",
-        "date": "2026-10-13",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "Trumpagotchi",
-      "repo": "adamcharleswilsonmusic-code/Trumpagotchi",
-      "forkOf": null,
-      "author": "adamcharleswilsonmusic-code",
-      "identity": null,
-      "stars": 5,
-      "lastCommit": "2026-10-13",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "v1.0.0",
         "date": "2026-10-13",
         "package": "affected"
       }
@@ -1311,9 +1555,11 @@
       "identity": "FM-1_900",
       "stars": 5,
       "lastCommit": "2026-10-19",
+      "commits": 11,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": true
       },
       "release": {
         "tag": "1.6.1_and_sequences",
@@ -1328,14 +1574,16 @@
       "author": "eldontyrellcorp",
       "identity": "FM-1_900",
       "stars": 5,
-      "lastCommit": "2026-10-25",
+      "lastCommit": "2026-10-26",
+      "commits": 44,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
-        "tag": "minitone-1.0.4",
-        "date": "2026-10-25",
+        "tag": "minitone-1.0.5",
+        "date": "2026-10-26",
         "package": "affected"
       }
     },
@@ -1346,10 +1594,12 @@
       "author": "evanyerburgh",
       "identity": "FM-1_8000200",
       "stars": 5,
-      "lastCommit": "2026-10-25",
+      "lastCommit": "2026-10-27",
+      "commits": 153,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.2",
@@ -1365,9 +1615,11 @@
       "identity": null,
       "stars": 5,
       "lastCommit": "2026-10-17",
+      "commits": 5,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v1.0",
@@ -1376,152 +1628,18 @@
       }
     },
     {
-      "name": "No Man Sky FM",
-      "repo": "hericdk/nomanskyFM",
-      "forkOf": null,
-      "author": "hericdk",
-      "identity": "FM-1_900",
-      "stars": 5,
-      "lastCommit": "2026-10-20",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": null
-    },
-    {
-      "name": "PurpleMonkey",
-      "repo": "Quixotic7/PurpleMonkeyFM1",
-      "forkOf": null,
-      "author": "Quixotic7",
-      "identity": "FM-1_927",
-      "stars": 5,
-      "lastCommit": "2026-10-10",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "v0.11",
-        "date": "2026-10-10",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "Ketch",
-      "repo": "risseraka/fm1-tracker-ketch",
-      "forkOf": null,
-      "author": "risseraka",
-      "identity": "FM-1_951",
-      "stars": 5,
-      "lastCommit": "2026-10-22",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "v0.1-beta",
-        "date": "2026-10-12",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "Modular One",
-      "repo": "bunglesociety/modular-one",
-      "forkOf": null,
-      "author": "bunglesociety",
-      "identity": null,
-      "stars": 4,
-      "lastCommit": "2026-10-20",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "v0.1-beta",
-        "date": "2026-10-20",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "Loom FM-1",
-      "repo": "Co-oscillator/Loom-FM-1",
-      "forkOf": null,
-      "author": "Co-oscillator",
-      "identity": null,
-      "stars": 4,
-      "lastCommit": "2026-10-25",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "v0.1.0",
-        "date": "2026-10-18",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "LCD-4",
-      "repo": "devrvega/LCD-4",
-      "forkOf": null,
-      "author": "devrvega",
-      "identity": null,
-      "stars": 4,
-      "lastCommit": "2026-10-16",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "v0.1.2",
-        "date": "2026-10-16",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "Pelucco",
-      "repo": "Gadlele/Pelucco",
-      "forkOf": "hugelton/Felucca",
-      "author": "Gadlele",
-      "identity": null,
-      "stars": 4,
-      "lastCommit": "2026-10-16",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": null
-    },
-    {
-      "name": "MIDIMON",
-      "repo": "ignis32/midimonitor_fm1",
-      "forkOf": null,
-      "author": "ignis32",
-      "identity": "FM-1_88000400",
-      "stars": 4,
-      "lastCommit": "2026-10-25",
-      "source": {
-        "status": "ok",
-        "basis": "fixed-base"
-      },
-      "release": {
-        "tag": "v0.4",
-        "date": "2026-10-25",
-        "package": "ok"
-      }
-    },
-    {
       "name": "FMER",
       "repo": "Nacsez/FMER",
       "forkOf": null,
       "author": "Nacsez",
-      "identity": null,
-      "stars": 4,
+      "identity": "FM-1_735",
+      "stars": 5,
       "lastCommit": "2026-10-25",
+      "commits": 7,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "build-735-r11",
@@ -1535,16 +1653,154 @@
       "forkOf": null,
       "author": "SikkenWorks",
       "identity": "FM-1_2123",
-      "stars": 4,
+      "stars": 5,
       "lastCommit": "2026-10-25",
+      "commits": 116,
       "source": {
         "status": "ok",
-        "basis": "pinned-v15"
+        "basis": "pinned-v15",
+        "sizeCheck": true
       },
       "release": {
         "tag": "V1.5",
         "date": "2026-10-25",
         "package": "ok"
+      }
+    },
+    {
+      "name": "Modular One",
+      "repo": "bunglesociety/modular-one",
+      "forkOf": null,
+      "author": "bunglesociety",
+      "identity": "FM-1_900",
+      "stars": 4,
+      "lastCommit": "2026-10-26",
+      "commits": 5,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v0.1-beta",
+        "date": "2026-10-20",
+        "package": "affected"
+      }
+    },
+    {
+      "name": "Loom FM-1",
+      "repo": "Co-oscillator/Loom-FM-1",
+      "forkOf": null,
+      "author": "Co-oscillator",
+      "identity": "FM-1_985",
+      "stars": 4,
+      "lastCommit": "2026-10-25",
+      "commits": 31,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v0.1.0",
+        "date": "2026-10-18",
+        "package": "affected"
+      }
+    },
+    {
+      "name": "LCD-4",
+      "repo": "devrvega/LCD-4",
+      "forkOf": null,
+      "author": "devrvega",
+      "identity": "FM-1_4000102",
+      "stars": 4,
+      "lastCommit": "2026-10-16",
+      "commits": 4,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v0.1.2",
+        "date": "2026-10-16",
+        "package": "affected"
+      }
+    },
+    {
+      "name": "SIDOU",
+      "repo": "dsablic/sidou",
+      "forkOf": null,
+      "author": "dsablic",
+      "identity": "FM-1_964",
+      "stars": 4,
+      "lastCommit": "2026-10-25",
+      "commits": 768,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": true
+      },
+      "release": {
+        "tag": "v0.5.0",
+        "date": "2026-10-25",
+        "package": "affected"
+      }
+    },
+    {
+      "name": "Pelucco",
+      "repo": "Gadlele/Pelucco",
+      "forkOf": "hugelton/Felucca",
+      "author": "Gadlele",
+      "identity": null,
+      "stars": 4,
+      "lastCommit": "2026-10-16",
+      "commits": 2,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": null
+    },
+    {
+      "name": "MIDIMON",
+      "repo": "ignis32/midimonitor_fm1",
+      "forkOf": null,
+      "author": "ignis32",
+      "identity": "FM-1_88000400",
+      "stars": 4,
+      "lastCommit": "2026-10-25",
+      "commits": 28,
+      "source": {
+        "status": "ok",
+        "basis": "fixed-base",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v0.4",
+        "date": "2026-10-25",
+        "package": "ok"
+      }
+    },
+    {
+      "name": "386DX",
+      "repo": "seajaysec/386-DX-FM1-KaraokeBot",
+      "forkOf": null,
+      "author": "seajaysec",
+      "identity": "FM-1_386010002",
+      "stars": 4,
+      "lastCommit": "2026-10-19",
+      "commits": 14,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v1.0.2",
+        "date": "2026-10-19",
+        "package": "affected"
       }
     },
     {
@@ -1555,9 +1811,11 @@
       "identity": null,
       "stars": 4,
       "lastCommit": "2026-10-10",
+      "commits": 6,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -1569,9 +1827,11 @@
       "identity": "FM-1_950",
       "stars": 3,
       "lastCommit": "2026-10-20",
+      "commits": 54,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v1.0",
@@ -1580,16 +1840,38 @@
       }
     },
     {
+      "name": "Doom FM-1 / SMK",
+      "repo": "ChanceTheMaker/doom-fm1-smk",
+      "forkOf": null,
+      "author": "ChanceTheMaker",
+      "identity": null,
+      "stars": 3,
+      "lastCommit": "2026-10-22",
+      "commits": 46,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "fm1-controls-26",
+        "date": "2026-10-22",
+        "package": "none"
+      }
+    },
+    {
       "name": "Mocky",
       "repo": "charlesvestal/fm1-mocky",
       "forkOf": null,
       "author": "charlesvestal",
-      "identity": null,
+      "identity": "FM-1_1000901",
       "stars": 3,
       "lastCommit": "2026-10-15",
+      "commits": 5,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.9.1",
@@ -1605,9 +1887,11 @@
       "identity": null,
       "stars": 3,
       "lastCommit": "2026-10-14",
+      "commits": 15,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -1618,30 +1902,14 @@
       "author": "delirioux",
       "identity": "FM-1_900",
       "stars": 3,
-      "lastCommit": "2026-10-17",
+      "lastCommit": "2026-10-26",
+      "commits": 72,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": true
       },
       "release": null
-    },
-    {
-      "name": "SIDOU",
-      "repo": "dsablic/sidou",
-      "forkOf": null,
-      "author": "dsablic",
-      "identity": "FM-1_964",
-      "stars": 3,
-      "lastCommit": "2026-10-25",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "v0.5.0",
-        "date": "2026-10-25",
-        "package": "affected"
-      }
     },
     {
       "name": "Glitchbox",
@@ -1651,9 +1919,11 @@
       "identity": null,
       "stars": 3,
       "lastCommit": "2026-10-16",
+      "commits": 11,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -1662,16 +1932,38 @@
       "repo": "glvno/matryoshka",
       "forkOf": null,
       "author": "glvno",
-      "identity": null,
+      "identity": "FM-1_714",
       "stars": 3,
       "lastCommit": "2026-10-26",
+      "commits": 930,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": true
       },
       "release": {
-        "tag": "v1.4.0",
+        "tag": "v1.4.2",
         "date": "2026-10-26",
+        "package": "affected"
+      }
+    },
+    {
+      "name": "Trireme FM-1",
+      "repo": "ignis32/trireme_fm1",
+      "forkOf": null,
+      "author": "ignis32",
+      "identity": "FM-1_961",
+      "stars": 3,
+      "lastCommit": "2026-10-20",
+      "commits": 6,
+      "source": {
+        "status": "affected",
+        "basis": "old-base",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v0.1.1",
+        "date": "2026-10-20",
         "package": "affected"
       }
     },
@@ -1683,9 +1975,11 @@
       "identity": null,
       "stars": 3,
       "lastCommit": "2026-10-24",
+      "commits": 39,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v2.8.1",
@@ -1701,9 +1995,11 @@
       "identity": "FM-1_7010201",
       "stars": 3,
       "lastCommit": "2026-10-18",
+      "commits": 4,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v1.2.1",
@@ -1719,9 +2015,11 @@
       "identity": null,
       "stars": 3,
       "lastCommit": "2026-10-24",
+      "commits": 12,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -1733,9 +2031,11 @@
       "identity": "FM-1_942",
       "stars": 3,
       "lastCommit": "2026-10-20",
+      "commits": 55,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v1.2.0",
@@ -1751,9 +2051,11 @@
       "identity": "FM-1_925",
       "stars": 3,
       "lastCommit": "2026-10-06",
+      "commits": 0,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v2.5-b28-test",
@@ -1769,9 +2071,11 @@
       "identity": "FM-1_777",
       "stars": 3,
       "lastCommit": "2026-10-16",
+      "commits": 27,
       "source": {
         "status": "affected",
-        "basis": "submodule"
+        "basis": "submodule",
+        "sizeCheck": true
       },
       "release": {
         "tag": "v1.5.2",
@@ -1780,216 +2084,18 @@
       }
     },
     {
-      "name": "SLOOP Floyd FM",
-      "repo": "renebohne/sloop-fm1",
-      "forkOf": "isod89/sloop-fm1",
-      "author": "renebohne",
-      "identity": "FM-1_924",
-      "stars": 3,
-      "lastCommit": "2026-10-07",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "v2.4",
-        "date": "2026-10-06",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "386DX",
-      "repo": "seajaysec/386-DX-FM1-KaraokeBot",
-      "forkOf": null,
-      "author": "seajaysec",
-      "identity": "FM-1_386010002",
-      "stars": 3,
-      "lastCommit": "2026-10-19",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "v1.0.2",
-        "date": "2026-10-19",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "Crepuscular_Homunculus",
-      "repo": "TerkWerX/Crepuscular_Homunculus",
-      "forkOf": null,
-      "author": "TerkWerX",
-      "identity": null,
-      "stars": 3,
-      "lastCommit": "2026-10-13",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "v0.22.0-dev",
-        "date": "2026-10-13",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "TripDeck",
-      "repo": "anonymousacademe/FM-1-TripDeck",
-      "forkOf": null,
-      "author": "anonymousacademe",
-      "identity": null,
-      "stars": 2,
-      "lastCommit": "2026-10-19",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": null
-    },
-    {
-      "name": "BOTANICA",
-      "repo": "catacombius/NoteSorcery",
-      "forkOf": null,
-      "author": "catacombius",
-      "identity": null,
-      "stars": 2,
-      "lastCommit": "2026-10-20",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "botanica-v0.3",
-        "date": "2026-10-20",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "Doom FM-1 / SMK",
-      "repo": "ChanceTheMaker/doom-fm1-smk",
-      "forkOf": null,
-      "author": "ChanceTheMaker",
-      "identity": null,
-      "stars": 2,
-      "lastCommit": "2026-10-22",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "fm1-controls-26",
-        "date": "2026-10-22",
-        "package": "none"
-      }
-    },
-    {
-      "name": "fm1-rocket-os",
-      "repo": "cmlarsen/fm1-rocket-os",
-      "forkOf": null,
-      "author": "cmlarsen",
-      "identity": null,
-      "stars": 2,
-      "lastCommit": "2026-10-12",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": null
-    },
-    {
-      "name": "Flyfish",
-      "repo": "delirioux/flyfish",
-      "forkOf": null,
-      "author": "delirioux",
-      "identity": "FM-1_900",
-      "stars": 2,
-      "lastCommit": "2026-10-19",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": null
-    },
-    {
-      "name": "BRUTAL FM",
-      "repo": "hiroikezawa/brutal-fm",
-      "forkOf": null,
-      "author": "hiroikezawa",
-      "identity": null,
-      "stars": 2,
-      "lastCommit": "2026-10-22",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "v0.1.5",
-        "date": "2026-10-22",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "Trireme FM-1",
-      "repo": "ignis32/trireme_fm1",
-      "forkOf": null,
-      "author": "ignis32",
-      "identity": null,
-      "stars": 2,
-      "lastCommit": "2026-10-20",
-      "source": {
-        "status": "affected",
-        "basis": "old-base"
-      },
-      "release": {
-        "tag": "v0.1.1",
-        "date": "2026-10-20",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "Double Rainbow",
-      "repo": "joshbartlettband-web/Double-Rainbow",
-      "forkOf": "keremimo/melodee",
-      "author": "joshbartlettband-web",
-      "identity": null,
-      "stars": 2,
-      "lastCommit": "2026-10-24",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": null
-    },
-    {
-      "name": "FOMAJAM",
-      "repo": "konsumer/fomajam",
-      "forkOf": null,
-      "author": "konsumer",
-      "identity": "FM-1_961",
-      "stars": 2,
-      "lastCommit": "2026-10-23",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "v0.1.6",
-        "date": "2026-10-23",
-        "package": "affected"
-      }
-    },
-    {
       "name": "GATOR",
       "repo": "npi3pak/fm1-gator",
       "forkOf": null,
       "author": "npi3pak",
-      "identity": null,
-      "stars": 2,
+      "identity": "FM-1_906",
+      "stars": 3,
       "lastCommit": "2026-10-17",
+      "commits": 6,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.6",
@@ -2003,15 +2109,221 @@
       "forkOf": null,
       "author": "pbarilla",
       "identity": "FM-1_337",
-      "stars": 2,
+      "stars": 3,
       "lastCommit": "2026-10-26",
+      "commits": 33,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v1.3.3",
         "date": "2026-10-26",
+        "package": "affected"
+      }
+    },
+    {
+      "name": "SLOOP Floyd FM",
+      "repo": "renebohne/sloop-fm1",
+      "forkOf": "isod89/sloop-fm1",
+      "author": "renebohne",
+      "identity": "FM-1_924",
+      "stars": 3,
+      "lastCommit": "2026-10-07",
+      "commits": 0,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v2.4",
+        "date": "2026-10-06",
+        "package": "affected"
+      }
+    },
+    {
+      "name": "Crepuscular_Homunculus",
+      "repo": "TerkWerX/Crepuscular_Homunculus",
+      "forkOf": null,
+      "author": "TerkWerX",
+      "identity": "FM-1_986",
+      "stars": 3,
+      "lastCommit": "2026-10-27",
+      "commits": 6,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v0.26.19",
+        "date": "2026-10-27",
+        "package": "affected"
+      }
+    },
+    {
+      "name": "TripDeck",
+      "repo": "anonymousacademe/FM-1-TripDeck",
+      "forkOf": null,
+      "author": "anonymousacademe",
+      "identity": null,
+      "stars": 2,
+      "lastCommit": "2026-10-19",
+      "commits": 3,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": null
+    },
+    {
+      "name": "BOTANICA",
+      "repo": "catacombius/NoteSorcery",
+      "forkOf": null,
+      "author": "catacombius",
+      "identity": "FM-1_9603",
+      "stars": 2,
+      "lastCommit": "2026-10-20",
+      "commits": 25,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "botanica-v0.3",
+        "date": "2026-10-20",
+        "package": "affected"
+      }
+    },
+    {
+      "name": "GameDude",
+      "repo": "ChanceTheMaker/gamedude-fm1-smk",
+      "forkOf": null,
+      "author": "ChanceTheMaker",
+      "identity": "FM-1_937",
+      "stars": 2,
+      "lastCommit": "2026-10-22",
+      "commits": 32,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "smk-pad-lights-953",
+        "date": "2026-10-22",
+        "package": "affected"
+      }
+    },
+    {
+      "name": "fm1-rocket-os",
+      "repo": "cmlarsen/fm1-rocket-os",
+      "forkOf": null,
+      "author": "cmlarsen",
+      "identity": null,
+      "stars": 2,
+      "lastCommit": "2026-10-12",
+      "commits": 372,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": null
+    },
+    {
+      "name": "Flyfish",
+      "repo": "delirioux/flyfish",
+      "forkOf": null,
+      "author": "delirioux",
+      "identity": "FM-1_900",
+      "stars": 2,
+      "lastCommit": "2026-10-19",
+      "commits": 22,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": true
+      },
+      "release": null
+    },
+    {
+      "name": "BOP-1",
+      "repo": "devrvega/BOP-1",
+      "forkOf": null,
+      "author": "devrvega",
+      "identity": "FM-1_61000100",
+      "stars": 2,
+      "lastCommit": "2026-10-18",
+      "commits": 3,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v0.1.0",
+        "date": "2026-10-18",
+        "package": "affected"
+      }
+    },
+    {
+      "name": "BRUTAL FM",
+      "repo": "hiroikezawa/brutal-fm",
+      "forkOf": null,
+      "author": "hiroikezawa",
+      "identity": "FM-1_700",
+      "stars": 2,
+      "lastCommit": "2026-10-22",
+      "commits": 19,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": true
+      },
+      "release": {
+        "tag": "v0.1.5",
+        "date": "2026-10-22",
+        "package": "affected"
+      }
+    },
+    {
+      "name": "Double Rainbow",
+      "repo": "joshbartlettband-web/Double-Rainbow",
+      "forkOf": "keremimo/melodee",
+      "author": "joshbartlettband-web",
+      "identity": null,
+      "stars": 2,
+      "lastCommit": "2026-10-24",
+      "commits": 65,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": null
+    },
+    {
+      "name": "FOMAJAM",
+      "repo": "konsumer/fomajam",
+      "forkOf": null,
+      "author": "konsumer",
+      "identity": "FM-1_961",
+      "stars": 2,
+      "lastCommit": "2026-10-27",
+      "commits": 54,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v0.1.7",
+        "date": "2026-10-27",
         "package": "affected"
       }
     },
@@ -2022,12 +2334,34 @@
       "author": "schwartzworld",
       "identity": null,
       "stars": 2,
-      "lastCommit": "2026-10-15",
+      "lastCommit": "2026-10-26",
+      "commits": 68,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
+    },
+    {
+      "name": "FRASIL",
+      "repo": "styvesgoupil/frasil",
+      "forkOf": null,
+      "author": "styvesgoupil",
+      "identity": "FM-1_47020001",
+      "stars": 2,
+      "lastCommit": "2026-10-25",
+      "commits": 6,
+      "source": {
+        "status": "affected",
+        "basis": "old-base",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v2.0.1",
+        "date": "2026-10-25",
+        "package": "affected"
+      }
     },
     {
       "name": "TamaMPE",
@@ -2037,9 +2371,11 @@
       "identity": null,
       "stars": 2,
       "lastCommit": "2026-10-11",
+      "commits": 0,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -2048,18 +2384,36 @@
       "repo": "WiggisModular/Modular-1",
       "forkOf": null,
       "author": "WiggisModular",
-      "identity": null,
+      "identity": "FM-1_800",
       "stars": 2,
       "lastCommit": "2026-10-20",
+      "commits": 68,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v1.0.3",
         "date": "2026-10-14",
         "package": "affected"
       }
+    },
+    {
+      "name": "FM-1 Doom",
+      "repo": "zvenson/fm1doom",
+      "forkOf": null,
+      "author": "zvenson",
+      "identity": "FM-1_985",
+      "stars": 2,
+      "lastCommit": "2026-10-07",
+      "commits": 11,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": null
     },
     {
       "name": "picovave",
@@ -2069,9 +2423,11 @@
       "identity": null,
       "stars": 1,
       "lastCommit": "2026-10-24",
+      "commits": 37,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "12822759",
@@ -2087,9 +2443,11 @@
       "identity": "FM-1_4310100",
       "stars": 1,
       "lastCommit": "2026-10-21",
+      "commits": 23,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v1.1",
@@ -2105,41 +2463,27 @@
       "identity": "FM-1_8000013",
       "stars": 1,
       "lastCommit": "2026-10-19",
+      "commits": 29,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
-    },
-    {
-      "name": "GameDude",
-      "repo": "ChanceTheMaker/gamedude-fm1-smk",
-      "forkOf": null,
-      "author": "ChanceTheMaker",
-      "identity": null,
-      "stars": 1,
-      "lastCommit": "2026-10-22",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "smk-pad-lights-953",
-        "date": "2026-10-22",
-        "package": "affected"
-      }
     },
     {
       "name": "NESynth",
       "repo": "ChanceTheMaker/NESynth-FM1-SMK",
       "forkOf": null,
       "author": "ChanceTheMaker",
-      "identity": null,
+      "identity": "FM-1_961",
       "stars": 1,
       "lastCommit": "2026-10-22",
+      "commits": 53,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "smk-pad-lights-971",
@@ -2148,20 +2492,22 @@
       }
     },
     {
-      "name": "BOP-1",
-      "repo": "devrvega/BOP-1",
+      "name": "PERF-1",
+      "repo": "deamonSLINKY/PERF-1",
       "forkOf": null,
-      "author": "devrvega",
-      "identity": null,
+      "author": "deamonSLINKY",
+      "identity": "FM-1_7001300",
       "stars": 1,
-      "lastCommit": "2026-10-18",
+      "lastCommit": "2026-10-26",
+      "commits": 108,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
-        "tag": "v0.1.0",
-        "date": "2026-10-18",
+        "tag": "v0.13.0",
+        "date": "2026-10-25",
         "package": "affected"
       }
     },
@@ -2170,12 +2516,14 @@
       "repo": "devrvega/IND-1",
       "forkOf": null,
       "author": "devrvega",
-      "identity": null,
+      "identity": "FM-1_5000201",
       "stars": 1,
       "lastCommit": "2026-10-16",
+      "commits": 8,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.2.1",
@@ -2188,12 +2536,14 @@
       "repo": "DimmKirr/core-fm1",
       "forkOf": null,
       "author": "DimmKirr",
-      "identity": null,
+      "identity": "FM-1_900",
       "stars": 1,
       "lastCommit": "2026-10-25",
+      "commits": 25,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "dev",
@@ -2202,16 +2552,34 @@
       }
     },
     {
+      "name": "kettle",
+      "repo": "dmajka/elixir",
+      "forkOf": null,
+      "author": "dmajka",
+      "identity": null,
+      "stars": 1,
+      "lastCommit": "2026-10-27",
+      "commits": 25,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": true
+      },
+      "release": null
+    },
+    {
       "name": "fm1-amy",
       "repo": "dpwe/fm1-amy",
       "forkOf": null,
       "author": "dpwe",
       "identity": null,
       "stars": 1,
-      "lastCommit": "2026-10-22",
+      "lastCommit": "2026-10-27",
+      "commits": 10,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -2223,15 +2591,33 @@
       "identity": "FM-1_983",
       "stars": 1,
       "lastCommit": "2026-10-25",
+      "commits": 12,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": true
       },
       "release": {
         "tag": "v0.9.1",
         "date": "2026-10-25",
         "package": "affected"
       }
+    },
+    {
+      "name": "MNM-1",
+      "repo": "galfaroth/mnm1",
+      "forkOf": null,
+      "author": "galfaroth",
+      "identity": "FM-1_900",
+      "stars": 1,
+      "lastCommit": "2026-10-26",
+      "commits": 15,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": null
     },
     {
       "name": "MODELAR",
@@ -2241,9 +2627,11 @@
       "identity": "FM-1_42000300",
       "stars": 1,
       "lastCommit": "2026-10-22",
+      "commits": 5,
       "source": {
         "status": "affected",
-        "basis": "old-base"
+        "basis": "old-base",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.3",
@@ -2259,9 +2647,11 @@
       "identity": null,
       "stars": 1,
       "lastCommit": "2026-10-21",
+      "commits": 1,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -2270,12 +2660,14 @@
       "repo": "ImpossibleKnot/bongo-cat-studio",
       "forkOf": null,
       "author": "ImpossibleKnot",
-      "identity": null,
+      "identity": "FM-1_980",
       "stars": 1,
       "lastCommit": "2026-10-24",
+      "commits": 2,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": true
       },
       "release": {
         "tag": "v0.4.0-rc1",
@@ -2288,16 +2680,18 @@
       "repo": "InigoHernandez/demake-synth",
       "forkOf": null,
       "author": "InigoHernandez",
-      "identity": null,
+      "identity": "FM-1_969",
       "stars": 1,
-      "lastCommit": "2026-10-25",
+      "lastCommit": "2026-10-26",
+      "commits": 132,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
-        "tag": "v0.4.11",
-        "date": "2026-10-25",
+        "tag": "v0.4.18",
+        "date": "2026-10-26",
         "package": "affected"
       }
     },
@@ -2309,41 +2703,27 @@
       "identity": null,
       "stars": 1,
       "lastCommit": "2026-10-09",
+      "commits": 0,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
-    },
-    {
-      "name": "fm1-dock",
-      "repo": "joakimeriksson/fm1-dock",
-      "forkOf": null,
-      "author": "joakimeriksson",
-      "identity": null,
-      "stars": 1,
-      "lastCommit": "2026-10-25",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "v0.6",
-        "date": "2026-10-25",
-        "package": "affected"
-      }
     },
     {
       "name": "FM-1 SID",
       "repo": "joakimeriksson/fm1-sid",
       "forkOf": null,
       "author": "joakimeriksson",
-      "identity": null,
+      "identity": "FM-1_900",
       "stars": 1,
-      "lastCommit": "2026-10-25",
+      "lastCommit": "2026-10-26",
+      "commits": 49,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.3",
@@ -2359,9 +2739,11 @@
       "identity": null,
       "stars": 1,
       "lastCommit": "2026-10-26",
+      "commits": 119,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -2373,23 +2755,47 @@
       "identity": "FM-1_2701000117",
       "stars": 1,
       "lastCommit": "2026-10-25",
+      "commits": 18,
       "source": {
         "status": "ok",
-        "basis": "fixed-base"
+        "basis": "fixed-base",
+        "sizeCheck": false
       },
       "release": null
+    },
+    {
+      "name": "SARDAB",
+      "repo": "jrdntnnr/sardab",
+      "forkOf": "jasonpersinger/ghoulbox-fm1-dungeon-synth",
+      "author": "jrdntnnr",
+      "identity": "FM-1_900",
+      "stars": 1,
+      "lastCommit": "2026-10-18",
+      "commits": 26,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": true
+      },
+      "release": {
+        "tag": "sardab-v2.1-preview",
+        "date": "2026-10-13",
+        "package": "affected"
+      }
     },
     {
       "name": "Synthesthetic",
       "repo": "michaeljsmalley/synthesthetic",
       "forkOf": null,
       "author": "michaeljsmalley",
-      "identity": null,
+      "identity": "FM-1_952",
       "stars": 1,
       "lastCommit": "2026-10-24",
+      "commits": 8,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.2-beta",
@@ -2405,9 +2811,11 @@
       "identity": "FM-1_987010100",
       "stars": 1,
       "lastCommit": "2026-10-18",
+      "commits": 27,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v1.1.0",
@@ -2420,17 +2828,19 @@
       "repo": "ocean/estampie",
       "forkOf": null,
       "author": "ocean",
-      "identity": "FM-1_378009",
+      "identity": "FM-1_378010",
       "stars": 1,
-      "lastCommit": "2026-10-25",
+      "lastCommit": "2026-10-27",
+      "commits": 101,
       "source": {
-        "status": "affected",
-        "basis": "own-copy"
+        "status": "ok",
+        "basis": "fixed-code",
+        "sizeCheck": false
       },
       "release": {
-        "tag": "v0.3.6",
-        "date": "2026-10-25",
-        "package": "affected"
+        "tag": "v0.3.7",
+        "date": "2026-10-27",
+        "package": "ok"
       }
     },
     {
@@ -2441,9 +2851,11 @@
       "identity": null,
       "stars": 1,
       "lastCommit": "2026-10-22",
+      "commits": 3,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -2454,14 +2866,16 @@
       "author": "Quixotic7",
       "identity": "FM-1_46001200",
       "stars": 1,
-      "lastCommit": "2026-10-26",
+      "lastCommit": "2026-10-27",
+      "commits": 527,
       "source": {
         "status": "ok",
-        "basis": "fixed-base"
+        "basis": "fixed-base",
+        "sizeCheck": false
       },
       "release": {
-        "tag": "v0.12.0-beta.6",
-        "date": "2026-10-26",
+        "tag": "v0.12.0-beta.9",
+        "date": "2026-10-27",
         "package": "ok"
       }
     },
@@ -2472,10 +2886,12 @@
       "author": "Quixotic7",
       "identity": null,
       "stars": 1,
-      "lastCommit": "2026-10-22",
+      "lastCommit": "2026-10-26",
+      "commits": 78,
       "source": {
         "status": "unclear",
-        "basis": "unknown"
+        "basis": "unknown",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -2484,12 +2900,14 @@
       "repo": "Reytian/fm1-luogu",
       "forkOf": null,
       "author": "Reytian",
-      "identity": null,
+      "identity": "FM-1_53010001",
       "stars": 1,
       "lastCommit": "2026-10-23",
+      "commits": 6,
       "source": {
         "status": "affected",
-        "basis": "old-base"
+        "basis": "old-base",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v1.0.1",
@@ -2505,29 +2923,13 @@
       "identity": "FM-1_660",
       "stars": 1,
       "lastCommit": "2026-10-24",
+      "commits": 81,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": true
       },
       "release": null
-    },
-    {
-      "name": "FRASIL",
-      "repo": "styvesgoupil/frasil",
-      "forkOf": null,
-      "author": "styvesgoupil",
-      "identity": "FM-1_47020001",
-      "stars": 1,
-      "lastCommit": "2026-10-25",
-      "source": {
-        "status": "affected",
-        "basis": "old-base"
-      },
-      "release": {
-        "tag": "v2.0.1",
-        "date": "2026-10-25",
-        "package": "affected"
-      }
     },
     {
       "name": "FM-1 T1",
@@ -2537,9 +2939,11 @@
       "identity": null,
       "stars": 1,
       "lastCommit": "2026-10-14",
+      "commits": 2,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -2551,11 +2955,33 @@
       "identity": null,
       "stars": 1,
       "lastCommit": "2026-10-09",
+      "commits": 0,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
+    },
+    {
+      "name": "KIDBOY",
+      "repo": "WillCMcC/kidboy-firmware",
+      "forkOf": null,
+      "author": "WillCMcC",
+      "identity": "FM-1_938",
+      "stars": 1,
+      "lastCommit": "2026-10-18",
+      "commits": 51,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": true
+      },
+      "release": {
+        "tag": "v0.1",
+        "date": "2026-10-18",
+        "package": "affected"
+      }
     },
     {
       "name": "crate-fm1",
@@ -2565,23 +2991,11 @@
       "identity": null,
       "stars": 1,
       "lastCommit": "2026-10-19",
+      "commits": 2,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": null
-    },
-    {
-      "name": "FM-1 Doom",
-      "repo": "zvenson/fm1doom",
-      "forkOf": null,
-      "author": "zvenson",
-      "identity": "FM-1_985",
-      "stars": 1,
-      "lastCommit": "2026-10-07",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -2593,9 +3007,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-11",
+      "commits": 14,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -2607,9 +3023,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-19",
+      "commits": 6,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -2621,9 +3039,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-26",
+      "commits": 23,
       "source": {
         "status": "ok",
-        "basis": "fixed-code"
+        "basis": "fixed-code",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -2635,9 +3055,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-17",
+      "commits": 0,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -2649,9 +3071,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-12",
+      "commits": 2,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -2663,9 +3087,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-23",
+      "commits": 95,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -2676,10 +3102,12 @@
       "author": "DarkHelmet67",
       "identity": null,
       "stars": 0,
-      "lastCommit": "2026-10-25",
+      "lastCommit": "2026-10-26",
+      "commits": 5,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -2691,9 +3119,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-21",
+      "commits": 13,
       "source": {
         "status": "affected",
-        "basis": "old-base"
+        "basis": "old-base",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.1",
@@ -2709,9 +3139,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-22",
+      "commits": 1,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -2720,12 +3152,14 @@
       "repo": "deabrewcontato-code/Selva1",
       "forkOf": null,
       "author": "deabrewcontato-code",
-      "identity": null,
+      "identity": "FM-1_901",
       "stars": 0,
       "lastCommit": "2026-10-18",
+      "commits": 10,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.2.0",
@@ -2741,45 +3175,31 @@
       "identity": "FM-1_900",
       "stars": 0,
       "lastCommit": "2026-10-22",
+      "commits": 86,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
-    },
-    {
-      "name": "PERF-1",
-      "repo": "deamonSLINKY/PERF-1",
-      "forkOf": null,
-      "author": "deamonSLINKY",
-      "identity": null,
-      "stars": 0,
-      "lastCommit": "2026-10-25",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "v0.13.0",
-        "date": "2026-10-25",
-        "package": "affected"
-      }
     },
     {
       "name": "Makohai",
       "repo": "delirioux/makohai",
       "forkOf": null,
       "author": "delirioux",
-      "identity": "FM-1_960",
+      "identity": "FM-1_47625642",
       "stars": 0,
-      "lastCommit": "2026-10-25",
+      "lastCommit": "2026-10-27",
+      "commits": 85,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
-        "tag": "v1.0",
-        "date": "2026-10-25",
+        "tag": "v1.2",
+        "date": "2026-10-26",
         "package": "affected"
       }
     },
@@ -2788,12 +3208,14 @@
       "repo": "devrvega/CRT-4",
       "forkOf": null,
       "author": "devrvega",
-      "identity": null,
+      "identity": "FM-1_2000102",
       "stars": 0,
       "lastCommit": "2026-10-16",
+      "commits": 5,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.1.2",
@@ -2806,12 +3228,14 @@
       "repo": "devrvega/ROM-1",
       "forkOf": null,
       "author": "devrvega",
-      "identity": null,
+      "identity": "FM-1_0000101",
       "stars": 0,
       "lastCommit": "2026-10-17",
+      "commits": 6,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.1.1",
@@ -2824,12 +3248,14 @@
       "repo": "devrvega/SEQ-4",
       "forkOf": null,
       "author": "devrvega",
-      "identity": null,
+      "identity": "FM-1_1000100",
       "stars": 0,
       "lastCommit": "2026-10-16",
+      "commits": 2,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.1.0",
@@ -2838,30 +3264,18 @@
       }
     },
     {
-      "name": "kettle",
-      "repo": "dmajka/kettle",
-      "forkOf": null,
-      "author": "dmajka",
-      "identity": null,
-      "stars": 0,
-      "lastCommit": "2026-10-26",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": null
-    },
-    {
       "name": "analogBEAST",
       "repo": "dzwerg/analogBEAST",
       "forkOf": null,
       "author": "dzwerg",
-      "identity": null,
+      "identity": "FM-1_901",
       "stars": 0,
       "lastCommit": "2026-10-23",
+      "commits": 13,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v1.1",
@@ -2874,12 +3288,14 @@
       "repo": "dzwerg/Golana-DZ",
       "forkOf": "Gadlele/Golana",
       "author": "dzwerg",
-      "identity": "FM-1_900",
+      "identity": "FM-1_902",
       "stars": 0,
       "lastCommit": "2026-10-18",
+      "commits": 3,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.2.2-beta1",
@@ -2895,9 +3311,11 @@
       "identity": "FM-1_956",
       "stars": 0,
       "lastCommit": "2026-10-25",
+      "commits": 32,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -2906,12 +3324,14 @@
       "repo": "EremanSim/ChoralRootj-6",
       "forkOf": "Quixotic7/ChoralRootFM1",
       "author": "EremanSim",
-      "identity": null,
+      "identity": "FM-1_920",
       "stars": 0,
       "lastCommit": "2026-10-13",
+      "commits": 21,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.23-j6",
@@ -2927,37 +3347,27 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-18",
+      "commits": 6,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
     {
       "name": "dinobox-fm1",
-      "repo": "fantasmoslam/dinobox-fm1",
+      "repo": "fantasmoslam/Paleotone",
       "forkOf": null,
       "author": "fantasmoslam",
       "identity": null,
       "stars": 0,
-      "lastCommit": "2026-10-26",
+      "lastCommit": "2026-10-27",
+      "commits": 87,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": null
-    },
-    {
-      "name": "MNM-1",
-      "repo": "galfaroth/mnm1",
-      "forkOf": null,
-      "author": "galfaroth",
-      "identity": "FM-1_900",
-      "stars": 0,
-      "lastCommit": "2026-10-25",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -2969,9 +3379,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-11",
+      "commits": 1,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -2983,9 +3395,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-14",
+      "commits": 2,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -2997,9 +3411,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-12",
+      "commits": 553,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -3011,11 +3427,33 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-09",
+      "commits": 0,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
+    },
+    {
+      "name": "fm1-j6",
+      "repo": "JackieAlacrity2373/fm1-j6",
+      "forkOf": null,
+      "author": "JackieAlacrity2373",
+      "identity": "FM-1_66010200",
+      "stars": 0,
+      "lastCommit": "2026-10-27",
+      "commits": 7,
+      "source": {
+        "status": "ok",
+        "basis": "fixed-code",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v1.2.0",
+        "date": "2026-10-27",
+        "package": "ok"
+      }
     },
     {
       "name": "Studio Tess",
@@ -3025,9 +3463,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-17",
+      "commits": 2,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -3039,9 +3479,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-25",
+      "commits": 8,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -3050,12 +3492,14 @@
       "repo": "joakimeriksson/scintilla-fm1",
       "forkOf": null,
       "author": "joakimeriksson",
-      "identity": null,
+      "identity": "FM-1_96300101",
       "stars": 0,
-      "lastCommit": "2026-10-24",
+      "lastCommit": "2026-10-26",
+      "commits": 14,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.1.1",
@@ -3070,10 +3514,12 @@
       "author": "johnskiller",
       "identity": null,
       "stars": 0,
-      "lastCommit": "2026-10-25",
+      "lastCommit": "2026-10-27",
+      "commits": 50,
       "source": {
         "status": "ok",
-        "basis": "fixed-base"
+        "basis": "fixed-base",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -3085,29 +3531,13 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-26",
+      "commits": 15,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
-    },
-    {
-      "name": "SARDAB",
-      "repo": "jrdntnnr/sardab",
-      "forkOf": "jasonpersinger/ghoulbox-fm1-dungeon-synth",
-      "author": "jrdntnnr",
-      "identity": null,
-      "stars": 0,
-      "lastCommit": "2026-10-18",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "sardab-v2.1-preview",
-        "date": "2026-10-13",
-        "package": "affected"
-      }
     },
     {
       "name": "JSMFelucca",
@@ -3116,10 +3546,12 @@
       "author": "jsmonzani",
       "identity": null,
       "stars": 0,
-      "lastCommit": "2026-10-24",
+      "lastCommit": "2026-10-27",
+      "commits": 17,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": true
       },
       "release": null
     },
@@ -3128,12 +3560,14 @@
       "repo": "jsopdebeeck/fm1-delrio",
       "forkOf": null,
       "author": "jsopdebeeck",
-      "identity": "FM-1_48000700",
+      "identity": "FM-1_48000900",
       "stars": 0,
       "lastCommit": "2026-10-25",
+      "commits": 17,
       "source": {
         "status": "ok",
-        "basis": "fixed-base"
+        "basis": "fixed-base",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.9",
@@ -3149,9 +3583,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-15",
+      "commits": 39,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -3163,9 +3599,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-18",
+      "commits": 2,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -3176,10 +3614,12 @@
       "author": "KemstheSage",
       "identity": null,
       "stars": 0,
-      "lastCommit": "2026-10-25",
+      "lastCommit": "2026-10-26",
+      "commits": 29,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": true
       },
       "release": null
     },
@@ -3188,12 +3628,14 @@
       "repo": "Kenneth-Rakentine/Ravel-FM1",
       "forkOf": null,
       "author": "Kenneth-Rakentine",
-      "identity": null,
+      "identity": "FM-1_96000301",
       "stars": 0,
       "lastCommit": "2026-10-20",
+      "commits": 18,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.3.1",
@@ -3206,12 +3648,14 @@
       "repo": "kidbee85-beep/AMB-1-Evolved",
       "forkOf": null,
       "author": "kidbee85-beep",
-      "identity": null,
+      "identity": "FM-1_7080001",
       "stars": 0,
       "lastCommit": "2026-10-16",
+      "commits": 26,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "E1",
@@ -3227,9 +3671,11 @@
       "identity": "FM-1_7100002",
       "stars": 0,
       "lastCommit": "2026-10-18",
+      "commits": 2,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": true
       },
       "release": {
         "tag": "v1.0.0",
@@ -3242,14 +3688,20 @@
       "repo": "KingXeryus/SynthMaven",
       "forkOf": null,
       "author": "KingXeryus",
-      "identity": null,
+      "identity": "FM-1_921",
       "stars": 0,
       "lastCommit": "2026-10-26",
+      "commits": 75,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
-      "release": null
+      "release": {
+        "tag": "v2.1.2",
+        "date": "2026-10-26",
+        "package": "affected"
+      }
     },
     {
       "name": "fm1-deal-or-no-deal",
@@ -3259,9 +3711,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-18",
+      "commits": 1,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -3273,9 +3727,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-16",
+      "commits": 0,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": true
       },
       "release": null
     },
@@ -3284,12 +3740,14 @@
       "repo": "LXXero/oplbox",
       "forkOf": null,
       "author": "LXXero",
-      "identity": null,
+      "identity": "FM-1_964",
       "stars": 0,
       "lastCommit": "2026-10-24",
+      "commits": 11,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.4.2",
@@ -3302,12 +3760,14 @@
       "repo": "markterm/monohull",
       "forkOf": null,
       "author": "markterm",
-      "identity": null,
+      "identity": "FM-1_928",
       "stars": 0,
-      "lastCommit": "2026-10-25",
+      "lastCommit": "2026-10-26",
+      "commits": 7,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.2.0",
@@ -3320,18 +3780,36 @@
       "repo": "mentalcells/ambwave",
       "forkOf": null,
       "author": "mentalcells",
-      "identity": null,
+      "identity": "FM-1_900",
       "stars": 0,
       "lastCommit": "2026-10-20",
+      "commits": 3,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.1.0",
         "date": "2026-10-17",
         "package": "affected"
       }
+    },
+    {
+      "name": "numetal-skratchmaster-pro-fm1",
+      "repo": "mhellar/numetal-skratchmaster-pro-fm1",
+      "forkOf": null,
+      "author": "mhellar",
+      "identity": null,
+      "stars": 0,
+      "lastCommit": "2026-10-26",
+      "commits": 13,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "sizeCheck": false
+      },
+      "release": null
     },
     {
       "name": "Felucca MPE",
@@ -3341,9 +3819,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-23",
+      "commits": 19,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": true
       },
       "release": null
     },
@@ -3355,9 +3835,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-19",
+      "commits": 4,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": true
       },
       "release": null
     },
@@ -3366,12 +3848,14 @@
       "repo": "NicholasPratt/Prysm",
       "forkOf": null,
       "author": "NicholasPratt",
-      "identity": null,
+      "identity": "FM-1_989",
       "stars": 0,
       "lastCommit": "2026-10-26",
+      "commits": 73,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v1.3",
@@ -3386,10 +3870,12 @@
       "author": "NorfolkHacker",
       "identity": null,
       "stars": 0,
-      "lastCommit": "2026-10-25",
+      "lastCommit": "2026-10-26",
+      "commits": 101,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -3401,9 +3887,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-22",
+      "commits": 22,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -3415,9 +3903,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-16",
+      "commits": 6,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -3429,9 +3919,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-26",
+      "commits": 234,
       "source": {
         "status": "affected",
-        "basis": "old-base"
+        "basis": "old-base",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -3443,9 +3935,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-19",
+      "commits": 29,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": true
       },
       "release": null
     },
@@ -3457,9 +3951,11 @@
       "identity": "FM-1_950",
       "stars": 0,
       "lastCommit": "2026-10-17",
+      "commits": 29,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v2.0.0",
@@ -3475,9 +3971,11 @@
       "identity": "FM-1_960",
       "stars": 0,
       "lastCommit": "2026-10-17",
+      "commits": 1,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v1.0.0",
@@ -3493,9 +3991,11 @@
       "identity": "FM-1_982",
       "stars": 0,
       "lastCommit": "2026-10-23",
+      "commits": 23,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -3507,9 +4007,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-25",
+      "commits": 62,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": true
       },
       "release": null
     },
@@ -3518,12 +4020,14 @@
       "repo": "SikkenWorks/B1-Drawbar-Organ",
       "forkOf": null,
       "author": "SikkenWorks",
-      "identity": null,
+      "identity": "FM-1_481026",
       "stars": 0,
       "lastCommit": "2026-10-23",
+      "commits": 21,
       "source": {
         "status": "ok",
-        "basis": "pinned-v15"
+        "basis": "pinned-v15",
+        "sizeCheck": false
       },
       "release": {
         "tag": "V4.9beta",
@@ -3539,9 +4043,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-12",
+      "commits": 65,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -3553,9 +4059,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-13",
+      "commits": 4,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -3564,12 +4072,14 @@
       "repo": "slothpallas/mope-1",
       "forkOf": null,
       "author": "slothpallas",
-      "identity": null,
+      "identity": "FM-1_6673000100",
       "stars": 0,
       "lastCommit": "2026-10-24",
+      "commits": 13,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.1.0",
@@ -3585,9 +4095,11 @@
       "identity": "FM-1_900",
       "stars": 0,
       "lastCommit": "2026-10-21",
+      "commits": 9,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -3599,9 +4111,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-15",
+      "commits": 8,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -3613,9 +4127,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-20",
+      "commits": 32,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": true
       },
       "release": null
     },
@@ -3624,12 +4140,14 @@
       "repo": "thecemeterygates/masif-fm1",
       "forkOf": null,
       "author": "thecemeterygates",
-      "identity": null,
+      "identity": "FM-1_961",
       "stars": 0,
       "lastCommit": "2026-10-25",
+      "commits": 3,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.1",
@@ -3645,9 +4163,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-18",
+      "commits": 7,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -3659,9 +4179,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-15",
+      "commits": 32,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -3670,12 +4192,14 @@
       "repo": "thomasgregorymarsden-code/Felucca-opx",
       "forkOf": "hugelton/Felucca",
       "author": "thomasgregorymarsden-code",
-      "identity": null,
+      "identity": "FM-1_901",
       "stars": 0,
       "lastCommit": "2026-10-26",
+      "commits": 99,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": {
         "tag": "v0.1.0",
@@ -3691,9 +4215,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-14",
+      "commits": 1,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -3705,9 +4231,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-22",
+      "commits": 14,
       "source": {
         "status": "affected",
-        "basis": "old-base"
+        "basis": "old-base",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -3719,9 +4247,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-20",
+      "commits": 2,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
     },
@@ -3733,29 +4263,13 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-10-25",
+      "commits": 7,
       "source": {
         "status": "affected",
-        "basis": "own-copy"
+        "basis": "own-copy",
+        "sizeCheck": false
       },
       "release": null
-    },
-    {
-      "name": "KIDBOY",
-      "repo": "WillCMcC/kidboy-firmware",
-      "forkOf": null,
-      "author": "WillCMcC",
-      "identity": null,
-      "stars": 0,
-      "lastCommit": "2026-10-18",
-      "source": {
-        "status": "affected",
-        "basis": "own-copy"
-      },
-      "release": {
-        "tag": "v0.1",
-        "date": "2026-10-18",
-        "package": "affected"
-      }
     }
   ],
   "forks": [
@@ -3884,6 +4398,12 @@
       "parent": "hugelton/Felucca",
       "status": "affected",
       "basis": "Felucca 1.6.1"
+    },
+    {
+      "repo": "Comradevergreen/fm-evergreen",
+      "parent": "hugelton/Felucca",
+      "status": "affected",
+      "basis": "Felucca 1.0-1.4"
     },
     {
       "repo": "davidpryan/generativefm1",
@@ -4200,6 +4720,12 @@
     {
       "repo": "stevensnasdell-cmd/dock",
       "parent": "keremimo/melodee",
+      "status": "affected",
+      "basis": "modified"
+    },
+    {
+      "repo": "BlueSGL/ChoralRootFM1",
+      "parent": "Quixotic7/ChoralRootFM1",
       "status": "affected",
       "basis": "modified"
     },

@@ -42,6 +42,16 @@ export function classifyText(text) {
   return "update-code";
 }
 
+// Whether update code has Felucca 1.6.1's board-size check: a flash.bin that isn't 0x93000 bytes
+// returns -15. Earlier Felucca versions, felucca-bsp and fm1-base don't have it, and porting the
+// updated check into a copy that does needs more care, as the check sits beside the -3 line.
+export function hasSizeCheck(text) {
+  const literal = /\bfl_len\s*!=\s*0x93000u?\b/i.test(text);
+  const named =
+    /\bfl_len\s*!=\s*OTA_FL_LEN\b/.test(text) && /#\s*define\s+OTA_FL_LEN\s+\(?\s*0x93000u?\b/i.test(text);
+  return (literal || named) && /return\s+-15\s*;/.test(text);
+}
+
 // The candidate update-code files in a tree listing, best first: the repository's own code before
 // vendored copies, files called ota.c first, then the shallowest.
 export function candidateFiles(tree) {
@@ -140,7 +150,7 @@ export function createSourceClassifier(github) {
           const tree = await treeOf(module.repo, module.commit);
           if (!tree) return null;
           const found = await findUpdateCode(module.repo, module.commit, tree.entries);
-          if (found) return { kind: found.kind, via: [module.repo], path: found.path };
+          if (found) return { kind: found.kind, via: [module.repo], path: found.path, sizeCheck: hasSizeCheck(found.text) };
           if (depth >= maximumSubmoduleDepth) return null;
           for (const inner of await submodulesOf(module.repo, module.commit, tree.entries)) {
             if (!inner.repo) continue;
@@ -154,8 +164,9 @@ export function createSourceClassifier(github) {
     return submoduleCache.get(key);
   }
 
-  // Classifies a repository at a commit. Returns { status, basis, path, blob, kind, detail, note }
-  // in the data's terms; throws when GitHub couldn't be asked (so the caller keeps what it had).
+  // Classifies a repository at a commit. Returns { status, basis, sizeCheck, path, blob, kind,
+  // detail, note } in the data's terms, sizeCheck being null without update code; throws when
+  // GitHub couldn't be asked (so the caller keeps what it had).
   async function classify(repo, commit) {
     const tree = await treeOf(repo, commit);
     if (!tree) throw new Error(`no tree for ${repo}@${commit}`);
@@ -169,7 +180,8 @@ export function createSourceClassifier(github) {
         "update-code": ["unclear", "unknown"],
       };
       const [status, basis] = byKind[own.kind];
-      return { status, basis, path: own.path, blob: own.blob, kind: own.kind, text: own.text, detail: own.path, note };
+      const sizeCheck = hasSizeCheck(own.text);
+      return { status, basis, sizeCheck, path: own.path, blob: own.blob, kind: own.kind, text: own.text, detail: own.path, note };
     }
 
     const modules = await submodulesOf(repo, commit, tree.entries);
@@ -190,9 +202,9 @@ export function createSourceClassifier(github) {
         "update-code": ["unclear", "unknown"],
       };
       const [status, basis] = byKind[result.kind];
-      return { status, basis, path: null, blob: null, kind: result.kind, detail, note };
+      return { status, basis, sizeCheck: result.sizeCheck, path: null, blob: null, kind: result.kind, detail, note };
     }
-    return { status: "unclear", basis: "unknown", path: null, blob: null, kind: null, detail: null, note };
+    return { status: "unclear", basis: "unknown", sizeCheck: null, path: null, blob: null, kind: null, detail: null, note };
   }
 
   return { classify, treeOf };
