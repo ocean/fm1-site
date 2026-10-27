@@ -40,9 +40,12 @@ jobs:
 
       - name: Run the scanner
         env:
-          # Read-only, for GitHub's API and its rate limits. Code search may refuse it; the scan
-          # then goes on without code search.
-          GITHUB_TOKEN: ${{ github.token }}
+          # Read-only, for GitHub's API and its rate limits. BOOTLOADER_SCAN_TOKEN, when it's set, is
+          # a fine-grained personal token with read-only access to public repositories, for 5,000
+          # requests an hour rather than this repository's 1,000; it's only ever given to this job.
+          # Without it, the job's own token does. Code search may refuse either; the scan then goes
+          # on without code search.
+          GITHUB_TOKEN: ${{ secrets.BOOTLOADER_SCAN_TOKEN || github.token }}
         run: |
           mkdir -p "$RUNNER_TEMP/scan"
           node scripts/bootloader-check/scan.mjs \
