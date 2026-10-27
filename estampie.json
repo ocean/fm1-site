@@ -1,6 +1,6 @@
 {
-  "version": "0.3.6",
-  "url": "https://github.com/ocean/estampie/releases/download/v0.3.6/estampie-site-0.3.6.zip",
-  "sha256": "37cf0a1ce0acc7f5dc748cfd14004ac3150c149fec3b398b5bb16b3750e2fae8",
-  "sourceCommit": "175679bd12666667b30aec3ff36141419e1bfaa8"
+  "version": "0.3.7",
+  "url": "https://github.com/ocean/estampie/releases/download/v0.3.7/estampie-site-0.3.7.zip",
+  "sha256": "433bf9bc99b42cde1177fd455c2f0c6560a974affc122cd82e5a8af38840ca19",
+  "sourceCommit": "b6be8f78adcee97d4b217db7b81f6a4eb02445e8"
 }
