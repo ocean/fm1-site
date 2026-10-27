@@ -237,7 +237,7 @@ await mapLimit(toScan, 4, async (candidate) => {
   const commit = meta.defaultBranchRef?.target?.oid;
   let source = null;
   if (!commit) {
-    source = { status: "unclear", basis: "unknown", kind: null, detail: "empty repository" };
+    source = { status: "unclear", basis: "unknown", sizeCheck: null, kind: null, detail: "empty repository" };
   } else {
     try {
       source = await sources.classify(meta.nameWithOwner, commit);
@@ -391,7 +391,7 @@ for (const candidate of candidates.values()) {
     stars: meta.stargazerCount,
     lastCommit: day(meta.defaultBranchRef?.target?.committedDate) ?? before?.lastCommit ?? null,
     commits: entry.commits ?? before?.commits ?? null,
-    source: source ? { status: source.status, basis } : before.source,
+    source: source ? { status: source.status, basis, sizeCheck: source.sizeCheck ?? null } : before.source,
     release,
   });
   details[repo] ??= {

@@ -7,8 +7,9 @@
 //   - name, repo ("owner/name"), forkOf (a repo, or null), author, identity (its product string,
 //     or null), stars, lastCommit (YYYY-MM-DD, or null), commits (its default branch's commits, or
 //     for a fork, the ones its parent doesn't have; null when not known);
-//   - source: what its default branch does now: status ("affected", "ok" or "unclear"), and basis,
-//     one of the bases below;
+//   - source: what its default branch does now: status ("affected", "ok" or "unclear"), basis,
+//     one of the bases below, and sizeCheck: whether its update code has Felucca 1.6.1's
+//     board-size check (-15), or null when there's no update code to look at (or not checked yet);
 //   - release: its latest release, or null: tag, date (YYYY-MM-DD, or null), and package, what its
 //     .fwsc does ("affected", "ok", "other" for not Felucca's update code, "none" for no .fwsc,
 //     "unclear", which only an override sets, or null when it hasn't been checked).
@@ -44,6 +45,7 @@ const isDate = (value) => value === null || (typeof value === "string" && datePa
 function checkSource(source, check) {
   check(source && statuses.includes(source.status), "source.status isn't affected, ok or unclear");
   check(source && Object.hasOwn(bases, source.basis), "source.basis is unknown");
+  check(source?.sizeCheck == null || typeof source.sizeCheck === "boolean", "source.sizeCheck isn't true, false or null");
 }
 
 function checkRelease(release, check) {
