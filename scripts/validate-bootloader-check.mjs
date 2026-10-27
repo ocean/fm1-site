@@ -5,7 +5,8 @@
 // - formatVersion: 1; checkedAt: when the scan ran (ISO 8601); method: "survey" or "scan".
 // - firmwares: one per FM-1 firmware on Felucca's update code, each with
 //   - name, repo ("owner/name"), forkOf (a repo, or null), author, identity (its product string,
-//     or null), stars, lastCommit (YYYY-MM-DD, or null);
+//     or null), stars, lastCommit (YYYY-MM-DD, or null), commits (its default branch's commits, or
+//     for a fork, the ones its parent doesn't have; null when not known);
 //   - source: what its default branch does now: status ("affected", "ok" or "unclear"), and basis,
 //     one of the bases below;
 //   - release: its latest release, or null: tag, date (YYYY-MM-DD, or null), and package, what its
@@ -83,6 +84,7 @@ export function validateBootloaderCheck(dataText, overridesText) {
     check(entry.identity === null || typeof entry.identity === "string", "identity isn't text or null");
     check(Number.isInteger(entry.stars) && entry.stars >= 0, "stars isn't a whole number");
     check(isDate(entry.lastCommit), "lastCommit isn't YYYY-MM-DD or null");
+    check(entry.commits == null || (Number.isInteger(entry.commits) && entry.commits >= 0), "commits isn't a whole number or null");
     checkSource(entry.source, check);
     checkRelease(entry.release, check);
   }
