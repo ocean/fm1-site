@@ -12,7 +12,7 @@ All three are on GitHub under github.com/ocean. Installing custom firmware on an
 
 ## For firmware developers
 
-- [Bootloader check](https://fm-1.drewr.dev/bootloader-check/): which FM-1 firmwares on Felucca's update code refuse to install M-VAVE's V15 when the FM-1's bootloader has changed, and how to fix yours (port felucca-bsp afd83ede). Data: https://fm-1.drewr.dev/bootloader-check/data.json
+- [Bootloader check](https://fm-1.drewr.dev/bootloader-check/): FM-1 firmwares on Felucca's update code can trap users who have changed their bootloader (m-bootloader, or Open V12/V14's): they only install other Felucca-based firmwares over USB, and refuse V15. m-bootloader itself works correctly; the cause is a check in the firmwares' update code. Which firmwares, and the update that fixes it (port felucca-bsp afd83ede). Data: https://fm-1.drewr.dev/bootloader-check/data.json
 
 ## Full text
 

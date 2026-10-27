@@ -115,8 +115,21 @@ const states = [
   { name: "fm1kit-phone", path: "/fm1kit/", viewport: phone, colorScheme: "light", backdrops: ["#fff"] },
   { name: "estampie", path: "/estampie/", viewport: desktop },
   { name: "estampie-phone", path: "/estampie/", viewport: phone },
-  { name: "bootloader-check", path: "/bootloader-check/", viewport: desktop, backdrops: ["#1a110b", "#2a1b11"] },
-  { name: "bootloader-check-phone", path: "/bootloader-check/", viewport: phone, backdrops: ["#1a110b", "#2a1b11"] },
+  { name: "bootloader-check", path: "/bootloader-check/", viewport: desktop, colorScheme: "light", backdrops: ["#fff", "#f6f7f8"] },
+  {
+    name: "bootloader-check-dark",
+    path: "/bootloader-check/",
+    viewport: desktop,
+    colorScheme: "dark",
+    backdrops: ["#17191c", "#1f2226"],
+  },
+  {
+    name: "bootloader-check-phone",
+    path: "/bootloader-check/",
+    viewport: phone,
+    colorScheme: "light",
+    backdrops: ["#fff", "#f6f7f8"],
+  },
   { name: "privacy", path: "/privacy/", viewport: phone, backdrops: ["#1a110b", "#2a1b11"] },
   { name: "not-found", path: "/404.html", viewport: phone, backdrops: ["#1a110b", "#2a1b11"] },
 ];

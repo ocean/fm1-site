@@ -24,12 +24,12 @@ import { fileURLToPath } from "node:url";
 
 export const statuses = ["affected", "ok", "unclear"];
 export const bases = {
-  "own-copy": "Own copy of the old check",
-  "old-base": "Pins fm1-base or felucca-bsp from before the fix",
-  submodule: "Old check from a Felucca or X0X submodule",
+  "own-copy": "Own copy of the original check",
+  "old-base": "Pins fm1-base or felucca-bsp from before the update",
+  submodule: "Original check, from a Felucca or X0X submodule",
   rewrite: "Independent rewrite with the same check",
-  "fixed-code": "Has the fix (ota_boot_valid)",
-  "fixed-base": "On a fixed fm1-base or felucca-bsp",
+  "fixed-code": "Has the updated check (ota_boot_valid)",
+  "fixed-base": "On an updated fm1-base or felucca-bsp",
   "pinned-v15": "Accepts the exact V15 package (puts the stock bootloader back)",
   "own-loader": "Installs every package with its own loader",
   "chip-key": "Compares the chip key instead: untested",
