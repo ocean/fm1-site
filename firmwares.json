@@ -1,5 +1,5 @@
 {
-  "builtAt" : "2026-10-29T00:25:44Z",
+  "builtAt" : "2026-10-29T05:16:35Z",
   "entries" : [
     {
       "author" : "zvenson",
@@ -51,7 +51,7 @@
     },
     {
       "author" : "DEADACTIVE",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-28",
       "id" : "hortator",
       "isOfficial" : false,
@@ -103,7 +103,7 @@
     },
     {
       "author" : "DEADACTIVE",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-28",
       "id" : "hortator-bt",
       "isOfficial" : false,
@@ -199,7 +199,7 @@
     },
     {
       "author" : "Chance Roth (ChanceTheMaker)",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-05",
       "id" : "salt",
       "isOfficial" : false,
@@ -888,7 +888,7 @@
     },
     {
       "author" : "Charles Vestal",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-15",
       "id" : "fomni",
       "isOfficial" : false,
@@ -944,7 +944,7 @@
     },
     {
       "author" : "Quixotic7",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-26",
       "id" : "choralroot",
       "isOfficial" : false,
@@ -1174,7 +1174,7 @@
     },
     {
       "author" : "zvenson",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-23",
       "id" : "dinghy",
       "isOfficial" : false,
@@ -1229,7 +1229,7 @@
     },
     {
       "author" : "jadamsowers",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-13",
       "id" : "fimba",
       "isOfficial" : false,
@@ -1277,7 +1277,7 @@
     },
     {
       "author" : "juanjiant-bit",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-28",
       "id" : "jiant",
       "isOfficial" : false,
@@ -1329,7 +1329,7 @@
     },
     {
       "author" : "math0ne",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-09",
       "id" : "chord",
       "isOfficial" : false,
@@ -1649,7 +1649,7 @@
     },
     {
       "author" : "Hericdk",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-14",
       "id" : "winampfm",
       "isOfficial" : false,
@@ -1753,7 +1753,7 @@
     },
     {
       "author" : "Charles Vestal",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-17",
       "id" : "polly",
       "isOfficial" : false,
@@ -2134,7 +2134,7 @@
     },
     {
       "author" : "dspaudio",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-28",
       "id" : "orbit",
       "isOfficial" : false,
@@ -2536,7 +2536,7 @@
     },
     {
       "author" : "FicusFicusov",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-22",
       "id" : "coralflower",
       "isOfficial" : false,
@@ -2596,7 +2596,7 @@
     },
     {
       "author" : "genkigenki",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-23",
       "id" : "vector37",
       "isOfficial" : false,
@@ -2792,7 +2792,7 @@
     },
     {
       "author" : "Reytian",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-16",
       "id" : "min1",
       "isOfficial" : false,
@@ -2852,7 +2852,7 @@
     },
     {
       "author" : "Quixotic7",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-10",
       "id" : "purplemonkey",
       "isOfficial" : false,
@@ -3024,7 +3024,7 @@
     },
     {
       "author" : "Leonardo Mirabal",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-27",
       "id" : "frodhes",
       "isOfficial" : false,
@@ -3080,7 +3080,7 @@
     },
     {
       "author" : "konsumer",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-27",
       "id" : "fomajam",
       "isOfficial" : false,
@@ -3180,7 +3180,7 @@
     },
     {
       "author" : "Hericdk",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-20",
       "id" : "nmsfm",
       "isOfficial" : false,
@@ -3233,7 +3233,7 @@
     {
       "author" : "Hericdk",
       "beta" : false,
-      "date" : "2026-10-12",
+      "date" : "2026-10-29",
       "id" : "fm1quest",
       "isOfficial" : false,
       "kinds" : [
@@ -3247,11 +3247,11 @@
         },
         {
           "label" : "Source code",
-          "url" : "https://github.com/hericdk/fm1-quest/tree/quest-38"
+          "url" : "https://github.com/hericdk/fm1-quest/tree/quest-39"
         },
         {
           "label" : "Release",
-          "url" : "https://github.com/hericdk/fm1-quest/releases/tag/quest-38"
+          "url" : "https://github.com/hericdk/fm1-quest/releases/tag/quest-39"
         },
         {
           "label" : "Editor",
@@ -3295,7 +3295,7 @@
       "sha256" : "9c29c3e72e4380c478faf68f77e418c05f2a8ae2dc08bdce8d84fd6619130a64",
       "size" : 610019,
       "stars" : 14,
-      "version" : "38",
+      "version" : "39",
       "what" : "A pixel-art RPG while you make music, built on SLOOP: four heroes, one a track, walk through a village and fight monsters and bosses as your loop plays, every SLOOP screen redrawn in the game's style."
     },
     {
@@ -4244,7 +4244,7 @@
     },
     {
       "author" : "Hirakos",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-22",
       "id" : "modelar",
       "isOfficial" : false,
@@ -4293,7 +4293,7 @@
     },
     {
       "author" : "evanyerburgh",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-21",
       "id" : "niagara",
       "isOfficial" : false,
@@ -4349,7 +4349,7 @@
     },
     {
       "author" : "actuallysparky",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-13",
       "id" : "unholy",
       "isOfficial" : false,
@@ -4522,7 +4522,7 @@
     },
     {
       "author" : "Charles Vestal",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-27",
       "id" : "loom",
       "isOfficial" : false,
@@ -4588,7 +4588,7 @@
     },
     {
       "author" : "Charles Vestal",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-15",
       "id" : "monk",
       "isOfficial" : false,
@@ -4918,7 +4918,7 @@
     },
     {
       "author" : "Jess Del Rio",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-25",
       "id" : "delrio",
       "isOfficial" : false,
@@ -4957,7 +4957,7 @@
     },
     {
       "author" : "OrbVorgis",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-27",
       "id" : "carnac",
       "isOfficial" : false,
@@ -5049,7 +5049,7 @@
     },
     {
       "author" : "FBNFRTG",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-25",
       "id" : "drift",
       "isOfficial" : false,
@@ -5100,7 +5100,7 @@
     },
     {
       "author" : "Denis Sablić",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-25",
       "id" : "sidou",
       "isOfficial" : false,
@@ -5216,7 +5216,7 @@
     },
     {
       "author" : "BonszaiMusic",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-27",
       "id" : "caravel",
       "isOfficial" : false,
@@ -5276,7 +5276,7 @@
     },
     {
       "author" : "ignis32",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-25",
       "id" : "midimon",
       "isOfficial" : false,
@@ -5369,7 +5369,7 @@
     },
     {
       "author" : "Drew Robinson",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-27",
       "id" : "estampie",
       "isOfficial" : false,
@@ -5560,7 +5560,7 @@
     },
     {
       "author" : "Co-oscillator",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-18",
       "id" : "loomfm1",
       "isOfficial" : false,
@@ -5756,7 +5756,7 @@
     },
     {
       "author" : "ivanvoid",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-17",
       "id" : "gator",
       "isOfficial" : false,
@@ -5804,7 +5804,7 @@
     },
     {
       "author" : "Mark White",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-25",
       "id" : "monohull",
       "isOfficial" : false,
@@ -5856,7 +5856,7 @@
     },
     {
       "author" : "deamonSLINKY",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-28",
       "id" : "perf1",
       "isOfficial" : false,
@@ -6007,7 +6007,7 @@
     },
     {
       "author" : "De-Pattern",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-26",
       "id" : "ravel",
       "isOfficial" : false,
@@ -6067,7 +6067,7 @@
     },
     {
       "author" : "Jiří Píša",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-27",
       "id" : "berlinan",
       "isOfficial" : false,
@@ -6178,7 +6178,7 @@
     },
     {
       "author" : "slothpallas",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-28",
       "id" : "mope1",
       "isOfficial" : false,
@@ -6265,7 +6265,7 @@
     },
     {
       "author" : "Mr. Roboto",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-28",
       "id" : "nauclerus",
       "isOfficial" : false,
@@ -6304,7 +6304,7 @@
     },
     {
       "author" : "hitosu",
-      "beta" : true,
+      "beta" : false,
       "date" : "2026-10-28",
       "id" : "ptfm",
       "isOfficial" : false,
@@ -6513,8 +6513,8 @@
       "listing" : 2,
       "name" : "Album",
       "packageOrigin" : "projectPage",
-      "packageURL" : "https://joshbartlettband-web.github.io/album-fm1/firmware/album-0.1.20.fwsc",
-      "product" : "FM-1_2701000120",
+      "packageURL" : "https://joshbartlettband-web.github.io/album-fm1/firmware/album-0.1.35.fwsc",
+      "product" : "FM-1_2701000135",
       "size" : 611354,
       "stars" : 1,
       "what" : "A series of firmwares, one per record, by Rainbow mode's maker: a few deep sounds drawn from photographs, each moving its photo as it plays. Album 01 bends chords the whole time they ring, through a reverse reverb, with a chord on every key, a soft beat for every patch, and two FM1s playing together over MIDI clock or Bluetooth. It installs from its own browser page."
@@ -6602,7 +6602,7 @@
       "sha256" : "4605411cfa91ba5143c79523837db7b09a19abf2bf4bf3f2a40e95c1b81a2933",
       "size" : 609849,
       "stars" : 0,
-      "version" : "v0.1.0",
+      "version" : "0.1.0",
       "what" : "An ambient instrument built on Felucca: four tracks of curated sounds, held chords, scattered notes, and four knobs for Shape, Motion, Density, and Space. It installs from its own web page, with a browser version to try first."
     },
     {
@@ -6788,7 +6788,7 @@
       "sha256" : "6796ac71b56b2bffbd35a18ee6df5a0e8010ee9a16714c9c64a716b10c6c3a39",
       "size" : 610090,
       "stars" : 1,
-      "version" : "v0.4.0-rc1",
+      "version" : "0.4.0-rc1",
       "what" : "A playable little band built on Felucca 1.6.1: a cat plays the keys while three more react to the music, with thirteen sound engines, a generated backing band, and a looper for your own melodies. Its README says the upgrade from 0.3.0 to this release candidate was tested on one FM1. It installs through Felucca's updater from its release package."
     },
     {
@@ -6831,7 +6831,7 @@
       "sha256" : "0b9375aa4a586e6ac57a72392998b2de152752da39a94382e5e9b8191e3bf97a",
       "size" : 609672,
       "stars" : 2,
-      "version" : "v0.1.0",
+      "version" : "0.1.0",
       "what" : "A music toy for children that is also a real synthesizer: every control is a friend whose body is the sound, and the same toy grows from pressing things at three, to beats and loops, to a subtractive synth with its real names. It installs from its own browser page, with an emulator to try first and printable guides."
     },
     {
@@ -6865,7 +6865,7 @@
       "sha256" : "6fcf5c16f3221a87581641935c4b373053cc746760d9d911e4ec94f3510c9661",
       "size" : 610090,
       "stars" : 2,
-      "version" : "v0.1.5",
+      "version" : "0.1.5",
       "what" : "An FM synth for industrial techno, noise, and dark ambient, built on Felucca: four operators in a 4×4 modulation matrix, METAL, GROWL, CHAOS, and NOISE modes, a wavefolder, a morph between two sounds, and a COMPLEX ARP that generates a pattern from the keys held and keeps it as a loop. Its README, in Japanese, says it runs on an FM1. It installs from its release package."
     },
     {
@@ -6903,7 +6903,7 @@
       "sha256" : "985c1000dc58dd0afeafb18185a5de980795908166e9356d4c72fd07e656708f",
       "size" : 610143,
       "stars" : 3,
-      "version" : "v0.26.19",
+      "version" : "0.26.19",
       "what" : "A synth and four-track groovebox, called TERKINSTEIN until 0.26. It plays, edits, sequences, and saves on the FM1 itself, with piano-roll editing, saved song swing, and a virtual FM1 to try in a browser. It installs from its release package."
     },
     {
@@ -6949,7 +6949,7 @@
       "sha256" : "b496d0efdfc403dba0d447a7987331cd7dbe2a5dbc8908cafbc2154f72f584da",
       "size" : 610113,
       "stars" : 1,
-      "version" : "v0.4.24",
+      "version" : "0.4.24",
       "what" : "An ambient lo-fi machine, by MONO2K's maker, built on 64 recordings made with pedals and played by three synths, each with its own piano roll, patterns, and chain of lo-fi effects, with scenes, a song, and a chord machine leading them. It installs from its own browser page or its release package, and plays in a browser first."
     },
     {
@@ -7231,7 +7231,7 @@
       "sha256" : "8849cff2068bc47f118db3c85d76a5ff07f56b0f310ef9f0465bfd9591fd51f4",
       "size" : 611496,
       "stars" : 8,
-      "version" : "v1.3",
+      "version" : "1.3",
       "what" : "An internet radio over WiFi: it joins a 2.4 GHz network, plays stations from Radio Garden's map, and puts punch-in effects on the keys. Its first release, 1.0, was withdrawn after crashing on some FM1s when WiFi started; 1.3 is a pre-release, whose notes ask anyone whose FM1 crashes to report it. It installs from its own browser page, with a manual on the same site."
     },
     {
@@ -7309,7 +7309,7 @@
       "sha256" : "545f518eecdb87f33cd251d4a0f6ee6078b17e1cacc3d52892a7497781b5f837",
       "size" : 610110,
       "stars" : 14,
-      "version" : "v1.1.0",
+      "version" : "1.1.0",
       "what" : "A six-operator FM synthesizer made for learning FM: no drums or song mode, just the DX7 engine with every parameter under a knob while the sound plays, and a screen that shows what you changed. It has eight voices, 32 user slots, a small arpeggiator and a one-phrase looper, and is built on Dinghy. Its README says it runs on the FM1, and it installs from its release package."
     },
     {
@@ -7521,7 +7521,7 @@
       "sha256" : "76b944fda1d2d81e7bdf59fddd23e9c4ac02d645d97d6dd793a2d02fb6a75bf6",
       "size" : 610110,
       "stars" : 13,
-      "version" : "v0.6",
+      "version" : "0.6",
       "what" : "One firmware, installed once, that holds several synths as modules in flash: hold HOME to pick another, with no reinstall. It comes with CS-1, Scintilla, OberVave, FM-1 SID, and a sine, and its page deploys your own modules over USB and shows the log and the load. It installs from its release package or the Firmware Hub."
     },
     {
@@ -7555,7 +7555,7 @@
       "sha256" : "c65d04439f57011d43483d336c501472a3e38ac51ebed327093225b5b30bff7c",
       "size" : 492084,
       "stars" : 0,
-      "version" : "v0.1.2",
+      "version" : "0.1.2",
       "what" : "A first keyboard course: eight chapters from finding middle C, twelve exercises, and thirty traditional melodies, each played to you, lit on the keys, and listened to, with the FM synthesiser and its DX7 presets still behind the learning screen. Its README says the preview has been installed on an FM1 and the whole course still needs playing through. It installs from its pre-release package."
     },
     {
@@ -7755,7 +7755,7 @@
       "sha256" : "8bab81bb3cf3a197a7f9c7a4b07ae962a45a2ae90b85bd88ae267fc2a707d052",
       "size" : 609849,
       "stars" : 6,
-      "version" : "v1.0.0-r12",
+      "version" : "1.0.0-r12",
       "what" : "Easy, kid-friendly firmware built on Felucca, with sound pictures instead of menus, four colour knobs, and a singing gnome. It comes as a release package, installed with a Python script."
     },
     {
@@ -7866,7 +7866,7 @@
       "sha256" : "38db751f4507942754aeba63121bff847f90f3d1465cf68c80f6ec30701597d4",
       "size" : 610136,
       "stars" : 0,
-      "version" : "v0.1",
+      "version" : "0.1",
       "what" : "Five generative firmwares for haunted ambient music with meaningful controls: Halflight, Midnight, Untrue, Voicemail, and Worntape. Its flasher page installs any of them from Chrome or Edge, and the release carries a package for each."
     },
     {
@@ -7936,7 +7936,7 @@
       "sha256" : "819e1baee04987f2cacfa35c7fd36d553e79c2b7eca8d3ef6b8cf09dc3e6c6fc",
       "size" : 609672,
       "stars" : 1,
-      "version" : "v0.2.1",
+      "version" : "0.2.1",
       "what" : "A self-playing industrial machine after the records of KMFDM, Nine Inch Nails, and Ministry: it starts as soon as it is switched on and arranges its own songs, with song and drum editors. It installs from its own browser page."
     },
     {
@@ -7975,7 +7975,7 @@
       "sha256" : "d4c4fe43f2970b45a5be8a67c45a8206590da59b29ef6e96454cbdce836d959e",
       "size" : 610090,
       "stars" : 1,
-      "version" : "v0.1",
+      "version" : "0.1",
       "what" : "A toy for toddlers: the keys play nursery songs, say and show letters, count, or play their own notes, the buttons are drums, and there are no menus. It comes as a release package."
     },
     {
@@ -8018,7 +8018,7 @@
       "sha256" : "83b4a2ee4aa539c8946e8b9660a51b0bc6eff5abd1677fab0f3b55712429873e",
       "size" : 609999,
       "stars" : 0,
-      "version" : "v0.3.2-public",
+      "version" : "0.3.2-public",
       "what" : "MYCELIUM's sibling: playable synth sounds with lightshows on a Novation Launchpad Pro MK3, triggered from the FM1's keys. A browser companion previews shows and updates the firmware, which installs from its release package."
     },
     {
@@ -8069,7 +8069,7 @@
       "sha256" : "56716b513a2483028a597fbcd18588db7edc3d9fff5ac3717c2ea4148aab4e0f",
       "size" : 609672,
       "stars" : 4,
-      "version" : "v0.1.2",
+      "version" : "0.1.2",
       "what" : "A pocket groovebox: four tracks, a drum machine and three synths, playing 16-step patterns that chain together, with 808, 909, arcade, and rhythm box kits, chords the synths follow, parameter locks, ratchets, slides, swing, and sixteen punch-in effects. It is built on Felucca by way of X0X, AMB-1, and IND-1, installs from its own browser page, and can be tried first in a browser emulator."
     },
     {
@@ -8103,7 +8103,7 @@
       "sha256" : "4e7d9262e55b57fab36b0660770952528b9333f62971fcc7e9c5bd3aedb81199",
       "size" : 610136,
       "stars" : 1,
-      "version" : "v1.0.1",
+      "version" : "1.0.1",
       "what" : "Peking opera percussion and jinghu accompaniment: learn the percussion patterns by playing along, or sing an aria with its own band. Its README says it runs on an FM1, though most of its testing has been in a simulator. It installs from its release package."
     },
     {
@@ -8150,7 +8150,7 @@
       "sha256" : "64c8d8dd1a48189ad370e8e149107f69c44311659bac6bf88116634b61bd46ab",
       "size" : 610110,
       "stars" : 0,
-      "version" : "v0.1",
+      "version" : "0.1",
       "what" : "A four-track sample tracker and rack sampler built on zp12, SLOOP, Felucca, and Ketch: 128 instruments with tables, grooves, and modulation, 24 samples in about 730 KB, and a sampler page on the FM1 that records the computer's sound over USB. Its web page prepares samples, syncs them to the FM1, and backs it up. It installs from its release package."
     },
     {
@@ -8231,7 +8231,7 @@
       "sha256" : "76ffe96997e385d8c7f84ddc34ace6fe68987f62638aa8f2991523bc5cf36f40",
       "size" : 609661,
       "stars" : 3,
-      "version" : "v0.9.1",
+      "version" : "0.9.1",
       "what" : "A developer tool, not an instrument: it shows pictures sent from a web page on the FM1's screen, to check screen mockups on the real hardware, and can keep up to 64 in flash. It installs from its own browser page."
     },
     {
@@ -8274,7 +8274,7 @@
       "sha256" : "8197e3e5acefb40f0d334ddd21ec216372cfe1c38cac31d9e922246d7d1fea53",
       "size" : 610086,
       "stars" : 2,
-      "version" : "v1.0.3",
+      "version" : "1.0.3",
       "what" : "A modular synth after the Nord Modular: its web app builds patches from modules, maps their parameters and the knobs through a matrix, and uploads them to the FM1, which steps through patches and modules and adds an arpeggiator with Euclidean rhythms and chaos. Version 1.0.3 plays four voices. It installs from its release package."
     },
     {
@@ -8317,7 +8317,7 @@
       "sha256" : "beab4e0e28ff2ff3ef5073d6d63fa257c466c0fca25ba984f0f59335665184ca",
       "size" : 609649,
       "stars" : 5,
-      "version" : "v0.1-beta",
+      "version" : "0.1-beta",
       "what" : "Film-music firmware built on Felucca. Its README says it runs on the author's FM1 and has not been tested on other units. It installs from its release package."
     },
     {
@@ -8364,7 +8364,7 @@
       "sha256" : "8e72edc5d894b99efc556d20e64dfe4ea2bb59877920c5314d9befbf3f612be8",
       "size" : 610090,
       "stars" : 1,
-      "version" : "v0.1.0-green2-experimental",
+      "version" : "0.1.0-green2-experimental",
       "what" : "A cyberpunk-inspired performance synth with a sequencer, effects, and a browser studio. Its README says the package has booted on one FM1 and passed its protocol tests there. It installs from its own browser updater."
     },
     {
@@ -8528,7 +8528,7 @@
       "sha256" : "2b1576873d3eb2e5d0929169e1a3c6618e98e28afb1aa9a9ddba4c5e4db49500",
       "size" : 610110,
       "stars" : 0,
-      "version" : "v0.4.2",
+      "version" : "0.4.2",
       "what" : "The FM1 as an AdLib: an OPL2 emulation that plays SoundFX Macs Opera songs, the DOS soundtracks of LINEL’s games and Stone Age, and since 0.4 a tracker that edits and saves them as.CMF files. Its README says earlier versions ran on a real FM1. It installs from its release package."
     },
     {
@@ -8601,7 +8601,7 @@
       "sha256" : "926f08a95fa0e00f988bfd73f82fd8df130b9a8e4aa95a98e3aca925ec9b89a7",
       "size" : 610819,
       "stars" : 25,
-      "version" : "v0.2",
+      "version" : "0.2",
       "what" : "A modular firmware built on SLOOP, Felucca, Melodee, X0X, and other FM1 projects: you choose its engines, drum kits, effects, and features in a browser builder with a live flash and RAM budget, try the build in a simulator, and install it from the same site. Its releases come in ready-made flavours. Its README calls it early access and says it runs on real FM1s while most features are tested in the emulator and on a computer."
     },
     {
@@ -8648,7 +8648,7 @@
       "sha256" : "f74cd6ffe2e4bec65d5b531cdab8de825f57bc1c71dbd2e6ef55ee0358807ab1",
       "size" : 612196,
       "stars" : 0,
-      "version" : "v1.3",
+      "version" : "1.3",
       "what" : "A four-voice wavetable FM synthesizer built on Dinghy and Felucca: two oscillators a voice, each a chain of three wavetable operators that modulate by FM, ring, or mix, with a resonant filter, an LFO, a looping modulation envelope, chorus, delay, plate reverb, and eight patch slots. It installs from its own browser page, which since 0.8 also has an editor that plays Prysm in the page and stays in step with a connected FM1. Version 0.9 added a polyphonic sequencer that records live, and 1.0 VCA OPEN, which holds the amp open for a drone."
     },
     {
@@ -8682,7 +8682,7 @@
       "sha256" : "9bd1127405c37ed67fcbf646c0a42e9fda00bfed5e40e7fe883bc5694bdbaa9d",
       "size" : 610110,
       "stars" : 0,
-      "version" : "v0.3",
+      "version" : "0.3",
       "what" : "A drone instrument of thirteen sine voices that flow towards the note you play, an angel cluster above the root and a demon cluster below it, with a Heaven / Hell knob. It also runs on a Mac as an Audio Unit instrument, and its FM1 firmware is in its release package."
     },
     {
@@ -8716,7 +8716,7 @@
       "sha256" : "045f7386e5a33efbb1b544d5a3e34aafa4d3a4b33a133312080cbaec4126c79f",
       "size" : 609657,
       "stars" : 1,
-      "version" : "v745",
+      "version" : "745",
       "what" : "A side-scrolling action game: defend the dam, ride through robot city, fly to the data center, and defeat Mother. It comes as a firmware package with a quick-start guide, installed with the tools in its source archive."
     },
     {
@@ -8786,7 +8786,7 @@
       "sha256" : "cc670b99897058ad6b7fff3094b640a40d4be6a765bd8492e647b6834ef54557",
       "size" : 609672,
       "stars" : 0,
-      "version" : "v0.1.1",
+      "version" : "0.1.1",
       "what" : "A sixteen-part sound module, as the rack modules of the nineties were: a part for each MIDI channel, each playing a preset of sounds you choose, with a filter, envelopes, reverb, and chorus. It plays.sf2 files. It installs from its own browser page and can be tried in a browser first."
     },
     {
@@ -8828,7 +8828,7 @@
       "sha256" : "fedafffd66fe35dc7fad57e11e5e6cb6adcfa21fb92760ccc3f9920c8fb30684",
       "size" : 611367,
       "stars" : 11,
-      "version" : "v0.1.1",
+      "version" : "0.1.1",
       "what" : "A single-part synthesiser fork of Melodee, by its author, with Bluetooth MIDI and 24-bit audio: one engine at a time of Prophet, FM6, CZ-1, or JUNO-106, with factory libraries, 384 user slots, native SysEx import and export, an arpeggiator, chords, and microtonal tuning. Its README calls it experimental, with checks of the exact release package still pending. It installs from its own browser page and has a web editor."
     },
     {
@@ -8875,7 +8875,7 @@
       "sha256" : "cd4b8f82764beb3c71d065805c43cbba6c4217ab7b2607cceaf88cf0d0cf2461",
       "size" : 610035,
       "stars" : 0,
-      "version" : "v0.2.0",
+      "version" : "0.2.0",
       "what" : "A synth inspired by São Paulo, with three wavetable, analog, FM, or noise oscillators, a ladder filter, a modulation matrix, and a 303-style sequencer. The same engine runs in a browser and as a plugin; the FM1 version is built on SLOOP and installs from its own page. Its notes are in Portuguese."
     },
     {
@@ -9028,7 +9028,7 @@
       "sha256" : "5563ab139360ae58b26152cf453c04f6b19d1070bad6d87393f8d19d34826928",
       "size" : 610012,
       "stars" : 2,
-      "version" : "v0.2-beta",
+      "version" : "0.2-beta",
       "what" : "An audio-visual instrument with 30 audio-reactive visualisers on the FM1's screen and over USB as a webcam. Its release notes say 0.2 has been tested on one FM1, with macOS only. It installs from its own browser page, and a browser version plays it first."
     },
     {
@@ -9067,7 +9067,7 @@
       "sha256" : "5f9182ee31762088ab01dc6bc00913e6705b896c97182c09221cd3bd29fcb031",
       "size" : 609849,
       "stars" : 3,
-      "version" : "v0.1.0-beta.18",
+      "version" : "0.1.0-beta.18",
       "what" : "A four-machine acid groovebox: two 303-style mono synths, an 808, and a 909, with patterns, song chaining, and performance effects. Its notes record test passes on an FM1, and it has no licence file. It installs from its release package."
     },
     {
@@ -9113,7 +9113,7 @@
       "sha256" : "7480de7f5cdbd47bd6dbbcc039d06639ca87ab611795942b15ff88781c579034",
       "size" : 611354,
       "stars" : 0,
-      "version" : "v0.12",
+      "version" : "0.12",
       "what" : "A Digitone-style FM groovebox with four-operator FM, virtual analogue, and drum engines, twelve voices, and a 64-step sequencer with parameter locks. Its README says it runs on an FM1, though its 0.12 release notes say it has not yet been tested on a physical one. It installs from its own browser page, with an emulator to try first."
     },
     {
@@ -9151,7 +9151,7 @@
       "sha256" : "d1b027d5fcafc374ff174bbd5f3b6dac7686554f5a3f44c04cc4d30cc3213baa",
       "size" : 610594,
       "stars" : 7,
-      "version" : "v0.1.3",
+      "version" : "0.1.3",
       "what" : "A tiny firmware, by ChoralRoot's maker, to stop at between two others: it makes no sound and stores nothing, answers installers as M-VAVE's V15, and carries ChoralRoot's flash safeguards, so an install cut off part way brings the FM1 back in update mode. Its README says 0.1 worked on an FM1, and 0.1.1 fixed two bugs seen on one. It installs from its own browser page or its release package."
     },
     {
@@ -9194,7 +9194,7 @@
       "sha256" : "9e7028d1d65398aa6d7f2c883a95b6dbe7ded4f0cbaaf88197c81684d347fded",
       "size" : 610086,
       "stars" : 3,
-      "version" : "v0.1.1",
+      "version" : "0.1.1",
       "what" : "Turns the FM1 into a macro keyboard that VIAL configures, keeping its settings in flash. It stays a USB MIDI device, so the usual firmware installers still reach it. It installs from its release package."
     },
     {
@@ -9237,7 +9237,7 @@
       "sha256" : "cf05c608818d54ad9b4061968f5f67de34ad41faa45672852c82774ed8277222",
       "size" : 609657,
       "stars" : 6,
-      "version" : "v1.0.0",
+      "version" : "1.0.0",
       "what" : "An unofficial parody virtual pet: feed him burgers, praise him, and put him to bed, and when he is happy he plays bongos on the pentatonic keyboard. It is installed with a Python tool from the release's.fwsc package."
     },
     {
@@ -9288,7 +9288,7 @@
       "sha256" : "0aedc953384583a22085a77f1e619399d7354a97563e4f4e2b6bab944cd9c716",
       "size" : 609689,
       "stars" : 1,
-      "version" : "v0.1.32-straightbeta",
+      "version" : "0.1.32-straightbeta",
       "what" : "A fork of X0X that keeps its 909, 808, two 303s, and breakbeat player and adds song blocks and variations, per-sound filters and limiters, and finer timing divisions. Sequences copy whole or one part at a time, any single drum row or either 303, keeping the destination's accents and swing, and each paste can be undone. Tested on only one FM1 so far."
     },
     {
@@ -9550,7 +9550,7 @@
       "releaseURL" : "https://github.com/devrvega/CRT-4/releases/tag/v0.1.2",
       "sha256" : "356083da727894e256d18b51e63da54bfb7bf776d240fc06a19c76272df3aded",
       "size" : 609672,
-      "version" : "v0.1.2",
+      "version" : "0.1.2",
       "what" : "CRT-4 for M-Vave FM-1",
       "whatSource" : "gitHub"
     },
@@ -9712,7 +9712,7 @@
       "releaseURL" : "https://github.com/thomasgregorymarsden-code/Felucca-opx/releases/tag/v0.1.0",
       "sha256" : "263420bed2608b381dbd2348654a381baf0c7d2494dd1799c4739beacb251cb3",
       "size" : 610086,
-      "version" : "v0.1.0",
+      "version" : "0.1.0",
       "what" : "Custom firmware for M-VAVE FM-1: fork of felucca to add a Korg Opsix style engine",
       "whatSource" : "gitHub"
     },
@@ -9779,7 +9779,7 @@
       "releaseURL" : "https://github.com/EremanSim/ChoralRootj-6/releases/tag/v0.23-j6",
       "sha256" : "ec84b99aac5b00e6a4d43bdaaf48ec804fe8930050a1581217683feb10bddb2b",
       "size" : 610313,
-      "version" : "v0.23-j6",
+      "version" : "0.23-j6",
       "what" : "Port of Choral Root to MWave FM1 but with Roland j6 chord set",
       "whatSource" : "gitHub"
     },
@@ -9942,7 +9942,7 @@
       "releaseURL" : "https://github.com/Rastapopolix/tessera/releases/tag/v2.1.1",
       "sha256" : "a37a34f497d1bcd3fae4211c771d26dab3d3fd2068bb3d56d3c65af672568e73",
       "size" : 610571,
-      "version" : "v2.1.1",
+      "version" : "2.1.1",
       "what" : "Tessera: generative firmware for the M-Vave FM-1. 13 generators, song forms, modulation on four tracks.",
       "whatSource" : "gitHub"
     },
@@ -10053,7 +10053,7 @@
       "releaseURL" : "https://github.com/fenderberg/fm1-nc-companion/releases/tag/v0.4",
       "sha256" : "075b9d84b3f7a29b6595debaf1ded6e6681342a6895f3e54f9302195bfcfcb77",
       "size" : 610090,
-      "version" : "v0.4",
+      "version" : "0.4",
       "what" : "NCC 0.4: FM-1 companion for Novation Circuit Tracks. 12 engines, 161 sounds, Circuit macro control, Dual parts and chord drones. Felucca fork.",
       "whatSource" : "gitHub"
     },
@@ -10583,7 +10583,7 @@
       "releaseURL" : "https://github.com/TerkWerX/Crepuscular_Homunculus/releases/tag/v0.26.19",
       "sha256" : "985c1000dc58dd0afeafb18185a5de980795908166e9356d4c72fd07e656708f",
       "size" : 610143,
-      "version" : "v0.26.19",
+      "version" : "0.26.19",
       "what" : "Free standalone synth and four-track groovebox firmware for the M-VAVE FM-1, by TERKINSTEIN.",
       "whatSource" : "gitHub"
     },
@@ -10854,7 +10854,7 @@
       "releaseURL" : "https://github.com/genkigenki/erik37/releases/tag/v1.2",
       "sha256" : "a83285d8e6ef9291bd613a248ff78a0c3e6efc02d231fcc53fb6e5d2ac3ac638",
       "size" : 651224,
-      "version" : "v1.2",
+      "version" : "1.2",
       "what" : "A grand piano for the M-Vave SMK-37: a sampled concert grand with velocity layers, dampers, pedals, string resonance and four rooms (MPL-2.0)",
       "whatSource" : "gitHub"
     },
@@ -11024,7 +11024,7 @@
       "releaseURL" : "https://github.com/devrvega/SEQ-4/releases/tag/v0.1.0",
       "sha256" : "7dae8979da10ba034f37aa0bb555f786a3c0e9af981920b9d8f3409232d5ec39",
       "size" : 609672,
-      "version" : "v0.1.0",
+      "version" : "0.1.0",
       "what" : "SEQ-4 for M-Vave FM-1",
       "whatSource" : "gitHub"
     },
@@ -11279,7 +11279,7 @@
       "releaseURL" : "https://github.com/ejtb76/FMLarynx/releases/tag/v0.1",
       "sha256" : "2f6cc59575f2e3ac681b7e27b967e4dc455b1f81f7470cfffb740fdc25cbabee",
       "size" : 610110,
-      "version" : "v0.1",
+      "version" : "0.1",
       "what" : "A throaty talking formant synth with a 303-style pattern sequencer: The synth is a saw wave through a three-formant vowel filter with an envelope, an added resonant LPF with cutoff and a ping-pong delay with drive. The 16-step sequencer has vowels, accent and slide per step, a pattern randomizer and storage for 16 patterns.",
       "whatSource" : "gitHub"
     },
@@ -11337,18 +11337,18 @@
       "builds" : [
         {
           "name" : "standard",
-          "sha256" : "489857fcc91104cd4edf19c7c975c0e6258d311931830838e9d9e6913bb3cb89",
+          "sha256" : "211f06f63e8ca09de2812c017db9bb229713ce8e5a102eba887031551b2b403c",
           "size" : 611496,
-          "url" : "https://github.com/Quixotic7/RemoteFM1/releases/download/v0.2.2/remote-0.2.2.fwsc"
+          "url" : "https://github.com/Quixotic7/RemoteFM1/releases/download/v0.2.3/remote-0.2.3.fwsc"
         },
         {
           "name" : "usb",
-          "sha256" : "4414f8f0b0936cb22c3fac91889e0df2cfa274d6322844edf13af5408841fc4d",
+          "sha256" : "e94574ee081dac596479a3de4ec0fd2aa0cea109a2692551b07037ad8eb17e4e",
           "size" : 611496,
-          "url" : "https://github.com/Quixotic7/RemoteFM1/releases/download/v0.2.2/remote-usb-0.2.2.fwsc"
+          "url" : "https://github.com/Quixotic7/RemoteFM1/releases/download/v0.2.3/remote-usb-0.2.3.fwsc"
         }
       ],
-      "date" : "2026-10-28",
+      "date" : "2026-10-29",
       "id" : "resource-hub-remotefm1",
       "isOfficial" : false,
       "kinds" : [
@@ -11372,11 +11372,11 @@
       "listing" : 4,
       "name" : "RemoteFM1",
       "packageOrigin" : "githubRelease",
-      "packageURL" : "https://github.com/Quixotic7/RemoteFM1/releases/download/v0.2.2/remote-0.2.2.fwsc",
-      "releaseURL" : "https://github.com/Quixotic7/RemoteFM1/releases/tag/v0.2.2",
-      "sha256" : "489857fcc91104cd4edf19c7c975c0e6258d311931830838e9d9e6913bb3cb89",
+      "packageURL" : "https://github.com/Quixotic7/RemoteFM1/releases/download/v0.2.3/remote-0.2.3.fwsc",
+      "releaseURL" : "https://github.com/Quixotic7/RemoteFM1/releases/tag/v0.2.3",
+      "sha256" : "211f06f63e8ca09de2812c017db9bb229713ce8e5a102eba887031551b2b403c",
       "size" : 611496,
-      "version" : "v0.2.2"
+      "version" : "0.2.3"
     },
     {
       "author" : "acidsound",
@@ -11500,7 +11500,7 @@
     }
   ],
   "formatVersion" : 1,
-  "hubUpdated" : "2026-10-29 00:06 UTC",
+  "hubUpdated" : "2026-10-29 03:02 UTC",
   "problems" : [
 
   ]
