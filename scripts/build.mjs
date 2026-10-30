@@ -10,6 +10,7 @@
 // The bootloader check's data (bootloader-check/data.json, committed by its own workflow) is
 // rendered into its page, with the hand-edited corrections in overrides.json applied.
 // While nothing is pinned, the placeholder files in this repository are used instead.
+// Every published page, the projects' included, then gets GoatCounter's visit counter.
 import { execFile } from "node:child_process";
 import { cp, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import { join, relative } from "node:path";
@@ -33,6 +34,11 @@ const publicPaths = [
   "fm1kit",
   "privacy",
 ];
+
+// GoatCounter's script, pinned by version and SHA-384 so a browser refuses it if it changes.
+export const visitCounter =
+  '<script data-goatcounter="https://fm1.goatcounter.com/count" async src="https://gc.zgo.at/count.v5.js" ' +
+  'integrity="sha384-atnOLvQb9t+jTSipvd75X2yginT4PjVbqDdlJAmxMm+wYElFmeR6EmLP5bYeoRVQ" crossorigin="anonymous"></script>';
 
 const escapeHtml = (text) =>
   text.replace(/[&<>"']/g, (character) => `&#${character.codePointAt(0)};`);
@@ -105,6 +111,31 @@ async function unpackEstampie(pin) {
   console.log(`Unpacked ESTAMPIE ${pin.version}'s site into dist/estampie/.`);
 }
 
+// Puts the visit counter at the end of each page's <head>, leaving pages that count already alone.
+// Pages that leave </head> out, as some of ESTAMPIE's small ones do, get it after their <title>.
+async function addVisitCounter() {
+  const pages = (await readdir(dist, { recursive: true })).filter((file) => file.endsWith(".html"));
+  let added = 0;
+  for (const file of pages) {
+    const path = join(dist, file);
+    const page = await readFile(path, "utf8");
+    if (/<script[^>]* data-goatcounter=/.test(page)) {
+      continue;
+    }
+    const head = page.match(/^( *)<\/head>/m);
+    const title = page.match(/<title>[^<]*<\/title>/);
+    if (head) {
+      await writeFile(path, page.replace(head[0], `${head[1]}  ${visitCounter}\n${head[0]}`));
+    } else if (title) {
+      await writeFile(path, page.replace(title[0], `${title[0]}${visitCounter}`));
+    } else {
+      throw new Error(`${file} has no </head> or <title> for the visit counter`);
+    }
+    added += 1;
+  }
+  console.log(`Added the visit counter to ${added} of ${pages.length} pages.`);
+}
+
 async function copyFm1kitFiles(pin) {
   for (const [file, sha256] of Object.entries(pin.files)) {
     const url = `https://raw.githubusercontent.com/ocean/FM1Kit/${pin.tag}/${file}`;
@@ -141,4 +172,5 @@ if (fm1kit.tag) {
 } else {
   console.log("No FM1Kit release pinned in fm1kit.json: keeping fm1kit/llms-full.txt.");
 }
+await addVisitCounter();
 console.log(`Built ${publicPaths.length} paths into dist/.`);
