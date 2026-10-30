@@ -433,12 +433,30 @@ async function llmsLinks() {
   return found;
 }
 
+// Every published page loads GoatCounter's pinned script exactly once (the build adds it).
+async function visitCounterProblems() {
+  const found = [];
+  const pages = (await readdir(dist, { recursive: true })).filter((file) => file.endsWith(".html"));
+  for (const file of pages) {
+    const page = await readFile(join(dist, file), "utf8");
+    const scripts = page.match(/<script[^>]* data-goatcounter=[^>]*>/g) ?? [];
+    if (scripts.length !== 1) {
+      found.push(`${file} loads the visit counter ${scripts.length} times`);
+    } else if (!/ integrity="sha384-/.test(scripts[0])) {
+      found.push(`${file} loads the visit counter without an integrity hash`);
+    }
+  }
+  console.log(`${found.length === 0 ? "ok  " : "FAIL"} the visit counter on ${pages.length} pages`);
+  return found;
+}
+
 await mkdir(shots, { recursive: true });
 const server = await serve();
 const base = `http://127.0.0.1:${server.address().port}`;
 const browser = await chromium.launch();
 const problems = [];
 const linksFound = await llmsLinks();
+problems.push(...(await visitCounterProblems()));
 
 try {
   for (const state of states) {
