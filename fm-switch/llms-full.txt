@@ -1,6 +1,6 @@
 # FM-SWITCH
 
-> An app for iPhone, iPad and Mac for swapping M-VAVE FM-1 firmwares over USB. In TestFlight for iPhone and iPad, open source, free, not affiliated with M-VAVE.
+> An app for iPhone, iPad and Mac for swapping M-VAVE FM-1 firmwares over USB. In TestFlight for iPhone and iPad, a download for the Mac, open source, free, not affiliated with M-VAVE.
 
 Part of Drew Robinson's FM-1 projects: https://fm-1.drewr.dev/ (see /llms-full.txt there for the others). Source: https://github.com/ocean/FM-SWITCH
 
@@ -19,11 +19,13 @@ The M-VAVE FM-1 is a tiny hardware synthesiser with a lively community of custom
 - Installing shows one progress bar through four stages: getting ready, installing, checking and restarting.
 - Save my FM-1: on M-VAVE's open firmware, keeps a copy of every saved project, the project being edited (with unsaved changes) and the samples, before switching away.
 - An install takes about 20 seconds for V15 and under 40 seconds for Felucca 1.6.1 on the FM-1 tested.
+- Whole-flash backups (Mac): with the FM-1 in download mode, backs up its whole flash and restores it later. Before every backup or restore, macOS asks for the person's password so FM-SWITCH's helper can run as an administrator, then for permission to use the FM-1 as a USB drive. Hardware-tested with the notarised build on 29 Oct 2026.
 - Flash history, and a simulated FM-1 for the iOS Simulator (it can start in USB rescue mode, or "pull the cable" at 45% to test carrying on).
 
 ## Platforms
 
-- iOS and iPadOS 17 or later, and macOS (native SwiftUI, sandboxed).
+- iOS and iPadOS 17 or later (sandboxed, as every App Store and TestFlight app is), and macOS 14 or later; native SwiftUI on both.
+- The Mac app is signed with Developer ID and notarised by Apple. It isn't sandboxed: reading or writing the FM-1's whole flash runs a small tool as an administrator, and macOS asks for your password first.
 - Connects by an iPhone or iPad's USB-C port, a Lightning device through Apple's camera adapter, or a Mac's USB.
 - iPad (landscape, or a 13-inch in either orientation) and the Mac get a wide layout: a sidebar, and lists with the picked item beside them.
 
@@ -41,7 +43,9 @@ Every feature is free, and tips unlock nothing. On iPhone and iPad tips are in-a
 
 ## Building
 
-iPhone and iPad: in TestFlight now; ask on the FM-1 Discord for more. The Mac app is coming soon, from the website, signed with Developer ID.
+iPhone and iPad: in TestFlight now; ask on the FM-1 Discord for more. Mac: a signed, notarised DMG from the website, always at https://github.com/ocean/FM-SWITCH/releases/latest/download/FM-SWITCH.dmg
+
+The Mac app checks GitHub once a day for a newer release; the request carries nothing about the person or their FM-1.
 
 ## Under the hood
 

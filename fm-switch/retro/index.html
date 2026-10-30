@@ -30,12 +30,13 @@
         </div>
       </div>
       <ul class="tags" aria-label="Platforms and status">
-        <li class="solid">IN TESTFLIGHT</li>
-        <li>IPHONE</li>
-        <li>IPAD</li>
         <li>MAC</li>
         <li>USB</li>
+        <li>IPHONE</li>
+        <li>IPAD</li>
+        <li class="solid">IN TESTFLIGHT</li>
       </ul>
+      <p class="download"><a href="https://github.com/ocean/FM-SWITCH/releases/latest/download/FM-SWITCH.dmg"><img src="../../assets/fm-switch-mac-dark.svg" alt="Download FM-SWITCH for Mac (macOS 14 or later)" width="272" height="72"></a></p>
     </header>
 
     <section class="panel">
@@ -66,6 +67,7 @@
           <li>Asks before switching to a different firmware, which can erase the FM-1's projects and samples.</li>
           <li>Keeps the screen awake while it writes. If it stops for any reason, <strong>CARRY ON</strong> finishes the job.</li>
           <li>Afterwards, checks the FM-1 reports the new firmware.</li>
+          <li>On a Mac, with the FM-1 in download mode, backs up its whole flash and restores it later. Each time, macOS first asks for your password so FM-SWITCH's helper can run as an administrator, then for permission to use the FM-1 as a USB drive.</li>
         </ul>
         <p class="note">An install takes about 20 seconds for V15, and under 40 for Felucca.</p>
       </div>
@@ -78,13 +80,13 @@
       <div class="panel-body">
         <p>Native SwiftUI on every platform. Talking to the FM-1 is <a href="../../fm1kit/">FM1Kit</a>, an open-source Swift package.</p>
         <p>Every feature is free. To say thanks, there's <a href="https://ko-fi.com/oceanicity">Ko-fi</a>.</p>
-        <p>The iPhone and iPad app is in TestFlight now, and the Mac app is coming soon. For more, check the FM-1 Discord<span class="cursor" aria-hidden="true"></span></p>
+        <p>The iPhone and iPad app is in TestFlight now, and the Mac app is a free download from this page, notarised by Apple. For more, check the FM-1 Discord<span class="cursor" aria-hidden="true"></span></p>
       </div>
     </section>
 
     <footer>
       <p>Not affiliated with M-VAVE. Installing custom firmware is at your own risk.</p>
-      <p><a href="../../privacy/">Privacy</a>: FM-SWITCH collects no data.</p>
+      <p><a href="../../privacy/">Privacy</a>: FM-SWITCH collects no data. The Mac app checks GitHub once a day for a newer release, and that request carries nothing about you or your FM-1.</p>
     </footer>
   </main>
 </body>

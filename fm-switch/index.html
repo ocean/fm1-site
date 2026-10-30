@@ -50,6 +50,7 @@
     </div>
 
     <p class="status">iPhone and iPad: in TestFlight</p>
+    <p class="download"><a href="https://github.com/ocean/FM-SWITCH/releases/latest/download/FM-SWITCH.dmg"><img src="../assets/fm-switch-mac-light.svg" alt="Download FM-SWITCH for Mac (macOS 14 or later)" width="272" height="72"></a></p>
 
     <section class="feature feature--change">
       <svg viewBox="0 0 44 44" aria-hidden="true"><rect width="44" height="44" rx="11" fill="#fff" fill-opacity="0.18"/><path d="M29 14H14m0 0 4-4m-4 4 4 4M15 30h15m0 0-4-4m4 4-4 4" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -113,11 +114,16 @@
       </li>
       <li class="card">
         <h3>Synced with iCloud (if you use it)</h3>
-        <p>Firmwares you install or save on your iPhone are synced through iCloud and available almost instantly on other connected devices and in the upcoming Mac app.</p>
+        <p>Firmwares you install or save on your iPhone are synced through iCloud and available almost instantly on other connected devices, including your Mac.</p>
       </li>
       <li class="card">
         <h3>You can always go back</h3>
         <p>M-VAVE's official V15 "stock" firmware comes with the app.</p>
+      </li>
+      <li class="card">
+        <h3>Back up the whole FM-1 (Mac)</h3>
+        <p>On a Mac, with the FM-1 in download mode, FM-SWITCH can back up its whole flash and restore it later.</p>
+        <p>Each time, macOS first asks for your password so FM-SWITCH's helper can run as an administrator, then for permission to use the FM-1 as a USB drive.</p>
       </li>
       <li class="card">
         <h3>If it stops</h3>
@@ -184,12 +190,12 @@
     <h2 class="label">Under the hood</h2>
     <div class="card">
       <p>Native SwiftUI on iPhone, iPad and Mac. Talking to the FM-1 is <a href="../fm1kit/">FM1Kit</a>, an open-source Swift package.</p>
-      <p>The iPhone and iPad app is in TestFlight now, and the Mac app is coming soon. For more info or discussion, find me on the FM-1 Discord.</p>
+      <p>The iPhone and iPad app is in TestFlight now, and the Mac app is a free download from this page, notarised by Apple. For more info or discussion, find me on the FM-1 Discord.</p>
     </div>
 
     <footer>
       <p>Not affiliated with M-VAVE. Installing custom firmware is at your own risk.</p>
-      <p><a href="../privacy/">Privacy</a>: FM-SWITCH collects no data.</p>
+      <p><a href="../privacy/">Privacy</a>: FM-SWITCH collects no data. The Mac app checks GitHub once a day for a newer release, and that request carries nothing about you or your FM-1.</p>
     </footer>
   </main>
 </body>
