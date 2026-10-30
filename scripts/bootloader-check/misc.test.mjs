@@ -2,7 +2,7 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import { deflateRawSync } from "node:zlib";
-import { catalogueRepos, isExcluded, pushedSinceForked } from "./discover.mjs";
+import { catalogueRepos, isExcluded, listForks, pushedSinceForked, searchRepos } from "./discover.mjs";
 import { mapLimit } from "./github.mjs";
 import { filesInZip } from "./zip.mjs";
 
@@ -92,6 +92,29 @@ describe("discovery", () => {
   it("tells a fork that's been pushed to from a plain copy", () => {
     assert.ok(pushedSinceForked({ createdAt: "2026-10-01T00:00:00Z", pushedAt: "2026-10-02T00:00:00Z" }));
     assert.ok(!pushedSinceForked({ createdAt: "2026-10-01T00:00:00Z", pushedAt: "2026-09-30T00:00:00Z" }));
+  });
+
+  it("never adds a private repository, whatever the token can see", async () => {
+    const repository = (full_name, extra = {}) => ({ repository: { full_name, fork: false, private: false, ...extra } });
+    const github = {
+      searchCode: async () => [repository("someone/public-fw"), repository("drew/secret-fw", { private: true })],
+      graphql: async () => ({
+        data: {
+          repository: {
+            forks: {
+              pageInfo: { hasNextPage: false },
+              nodes: [
+                { nameWithOwner: "someone/fork", createdAt: "2026-10-01T00:00:00Z", pushedAt: "2026-10-02T00:00:00Z", isPrivate: false },
+                { nameWithOwner: "drew/secret-fork", createdAt: "2026-10-01T00:00:00Z", pushedAt: "2026-10-02T00:00:00Z", isPrivate: true },
+              ],
+            },
+          },
+        },
+      }),
+    };
+    assert.deepEqual(await searchRepos(github, () => {}), ["someone/public-fw"]);
+    const forks = await listForks(github, ["hugelton/felucca"]);
+    assert.deepEqual(forks.get("hugelton/felucca").map((fork) => fork.repo), ["someone/fork"]);
   });
 });
 
