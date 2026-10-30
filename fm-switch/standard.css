@@ -169,6 +169,30 @@ h1 {
   background: var(--good);
 }
 
+/* The Mac download badge. */
+.download {
+  margin: 0 0 1.5rem;
+  text-align: center;
+}
+
+.download a {
+  display: inline-block;
+  border-radius: 16px;
+  transition: transform 0.15s ease;
+}
+
+.download a:hover,
+.download a:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.download img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 /* The home screen's two big cards. */
 .feature {
   display: grid;

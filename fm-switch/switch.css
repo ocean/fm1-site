@@ -153,6 +153,28 @@ h1 {
   color: var(--bg);
 }
 
+/* The Mac download badge, with a hard shadow as the panels have. */
+.download {
+  margin: -1.5rem 0 3rem;
+}
+
+.download a {
+  display: inline-block;
+  border: 0;
+  filter: drop-shadow(4px 4px 0 var(--shadow));
+}
+
+.download a:hover,
+.download a:focus-visible {
+  filter: drop-shadow(4px 4px 0 var(--shadow)) drop-shadow(0 0 6px rgb(123 227 154 / 35%));
+}
+
+.download img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 /* Panels: a notched outline, a title tab across the top border and a hard shadow. */
 .panel {
   position: relative;
