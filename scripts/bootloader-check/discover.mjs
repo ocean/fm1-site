@@ -5,6 +5,9 @@
 //
 // Code search needs a token GitHub accepts for it. If it's refused (as it may be for the Actions
 // token), discovery goes on without it and says so.
+//
+// Only public repositories are ever added: a token that can see private ones (a personal one, run
+// locally) must not put them on the public page.
 
 // Text only Felucca's update code (old or fixed) has.
 export const searchQueries = [
@@ -77,7 +80,7 @@ export async function searchRepos(github, log) {
       const items = await github.searchCode(query);
       for (const item of items) {
         const repo = item.repository?.full_name;
-        if (repo && !item.repository.fork) repos.set(repo.toLowerCase(), repo);
+        if (repo && !item.repository.fork && !item.repository.private) repos.set(repo.toLowerCase(), repo);
       }
       log(`  code search ${query}: ${items.length} file(s)`);
     } catch (error) {
@@ -98,7 +101,7 @@ export async function listForks(github, parents) {
     repository(owner: $owner, name: $name) {
       forks(first: 100, after: $after) {
         pageInfo { hasNextPage endCursor }
-        nodes { nameWithOwner createdAt pushedAt }
+        nodes { nameWithOwner createdAt pushedAt isPrivate }
       }
     }
   }`;
@@ -111,7 +114,9 @@ export async function listForks(github, parents) {
       const connection = data.repository?.forks;
       if (!connection) break;
       list.push(
-        ...connection.nodes.map((node) => ({ repo: node.nameWithOwner, createdAt: node.createdAt, pushedAt: node.pushedAt })),
+        ...connection.nodes
+          .filter((node) => !node.isPrivate)
+          .map((node) => ({ repo: node.nameWithOwner, createdAt: node.createdAt, pushedAt: node.pushedAt })),
       );
       if (!connection.pageInfo.hasNextPage) break;
       after = connection.pageInfo.endCursor;
