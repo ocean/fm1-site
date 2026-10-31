@@ -49,7 +49,7 @@ The Mac app checks GitHub once a day for a newer release; the request carries no
 
 ## Under the hood
 
-Talking to the FM-1 (the update protocol, `.fwsc` packages, CoreMIDI and the simulated FM-1) is FM1Kit, an open-source Swift package by the same author: https://fm-1.drewr.dev/fm1kit/
+Talking to the FM-1 (the update protocol, `.fwsc` packages, CoreMIDI and the simulated FM-1) is FM1Kit, an open-source Swift package by the same author: https://fm-1.drewr.dev/fm1kit/ (source: https://github.com/ocean/FM1Kit)
 
 ## Safety
 
