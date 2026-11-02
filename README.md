@@ -55,7 +55,7 @@ pushes the branch and leaves opening the pull request to you.
 
 `firmwares.json` (served at https://fm-1.drewr.dev/firmwares.json, open to any site)
 is the FM-1 firmware list FM-SWITCH downloads. FM-SWITCH's `fm1-catalogue` tool builds it from the firmware
-hub, fm1-editor.com and aroum's FM1 Resource Hub. The "Update the firmware list" workflow
+hub, fm1-editor.com, aroum's FM1 Resource Hub and mutant.cloud. The "Update the firmware list" workflow
 (`.github/workflows/update-firmwares.yml`) runs it on macOS, then a separate job running only this
 repository's code checks the result (`scripts/validate-firmwares.mjs`: the format the app reads, https for
 anything it downloads, real SHA-256 values, sane sizes) and commits it to `main` only when the list itself

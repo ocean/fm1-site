@@ -10,7 +10,7 @@ The M-VAVE FM-1 is a tiny hardware synthesiser with a lively community of custom
 
 ## Features
 
-- Firmware list: the firmware hub's catalogue (thefirmwarehub.com), fm1-editor.com's list and aroum's FM1 Resource Hub, with filters for kinds (grooveboxes, synths and so on) and for firmwares built from source.
+- Firmware list: the firmware hub's catalogue (thefirmwarehub.com), fm1-editor.com's list, aroum's FM1 Resource Hub and mutant.cloud, with filters for kinds (grooveboxes, synths and so on) and for firmwares built from source.
 - Firmware pages: each firmware's own page, with its author, description, pictures from its README, an Install button, Save to this phone for later, and its links (project site, source code, release, editor, try it in the browser, and the lists it's on).
 - Package discovery: finds each firmware's `.fwsc` package from GitHub releases, publisher manifests, project pages or M-VAVE's downloads, with live checks for newer releases and their builds.
 - Saved firmwares: kept on the device for offline flashing.
