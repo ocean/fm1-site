@@ -5,6 +5,9 @@
 # Two jobs, so FM-SWITCH's code (and the packages it fetches) never holds a token that can write
 # here: "build" runs the tool with read-only permissions; "publish" runs only this repository's own
 # code, checks the file and commits it.
+#
+# When a source can't be read, fm1-catalogue keeps that source's firmwares from the last published
+# list and exits 4. The list is still checked and published, then the run fails so someone looks.
 name: Update the firmware list
 
 on:
@@ -26,6 +29,9 @@ jobs:
     timeout-minutes: 20
     permissions:
       contents: read
+    outputs:
+      incomplete: ${{ steps.catalogue.outputs.incomplete }}
+      problems: ${{ steps.catalogue.outputs.problems }}
     steps:
       - name: Check out this site (for the last published list)
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -42,6 +48,7 @@ jobs:
           persist-credentials: false
 
       - name: Run fm1-catalogue
+        id: catalogue
         working-directory: app
         env:
           # Read-only, and only for GitHub's API rate limit.
@@ -52,7 +59,20 @@ jobs:
           if [ -f ../site/firmwares.json ]; then
             previous=(--previous ../site/firmwares.json)
           fi
-          swift run -c release fm1-catalogue --output "$RUNNER_TEMP/list/firmwares.json" "${previous[@]}"
+          problems="$RUNNER_TEMP/problems.txt"
+          status=0
+          swift run -c release fm1-catalogue --output "$RUNNER_TEMP/list/firmwares.json" "${previous[@]}" \
+            2> "$problems" || status=$?
+          cat "$problems" >&2
+          if [ "$status" -eq 4 ]; then
+            # Written, but a source couldn't be read: publish it, then fail the run.
+            message=$(grep '^fm1-catalogue: ' "$problems" | sed 's/^fm1-catalogue: //' | tr '\n' ' ')
+            echo "incomplete=true" >> "$GITHUB_OUTPUT"
+            echo "problems=$message" >> "$GITHUB_OUTPUT"
+            echo "::warning::$message"
+            exit 0
+          fi
+          exit "$status"
 
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
@@ -89,6 +109,8 @@ jobs:
       - name: Commit it if it changed
         env:
           GH_TOKEN: ${{ github.token }}
+          INCOMPLETE: ${{ needs.build.outputs.incomplete }}
+          PROBLEMS: ${{ needs.build.outputs.problems }}
         run: |
           new="$RUNNER_TEMP/list/firmwares.json"
           # builtAt and the hub's own timestamp change on every run without the list changing.
@@ -102,9 +124,25 @@ jobs:
           remote="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          sources="Built by FM-SWITCH's fm1-catalogue from the firmware hub, fm1-editor.com, aroum's FM1 Resource Hub and mutant.cloud."
+          if [ "$INCOMPLETE" = "true" ]; then
+            sources="$sources Incomplete: $PROBLEMS"
+          fi
           git add firmwares.json
-          git commit --message "Update the firmware list ($count firmwares)" \
-            --message "Built by FM-SWITCH's fm1-catalogue from the firmware hub, fm1-editor.com and aroum's FM1 Resource Hub."
+          git commit --message "Update the firmware list ($count firmwares)" --message "$sources"
           git pull --rebase "$remote" main
           git push "$remote" HEAD:main
           gh workflow run ci.yml --ref main
+
+      - name: Fail if a source couldn't be read
+        if: needs.build.outputs.incomplete == 'true'
+        env:
+          PROBLEMS: ${{ needs.build.outputs.problems }}
+        run: |
+          echo "### The firmware list is incomplete" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "$PROBLEMS" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "It was checked and published anyway." >> "$GITHUB_STEP_SUMMARY"
+          echo "::error::$PROBLEMS"
+          exit 1

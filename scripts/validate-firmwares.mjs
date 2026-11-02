@@ -1,7 +1,7 @@
 // Checks firmwares.json, the FM-1 firmware list FM-SWITCH downloads, before it's published.
 //
-// The list is built by FM-SWITCH's fm1-catalogue tool (from the firmware hub, fm1-editor.com and
-// aroum's FM1 Resource Hub). This repository publishes it, so it checks the file with its own code:
+// The list is built by FM-SWITCH's fm1-catalogue tool (from the firmware hub, fm1-editor.com, aroum's
+// FM1 Resource Hub and mutant.cloud). This repository publishes it, so it checks the file with its own code:
 // the format the app understands, sane sizes, https for anything the app downloads, and real
 // SHA-256 values. Run as a script with a path, or import validateFirmwares().
 import { readFile } from "node:fs/promises";
@@ -13,6 +13,8 @@ const entryCount = { minimum: 50, maximum: 1000 };
 const packageOrigins = ["hub", "githubRelease", "publisherManifest", "projectPage", "mvave"];
 // Where an entry's description (what) came from, when it isn't the hub or fm1-editor.com.
 const whatSources = ["gitHub"];
+// Which lists an entry is on, as bits: the hub, fm1-editor.com, aroum's FM1 Resource Hub, mutant.cloud.
+const listingBits = 0b1111;
 const sha256Pattern = /^[0-9a-f]{64}$/;
 
 function urlWithScheme(value, schemes) {
@@ -67,7 +69,7 @@ export function validateFirmwares(text) {
     check(Array.isArray(entry.kinds) && entry.kinds.every((kind) => typeof kind === "string"), "kinds isn't a list of strings");
     check(typeof entry.beta === "boolean", "beta isn't true or false");
     check(typeof entry.isOfficial === "boolean", "isOfficial isn't true or false");
-    check(Number.isInteger(entry.listing) && entry.listing >= 1 && entry.listing <= 7, "listing isn't 1 to 7");
+    check(Number.isInteger(entry.listing) && entry.listing >= 1 && entry.listing <= listingBits, `listing isn't 1 to ${listingBits}`);
     check(
       Array.isArray(entry.links) &&
         entry.links.every((link) => typeof link.label === "string" && urlWithScheme(link.url, ["https:", "http:"])),
