@@ -32,6 +32,7 @@ const publicPaths = [
   "estampie",
   "fm-switch",
   "fm1kit",
+  "fm1-moment",
   "privacy",
 ];
 

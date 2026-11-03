@@ -21,6 +21,7 @@ The M-VAVE FM-1 is a small, inexpensive hardware synthesiser with a screen, a ke
 - `/fm-switch/` : FM-SWITCH's page.
 - `/fm1kit/` : FM1Kit's page, an overview of the package's API.
 - `/bootloader-check/` : for firmware developers, which firmwares on Felucca's update code trap users with a changed bootloader (m-bootloader, or Open V12/V14's) by only installing other Felucca-based firmwares. Its data is `/bootloader-check/data.json`, with corrections in `/bootloader-check/overrides.json`.
+- `/fm1-moment/` : The FM-1 Moment, a dated and sourced history of the FM-1's custom-firmware boom in 2026, as of 1 November 2026. Its dataset of about 200 firmwares' first public releases is `/fm1-moment/releases.csv`.
 - `/llms.txt` : a short index of this file.
 
 ---
