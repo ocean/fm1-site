@@ -130,6 +130,8 @@ const states = [
     colorScheme: "light",
     backdrops: ["#fff", "#f6f7f8"],
   },
+  { name: "fm1-moment", path: "/fm1-moment/", viewport: desktop, backdrops: ["#1a110b", "#2a1b11"] },
+  { name: "fm1-moment-phone", path: "/fm1-moment/", viewport: phone, backdrops: ["#1a110b", "#2a1b11"] },
   { name: "privacy", path: "/privacy/", viewport: phone, backdrops: ["#1a110b", "#2a1b11"] },
   { name: "not-found", path: "/404.html", viewport: phone, backdrops: ["#1a110b", "#2a1b11"] },
 ];

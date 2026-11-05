@@ -1,0 +1,424 @@
+/*
+ * The FM-1 Moment: a reference page in the site's own look (assets/site.css: the warm dark palette
+ * and Cooper Hewitt), widened for tables, charts and the timeline. Prose keeps the site's reading
+ * measure; the charts and tables take the full width. The charts are static SVG in the page, so
+ * they need no JavaScript, and their colours come from the variables below.
+ */
+
+:root {
+  --surface: #23170f;
+  --chart-line: var(--accent);
+  --chart-muted: #8a7760;
+  --chart-bar: #6e5a45;
+  --chart-band: #2e1f14;
+}
+
+main {
+  max-width: 46rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.intro .lede {
+  margin-bottom: 1.25rem;
+  color: var(--text);
+  font-size: 1.3rem;
+  line-height: 1.45;
+}
+
+.intro p {
+  margin: 0 0 1.25rem;
+}
+
+abbr[title] {
+  text-decoration: underline dotted var(--rule);
+  text-underline-offset: 0.2em;
+}
+
+/* Key dates. */
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  gap: 1px;
+  margin: 2.5rem 0;
+  padding: 0;
+  border: 1px solid var(--rule);
+  background: var(--rule);
+  list-style: none;
+}
+
+.facts li {
+  display: grid;
+  gap: 0.25rem;
+  align-content: start;
+  padding: 1rem;
+  background: var(--bg);
+}
+
+.facts b {
+  color: var(--accent);
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.facts span {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Contents. */
+.contents {
+  margin: 0 0 3rem;
+  font-size: 0.95rem;
+}
+
+.contents ol {
+  columns: 2 14rem;
+  margin: 0;
+  padding-left: 1.4rem;
+  color: var(--muted);
+}
+
+.contents li {
+  margin-bottom: 0.25rem;
+}
+
+/* Sections. */
+section {
+  margin-top: 3.5rem;
+}
+
+section + section.prose:not(:has(h2)) {
+  margin-top: 0;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+h2 .num {
+  display: inline-block;
+  min-width: 1.4em;
+  color: var(--accent);
+  font-weight: 400;
+}
+
+h3 {
+  margin: 2.5rem 0 0.75rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.prose ul {
+  margin: 0 0 1.25rem;
+  padding-left: 1.2rem;
+}
+
+.prose li {
+  margin-bottom: 0.6rem;
+}
+
+.prose li::marker {
+  color: var(--accent);
+}
+
+.prose b {
+  font-weight: 600;
+}
+
+code {
+  font-size: 0.9em;
+}
+
+/* Tables. */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1.5rem 0 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+caption {
+  margin-bottom: 0.6rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+th,
+td {
+  padding: 0.55rem 0.75rem 0.55rem 0;
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+td:first-child {
+  white-space: nowrap;
+}
+
+th.n,
+td.n {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Charts. */
+figure {
+  margin: 1.5rem 0 1rem;
+}
+
+.chart {
+  display: block;
+  width: 100%;
+  height: auto;
+  font-family: var(--font);
+  font-size: 12px;
+}
+
+.chart .grid {
+  stroke: var(--rule);
+  stroke-width: 1;
+}
+
+.chart .axis {
+  stroke: var(--muted);
+  stroke-width: 1;
+}
+
+.chart .band {
+  fill: var(--chart-band);
+}
+
+.chart .event {
+  stroke: var(--chart-muted);
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+}
+
+.chart .line {
+  fill: none;
+  stroke: var(--chart-line);
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+
+.chart .line--muted {
+  stroke: var(--chart-muted);
+  stroke-width: 2;
+}
+
+.chart .dot {
+  fill: var(--chart-line);
+}
+
+.chart .bar {
+  fill: var(--chart-bar);
+}
+
+.chart text {
+  fill: var(--muted);
+}
+
+.chart .tick {
+  font-size: 11.5px;
+}
+
+.chart .label {
+  font-size: 12px;
+}
+
+.chart .note,
+.chart .end-label {
+  fill: var(--text);
+}
+
+.chart .note {
+  font-size: 12px;
+}
+
+.chart .strong,
+.chart .end-label {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+figcaption {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+details.data {
+  margin: 0 0 2rem;
+  font-size: 0.92rem;
+}
+
+details.data summary {
+  color: var(--muted);
+  cursor: pointer;
+}
+
+details.data table {
+  max-width: 20rem;
+}
+
+/* Timeline. */
+.timeline {
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 1.25rem;
+  padding: 0 0 1.1rem;
+}
+
+.timeline li::before {
+  position: absolute;
+  top: 0.15rem;
+  bottom: -0.15rem;
+  left: 7.15rem;
+  border-left: 1px solid var(--rule);
+  content: "";
+}
+
+.timeline li::after {
+  position: absolute;
+  top: 0.6rem;
+  left: calc(7.15rem - 3.5px);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--muted);
+  content: "";
+}
+
+.timeline time {
+  color: var(--muted);
+  font-size: 0.95rem;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.timeline p {
+  margin: 0;
+  padding-left: 0.5rem;
+}
+
+.timeline p a {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.timeline p a:hover,
+.timeline p a:focus-visible {
+  color: var(--accent);
+}
+
+.timeline .key time,
+.timeline .key b {
+  color: var(--accent);
+}
+
+.timeline .key b {
+  font-weight: 600;
+}
+
+.timeline .key::after {
+  top: 0.5rem;
+  left: calc(7.15rem - 5.5px);
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+}
+
+.timeline .phase {
+  display: block;
+  padding: 1rem 0 1rem 7.95rem;
+  color: var(--accent);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.timeline .phase::after {
+  display: none;
+}
+
+.timeline .phase:first-child {
+  padding-top: 0;
+}
+
+.sources li {
+  font-size: 0.92rem;
+}
+
+cite {
+  font-style: italic;
+}
+
+@media (width <= 32rem) {
+  .timeline li {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+    padding: 0 0 1.1rem 1.4rem;
+  }
+
+  .timeline li::before {
+    left: 0.25rem;
+  }
+
+  .timeline li::after {
+    left: calc(0.25rem - 3.5px);
+  }
+
+  .timeline .key::after {
+    left: calc(0.25rem - 5.5px);
+  }
+
+  .timeline time {
+    text-align: left;
+  }
+
+  .timeline p {
+    padding-left: 0;
+  }
+
+  .timeline .phase {
+    padding-left: 1.4rem;
+  }
+}
+
+.timeline .src {
+  color: var(--muted);
+  font-size: 0.85rem;
+}

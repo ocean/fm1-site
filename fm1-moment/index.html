@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The FM-1 Moment: FM-1 projects</title>
+  <meta name="description" content="A dated history of the M-VAVE FM-1's custom-firmware boom in 2026: the device, the first custom firmware, Felucca and the first wave, the community's tools, M-VAVE's open firmware, and about 200 firmwares in five weeks. With sources and the dataset.">
+  <link rel="icon" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/site.css">
+  <link rel="stylesheet" href="page.css">
+</head>
+<body>
+  <main>
+    <a class="back" href="../">&lsaquo; FM-1 projects</a>
+
+    <header class="intro">
+      <p class="eyebrow">A working history &middot; as of 1 November 2026</p>
+      <h1>The FM-1 Moment</h1>
+      <p class="lede">In five weeks of 2026, a US$75 pocket FM synth went from one hacked firmware to about two hundred community firmwares, and its maker answered by publishing open firmware of its own.</p>
+      <p>This page sets out what happened and when, with a source for each fact, for anyone who wants to study it later. It's a working draft: dates marked <abbr title="circa">c.</abbr> are inferred, and the open questions are listed at the end. Corrections are welcome as <a href="https://github.com/ocean/fm1-site/issues">issues on GitHub</a>.</p>
+    </header>
+
+    <ul class="facts" aria-label="Key dates">
+      <li><b>27 Sep</b><span>First public custom firmware, Baud Girl's FM-1+VA</span></li>
+      <li><b>3 Oct</b><span>First open-source firmware, Felucca</span></li>
+      <li><b>16 Oct</b><span>M-VAVE publishes its own open firmware</span></li>
+      <li><b>&asymp;200</b><span>firmwares by 31 October</span></li>
+    </ul>
+
+    <nav class="contents" aria-label="On this page">
+      <ol>
+        <li><a href="#device">The device</a></li>
+        <li><a href="#opening">Cracking it open</a></li>
+        <li><a href="#floodgates">The floodgates</a></li>
+        <li><a href="#infrastructure">The community's tools</a></li>
+        <li><a href="#response">M-VAVE's response</a></li>
+        <li><a href="#numbers">The numbers</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#open-questions">Open questions</a></li>
+        <li><a href="#method">Method, data and sources</a></li>
+      </ol>
+    </nav>
+
+    <section class="prose" aria-labelledby="device">
+      <h2 id="device"><span class="num">1</span> The device: a DX7 in a pocket</h2>
+      <p>The M-VAVE FM-1 arrived in mid-2026 as a budget six-operator FM synth, not a hacker's platform. <a href="https://synthanatomy.com/2026/10/m-vave-fm-1-a-budget-friendly-dx-7-style-desktop-fm-polysynth.html">Synth Anatomy's first coverage</a> is dated 14 June; <a href="https://sonicstate.com/news/2026/07/10/m-vave-fm-1-reviews-/">Sonicstate</a> rounded up reviews on 10 July and <a href="https://www.synthtopia.com/content/2026/07/13/m-vave-introduces-fm-1-fm-pocket-synthesizer/">Synthtopia</a> announced it on 13 July, at around US$75&ndash;100.</p>
+      <ul>
+        <li><b>Sound:</b> six-operator FM, 32 algorithms and 12 voices, in a DX7-style engine derived from Dexed.</li>
+        <li><b>Hardware:</b> 27 silicone keys, seven knobs and a volume control, a colour screen, a 2000 mAh battery, a speaker, USB-C, TRS MIDI in and Bluetooth MIDI.</li>
+        <li><b>Inside:</b> a JieLi AC791N system-on-chip with two pi32v2 cores, documented by the reverse-engineering project <a href="https://zeli.app/story/49994065">AL-255/FM-1-RE</a>. M-VAVE's SMK-37 Pro keyboard uses the same chip, which is why so many FM-1 firmwares were later ported to it.</li>
+        <li><b>Stock firmware:</b> V14 at launch, then V15 on 30 July. V15 was published as a separate <code>FM-1.fwsc</code> file rather than inside the Windows updater, which gave the community a clean sample of the update package (<a href="https://github.com/aroum/fm1-custom-fw/issues/1">aroum, issue 1</a>).</li>
+      </ul>
+    </section>
+
+    <section class="prose" aria-labelledby="opening">
+      <h2 id="opening"><span class="num">2</span> Cracking it open</h2>
+      <p>The groundwork was laid in July. Between 18 and 21 July the FM-1-RE project disassembled the firmware, mapped its functions, decoded M-VAVE's update protocol and installed a demo firmware of its own. Reverse engineering was also under way in Reddit's r/synthdiy at the time (<a href="https://azat.tv/m-vave-fm-1-synthesizer-firmware-hacking-open-platform/">azat.tv</a>). A handful of projects made their first commits in early September: a poly sequencer on 3 September and Lunar Modulator on 6 September.</p>
+      <p>The first public custom firmware was <a href="https://baudgirl.com/work/FM-1+VA">FM-1+VA</a> by Baud Girl, the workshop label of a developer named Madeline. Stanley Gurvich's firmware database records four test packages (FM-1_083 to FM-1_086) on 26 September and the public FM-1_089 on 27 September. It's free to use but not open source.</p>
+      <p>It added a list-based menu, a virtual analogue engine with a supersaw mode beside the DX7 engine, and a 303-style 64-step sequencer with ratchets, slides and accents. <a href="https://synthanatomy.com/2026/09/baud-girl-fm-1-va-custom-m-vave-fm-1-firmware.html">Synth Anatomy</a> covered it on 28 September and <a href="https://sonicstate.com/news/2026/09/29/free-custom-firmware-for-mvave-fm-1-/">Sonicstate</a> on 29 September, and YouTube demos by DECIMA1, Stanley Gurvich, ElektroTV and NatLife Sounds followed within two days (<a href="https://www.matrixsynth.com/2026/09/m-vave-fm-1-now-is-va-synthesizer-full.html">Matrixsynth</a>).</p>
+    </section>
+
+    <section class="prose" aria-labelledby="floodgates">
+      <h2 id="floodgates"><span class="num">3</span> The floodgates</h2>
+      <p>The open-source era began on 3 October, when Leo Kuroshita of H&uuml;gelton Instruments tagged <a href="https://github.com/hugelton/Felucca">Felucca</a> v0.8-beta, after announcing it on X a day or two earlier. It was a GPL-3.0, multi-engine, four-track firmware that anyone could build, and most later firmwares fork it. Introducing his first look at it, Stanley Gurvich wrote &ldquo;The floodgates had opened&rdquo; (<a href="https://www.matrixsynth.com/2026/10/fm-1-custom-firmware-felucca.html">Matrixsynth, 4 October</a>).</p>
+      <p>In the week that followed, about 45 firmwares appeared. By first tagged release:</p>
+      <ul>
+        <li><b>4 October:</b> X0X by Charles Vestal (a ReBirth-style 909, 808 and two 303s), SLOOP by isod89 (a live four-track groovebox and the second big family tree) and Jangada by zednaked.</li>
+        <li><b>6&ndash;7 October:</b> Melodee by keremimo, sloopDX by zvenson, ChoralRoot by Quixotic7, FoMni-1 by Charles Vestal, fm1-chord by math0ne, GHOULBOX by Jason Persinger, FiMba-1 by J.&nbsp;Adam Sowers and FM-1 Doom by zvenson.</li>
+        <li><b>9&ndash;10 October:</b> Dinghy by zvenson, a documented base for writing new firmwares, and AMB-1, CTL-1 and Mocky by Charles Vestal.</li>
+      </ul>
+      <p>Three things made that pace possible:</p>
+      <ul>
+        <li><b>A safe update path.</b> Felucca's update loader and its USB rescue mode (OCT&minus; held at power-on) were inherited by most forks, so a bad install could be undone.</li>
+        <li><b>Browser emulators.</b> Firmwares compiled to WebAssembly could be tried without risking the hardware.</li>
+        <li><b>AI coding agents.</b> Many projects say openly that they were built with LLM help; a Hacker News commenter described most of them as &ldquo;vibe-coded&rdquo; but still fun (<a href="https://zeli.app/story/49994065">zeli.app</a>).</li>
+      </ul>
+      <p>The press kept up for a while: Synthtopia counted &ldquo;nearly a dozen&rdquo; firmwares on 8 October (<a href="https://www.synthtopia.com/?p=155230">FoMni</a>) and ran a <a href="https://www.synthtopia.com/?p=155069">roundup</a> of Felucca, Baud Girl, Groove OS, Lunar Modulator, SLOOP and X0X.</p>
+    </section>
+
+    <section class="prose" aria-labelledby="infrastructure">
+      <h2 id="infrastructure"><span class="num">4</span> The community's tools</h2>
+      <p>Directories, installers, emulators and crawlers appeared in the same fortnight as the firmwares themselves.</p>
+    </section>
+
+    <div class="table-wrap">
+      <table>
+        <caption>Community tools and places, by start date</caption>
+        <thead>
+          <tr><th scope="col">Started</th><th scope="col">Tool or place</th><th scope="col">By</th><th scope="col">What it did</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>18 Jul</td><td><a href="https://zeli.app/story/49994065">FM-1-RE</a></td><td>AL-255</td><td>Disassembly, a function map and the update protocol; a demo firmware on 19 July</td></tr>
+          <tr><td>18 Jul</td><td><a href="https://fm1-editor.com/">FM1 Editor &amp; Librarian</a></td><td>Ben Sparrow</td><td>A DX7-style patch editor; its <a href="https://fm1-editor.com/firmware/">firmware directory</a> opened on 7 October</td></tr>
+          <tr><td>25 Jul</td><td><a href="https://github.com/aroum/fm1-custom-fw">FM1 Resource Hub</a></td><td>aroum</td><td>Began as SysEx and flasher notes; listed its first custom firmwares on 3 October and became the largest curated directory</td></tr>
+          <tr><td>25 Jul</td><td><a href="https://www.reddit.com/r/MVaveFM1/">r/MVaveFM1</a></td><td>community</td><td>The subreddit: release announcements, help with bricked units, hardware hacks</td></tr>
+          <tr><td>13 Sep</td><td>RP2040 recovery dongle</td><td>community</td><td>A USB rescue for bricked units, documented in aroum's hub</td></tr>
+          <tr><td>5 Oct</td><td><a href="https://github.com/cicloid/awesome-fm-1">awesome-fm-1</a></td><td>cicloid</td><td>A curated list</td></tr>
+          <tr><td>7 Oct</td><td>FM-1 Discord server</td><td>community</td><td>Real-time discussion between developers and players</td></tr>
+          <tr><td><abbr title="circa">c.</abbr> 9 Oct</td><td><a href="https://thefirmwarehub.com/">The FM-1 Firmware Hub</a></td><td>Sven Trogus (zvenson)</td><td>One-click installs of open-source firmwares from the browser (&ldquo;Make Firmware, Not War&rdquo;); from 18 October, a shared GitHub workflow (<a href="https://github.com/zvenson/fm1-build">fm1-build</a>) that builds and signs releases from source</td></tr>
+          <tr><td>10 Oct</td><td><a href="https://github.com/joakimeriksson/fm1-emu/wiki">fm1-emu</a></td><td>Joakim Eriksson</td><td>The whole device emulated in the browser, later as AU, VST3 and CLAP plugins (<a href="https://www.synthtopia.com/?p=155292">Synthtopia, 16 October</a>)</td></tr>
+          <tr><td>11 Oct</td><td><a href="https://genkigenki.github.io/smk37/">SMK-37 Firmware Hub</a></td><td>genkigenki</td><td>FM-1 firmwares ported to the SMK-37 keyboard</td></tr>
+          <tr><td>14 Oct</td><td><a href="https://wero1414.github.io/atlas-fm-1/">FM-1 Firmware Atlas</a></td><td>wero1414</td><td>A lineage map and safety guide</td></tr>
+          <tr><td>15 Oct</td><td><a href="https://charlesvestal.github.io/fm1-reader/">fm1-reader</a></td><td>Charles Vestal</td><td>A screen reader for the FM-1's display</td></tr>
+          <tr><td><abbr title="circa">c.</abbr> 17 Oct</td><td><a href="https://stanleygurvich.github.io/FMDB_FM1_FirmwareDatabase/">FMDB and Relay</a></td><td>Stanley Gurvich (Emerald Moon Labs)</td><td>An editor, an emulator host and a crawler tracking 300+ firmwares, mods and tools</td></tr>
+          <tr><td>17 Oct</td><td><a href="https://github.com/jvitkauskas/m-bootloader">m-bootloader</a></td><td>Julius Vitkauskas</td><td>A clean-room replacement bootloader</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose">
+      <p>Conversation happened in four kinds of place: Reddit's <a href="https://www.reddit.com/r/MVaveFM1/">r/MVaveFM1</a>, created on 25 July, two months before the first custom firmware, and the main venue for release announcements and help with bricked units; the long <a href="https://www.elektronauts.com/t/m-vave-fm-1/252170">Elektronauts thread</a>; threads on KVR, Gearspace and Hacker News; and Discord, from a community server created on 7 October, four days into the open-source wave, to servers for single projects (such as <a href="https://apiel.github.io/fm1-tribe/">fm1-tribe's</a>). On 12 October, one YouTuber wrote that new firmwares were coming out almost every day (<a href="https://www.matrixsynth.com/2026/10/m-vave-fm1-ghoulbox-firmware.html">Matrixsynth</a>).</p>
+    </div>
+
+    <section class="prose" aria-labelledby="response">
+      <h2 id="response"><span class="num">5</span> M-VAVE's response: joining in</h2>
+      <p>M-VAVE answered by publishing open firmware of its own, 19 days after the first custom firmware, and five days later shipped its biggest stock update. No takedowns or legal letters have been reported; one outlet described the company as choosing collaboration &ldquo;instead of blocking the work&rdquo; (<a href="https://azat.tv/m-vave-fm-1-synthesizer-firmware-hacking-open-platform/">azat.tv</a>).</p>
+      <ul>
+        <li><b>16 October, FM1 Open V12.</b> The first commit and tag of <a href="https://github.com/m-vave/fm1_open">m-vave/fm1_open</a>: an eight-track groovebox firmware with its source, a browser workbench and a flasher. V13 followed on 17 October and V14 on 19 October.</li>
+        <li><b>The forum post.</b> M-VAVE's announcement on its own forum (topic 4) was later removed, according to aroum's hub; why isn't recorded.</li>
+        <li><b>20 October, in the press.</b> <a href="https://www.synthtopia.com/content/2026/10/20/m-vave-officially-opens-fm-1-firmware-to-developers-with-new-workbench-sdk/">Synthtopia</a> and <a href="https://www.matrixsynth.com/2026/10/m-vave-fm1-open-v14-official-open.html">Matrixsynth</a> reported M-VAVE opening the FM-1 to developers, following the third-party firmware community.</li>
+        <li><b>What's open.</b> The repository has C source for the application and a binary SDK, while the core sound engine stays a closed binary. Its workbench can move an FM-1 from &ldquo;compatible third-party firmware&rdquo; back to V15, an official acknowledgement of the scene.</li>
+        <li><b>21 October, stock V16.</b> A free update that makes the FM-1 an eight-part multitimbral synth with 20 shared voices, a 64-step sequencer and an 8&nbsp;&times;&nbsp;8 arrangement grid (<a href="https://synthanatomy.com/2026/10/m-vave-fm-1-a-budget-friendly-dx-7-style-desktop-fm-polysynth.html">Synth Anatomy</a>). Community firmwares had been shipping features like these for three weeks.</li>
+        <li><b>FM-2.</b> M-VAVE told Sonicstate an FM-2 is in development, &ldquo;late this year, probably&rdquo; (<a href="https://synthanatomy.com/2026/10/m-vave-fm-2-is-coming-later-this-year.html">Synth Anatomy</a>).</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="numbers">
+      <div class="prose">
+        <h2 id="numbers"><span class="num">6</span> The numbers</h2>
+        <p>There are now between about 200 and 320 FM-1 custom firmwares, depending on who's counting and what counts. Counting firmwares by their first public release, more than half appeared in the eight days from 13 to 20 October.</p>
+      </div>
+      <figure>
+        <svg class="chart" viewBox="0 0 720 424" role="img" aria-labelledby="growth-title growth-desc">
+        <title id="growth-title">Custom FM-1 firmwares by first public release, 27 September to 31 October 2026</title>
+        <desc id="growth-desc">A cumulative line rising from 3 on 27 September to 200 on 31 October, steepest between 13 and 20 October, with new firmwares per day as bars underneath. The busiest days were 17 and 19 October, with 19 each.</desc>
+        <g transform="translate(0 24)"><line class="grid" x1="48" x2="700" y1="250.0" y2="250.0"/><text class="tick" x="40" y="254.0" text-anchor="end">0</text></g>
+        <g transform="translate(0 24)"><line class="grid" x1="48" x2="700" y1="210.0" y2="210.0"/><text class="tick" x="40" y="214.0" text-anchor="end">50</text></g>
+        <g transform="translate(0 24)"><line class="grid" x1="48" x2="700" y1="170.0" y2="170.0"/><text class="tick" x="40" y="174.0" text-anchor="end">100</text></g>
+        <g transform="translate(0 24)"><line class="grid" x1="48" x2="700" y1="130.0" y2="130.0"/><text class="tick" x="40" y="134.0" text-anchor="end">150</text></g>
+        <g transform="translate(0 24)"><line class="grid" x1="48" x2="700" y1="90.0" y2="90.0"/><text class="tick" x="40" y="94.0" text-anchor="end">200</text></g>
+        <g transform="translate(0 24)"><line class="grid" x1="48" x2="700" y1="50.0" y2="50.0"/><text class="tick" x="40" y="54.0" text-anchor="end">250</text></g>
+        <g transform="translate(0 24)"><rect class="band" x="346.8" y="50.0" width="150.2" height="200.0"/></g>
+        <g transform="translate(0 24)"><text class="note" x="493.1" y="226" text-anchor="end"><tspan class="strong">104 new</tspan></text><text class="note" x="493.1" y="241" text-anchor="end">13–20 Oct</text></g>
+        <line class="event" x1="48.0" x2="48.0" y1="24" y2="384"/><text class="label" x="52.0" y="18" text-anchor="start">First custom firmware (Baud Girl) · 27 Sep</text>
+        <line class="event" x1="163.1" x2="163.1" y1="40" y2="384"/><text class="label" x="167.1" y="34" text-anchor="start">Felucca, first open source · 3 Oct</text>
+        <line class="event" x1="412.4" x2="412.4" y1="56" y2="384"/><text class="label" x="408.4" y="50" text-anchor="end">M-VAVE's FM1 Open · 16 Oct</text>
+        <line class="event" x1="508.2" x2="508.2" y1="40" y2="384"/><text class="label" x="512.2" y="34" text-anchor="start">Stock V16 · 21 Oct</text>
+        <g transform="translate(0 24)"><path class="line" d="M48.0 247.6L67.2 247.6L86.4 247.6L105.5 246.0L124.7 246.0L143.9 245.2L163.1 244.4L182.2 243.6L201.4 242.0L220.6 237.2L239.8 231.6L258.9 226.8L278.1 223.6L297.3 214.0L316.5 209.2L335.6 200.4L354.8 192.4L374.0 182.0L393.2 175.6L412.4 168.4L431.5 153.2L450.7 141.2L469.9 126.0L489.1 117.2L508.2 111.6L527.4 102.8L546.6 102.0L565.8 100.4L584.9 95.6L604.1 95.6L623.3 94.0L642.5 93.2L661.6 91.6L680.8 90.0L700.0 90.0"/></g>
+        <g transform="translate(0 24)"><text class="end-label" x="698.0" y="78.0" text-anchor="end">200 by 31 Oct</text></g>
+        <g transform="translate(0 24)"><text class="label" x="48" y="282">New per day</text></g>
+        <g transform="translate(0 24)"><rect class="bar" x="43.0" y="348.9" width="10" height="11.1"><title>27 Sep: 3 new</title></rect></g>
+        <g transform="translate(0 24)"><rect class="bar" x="100.5" y="352.6" width="10" height="7.4"><title>30 Sep: 2 new</title></rect></g>
+        <g transform="translate(0 24)"><rect class="bar" x="138.9" y="356.3" width="10" height="3.7"><title>2 Oct: 1 new</title></rect></g>
+        <g transform="translate(0 24)"><rect class="bar" x="158.1" y="356.3" width="10" height="3.7"><title>3 Oct: 1 new</title></rect></g>
+        <g transform="translate(0 24)"><rect class="bar" x="177.2" y="356.3" width="10" height="3.7"><title>4 Oct: 1 new</title></rect></g>
+        <g transform="translate(0 24)"><rect class="bar" x="196.4" y="352.6" width="10" height="7.4"><title>5 Oct: 2 new</title></rect></g>
+        <g transform="translate(0 24)"><rect class="bar" x="215.6" y="337.9" width="10" height="22.1"><title>6 Oct: 6 new</title></rect></g>
+        <g transform="translate(0 24)"><rect class="bar" x="234.8" y="334.2" width="10" height="25.8"><title>7 Oct: 7 new</title></rect></g>
+        <g transform="translate(0 24)"><rect class="bar" x="253.9" y="337.9" width="10" height="22.1"><title>8 Oct: 6 new</title></rect></g>
+        <g transform="translate(0 24)"><rect class="bar" x="273.1" y="345.3" width="10" height="14.7"><title>9 Oct: 4 new</title></rect></g>
+        <g transform="translate(0 24)"><rect class="bar" x="292.3" y="315.8" width="10" height="44.2"><title>10 Oct: 12 new</title></rect></g>
+        <g transform="translate(0 24)"><rect class="bar" x="311.5" y="337.9" width="10" height="22.1"><title>11 Oct: 6 new</title></rect></g>
+        <g transform="translate(0 24)"><rect class="bar" x="330.6" y="319.5" width="10" height="40.5"><title>12 Oct: 11 new</title></rect></g>
+        <g transform="translate(0 24)"><rect class="bar" x="349.8" y="323.2" width="10" height="36.8"><title>13 Oct: 10 new</title></rect></g>
+        <g transform="translate(0 24)"><rect class="bar" x="369.0" y="312.1" width="10" height="47.9"><title>14 Oct: 13 new</title></rect></g>
+        <g transform="translate(0 24)"><rect class="bar" x="388.2" y="330.5" width="10" height="29.5"><title>15 Oct: 8 new</title></rect></g>
+        <g transform="translate(0 24)"><rect class="bar" x="407.4" y="326.8" width="10" height="33.2"><title>16 Oct: 9 new</title></rect></g>
+        <g transform="translate(0 24)"><rect class="bar" x="426.5" y="290.0" width="10" height="70.0"><title>17 Oct: 19 new</title></rect></g>
+        <g transform="translate(0 24)"><text class="tick" x="431.5" y="285.0" text-anchor="middle">19</text></g>
+        <g transform="translate(0 24)"><rect class="bar" x="445.7" y="304.7" width="10" height="55.3"><title>18 Oct: 15 new</title></rect></g>
+        <g transform="translate(0 24)"><rect class="bar" x="464.9" y="290.0" width="10" height="70.0"><title>19 Oct: 19 new</title></rect></g>
+        <g transform="translate(0 24)"><text class="tick" x="469.9" y="285.0" text-anchor="middle">19</text></g>
+        <g transform="translate(0 24)"><rect class="bar" x="484.1" y="319.5" width="10" height="40.5"><title>20 Oct: 11 new</title></rect></g>
+        <g transform="translate(0 24)"><rect class="bar" x="503.2" y="334.2" width="10" height="25.8"><title>21 Oct: 7 new</title></rect></g>
+        <g transform="translate(0 24)"><rect class="bar" x="522.4" y="319.5" width="10" height="40.5"><title>22 Oct: 11 new</title></rect></g>
+        <g transform="translate(0 24)"><rect class="bar" x="541.6" y="356.3" width="10" height="3.7"><title>23 Oct: 1 new</title></rect></g>
+        <g transform="translate(0 24)"><rect class="bar" x="560.8" y="352.6" width="10" height="7.4"><title>24 Oct: 2 new</title></rect></g>
+        <g transform="translate(0 24)"><rect class="bar" x="579.9" y="337.9" width="10" height="22.1"><title>25 Oct: 6 new</title></rect></g>
+        <g transform="translate(0 24)"><rect class="bar" x="618.3" y="352.6" width="10" height="7.4"><title>27 Oct: 2 new</title></rect></g>
+        <g transform="translate(0 24)"><rect class="bar" x="637.5" y="356.3" width="10" height="3.7"><title>28 Oct: 1 new</title></rect></g>
+        <g transform="translate(0 24)"><rect class="bar" x="656.6" y="352.6" width="10" height="7.4"><title>29 Oct: 2 new</title></rect></g>
+        <g transform="translate(0 24)"><rect class="bar" x="675.8" y="352.6" width="10" height="7.4"><title>30 Oct: 2 new</title></rect></g>
+        <g transform="translate(0 24)"><line class="axis" x1="48" x2="700" y1="360" y2="360"/></g>
+        <g transform="translate(0 24)"><text class="tick" x="48.0" y="378" text-anchor="middle">27 Sep</text></g>
+        <g transform="translate(0 24)"><text class="tick" x="182.2" y="378" text-anchor="middle">4 Oct</text></g>
+        <g transform="translate(0 24)"><text class="tick" x="316.5" y="378" text-anchor="middle">11 Oct</text></g>
+        <g transform="translate(0 24)"><text class="tick" x="450.7" y="378" text-anchor="middle">18 Oct</text></g>
+        <g transform="translate(0 24)"><text class="tick" x="584.9" y="378" text-anchor="middle">25 Oct</text></g>
+        </svg>
+        <figcaption>Firmwares by first public release (the earliest release tag of the firmware's own, or its author's first commit), plus Baud Girl's FM-1+VA, on Melbourne dates. <a href="releases.csv">The data</a>.</figcaption>
+      </figure>
+      <details class="data">
+        <summary>The numbers behind the chart</summary>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">Day</th><th scope="col" class="n">New</th><th scope="col" class="n">Total</th></tr></thead>
+            <tbody>
+              <tr><td>27 Sep</td><td class="n">3</td><td class="n">3</td></tr>
+              <tr><td>28 Sep</td><td class="n">0</td><td class="n">3</td></tr>
+              <tr><td>29 Sep</td><td class="n">0</td><td class="n">3</td></tr>
+              <tr><td>30 Sep</td><td class="n">2</td><td class="n">5</td></tr>
+              <tr><td>1 Oct</td><td class="n">0</td><td class="n">5</td></tr>
+              <tr><td>2 Oct</td><td class="n">1</td><td class="n">6</td></tr>
+              <tr><td>3 Oct</td><td class="n">1</td><td class="n">7</td></tr>
+              <tr><td>4 Oct</td><td class="n">1</td><td class="n">8</td></tr>
+              <tr><td>5 Oct</td><td class="n">2</td><td class="n">10</td></tr>
+              <tr><td>6 Oct</td><td class="n">6</td><td class="n">16</td></tr>
+              <tr><td>7 Oct</td><td class="n">7</td><td class="n">23</td></tr>
+              <tr><td>8 Oct</td><td class="n">6</td><td class="n">29</td></tr>
+              <tr><td>9 Oct</td><td class="n">4</td><td class="n">33</td></tr>
+              <tr><td>10 Oct</td><td class="n">12</td><td class="n">45</td></tr>
+              <tr><td>11 Oct</td><td class="n">6</td><td class="n">51</td></tr>
+              <tr><td>12 Oct</td><td class="n">11</td><td class="n">62</td></tr>
+              <tr><td>13 Oct</td><td class="n">10</td><td class="n">72</td></tr>
+              <tr><td>14 Oct</td><td class="n">13</td><td class="n">85</td></tr>
+              <tr><td>15 Oct</td><td class="n">8</td><td class="n">93</td></tr>
+              <tr><td>16 Oct</td><td class="n">9</td><td class="n">102</td></tr>
+              <tr><td>17 Oct</td><td class="n">19</td><td class="n">121</td></tr>
+              <tr><td>18 Oct</td><td class="n">15</td><td class="n">136</td></tr>
+              <tr><td>19 Oct</td><td class="n">19</td><td class="n">155</td></tr>
+              <tr><td>20 Oct</td><td class="n">11</td><td class="n">166</td></tr>
+              <tr><td>21 Oct</td><td class="n">7</td><td class="n">173</td></tr>
+              <tr><td>22 Oct</td><td class="n">11</td><td class="n">184</td></tr>
+              <tr><td>23 Oct</td><td class="n">1</td><td class="n">185</td></tr>
+              <tr><td>24 Oct</td><td class="n">2</td><td class="n">187</td></tr>
+              <tr><td>25 Oct</td><td class="n">6</td><td class="n">193</td></tr>
+              <tr><td>26 Oct</td><td class="n">0</td><td class="n">193</td></tr>
+              <tr><td>27 Oct</td><td class="n">2</td><td class="n">195</td></tr>
+              <tr><td>28 Oct</td><td class="n">1</td><td class="n">196</td></tr>
+              <tr><td>29 Oct</td><td class="n">2</td><td class="n">198</td></tr>
+              <tr><td>30 Oct</td><td class="n">2</td><td class="n">200</td></tr>
+              <tr><td>31 Oct</td><td class="n">0</td><td class="n">200</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+
+      <div class="table-wrap">
+        <table>
+          <caption>What each directory counts, 1 November 2026</caption>
+          <thead><tr><th scope="col">Directory</th><th scope="col">Count</th><th scope="col">What it counts</th></tr></thead>
+          <tbody>
+            <tr><td><a href="https://altstrument.org/devices/m-vave-fm-1">altstrument</a></td><td>322 firmwares, 78 tools</td><td>Every firmware, mod and port it can find</td></tr>
+            <tr><td><a href="https://stanleygurvich.github.io/FMDB_FM1_FirmwareDatabase/">FMDB</a></td><td>300+ entries</td><td>Firmwares, mods and tools for the FM-1 and SMK-37, crawled from GitHub</td></tr>
+            <tr><td><a href="https://github.com/aroum/fm1-custom-fw">FM1 Resource Hub</a></td><td>222 entries</td><td>Curated: 209 sound firmwares and games, 11 platforms, 2 patchers</td></tr>
+            <tr><td><a href="https://fm1-editor.com/firmware/">fm1-editor.com</a></td><td>201 entries</td><td>Curated by hand, updated almost daily</td></tr>
+            <tr><td>This page</td><td>200</td><td>Firmwares with a public GitHub release or repository, plus Baud Girl's</td></tr>
+            <tr><td><a href="https://thefirmwarehub.com/">The FM-1 Firmware Hub</a></td><td>91 (c. 25 Oct)</td><td>Open source, tested on hardware and installable in one click</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="prose">
+        <h3>A second record: fm1-editor.com's daily page</h3>
+        <p>fm1-editor.com keeps its firmware directory in a <a href="https://github.com/benny-sparra/fm1-dx7-patch-importer">public repository</a>, so its history is a dated record of what one curator saw each day. The page opened on 7 October with 16 entries and reached 201 on 31 October. Through mid-October it ran about five days behind first releases, and the gap was widest at the peak of the wave.</p>
+      </div>
+      <figure>
+        <svg class="chart" viewBox="0 0 720 340" role="img" aria-labelledby="lag-title lag-desc">
+        <title id="lag-title">Firmwares released against firmwares listed on fm1-editor.com, 7 to 31 October 2026</title>
+        <desc id="lag-desc">Two cumulative lines. fm1-editor.com's firmware page ran about five days behind first releases through mid-October; on 20 October 166 had been released and 91 were listed. The page caught up by 31 October, with 201 entries against 200 releases counted here.</desc>
+        <line class="grid" x1="48" x2="560" y1="300.0" y2="300.0"/><text class="tick" x="40" y="304.0" text-anchor="end">0</text>
+        <line class="grid" x1="48" x2="560" y1="252.0" y2="252.0"/><text class="tick" x="40" y="256.0" text-anchor="end">50</text>
+        <line class="grid" x1="48" x2="560" y1="204.0" y2="204.0"/><text class="tick" x="40" y="208.0" text-anchor="end">100</text>
+        <line class="grid" x1="48" x2="560" y1="156.0" y2="156.0"/><text class="tick" x="40" y="160.0" text-anchor="end">150</text>
+        <line class="grid" x1="48" x2="560" y1="108.0" y2="108.0"/><text class="tick" x="40" y="112.0" text-anchor="end">200</text>
+        <line class="grid" x1="48" x2="560" y1="60.0" y2="60.0"/><text class="tick" x="40" y="64.0" text-anchor="end">250</text>
+        <path class="line line--muted" d="M48.0 277.9L69.3 272.2L90.7 268.3L112.0 256.8L133.3 251.0L154.7 240.5L176.0 230.9L197.3 218.4L218.7 210.7L240.0 202.1L261.3 183.8L282.7 169.4L304.0 151.2L325.3 140.6L346.7 133.9L368.0 123.4L389.3 122.4L410.7 120.5L432.0 114.7L453.3 114.7L474.7 112.8L496.0 111.8L517.3 109.9L538.7 108.0L560.0 108.0"/>
+        <path class="line" d="M48.0 284.6L69.3 279.8L90.7 277.0L112.0 268.3L176.0 262.6L197.3 253.0L218.7 248.2L240.0 238.6L261.3 229.9L282.7 226.1L304.0 217.4L325.3 212.6L346.7 204.0L368.0 182.9L389.3 163.7L432.0 140.6L453.3 128.2L474.7 123.4L496.0 123.4L517.3 121.4L538.7 113.8L560.0 107.0"/>
+        <circle class="dot" cx="48.0" cy="284.6" r="2.5"><title>7 Oct: 16 listed</title></circle>
+        <circle class="dot" cx="69.3" cy="279.8" r="2.5"><title>8 Oct: 21 listed</title></circle>
+        <circle class="dot" cx="90.7" cy="277.0" r="2.5"><title>9 Oct: 24 listed</title></circle>
+        <circle class="dot" cx="112.0" cy="268.3" r="2.5"><title>10 Oct: 33 listed</title></circle>
+        <circle class="dot" cx="176.0" cy="262.6" r="2.5"><title>13 Oct: 39 listed</title></circle>
+        <circle class="dot" cx="197.3" cy="253.0" r="2.5"><title>14 Oct: 49 listed</title></circle>
+        <circle class="dot" cx="218.7" cy="248.2" r="2.5"><title>15 Oct: 54 listed</title></circle>
+        <circle class="dot" cx="240.0" cy="238.6" r="2.5"><title>16 Oct: 64 listed</title></circle>
+        <circle class="dot" cx="261.3" cy="229.9" r="2.5"><title>17 Oct: 73 listed</title></circle>
+        <circle class="dot" cx="282.7" cy="226.1" r="2.5"><title>18 Oct: 77 listed</title></circle>
+        <circle class="dot" cx="304.0" cy="217.4" r="2.5"><title>19 Oct: 86 listed</title></circle>
+        <circle class="dot" cx="325.3" cy="212.6" r="2.5"><title>20 Oct: 91 listed</title></circle>
+        <circle class="dot" cx="346.7" cy="204.0" r="2.5"><title>21 Oct: 100 listed</title></circle>
+        <circle class="dot" cx="368.0" cy="182.9" r="2.5"><title>22 Oct: 122 listed</title></circle>
+        <circle class="dot" cx="389.3" cy="163.7" r="2.5"><title>23 Oct: 142 listed</title></circle>
+        <circle class="dot" cx="432.0" cy="140.6" r="2.5"><title>25 Oct: 166 listed</title></circle>
+        <circle class="dot" cx="453.3" cy="128.2" r="2.5"><title>26 Oct: 179 listed</title></circle>
+        <circle class="dot" cx="474.7" cy="123.4" r="2.5"><title>27 Oct: 184 listed</title></circle>
+        <circle class="dot" cx="496.0" cy="123.4" r="2.5"><title>28 Oct: 184 listed</title></circle>
+        <circle class="dot" cx="517.3" cy="121.4" r="2.5"><title>29 Oct: 186 listed</title></circle>
+        <circle class="dot" cx="538.7" cy="113.8" r="2.5"><title>30 Oct: 194 listed</title></circle>
+        <circle class="dot" cx="560.0" cy="107.0" r="2.5"><title>31 Oct: 201 listed</title></circle>
+        <text class="label" x="568" y="102.0">Released (first release)</text>
+        <text class="end-label" x="568" y="123.0">Listed on fm1-editor.com</text>
+        <line class="event" x1="325.3" x2="325.3" y1="144.6" y2="208.6"/>
+        <text class="note" x="319.3" y="103.2" text-anchor="end"><tspan class="strong">75 not yet</tspan></text><text class="note" x="319.3" y="118.2" text-anchor="end">listed, 20 Oct</text>
+        <line class="axis" x1="48" x2="560" y1="300" y2="300"/>
+        <text class="tick" x="48.0" y="318" text-anchor="middle">7 Oct</text>
+        <text class="tick" x="197.3" y="318" text-anchor="middle">14 Oct</text>
+        <text class="tick" x="346.7" y="318" text-anchor="middle">21 Oct</text>
+        <text class="tick" x="496.0" y="318" text-anchor="middle">28 Oct</text>
+        </svg>
+        <figcaption>fm1-editor.com counted at its last update of each day (UK time), from <code>firmware/index.html</code> in its repository; releases as in the chart above.</figcaption>
+      </figure>
+    </section>
+
+    <section aria-labelledby="timeline">
+      <div class="prose">
+        <h2 id="timeline"><span class="num">7</span> Timeline</h2>
+        <p>Oldest first. The turning points are marked.</p>
+      </div>
+      <ol class="timeline">
+        <li class="phase">The device</li>
+        <li><time datetime="2026-06-14">14 Jun</time><p>First press coverage of the M-VAVE FM-1. <a href="https://synthanatomy.com/2026/10/m-vave-fm-1-a-budget-friendly-dx-7-style-desktop-fm-polysynth.html">Synth Anatomy</a></p></li>
+        <li><time datetime="2026-07-10">10&ndash;13 Jul</time><p>Reviews round-up and launch coverage, at about US$75. <a href="https://sonicstate.com/news/2026/07/10/m-vave-fm-1-reviews-/">Sonicstate</a>, <a href="https://www.synthtopia.com/content/2026/07/13/m-vave-introduces-fm-1-fm-pocket-synthesizer/">Synthtopia</a></p></li>
+        <li><time datetime="2026-07-18">18&ndash;21 Jul</time><p>FM-1-RE disassembles the firmware, decodes the update protocol and installs a demo firmware. Ben Sparrow starts the FM1 Editor on 18 July too. <a href="https://zeli.app/story/49994065">FM-1-RE</a></p></li>
+        <li><time datetime="2026-07-25">25 Jul</time><p>The r/MVaveFM1 subreddit is created, and aroum starts the FM1 Resource Hub the same day. <a href="https://www.reddit.com/r/MVaveFM1/">r/MVaveFM1</a>, <a href="https://github.com/aroum/fm1-custom-fw">aroum</a></p></li>
+        <li><time datetime="2026-07-30">30 Jul</time><p>Stock V15 is published as a standalone <code>.fwsc</code> file. <a href="https://github.com/aroum/fm1-custom-fw/issues/1">aroum, issue 1</a></p></li>
+        <li class="phase">The first custom firmwares</li>
+        <li><time datetime="2026-09-03">3&ndash;6 Sep</time><p>First commits of community firmware projects: a poly sequencer and Lunar Modulator. <span class="src">Git history</span></p></li>
+        <li><time datetime="2026-09-13">13 Sep</time><p>An RP2040 USB recovery dongle is documented. <a href="https://github.com/aroum/fm1-custom-fw">aroum</a></p></li>
+        <li><time datetime="2026-09-26">26 Sep</time><p>Baud Girl's test packages FM-1_083 to FM-1_086. <a href="https://stanleygurvich.github.io/FMDB_FM1_FirmwareDatabase/">FMDB</a></p></li>
+        <li class="key"><time datetime="2026-09-27">27 Sep</time><p><b>Baud Girl's FM-1+VA, the first public custom firmware.</b> <a href="https://baudgirl.com/work/FM-1+VA">baudgirl.com</a></p></li>
+        <li><time datetime="2026-09-28">28&ndash;29 Sep</time><p>Synth Anatomy and Sonicstate cover it, and YouTube demos follow. <a href="https://synthanatomy.com/2026/09/baud-girl-fm-1-va-custom-m-vave-fm-1-firmware.html">Synth Anatomy</a>, <a href="https://sonicstate.com/news/2026/09/29/free-custom-firmware-for-mvave-fm-1-/">Sonicstate</a></p></li>
+        <li class="phase">The floodgates</li>
+        <li><time datetime="2026-10-01">1&ndash;2 Oct</time><p>Leo Kuroshita announces a Felucca beta on X. <a href="https://synthanatomy.com/2026/10/hugelton-instruments-felucca-custom-m-vave-fm-1-firmware-turns-it-into-a-multi-engine-synth.html">Synth Anatomy</a></p></li>
+        <li class="key"><time datetime="2026-10-03">3 Oct</time><p><b>Felucca v0.8-beta, the first open-source firmware.</b> <a href="https://github.com/hugelton/Felucca">hugelton/Felucca</a></p></li>
+        <li><time datetime="2026-10-04">4 Oct</time><p>X0X, SLOOP and Jangada; &ldquo;The floodgates had opened.&rdquo; <a href="https://www.matrixsynth.com/2026/10/fm-1-custom-firmware-felucca.html">Matrixsynth</a></p></li>
+        <li><time datetime="2026-10-05">5 Oct</time><p>Felucca 1.0 is reported; the awesome-fm-1 list starts. <a href="https://synthanatomy.com/2026/10/hugelton-instruments-felucca-custom-m-vave-fm-1-firmware-turns-it-into-a-multi-engine-synth.html">Synth Anatomy</a>, <a href="https://github.com/cicloid/awesome-fm-1">cicloid</a></p></li>
+        <li><time datetime="2026-10-06">6 Oct</time><p>Melodee, sloopDX, ChoralRoot, FoMni-1 and fm1-chord. <span class="src">Git tags</span></p></li>
+        <li><time datetime="2026-10-07">7 Oct</time><p>GHOULBOX, FiMba-1 and FM-1 Doom; the FM-1 community's Discord server is created; FM-1-RE reaches Hacker News; fm1-editor.com's firmware page opens with 16 entries. <a href="https://zeli.app/story/49994065">zeli.app</a>, <a href="https://github.com/benny-sparra/fm1-dx7-patch-importer">fm1-editor.com's repository</a></p></li>
+        <li><time datetime="2026-10-09"><abbr title="circa">c.</abbr> 9 Oct</time><p>zvenson's FM-1 Firmware Hub launches; Dinghy, a base for new firmwares. <a href="https://www.youtube.com/watch?v=7Lm1Pjh9T-Q">YouTube</a>, <span class="src">git tags</span></p></li>
+        <li><time datetime="2026-10-10">10 Oct</time><p>fm1-emu starts. About 45 firmwares exist. <a href="https://github.com/joakimeriksson/fm1-emu/wiki">fm1-emu</a></p></li>
+        <li><time datetime="2026-10-11">11 Oct</time><p>The SMK-37 port hub starts. <a href="https://genkigenki.github.io/smk37/">genkigenki</a></p></li>
+        <li class="phase">The peak</li>
+        <li><time datetime="2026-10-14">14&ndash;15 Oct</time><p>The FM-1 Firmware Atlas; fm1-reader, a screen reader for the FM-1. About 90 firmwares. <a href="https://wero1414.github.io/atlas-fm-1/">Atlas</a>, <a href="https://charlesvestal.github.io/fm1-reader/">fm1-reader</a></p></li>
+        <li class="key"><time datetime="2026-10-16">16 Oct</time><p><b>M-VAVE publishes FM1 Open V12.</b> The count passes 100; an Elektronauts member counts &ldquo;52 different 3rd party firmware options&rdquo;. <a href="https://github.com/m-vave/fm1_open">m-vave/fm1_open</a>, <a href="https://www.elektronauts.com/t/m-vave-fm-1/252170?page=21">Elektronauts</a></p></li>
+        <li><time datetime="2026-10-17">17 Oct</time><p>m-bootloader; 19 new firmwares in one day. <abbr title="circa">c.</abbr> FMDB and Relay launch. <a href="https://github.com/jvitkauskas/m-bootloader">m-bootloader</a></p></li>
+        <li><time datetime="2026-10-18">18 Oct</time><p>A shared workflow builds and signs firmwares from source. <a href="https://github.com/zvenson/fm1-build">zvenson/fm1-build</a></p></li>
+        <li><time datetime="2026-10-19">19 Oct</time><p>FM1 Open V14; another 19-firmware day. <a href="https://github.com/m-vave/fm1_open">m-vave/fm1_open</a></p></li>
+        <li><time datetime="2026-10-20">20 Oct</time><p>M-VAVE's open firmware is reported in the press. 166 firmwares, 91 of them listed on fm1-editor.com. <a href="https://www.synthtopia.com/content/2026/10/20/m-vave-officially-opens-fm-1-firmware-to-developers-with-new-workbench-sdk/">Synthtopia</a></p></li>
+        <li class="key"><time datetime="2026-10-21">21 Oct</time><p><b>Stock V16: eight-part multitimbral, with a 64-step sequencer.</b> <a href="https://synthanatomy.com/2026/10/m-vave-fm-1-a-budget-friendly-dx-7-style-desktop-fm-polysynth.html">Synth Anatomy</a></p></li>
+        <li class="phase">Settling</li>
+        <li><time datetime="2026-10-25"><abbr title="circa">c.</abbr> 25 Oct</time><p>The Firmware Hub reports 91 firmwares; fm1-dock lets one install hold several synths. <a href="https://www.youtube.com/watch?v=f5aSi_IIiME">YouTube</a>, <a href="https://www.synthtopia.com/content/2026/10/26/latest-fm-1-firmware-lets-you-load-4-synth-engines-swap-them-on-the-fly/">Synthtopia</a></p></li>
+        <li><time datetime="2026-10-26"><abbr title="circa">c.</abbr> 26 Oct</time><p>Ars Technica's feature, &ldquo;From impulse purchase to pocket studio&rdquo;. <a href="https://lobste.rs/s/5u7gjd/from_impulse_purchase_pocket_studio_m">Lobsters</a></p></li>
+        <li><time datetime="2026-11-01">1 Nov</time><p>Between 200 and 320 firmwares, depending on the directory. <a href="#numbers">The numbers</a></p></li>
+      </ol>
+    </section>
+
+    <section class="prose" aria-labelledby="open-questions">
+      <h2 id="open-questions"><span class="num">8</span> Open questions</h2>
+      <ul>
+        <li>Who created r/MVaveFM1 and the community Discord server, and how quickly each grew.</li>
+        <li>The exact launch date of the FM-1 Firmware Hub, and of FMDB and Relay.</li>
+        <li>Why M-VAVE removed its forum announcement of FM1 Open.</li>
+        <li>Sales: whether, and by how much, the firmware boom moved FM-1 sales.</li>
+        <li>Firmwares released outside GitHub (Groove OS, Clipper, REDACTED and others), which aren't in this page's count.</li>
+      </ul>
+      <p>If you can answer any of these, with a source, please <a href="https://github.com/ocean/fm1-site/issues">open an issue</a>.</p>
+    </section>
+
+    <section class="prose" aria-labelledby="method">
+      <h2 id="method"><span class="num">9</span> Method, data and sources</h2>
+      <p><b>The count.</b> On 1 November 2026 I cloned the 202 GitHub repositories listed in aroum's FM1 Resource Hub. For each firmware, the first public release is its earliest release tag of its own, rather than one inherited from Felucca, SLOOP or another firmware it forks. About 60 repositories have no tag of their own; for those I used the author's first commit, which can be earlier than a release. M-VAVE's FM1 Open and two stock-firmware patchers aren't counted; Baud Girl's FM-1+VA, which isn't on GitHub, is added by hand.</p>
+      <p><b>The data.</b> <a href="releases.csv">releases.csv</a> has all 200 rows: when each firmware was first seen (UTC), its name, author, family and link, and what the date rests on (a tag, or a first commit). Please check the evidence column before relying on a single date.</p>
+      <p><b>What couldn't be checked.</b> FMDB and the Firmware Hub load their catalogues in the browser, and Reddit and Discord couldn't be read, so this page relies on their published pages and videos. The creation dates of r/MVaveFM1 (25 July) and the community Discord server (7 October) were supplied by a member of the community, not read from the platforms.</p>
+      <p><b>Citing this page.</b> Robinson, D. (2026). <cite>The FM-1 Moment: a working history of the M-VAVE FM-1 custom-firmware boom</cite>. fm-1.drewr.dev/fm1-moment/, as of 1 November 2026. CC BY 4.0.</p>
+
+      <h3>Sources</h3>
+      <ul class="sources">
+        <li><b>Directories:</b> <a href="https://github.com/aroum/fm1-custom-fw">aroum/fm1-custom-fw</a>, <a href="https://thefirmwarehub.com/">The FM-1 Firmware Hub</a>, <a href="https://stanleygurvich.github.io/FMDB_FM1_FirmwareDatabase/">FMDB</a>, <a href="https://fm1-editor.com/firmware/">fm1-editor.com</a> and <a href="https://github.com/benny-sparra/fm1-dx7-patch-importer">its repository</a>, <a href="https://altstrument.org/devices/m-vave-fm-1">altstrument</a>, <a href="https://wero1414.github.io/atlas-fm-1/">FM-1 Firmware Atlas</a>, <a href="https://github.com/joakimeriksson/fm1-emu/wiki">fm1-emu</a></li>
+        <li><b>The device:</b> <a href="https://www.synthtopia.com/content/2026/07/13/m-vave-introduces-fm-1-fm-pocket-synthesizer/">Synthtopia</a>, <a href="https://sonicstate.com/news/2026/07/10/m-vave-fm-1-reviews-/">Sonicstate</a>, <a href="https://synthanatomy.com/2026/10/m-vave-fm-1-a-budget-friendly-dx-7-style-desktop-fm-polysynth.html">Synth Anatomy on V16</a></li>
+        <li><b>Firmwares:</b> <a href="https://baudgirl.com/work/FM-1+VA">Baud Girl FM-1+VA</a>, <a href="https://synthanatomy.com/2026/09/baud-girl-fm-1-va-custom-m-vave-fm-1-firmware.html">Synth Anatomy on FM-1+VA</a>, <a href="https://sonicstate.com/news/2026/09/29/free-custom-firmware-for-mvave-fm-1-/">Sonicstate on FM-1+VA</a>, <a href="https://synthanatomy.com/2026/10/hugelton-instruments-felucca-custom-m-vave-fm-1-firmware-turns-it-into-a-multi-engine-synth.html">Synth Anatomy on Felucca</a>, <a href="https://www.matrixsynth.com/2026/10/fm-1-custom-firmware-felucca.html">Matrixsynth on Felucca</a>, <a href="https://www.synthtopia.com/?p=155069">Synthtopia's roundup</a>, <a href="https://www.synthtopia.com/?p=155230">Synthtopia on FoMni</a>, <a href="https://www.synthtopia.com/content/2026/10/26/latest-fm-1-firmware-lets-you-load-4-synth-engines-swap-them-on-the-fly/">Synthtopia on fm1-dock</a></li>
+        <li><b>Reverse engineering:</b> <a href="https://zeli.app/story/49994065">FM-1-RE and its Hacker News discussion</a></li>
+        <li><b>M-VAVE:</b> <a href="https://github.com/m-vave/fm1_open">m-vave/fm1_open</a>, <a href="https://www.synthtopia.com/content/2026/10/20/m-vave-officially-opens-fm-1-firmware-to-developers-with-new-workbench-sdk/">Synthtopia on FM1 Open</a>, <a href="https://azat.tv/m-vave-fm-1-synthesizer-firmware-hacking-open-platform/">azat.tv</a>, <a href="https://synthanatomy.com/2026/10/m-vave-fm-2-is-coming-later-this-year.html">Synth Anatomy on the FM-2</a></li>
+        <li><b>Community:</b> <a href="https://www.synthtopia.com/?p=155292">Synthtopia on the browser emulator</a>, <a href="https://www.matrixsynth.com/2026/10/m-vave-fm1-ghoulbox-firmware.html">Matrixsynth</a>, <a href="https://www.elektronauts.com/t/m-vave-fm-1/252170">the Elektronauts thread</a>, <a href="https://apiel.github.io/fm1-tribe/">fm1-tribe</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>Not affiliated with M-VAVE.</p>
+      <p>Compiled by Drew Robinson <a href="https://github.com/ocean">@ocean</a> 2026 <span class="sep" aria-hidden="true">&middot;</span> <a href="https://github.com/ocean/fm1-site/issues">Corrections</a> <span class="sep" aria-hidden="true">&middot;</span> <a href="../privacy/">Privacy</a></p>
+      <p class="licence">This page and its data are under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>: reuse them with credit.</p>
+    </footer>
+  </main>
+</body>
+</html>
