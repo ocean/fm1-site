@@ -209,6 +209,9 @@ code {
   font-family: var(--mono);
   font-size: 0.88em;
   letter-spacing: 0;
+
+  /* Long symbol names, such as open(waitingUpTo:), would otherwise widen a phone's page. */
+  overflow-wrap: anywhere;
 }
 
 pre {
@@ -223,6 +226,7 @@ pre {
 
 pre code {
   font-size: inherit;
+  overflow-wrap: normal;
 }
 
 /* Code blocks can scroll sideways, so they take keyboard focus. */
