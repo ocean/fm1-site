@@ -45,7 +45,7 @@ Inspired by the idea of teenage engineering's EP-1320 medieval; not affiliated w
 
 An app for iPhone, iPad and Mac for swapping M-VAVE FM-1 firmwares over USB.
 
-- Firmwares come from the firmware hub's catalogue (thefirmwarehub.com), fm1-editor.com's list, aroum's FM1 Resource Hub and mutant.cloud, with filters for kinds and for firmwares built from source. Each firmware has its own page, with pictures from its README and its links. The app finds each one's package (GitHub releases, publisher manifests, project pages, M-VAVE's downloads), checks for newer releases, and saves firmwares on the device for offline flashing.
+- Firmwares come from the firmware hub's catalogue (thefirmwarehub.com), fm1-editor.com's list, aroum's FM1 Resource Hub and mutant.cloud, sorted by name, latest update or most installed, with filters for kinds and for firmwares built from source. Each firmware has its own page, with pictures from its README and its links. The app finds each one's package (GitHub releases, publisher manifests, project pages, M-VAVE's downloads), checks for newer releases, and saves firmwares on the device for offline flashing, keeping earlier saved releases too.
 - M-VAVE's official V15 comes with the app, unmodified (from fm1_open, Apache-2.0), so there's always a known-good firmware to go back to.
 - Flashing checks the package first, asks before switching firmware (which can erase the FM-1's projects and samples), keeps the screen awake, can carry on where an interrupted install left off, and confirms the FM-1 reports the new firmware afterwards. An install goes through four stages: getting ready, installing, checking and restarting.
 - Save my FM-1: on M-VAVE's open firmware, keeps a copy of the FM-1's projects and samples.
