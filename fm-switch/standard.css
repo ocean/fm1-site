@@ -388,7 +388,7 @@ h1 {
   }
 }
 
-/* The install screen: one bar, and the four stages. */
+/* The install screen: one bar, and the three stages. */
 .bar {
   height: 8px;
   border-radius: 99px;
