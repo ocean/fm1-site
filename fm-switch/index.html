@@ -39,7 +39,7 @@
           <div class="fm1-stage fm1-stage--ready"><b>FM-1_900</b><small>Ready</small></div>
           <div class="fm1-stage"><b>AMB-1</b><small>Getting ready&hellip;</small><span class="fm1-bar fm1-bar--8"></span></div>
           <div class="fm1-stage"><b>AMB-1</b><small>Installing&hellip;</small><span class="fm1-bar fm1-bar--50"></span></div>
-          <div class="fm1-stage"><b>AMB-1</b><small>Checking&hellip;</small><span class="fm1-bar fm1-bar--90"></span></div>
+          <div class="fm1-stage"><b>AMB-1</b><small>Installing&hellip;</small><span class="fm1-bar fm1-bar--90"></span></div>
           <div class="fm1-stage"><b>AMB-1</b><small>Restarting&hellip;</small><span class="fm1-bar fm1-bar--98"></span></div>
           <div class="fm1-stage fm1-stage--done"><b>AMB-1</b><small>Done</small></div>
         </div>
@@ -79,25 +79,25 @@
       <li class="card step">
         <p class="n">Step 2</p>
         <h3>Before you start</h3>
-        <p>FM-SWITCH checks the package, and that exactly one FM-1 is connected.</p>
-        <p>Switching to a different firmware can erase the FM-1's projects and samples, so it asks first.</p>
+        <p>FM-SWITCH checks the package. With more than one FM-1 connected, it asks which one to use.</p>
+        <p>Switching to a different firmware can erase the FM-1's projects and samples, so it asks first, and tells you what switching back from it will take.</p>
+        <p>On an FM-1 with the newer flash chip, it warns you before a firmware that only knows the older one.</p>
       </li>
       <li class="card step">
         <p class="n">Step 3</p>
         <h3>Installing</h3>
-        <p>Keep it plugged in. Nearly there.</p>
+        <p>Keep it plugged in. The FM-1's screen stays dark while it installs.</p>
         <div class="bar" aria-hidden="true"><span></span></div>
         <ul class="stages">
           <li class="stage-done">Getting ready</li>
-          <li class="stage-done">Installing</li>
-          <li class="stage-now">Checking <small>Now</small></li>
+          <li class="stage-now">Installing <small>Now</small></li>
           <li class="stage-next">Restarting</li>
         </ul>
       </li>
       <li class="card step">
         <p class="n">Step 4</p>
         <h3>Done</h3>
-        <p>FM-SWITCH checks the FM-1 reports its new firmware.</p>
+        <p>It's done as soon as the FM-1 starts its new firmware.</p>
         <p>About 20 seconds for V15, and under 40 for Felucca.</p>
       </li>
     </ol>
@@ -119,15 +119,16 @@
       <li class="card">
         <h3>You can always go back</h3>
         <p>M-VAVE's official V15 "stock" firmware comes with the app.</p>
+        <p>If the firmware on your FM-1 won't take the one you pick, FM-SWITCH puts MIDIMON on first, then yours, and tells you why. It warns you before installing V16, since going back to V15 from it needs a Mac.</p>
       </li>
       <li class="card">
         <h3>Back up the whole FM-1 (Mac)</h3>
-        <p>On a Mac, with the FM-1 in download mode, FM-SWITCH can back up its whole flash and restore it later.</p>
+        <p>On a Mac, with the FM-1 in download mode, FM-SWITCH can back up its whole flash and restore it later. Backup &amp; rescue can also get M-VAVE's V16 and install it with its own bootloader, and install m-bootloader 2.1.</p>
         <p>Each time, macOS first asks for your password so FM-SWITCH's helper can run as an administrator, then for permission to use the FM-1 as a USB drive.</p>
       </li>
       <li class="card">
         <h3>If it stops</h3>
-        <p>Your phone stays awake while an install runs. If it stops for any reason, you can carry on where it left off.</p>
+        <p>Your phone stays awake while an install runs. If it stops for any reason, don't switch the FM-1 off: plug it back in and carry on where it left off. On a Mac, each install's log is saved, so you can send it if something goes wrong.</p>
       </li>
       <li class="card">
         <h3>Free</h3>
