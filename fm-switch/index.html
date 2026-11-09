@@ -81,7 +81,7 @@
         <h3>Before you start</h3>
         <p>FM-SWITCH checks the package. With more than one FM-1 connected, it asks which one to use.</p>
         <p>Switching to a different firmware can erase the FM-1's projects and samples, so it asks first, and tells you what switching back from it will take.</p>
-        <p>On an FM-1 with the newer flash chip, it warns you before a firmware that only knows the older one.</p>
+        <p>Firmwares that only know the older flash chip get a warning first, unless your FM-1 says it has the older chip. "How would I know?" shows how to tell: on FM-1s with the newer chip, the M-VAVE logo is on the front, under the screen.</p>
       </li>
       <li class="card step">
         <p class="n">Step 3</p>
@@ -110,7 +110,7 @@
       </li>
       <li class="card">
         <h3>Save them for later</h3>
-        <p>They're small (around 500 kB), so you can save the ones you'd like to use to your iPhone/iPad/Mac, and then install them any time even without a network connection. Saving a new release keeps the ones you saved before, so you can go back to an older release.</p>
+        <p>They're small (around 500 kB), so you can save the ones you'd like to use to your iPhone/iPad/Mac, and then install them any time even without a network connection. Saving a new release keeps the ones you saved before: a firmware's page lets you switch between them, and install or delete either. Each firmware's details say which FM-1s it saves on.</p>
       </li>
       <li class="card">
         <h3>Synced with iCloud (if you use it)</h3>
@@ -191,7 +191,7 @@
     <h2 class="label">Under the hood</h2>
     <div class="card">
       <p>Native SwiftUI on iPhone, iPad and Mac. Talking to the FM-1 is <a href="../fm1kit/">FM1Kit</a>, an open-source Swift package.</p>
-      <p>The source for both is on GitHub: <a href="https://github.com/ocean/FM-SWITCH">FM-SWITCH</a> and <a href="https://github.com/ocean/FM1Kit">FM1Kit</a>.</p>
+      <p>The source for both is on GitHub: <a href="https://github.com/ocean/FM-SWITCH">FM-SWITCH</a>, open source under the Mozilla Public License 2.0, and <a href="https://github.com/ocean/FM1Kit">FM1Kit</a>.</p>
       <p>The iPhone and iPad app is in TestFlight now, and the Mac app is a free download from this page, notarised by Apple. For more info or discussion, find me on the FM-1 Discord.</p>
     </div>
 

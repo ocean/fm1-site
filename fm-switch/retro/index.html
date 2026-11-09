@@ -54,7 +54,8 @@
         <ul>
           <li>One list of FM-1 firmwares, from the firmware hub, fm1-editor.com, aroum's FM1 Resource Hub and mutant.cloud, sorted by name, latest update or most installed, with filters for kinds and for firmwares built from source.</li>
           <li>Finds each firmware's package on GitHub releases, its project page or M-VAVE's downloads, and checks for newer releases.</li>
-          <li>Saves firmwares on the device, older releases too, so you can flash without a connection.</li>
+          <li>Saves firmwares on the device, older releases too, so you can flash without a connection. Switch between a firmware's saved releases, and install or delete either.</li>
+          <li>Shows which FM-1s each firmware saves on.</li>
         </ul>
       </div>
     </section>
@@ -65,7 +66,7 @@
         <ul>
           <li>Checks the package before anything is sent. With more than one FM-1 connected, asks which one.</li>
           <li>Asks before switching to a different firmware, which can erase the FM-1's projects and samples, and says what switching back from it will take. Warns before V16, since going back to V15 from it needs a Mac.</li>
-          <li>Warns before installing a firmware that only knows the older flash chip on an FM-1 with the newer one.</li>
+          <li>Warns before installing a firmware that only knows the older flash chip, unless the FM-1 says it has the older chip. <strong>HOW WOULD I KNOW?</strong> shows how to tell which FM-1 you have.</li>
           <li>Keeps the screen awake while it writes. The FM-1's own screen stays dark. If it stops for any reason, don't switch the FM-1 off: plug it back in and <strong>CARRY ON</strong> finishes the job.</li>
           <li>Done as soon as the FM-1 starts the new firmware.</li>
           <li>On a Mac, saves each install's log, and with the FM-1 in download mode, <strong>BACKUP &amp; RESCUE</strong> backs up its whole flash and restores it later, installs M-VAVE's V16 with its own bootloader, and installs m-bootloader 2.1. Each time, macOS first asks for your password so FM-SWITCH's helper can run as an administrator, then for permission to use the FM-1 as a USB drive.</li>
@@ -80,7 +81,7 @@
       <h2>UNDER THE HOOD</h2>
       <div class="panel-body">
         <p>Native SwiftUI on every platform. Talking to the FM-1 is <a href="../../fm1kit/">FM1Kit</a>, an open-source Swift package.</p>
-        <p>The source for both is on GitHub: <a href="https://github.com/ocean/FM-SWITCH">FM-SWITCH</a> and <a href="https://github.com/ocean/FM1Kit">FM1Kit</a>.</p>
+        <p>The source for both is on GitHub: <a href="https://github.com/ocean/FM-SWITCH">FM-SWITCH</a> (MPL-2.0) and <a href="https://github.com/ocean/FM1Kit">FM1Kit</a>.</p>
         <p>Every feature is free. To say thanks, there's <a href="https://ko-fi.com/oceanicity">Ko-fi</a>.</p>
         <p>The iPhone and iPad app is in TestFlight now, and the Mac app is a free download from this page, notarised by Apple. For more, check the FM-1 Discord<span class="cursor" aria-hidden="true"></span></p>
       </div>
