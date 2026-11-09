@@ -81,7 +81,7 @@
         <h3>Before you start</h3>
         <p>FM-SWITCH checks the package. With more than one FM-1 connected, it asks which one to use.</p>
         <p>Switching to a different firmware can erase the FM-1's projects and samples, so it asks first, and tells you what switching back from it will take.</p>
-        <p>On an FM-1 with the newer flash chip, it warns you before a firmware that only knows the older one.</p>
+        <p>Firmwares that only know the older flash chip get a warning first, unless your FM-1 says it has the older chip. "How would I know?" shows how to tell: on FM-1s with the newer chip, the M-VAVE logo is on the front, under the screen.</p>
       </li>
       <li class="card step">
         <p class="n">Step 3</p>
@@ -110,7 +110,7 @@
       </li>
       <li class="card">
         <h3>Save them for later</h3>
-        <p>They're small (around 500 kB), so you can save the ones you'd like to use to your iPhone/iPad/Mac, and then install them any time even without a network connection. Saving a new release keeps the ones you saved before, so you can go back to an older release.</p>
+        <p>They're small (around 500 kB), so you can save the ones you'd like to use to your iPhone/iPad/Mac, and then install them any time even without a network connection. Saving a new release keeps the ones you saved before: a firmware's page lets you switch between them, and install or delete either. Each firmware's details say which FM-1s it saves on.</p>
       </li>
       <li class="card">
         <h3>Synced with iCloud (if you use it)</h3>
@@ -142,7 +142,7 @@
         <figure>
           <picture>
             <source srcset="screens/my-fm1-dark.jpg" media="(prefers-color-scheme: dark)">
-            <img src="screens/my-fm1-light.jpg" alt="My FM-1: the drawn FM-1, the connection, and the Change firmware and Save my FM-1 cards." width="440" height="957" loading="lazy">
+            <img src="screens/my-fm1-light.jpg" alt="My FM-1: the drawn FM-1, the connection, and the Change firmware, My firmwares and Help cards." width="440" height="957" loading="lazy">
           </picture>
           <figcaption>My FM-1</figcaption>
         </figure>
@@ -151,38 +151,38 @@
         <figure>
           <picture>
             <source srcset="screens/firmwares-dark.jpg" media="(prefers-color-scheme: dark)">
-            <img src="screens/firmwares-light.jpg" alt="Firmwares: filters for kinds, and the list with each firmware's badge." width="440" height="957" loading="lazy">
+            <img src="screens/firmwares-light.jpg" alt="Firmwares: the sort and filters for kinds, and the list with each firmware's badge, starting with M-VAVE's official V16." width="440" height="957" loading="lazy">
           </picture>
           <figcaption>Firmwares</figcaption>
         </figure>
       </li>
       <li>
         <figure>
-          <picture>
-            <source srcset="screens/firmware-page-dark.jpg" media="(prefers-color-scheme: dark)">
-            <img src="screens/firmware-page-light.jpg" alt="A firmware's page: zp12, with pictures from its README, an Install button and its links." width="440" height="957" loading="lazy">
-          </picture>
+          <img src="screens/firmware-page-light.jpg" alt="A firmware's page: zp12, with pictures from its README, a warning that it only knows the older flash chip, and an Install button." width="440" height="957" loading="lazy">
           <figcaption>A firmware's page</figcaption>
         </figure>
       </li>
       <li>
         <figure>
-          <img src="screens/installing-light.jpg" alt="Installing SLOOP: the drawn FM-1's screen and the progress bar just started, with Getting ready done and Installing now." width="440" height="957" loading="lazy">
+          <img src="screens/before-you-start-light.jpg" alt="Before you start, for AMB-1: plugged in with a data cable, left plugged in until it's done, and anything worth keeping saved." width="440" height="957" loading="lazy">
+          <figcaption>Before you start</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <img src="screens/installing-light.jpg" alt="Installing AMB-1: the drawn FM-1's screen, the progress bar, and Getting ready done with Installing now and Restarting next." width="440" height="957" loading="lazy">
           <figcaption>Installing</figcaption>
         </figure>
       </li>
       <li>
         <figure>
-          <img src="screens/restarting-light.jpg" alt="Installing SLOOP, nearly done: the progress bar almost full, with Getting ready, Installing and Checking done and Restarting now." width="440" height="957" loading="lazy">
-          <figcaption>Restarting</figcaption>
+          <img src="screens/done-light.jpg" alt="AMB-1 is ready to play: the FM-1 says it's running the new firmware and is safe to unplug." width="440" height="957" loading="lazy">
+          <figcaption>Done</figcaption>
         </figure>
       </li>
       <li>
         <figure>
-          <picture>
-            <source srcset="screens/save-my-fm1-dark.jpg" media="(prefers-color-scheme: dark)">
-            <img src="screens/save-my-fm1-light.jpg" alt="Save my FM-1: what a copy keeps, a note about what happens while it saves, and earlier saves." width="440" height="957" loading="lazy">
-          </picture>
+          <img src="screens/save-my-fm1-light.jpg" alt="Save my FM-1: what a copy keeps, a note about what happens while it saves, and the Save my FM-1 button." width="440" height="957" loading="lazy">
           <figcaption>Save my FM-1</figcaption>
         </figure>
       </li>
@@ -191,7 +191,7 @@
     <h2 class="label">Under the hood</h2>
     <div class="card">
       <p>Native SwiftUI on iPhone, iPad and Mac. Talking to the FM-1 is <a href="../fm1kit/">FM1Kit</a>, an open-source Swift package.</p>
-      <p>The source for both is on GitHub: <a href="https://github.com/ocean/FM-SWITCH">FM-SWITCH</a> and <a href="https://github.com/ocean/FM1Kit">FM1Kit</a>.</p>
+      <p>The source for both is on GitHub: <a href="https://github.com/ocean/FM-SWITCH">FM-SWITCH</a>, open source under the Mozilla Public License 2.0, and <a href="https://github.com/ocean/FM1Kit">FM1Kit</a>.</p>
       <p>The iPhone and iPad app is in TestFlight now, and the Mac app is a free download from this page, notarised by Apple. For more info or discussion, find me on the FM-1 Discord.</p>
     </div>
 

@@ -47,17 +47,17 @@ Inspired by the idea of teenage engineering's EP-1320 medieval; not affiliated w
 
 An app for iPhone, iPad and Mac for swapping M-VAVE FM-1 firmwares over USB.
 
-- Firmwares come from the firmware hub's catalogue (thefirmwarehub.com), fm1-editor.com's list, aroum's FM1 Resource Hub and mutant.cloud, sorted by name, latest update or most installed, with filters for kinds and for firmwares built from source. Each firmware has its own page, with pictures from its README and its links. The app finds each one's package (GitHub releases, publisher manifests, project pages, M-VAVE's downloads), checks for newer releases, and saves firmwares on the device for offline flashing, keeping earlier saved releases too.
+- Firmwares come from the firmware hub's catalogue (thefirmwarehub.com), fm1-editor.com's list, aroum's FM1 Resource Hub and mutant.cloud, sorted by name, latest update or most installed, with filters for kinds and for firmwares built from source. Each firmware has its own page, with pictures from its README and its links. The app finds each one's package (GitHub releases, publisher manifests, project pages, M-VAVE's downloads), checks for newer releases, and saves firmwares on the device for offline flashing, keeping earlier saved releases too, which a firmware's page switches between. A firmware's details say which FM-1s it saves on.
 - M-VAVE's official V15 comes with the app, unmodified (from fm1_open, Apache-2.0), so there's always a known-good firmware to go back to.
 - Flashing checks the package first, asks which FM-1 to use when more than one is connected, asks before switching firmware (which can erase the FM-1's projects and samples) and says what switching back will take, keeps the screen awake, can carry on where an interrupted install left off, and is done as soon as the FM-1 starts the new firmware. An install goes through three stages: getting ready, installing and restarting; the FM-1's screen stays dark meanwhile.
-- Switching back: when the firmware on the FM-1 won't take the one picked, FM-SWITCH puts MIDIMON on first. It warns before V16 (going back to V15 needs a Mac) and before V15 after V16. FM-1s with the newer flash chip get a warning before a firmware that only knows the older one.
+- Switching back: when the firmware on the FM-1 won't take the one picked, FM-SWITCH puts MIDIMON on first. It warns before V16 (going back to V15 needs a Mac) and before V15 after V16. Firmwares that only know the older flash chip get a warning, unless the FM-1 says it has the older chip; "How would I know?" explains how to tell (the M-VAVE logo is on the front, under the screen, on FM-1s with the newer chip).
 - Save my FM-1: on M-VAVE's open firmware, keeps a copy of the FM-1's projects and samples.
 - Look: Standard is friendly and plain, with a warm parchment ground (#EEE8DD), white cards, the system font, purple for firmware (#6D28D9) and a drawn FM-1, in light or dark. Retro, the original 8-bit handheld-console look (green #7BE39A, Silkscreen, Departure Mono and VT323), is hidden until found, then chosen in Settings. The website's FM-SWITCH page has both looks too: https://fm-1.drewr.dev/fm-switch/retro/
 - Free: every feature is free, and tips unlock nothing.
 - Platforms: iOS and iPadOS 17+, macOS 14+ (native SwiftUI). Connects by USB-C, Lightning with Apple's camera adapter, or a Mac's USB.
 - Mac: with the FM-1 in download mode, backs up its whole flash and restores it later, installs M-VAVE's V16 with its own bootloader, and installs m-bootloader 2.1. Each install's log is saved, to send if something goes wrong.
 - Status: iPhone and iPad in TestFlight (more on the FM-1 Discord); the Mac app is a signed, notarised download: https://github.com/ocean/FM-SWITCH/releases/latest/download/FM-SWITCH.dmg
-- Source: https://github.com/ocean/FM-SWITCH
+- Source: https://github.com/ocean/FM-SWITCH (MPL-2.0)
 - Page: https://fm-1.drewr.dev/fm-switch/
 
 ---
