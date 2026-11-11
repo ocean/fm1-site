@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "checkedAt": "2026-11-09T11:27:25.346Z",
+  "checkedAt": "2026-11-09T23:14:58.225Z",
   "method": "scan",
   "firmwares": [
     {
@@ -9,18 +9,20 @@
       "forkOf": null,
       "author": "isod89",
       "identity": "FM-1_900",
-      "stars": 767,
+      "stars": 772,
       "lastCommit": "2026-11-04",
       "commits": 28,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v2.8.5",
         "date": "2026-11-04",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -29,18 +31,20 @@
       "forkOf": null,
       "author": "hugelton",
       "identity": "FM-1_917",
-      "stars": 689,
+      "stars": 696,
       "lastCommit": "2026-11-04",
       "commits": 81,
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "felucca-bsp",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.7.0",
         "date": "2026-10-28",
-        "package": "ok"
+        "package": "ok",
+        "chips": "first"
       }
     },
     {
@@ -49,18 +53,20 @@
       "forkOf": null,
       "author": "charlesvestal",
       "identity": "FM-1_9010201",
-      "stars": 225,
+      "stars": 228,
       "lastCommit": "2026-11-08",
       "commits": 230,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.2.1",
         "date": "2026-11-05",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -69,12 +75,13 @@
       "forkOf": "hugelton/Felucca",
       "author": "juanjiant-bit",
       "identity": "FM-1_909",
-      "stars": 224,
+      "stars": 228,
       "lastCommit": "2026-11-09",
-      "commits": 989,
+      "commits": 1011,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -85,18 +92,20 @@
       "forkOf": null,
       "author": "keremimo",
       "identity": "FM-1_91061",
-      "stars": 194,
+      "stars": 195,
       "lastCommit": "2026-11-02",
       "commits": 735,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.6.1",
         "date": "2026-11-02",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -105,18 +114,20 @@
       "forkOf": null,
       "author": "illuminus5",
       "identity": "FM-1_714",
-      "stars": 149,
-      "lastCommit": "2026-11-04",
-      "commits": 31,
+      "stars": 152,
+      "lastCommit": "2026-11-09",
+      "commits": 37,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
-        "tag": "v2.2",
-        "date": "2026-11-03",
-        "package": "affected"
+        "tag": "v2.5.1",
+        "date": "2026-11-09",
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -131,12 +142,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.3.2",
         "date": "2026-11-06",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -151,12 +164,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.33",
         "date": "2026-11-09",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -165,18 +180,20 @@
       "forkOf": "hugelton/Felucca",
       "author": "jasonpersinger",
       "identity": "FM-1_900",
-      "stars": 84,
+      "stars": 85,
       "lastCommit": "2026-10-24",
       "commits": 149,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "ghoulbox-v2.4",
         "date": "2026-10-24",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -191,12 +208,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.3.1",
         "date": "2026-11-04",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -205,18 +224,20 @@
       "forkOf": null,
       "author": "charlesvestal",
       "identity": "FM-1_8000401",
-      "stars": 79,
+      "stars": 80,
       "lastCommit": "2026-11-08",
       "commits": 32,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.4.1",
         "date": "2026-11-05",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -225,18 +246,20 @@
       "forkOf": null,
       "author": "charlesvestal",
       "identity": "FM-1_10001400",
-      "stars": 69,
-      "lastCommit": "2026-11-06",
-      "commits": 373,
+      "stars": 70,
+      "lastCommit": "2026-11-09",
+      "commits": 374,
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.14",
         "date": "2026-11-06",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -251,12 +274,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "drum-v1.0.1",
         "date": "2026-11-03",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -265,18 +290,20 @@
       "forkOf": null,
       "author": "zvenson",
       "identity": "FM-1_994",
-      "stars": 52,
+      "stars": 53,
       "lastCommit": "2026-11-07",
       "commits": 11,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.5",
         "date": "2026-11-07",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -285,18 +312,42 @@
       "forkOf": null,
       "author": "zvenson",
       "identity": "FM-1_9530",
-      "stars": 51,
+      "stars": 52,
       "lastCommit": "2026-11-02",
       "commits": 93,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v3.3.2",
         "date": "2026-11-02",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
+      }
+    },
+    {
+      "name": "GR!MM",
+      "repo": "GRiMMBIENT/grimm",
+      "forkOf": null,
+      "author": "GRiMMBIENT",
+      "identity": "FM-1_966",
+      "stars": 42,
+      "lastCommit": "2026-11-03",
+      "commits": 104,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "base": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v2.0.2",
+        "date": "2026-11-03",
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -311,32 +362,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.0.0",
         "date": "2026-11-03",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "GR!MM",
-      "repo": "GRiMMBIENT/grimm",
-      "forkOf": null,
-      "author": "GRiMMBIENT",
-      "identity": "FM-1_966",
-      "stars": 39,
-      "lastCommit": "2026-11-03",
-      "commits": 104,
-      "source": {
-        "status": "affected",
-        "basis": "own-copy",
-        "sizeCheck": false
-      },
-      "release": {
-        "tag": "v2.0.2",
-        "date": "2026-11-03",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -345,18 +378,20 @@
       "forkOf": null,
       "author": "sbegueria",
       "identity": "FM-1_8010403",
-      "stars": 37,
+      "stars": 38,
       "lastCommit": "2026-11-08",
       "commits": 457,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.4.3",
         "date": "2026-10-30",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -371,12 +406,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.0.1",
         "date": "2026-10-16",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -386,17 +423,19 @@
       "author": "ruppert",
       "identity": "FM-1_900",
       "stars": 36,
-      "lastCommit": "2026-11-06",
-      "commits": 313,
+      "lastCommit": "2026-11-09",
+      "commits": 333,
       "source": {
         "status": "unclear",
         "basis": "unknown",
+        "base": null,
         "sizeCheck": true
       },
       "release": {
-        "tag": "v2.2.0",
-        "date": "2026-11-04",
-        "package": "affected"
+        "tag": "v2.5.0",
+        "date": "2026-11-09",
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -411,9 +450,32 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
+    },
+    {
+      "name": "Optimist",
+      "repo": "w0ts/optimist",
+      "forkOf": null,
+      "author": "w0ts",
+      "identity": "FM-1_722",
+      "stars": 33,
+      "lastCommit": "2026-11-09",
+      "commits": 3287,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "base": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v0.2",
+        "date": "2026-10-25",
+        "package": "affected",
+        "chips": "first"
+      }
     },
     {
       "name": "RemoteFM1",
@@ -427,32 +489,36 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.3.6",
         "date": "2026-11-09",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
-      "name": "Optimist",
-      "repo": "w0ts/optimist",
+      "name": "fm1-dock",
+      "repo": "joakimeriksson/fm1-dock",
       "forkOf": null,
-      "author": "w0ts",
-      "identity": "FM-1_722",
-      "stars": 32,
+      "author": "joakimeriksson",
+      "identity": "FM-1_956",
+      "stars": 31,
       "lastCommit": "2026-11-09",
-      "commits": 3273,
+      "commits": 162,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
-        "tag": "v0.2",
-        "date": "2026-10-25",
-        "package": "affected"
+        "tag": "v0.8",
+        "date": "2026-11-07",
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -467,9 +533,32 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
+    },
+    {
+      "name": "Ravel",
+      "repo": "De-Pattern/Ravel_FM1",
+      "forkOf": null,
+      "author": "De-Pattern",
+      "identity": "FM-1_82012900",
+      "stars": 29,
+      "lastCommit": "2026-11-09",
+      "commits": 218,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "base": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v1.29.0",
+        "date": "2026-11-09",
+        "package": "affected",
+        "chips": "both"
+      }
     },
     {
       "name": "KARMA",
@@ -483,32 +572,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v3.0.5",
         "date": "2026-11-09",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "fm1-dock",
-      "repo": "joakimeriksson/fm1-dock",
-      "forkOf": null,
-      "author": "joakimeriksson",
-      "identity": "FM-1_956",
-      "stars": 29,
-      "lastCommit": "2026-11-08",
-      "commits": 155,
-      "source": {
-        "status": "affected",
-        "basis": "own-copy",
-        "sizeCheck": false
-      },
-      "release": {
-        "tag": "v0.8",
-        "date": "2026-11-07",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -523,6 +594,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -539,12 +611,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.6.2",
         "date": "2026-11-06",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -559,12 +633,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v4.0.1",
         "date": "2026-11-03",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -579,32 +655,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
         "tag": "v3.4.1",
         "date": "2026-11-07",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "Ravel",
-      "repo": "De-Pattern/Ravel_FM1",
-      "forkOf": null,
-      "author": "De-Pattern",
-      "identity": "FM-1_82012900",
-      "stars": 25,
-      "lastCommit": "2026-11-09",
-      "commits": 216,
-      "source": {
-        "status": "affected",
-        "basis": "own-copy",
-        "sizeCheck": false
-      },
-      "release": {
-        "tag": "v1.29.0",
-        "date": "2026-11-09",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -619,12 +677,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "maku-v1.0",
         "date": "2026-10-16",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -639,12 +699,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "V1.1.0",
         "date": "2026-10-23",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -659,12 +721,36 @@
       "source": {
         "status": "ok",
         "basis": "fixed-code",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
         "tag": "v0.11.0",
         "date": "2026-11-04",
-        "package": "ok"
+        "package": "ok",
+        "chips": "first"
+      }
+    },
+    {
+      "name": "FM Lab",
+      "repo": "jsmith13/fm_lab",
+      "forkOf": null,
+      "author": "jsmith13",
+      "identity": "FM-1_971",
+      "stars": 24,
+      "lastCommit": "2026-10-18",
+      "commits": 37,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "base": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v1.1.0",
+        "date": "2026-10-18",
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -679,12 +765,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.0.3",
         "date": "2026-11-06",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -699,32 +787,36 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.6.1",
         "date": "2026-10-30",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
-      "name": "FM Lab",
-      "repo": "jsmith13/fm_lab",
+      "name": "Amenity",
+      "repo": "ejtb76/amenity",
       "forkOf": null,
-      "author": "jsmith13",
-      "identity": "FM-1_971",
-      "stars": 23,
-      "lastCommit": "2026-10-18",
-      "commits": 37,
+      "author": "ejtb76",
+      "identity": "FM-1_817020000",
+      "stars": 22,
+      "lastCommit": "2026-11-08",
+      "commits": 39,
       "source": {
-        "status": "affected",
-        "basis": "own-copy",
+        "status": "ok",
+        "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
-        "tag": "v1.1.0",
-        "date": "2026-10-18",
-        "package": "affected"
+        "tag": "v2.0.0",
+        "date": "2026-11-08",
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -739,12 +831,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "fumi-1.1.0",
         "date": "2026-10-23",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -759,12 +853,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.2",
         "date": "2026-10-22",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -772,19 +868,21 @@
       "repo": "jadamsowers/fm1-fimba",
       "forkOf": null,
       "author": "jadamsowers",
-      "identity": "FM-1_8000601",
+      "identity": "FM-1_8000700",
       "stars": 21,
-      "lastCommit": "2026-10-13",
-      "commits": 24,
+      "lastCommit": "2026-11-09",
+      "commits": 36,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
-        "tag": "v0.6.1",
-        "date": "2026-10-13",
-        "package": "affected"
+        "tag": "v0.7.0",
+        "date": "2026-11-09",
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -799,12 +897,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "fm1-rescue-test",
         "date": "2026-10-22",
-        "package": "none"
+        "package": "none",
+        "chips": null
       }
     },
     {
@@ -812,19 +912,21 @@
       "repo": "kidbee85-beep/mutable-dreams",
       "forkOf": null,
       "author": "kidbee85-beep",
-      "identity": "FM-1_710010400",
+      "identity": "FM-1_710010500",
       "stars": 21,
-      "lastCommit": "2026-10-31",
-      "commits": 47,
+      "lastCommit": "2026-11-09",
+      "commits": 52,
       "source": {
-        "status": "affected",
-        "basis": "own-copy",
+        "status": "ok",
+        "basis": "fixed-code",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
-        "tag": "v1.4",
-        "date": "2026-10-31",
-        "package": "affected"
+        "tag": "v1.5",
+        "date": "2026-11-09",
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -839,12 +941,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.9.1",
         "date": "2026-11-09",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -859,32 +963,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.1",
         "date": "2026-10-31",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "Amenity",
-      "repo": "ejtb76/amenity",
-      "forkOf": null,
-      "author": "ejtb76",
-      "identity": "FM-1_817020000",
-      "stars": 19,
-      "lastCommit": "2026-11-08",
-      "commits": 39,
-      "source": {
-        "status": "ok",
-        "basis": "fixed-base",
-        "sizeCheck": false
-      },
-      "release": {
-        "tag": "v2.0.0",
-        "date": "2026-11-08",
-        "package": "ok"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -899,12 +985,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-code",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.2.1",
         "date": "2026-11-02",
-        "package": "ok"
+        "package": "ok",
+        "chips": "none"
       }
     },
     {
@@ -919,12 +1007,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.3.2",
         "date": "2026-10-23",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -939,12 +1029,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.0.4",
         "date": "2026-11-08",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -959,12 +1051,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.17.0",
         "date": "2026-11-07",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -979,12 +1073,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "quest-43",
         "date": "2026-11-02",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -999,12 +1095,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.3",
         "date": "2026-10-09",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -1019,6 +1117,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -1035,12 +1134,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-code",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "1.0",
         "date": "2026-11-07",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -1055,12 +1156,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
         "tag": "v3.8",
         "date": "2026-11-08",
-        "package": "none"
+        "package": "none",
+        "chips": null
       }
     },
     {
@@ -1075,12 +1178,14 @@
       "source": {
         "status": "affected",
         "basis": "submodule",
+        "base": "submodule",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.9.6",
         "date": "2026-10-29",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -1090,17 +1195,41 @@
       "author": "Philip-Bos",
       "identity": "FM-1_3246000210",
       "stars": 14,
-      "lastCommit": "2026-11-06",
-      "commits": 9,
+      "lastCommit": "2026-11-09",
+      "commits": 10,
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.2.10",
         "date": "2026-11-06",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
+      }
+    },
+    {
+      "name": "ZEN-1",
+      "repo": "aceyprime/zen-1",
+      "forkOf": null,
+      "author": "aceyprime",
+      "identity": "FM-1_6010200",
+      "stars": 13,
+      "lastCommit": "2026-10-21",
+      "commits": 6,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "base": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v1.2",
+        "date": "2026-10-21",
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -1115,12 +1244,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.3.1",
         "date": "2026-11-07",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -1135,32 +1266,36 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.2.0",
         "date": "2026-11-08",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
-      "name": "ZEN-1",
-      "repo": "aceyprime/zen-1",
+      "name": "FRASIL",
+      "repo": "styvesgoupil/frasil",
       "forkOf": null,
-      "author": "aceyprime",
-      "identity": "FM-1_6010200",
-      "stars": 12,
-      "lastCommit": "2026-10-21",
-      "commits": 6,
+      "author": "styvesgoupil",
+      "identity": "FM-1_47030200",
+      "stars": 13,
+      "lastCommit": "2026-11-09",
+      "commits": 16,
       "source": {
         "status": "affected",
-        "basis": "own-copy",
+        "basis": "old-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
-        "tag": "v1.2",
-        "date": "2026-10-21",
-        "package": "affected"
+        "tag": "v3.2",
+        "date": "2026-11-09",
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -1175,12 +1310,36 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.3-beta",
         "date": "2026-10-22",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
+      }
+    },
+    {
+      "name": "MONK-1",
+      "repo": "charlesvestal/fm1-monk",
+      "forkOf": null,
+      "author": "charlesvestal",
+      "identity": "FM-1_45001000",
+      "stars": 12,
+      "lastCommit": "2026-11-08",
+      "commits": 22,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "base": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v0.10",
+        "date": "2026-11-05",
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -1188,19 +1347,43 @@
       "repo": "dmajka/elixir",
       "forkOf": null,
       "author": "dmajka",
-      "identity": "FM-1_359010000",
+      "identity": "FM-1_359010300",
       "stars": 12,
       "lastCommit": "2026-11-09",
-      "commits": 81,
+      "commits": 85,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
-        "tag": "v1.0",
+        "tag": "v1.3",
         "date": "2026-11-09",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
+      }
+    },
+    {
+      "name": "NACHTFAHRT",
+      "repo": "FartyPants/fm1-nachtfahrt",
+      "forkOf": null,
+      "author": "FartyPants",
+      "identity": "FM-1_197010000",
+      "stars": 12,
+      "lastCommit": "2026-11-03",
+      "commits": 192,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "base": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v1.0.0",
+        "date": "2026-11-01",
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -1215,12 +1398,36 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "golana-v1.3",
         "date": "2026-10-26",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
+      }
+    },
+    {
+      "name": "PT/FM",
+      "repo": "hitosu/ptfm",
+      "forkOf": null,
+      "author": "hitosu",
+      "identity": "FM-1_7101",
+      "stars": 12,
+      "lastCommit": "2026-11-08",
+      "commits": 17,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "base": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v0.27",
+        "date": "2026-11-08",
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -1235,72 +1442,36 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.9.9",
         "date": "2026-11-08",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
-      "name": "FRASIL",
-      "repo": "styvesgoupil/frasil",
+      "name": "KAWA",
+      "repo": "Guizmoh/Kawa-Tracker-Fm1",
       "forkOf": null,
-      "author": "styvesgoupil",
-      "identity": "FM-1_47030200",
-      "stars": 12,
+      "author": "Guizmoh",
+      "identity": "FM-1_957",
+      "stars": 11,
       "lastCommit": "2026-11-09",
-      "commits": 16,
+      "commits": 35,
       "source": {
         "status": "affected",
-        "basis": "old-base",
+        "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
-        "tag": "v3.2",
+        "tag": "v0.9",
         "date": "2026-11-09",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "MONK-1",
-      "repo": "charlesvestal/fm1-monk",
-      "forkOf": null,
-      "author": "charlesvestal",
-      "identity": "FM-1_45001000",
-      "stars": 11,
-      "lastCommit": "2026-11-08",
-      "commits": 22,
-      "source": {
-        "status": "affected",
-        "basis": "own-copy",
-        "sizeCheck": false
-      },
-      "release": {
-        "tag": "v0.10",
-        "date": "2026-11-05",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "NACHTFAHRT",
-      "repo": "FartyPants/fm1-nachtfahrt",
-      "forkOf": null,
-      "author": "FartyPants",
-      "identity": "FM-1_197010000",
-      "stars": 11,
-      "lastCommit": "2026-11-03",
-      "commits": 192,
-      "source": {
-        "status": "affected",
-        "basis": "own-copy",
-        "sizeCheck": false
-      },
-      "release": {
-        "tag": "v1.0.0",
-        "date": "2026-11-01",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -1315,29 +1486,10 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
-    },
-    {
-      "name": "PT/FM",
-      "repo": "hitosu/ptfm",
-      "forkOf": null,
-      "author": "hitosu",
-      "identity": "FM-1_7101",
-      "stars": 11,
-      "lastCommit": "2026-11-08",
-      "commits": 17,
-      "source": {
-        "status": "affected",
-        "basis": "own-copy",
-        "sizeCheck": false
-      },
-      "release": {
-        "tag": "v0.27",
-        "date": "2026-11-08",
-        "package": "affected"
-      }
     },
     {
       "name": "AURORA",
@@ -1351,12 +1503,36 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.8.0",
         "date": "2026-11-03",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
+      }
+    },
+    {
+      "name": "S1Vave",
+      "repo": "AndrewGG88/S1Vave",
+      "forkOf": null,
+      "author": "AndrewGG88",
+      "identity": "FM-1_950",
+      "stars": 10,
+      "lastCommit": "2026-11-07",
+      "commits": 29,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "base": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v1.12.3",
+        "date": "2026-11-07",
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -1371,12 +1547,14 @@
       "source": {
         "status": "affected",
         "basis": "rewrite",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.10.0-beta",
         "date": "2026-10-25",
-        "package": "other"
+        "package": "other",
+        "chips": "none"
       }
     },
     {
@@ -1391,32 +1569,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.2.1-GW",
         "date": "2026-10-26",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "KAWA",
-      "repo": "Guizmoh/Kawa-Tracker-Fm1",
-      "forkOf": null,
-      "author": "Guizmoh",
-      "identity": "FM-1_957",
-      "stars": 10,
-      "lastCommit": "2026-11-09",
-      "commits": 32,
-      "source": {
-        "status": "affected",
-        "basis": "own-copy",
-        "sizeCheck": false
-      },
-      "release": {
-        "tag": "v0.9",
-        "date": "2026-11-09",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -1431,12 +1591,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v2.8.4",
         "date": "2026-10-30",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -1447,16 +1609,18 @@
       "identity": "FM-1_748023",
       "stars": 10,
       "lastCommit": "2026-11-09",
-      "commits": 36,
+      "commits": 40,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.1.2-dev1",
         "date": "2026-11-09",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -1471,12 +1635,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.2",
         "date": "2026-11-08",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -1491,12 +1657,14 @@
       "source": {
         "status": "unclear",
         "basis": "unknown",
+        "base": null,
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.1.4",
         "date": "2026-11-05",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -1511,12 +1679,14 @@
       "source": {
         "status": "ok",
         "basis": "pinned-v15",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
         "tag": "V1.88",
         "date": "2026-10-30",
-        "package": "ok"
+        "package": "ok",
+        "chips": "none"
       }
     },
     {
@@ -1531,12 +1701,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
         "tag": "v0.5.0-beta.1",
         "date": "2026-10-21",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -1551,32 +1723,36 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
         "tag": "v0.6.1-beta",
         "date": "2026-11-06",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
-      "name": "S1Vave",
-      "repo": "AndrewGG88/S1Vave",
-      "forkOf": null,
-      "author": "AndrewGG88",
+      "name": "FMEL-1",
+      "repo": "AntonioAltea/fmel-1",
+      "forkOf": "zvenson/dinghy",
+      "author": "AntonioAltea",
       "identity": "FM-1_950",
       "stars": 9,
-      "lastCommit": "2026-11-07",
-      "commits": 29,
+      "lastCommit": "2026-11-04",
+      "commits": 101,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
-        "tag": "v1.12.3",
-        "date": "2026-11-07",
-        "package": "affected"
+        "tag": "v1.2",
+        "date": "2026-11-04",
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -1591,12 +1767,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "1.0.5.2-midi23",
         "date": "2026-10-09",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -1611,12 +1789,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v2.8.4",
         "date": "2026-11-08",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -1631,12 +1811,36 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.0.1",
         "date": "2026-10-27",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
+      }
+    },
+    {
+      "name": "openpocket",
+      "repo": "isod89/openpocket",
+      "forkOf": null,
+      "author": "isod89",
+      "identity": null,
+      "stars": 9,
+      "lastCommit": "2026-11-09",
+      "commits": 172,
+      "source": {
+        "status": "ok",
+        "basis": "fixed-code",
+        "base": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v40",
+        "date": "2026-11-09",
+        "package": "ok",
+        "chips": "none"
       }
     },
     {
@@ -1647,10 +1851,11 @@
       "identity": "FM-1_8096",
       "stars": 9,
       "lastCommit": "2026-11-09",
-      "commits": 151,
+      "commits": 154,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -1667,12 +1872,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.12",
         "date": "2026-11-08",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -1687,12 +1894,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v666",
         "date": "2026-10-15",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -1707,32 +1916,36 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.3.2",
         "date": "2026-10-22",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
-      "name": "FMEL-1",
-      "repo": "AntonioAltea/fmel-1",
-      "forkOf": "zvenson/dinghy",
-      "author": "AntonioAltea",
-      "identity": "FM-1_950",
+      "name": "Pocket-Onyx",
+      "repo": "28spawn/Pocket-Onyx",
+      "forkOf": null,
+      "author": "28spawn",
+      "identity": "Pocket AMP_194",
       "stars": 8,
-      "lastCommit": "2026-11-04",
-      "commits": 101,
+      "lastCommit": "2026-11-09",
+      "commits": 10,
       "source": {
-        "status": "affected",
-        "basis": "own-copy",
+        "status": "ok",
+        "basis": "fixed-code",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
-        "tag": "v1.2",
-        "date": "2026-11-04",
-        "package": "affected"
+        "tag": "v1.18",
+        "date": "2026-11-08",
+        "package": "other",
+        "chips": "none"
       }
     },
     {
@@ -1747,12 +1960,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.9-salt14",
         "date": "2026-10-05",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -1767,32 +1982,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.3",
         "date": "2026-10-30",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "openpocket",
-      "repo": "isod89/openpocket",
-      "forkOf": null,
-      "author": "isod89",
-      "identity": null,
-      "stars": 8,
-      "lastCommit": "2026-11-09",
-      "commits": 172,
-      "source": {
-        "status": "ok",
-        "basis": "fixed-code",
-        "sizeCheck": false
-      },
-      "release": {
-        "tag": "v40",
-        "date": "2026-11-09",
-        "package": "ok"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -1807,12 +2004,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "build-736-r2",
         "date": "2026-11-05",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -1827,12 +2026,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v3.0.1",
         "date": "2026-10-23",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -1847,6 +2048,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -1863,12 +2065,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.2.0",
         "date": "2026-10-20",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -1876,19 +2080,21 @@
       "repo": "glvno/matryoshka",
       "forkOf": null,
       "author": "glvno",
-      "identity": "FM-1_7011101",
+      "identity": "FM-1_7011200",
       "stars": 7,
       "lastCommit": "2026-11-09",
-      "commits": 2136,
+      "commits": 2200,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
-        "tag": "v1.11.1",
+        "tag": "v1.12.0",
         "date": "2026-11-09",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -1903,12 +2109,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.9",
         "date": "2026-11-02",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -1923,12 +2131,36 @@
       "source": {
         "status": "ok",
         "basis": "fixed-code",
+        "base": "submodule",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.1.0-beta",
         "date": "2026-11-07",
-        "package": "other"
+        "package": "other",
+        "chips": "none"
+      }
+    },
+    {
+      "name": "JAN3000-M-Wave-Firmware",
+      "repo": "JanSchulten/JAN3000-M-Wave-Firmware",
+      "forkOf": null,
+      "author": "JanSchulten",
+      "identity": "FM-1_953",
+      "stars": 7,
+      "lastCommit": "2026-11-09",
+      "commits": 266,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "base": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v0.2-alpha",
+        "date": "2026-11-04",
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -1939,16 +2171,18 @@
       "identity": "FM-1_337",
       "stars": 7,
       "lastCommit": "2026-11-09",
-      "commits": 45,
+      "commits": 46,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
-        "tag": "v1.5.3",
+        "tag": "v1.5.4",
         "date": "2026-11-09",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -1963,12 +2197,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.2.2",
         "date": "2026-11-05",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -1983,12 +2219,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.1.1",
         "date": "2026-11-05",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -2003,12 +2241,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v2.0",
         "date": "2026-11-04",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -2023,12 +2263,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.2.3",
         "date": "2026-10-13",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -2043,12 +2285,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.0.0",
         "date": "2026-10-13",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -2063,12 +2307,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
         "tag": "v1.3.0",
         "date": "2026-11-01",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -2076,19 +2322,21 @@
       "repo": "bunglesociety/modular-one",
       "forkOf": null,
       "author": "bunglesociety",
-      "identity": "FM-1_900",
+      "identity": "FM-1_903",
       "stars": 6,
-      "lastCommit": "2026-10-26",
-      "commits": 5,
+      "lastCommit": "2026-11-09",
+      "commits": 8,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
-        "tag": "v0.1-beta",
-        "date": "2026-10-20",
-        "package": "affected"
+        "tag": "v0.3-beta",
+        "date": "2026-11-09",
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -2103,6 +2351,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -2119,12 +2368,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
         "tag": "v1.9.0",
         "date": "2026-11-08",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -2139,12 +2390,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-code",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "1.8.1",
         "date": "2026-11-09",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -2159,12 +2412,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "minitone-1.0.5",
         "date": "2026-10-26",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -2179,12 +2434,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "fantasma-v1.1",
         "date": "2026-10-16",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -2199,6 +2456,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -2215,6 +2473,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -2231,12 +2490,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.0.0-r12",
         "date": "2026-10-20",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -2251,12 +2512,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.3.0",
         "date": "2026-11-06",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -2271,12 +2534,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.6",
         "date": "2026-10-17",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -2291,12 +2556,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "schwung",
         "date": "2026-11-02",
-        "package": "none"
+        "package": "none",
+        "chips": null
       }
     },
     {
@@ -2311,32 +2578,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v2.1.1",
         "date": "2026-11-03",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "Pocket-Onyx",
-      "repo": "28spawn/Pocket-Onyx",
-      "forkOf": null,
-      "author": "28spawn",
-      "identity": "Pocket AMP_194",
-      "stars": 5,
-      "lastCommit": "2026-11-08",
-      "commits": 8,
-      "source": {
-        "status": "ok",
-        "basis": "fixed-code",
-        "sizeCheck": false
-      },
-      "release": {
-        "tag": "v1.18",
-        "date": "2026-11-08",
-        "package": "other"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -2351,12 +2600,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
         "tag": "v0.9.6",
         "date": "2026-11-02",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -2371,6 +2622,7 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": null
@@ -2387,12 +2639,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.0",
         "date": "2026-10-17",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -2403,16 +2657,18 @@
       "identity": "FM-1_1990",
       "stars": 5,
       "lastCommit": "2026-11-09",
-      "commits": 182,
+      "commits": 183,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.1.02",
         "date": "2026-11-09",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -2427,12 +2683,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.5",
         "date": "2026-11-08",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -2447,32 +2705,14 @@
       "source": {
         "status": "affected",
         "basis": "old-base",
+        "base": "felucca-bsp",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.1.1",
         "date": "2026-10-20",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "JAN3000-M-Wave-Firmware",
-      "repo": "JanSchulten/JAN3000-M-Wave-Firmware",
-      "forkOf": null,
-      "author": "JanSchulten",
-      "identity": "FM-1_953",
-      "stars": 5,
-      "lastCommit": "2026-11-04",
-      "commits": 259,
-      "source": {
-        "status": "affected",
-        "basis": "own-copy",
-        "sizeCheck": false
-      },
-      "release": {
-        "tag": "v0.2-alpha",
-        "date": "2026-11-04",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -2487,12 +2727,14 @@
       "source": {
         "status": "affected",
         "basis": "old-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.5.1",
         "date": "2026-10-27",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -2507,12 +2749,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "artihive-2.0.3",
         "date": "2026-11-07",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -2527,12 +2771,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v2.5-b28-test",
         "date": "2026-10-09",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -2547,12 +2793,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.0.1",
         "date": "2026-10-26",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -2567,12 +2815,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.5.1",
         "date": "2026-11-08",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -2587,12 +2837,14 @@
       "source": {
         "status": "ok",
         "basis": "pinned-v15",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
         "tag": "V1.8.3",
         "date": "2026-11-09",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -2607,12 +2859,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.7",
         "date": "2026-11-01",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -2627,12 +2881,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "12822759",
         "date": "2026-10-24",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -2647,12 +2903,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.6.1",
         "date": "2026-11-08",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -2667,12 +2925,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.1.0",
         "date": "2026-10-18",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -2682,17 +2942,19 @@
       "author": "delirioux",
       "identity": "FM-1_900",
       "stars": 4,
-      "lastCommit": "2026-11-08",
-      "commits": 87,
+      "lastCommit": "2026-11-09",
+      "commits": 89,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
         "tag": "v1.2",
         "date": "2026-11-04",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -2707,12 +2969,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.1.2",
         "date": "2026-10-16",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -2727,12 +2991,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.2.1",
         "date": "2026-10-18",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -2747,12 +3013,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.1.11",
         "date": "2026-11-08",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -2763,17 +3031,36 @@
       "identity": "FM-1_378011",
       "stars": 4,
       "lastCommit": "2026-11-09",
-      "commits": 125,
+      "commits": 126,
       "source": {
         "status": "ok",
         "basis": "fixed-code",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.3.8",
         "date": "2026-11-07",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
+    },
+    {
+      "name": "organvave-1",
+      "repo": "ruppert/organvave-1",
+      "forkOf": null,
+      "author": "ruppert",
+      "identity": null,
+      "stars": 4,
+      "lastCommit": "2026-11-05",
+      "commits": 122,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "base": "own-copy",
+        "sizeCheck": true
+      },
+      "release": null
     },
     {
       "name": "B1 Drawbar Organ",
@@ -2787,12 +3074,14 @@
       "source": {
         "status": "ok",
         "basis": "pinned-v15",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
         "tag": "V5.6",
         "date": "2026-11-02",
-        "package": "ok"
+        "package": "ok",
+        "chips": "none"
       }
     },
     {
@@ -2807,12 +3096,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.0",
         "date": "2026-11-04",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -2827,12 +3118,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.0.3",
         "date": "2026-10-14",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -2847,6 +3140,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -2863,12 +3157,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.2",
         "date": "2026-11-05",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -2883,12 +3179,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "fm1-controls-26",
         "date": "2026-10-22",
-        "package": "none"
+        "package": "none",
+        "chips": null
       }
     },
     {
@@ -2903,12 +3201,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "smk-pad-lights-953",
         "date": "2026-10-22",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -2923,12 +3223,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.9.2",
         "date": "2026-11-05",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -2943,12 +3245,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.1.0",
         "date": "2026-10-18",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -2963,6 +3267,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -2979,12 +3284,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.10",
         "date": "2026-11-06",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -2999,12 +3306,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-code",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.4.0",
         "date": "2026-10-29",
-        "package": "ok"
+        "package": "ok",
+        "chips": "first"
       }
     },
     {
@@ -3019,12 +3328,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.1.0",
         "date": "2026-10-27",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -3039,12 +3350,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.1.0-preview",
         "date": "2026-10-28",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -3059,12 +3372,14 @@
       "source": {
         "status": "affected",
         "basis": "submodule",
+        "base": "submodule",
         "sizeCheck": true
       },
       "release": {
         "tag": "v1.5.2",
         "date": "2026-10-16",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -3079,12 +3394,58 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.1.0",
         "date": "2026-10-18",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
+      }
+    },
+    {
+      "name": "Drumlab - Microtonic Drum Machine",
+      "repo": "pbarilla/drumlab",
+      "forkOf": null,
+      "author": "pbarilla",
+      "identity": "FM-1_032",
+      "stars": 3,
+      "lastCommit": "2026-11-09",
+      "commits": 6,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "base": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v0.1.2-beta",
+        "date": "2026-11-09",
+        "package": "affected",
+        "chips": "both"
+      }
+    },
+    {
+      "name": "JamTrack",
+      "repo": "Philip-Bos/jamtrack-fm1",
+      "forkOf": null,
+      "author": "Philip-Bos",
+      "identity": "FM-1_5268000203",
+      "stars": 3,
+      "lastCommit": "2026-11-09",
+      "commits": 9,
+      "source": {
+        "status": "ok",
+        "basis": "fixed-base",
+        "base": "fm1-base",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v0.2.3",
+        "date": "2026-11-09",
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -3099,29 +3460,15 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v2.4",
         "date": "2026-10-06",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
-    },
-    {
-      "name": "organvave-1",
-      "repo": "ruppert/organvave-1",
-      "forkOf": null,
-      "author": "ruppert",
-      "identity": null,
-      "stars": 3,
-      "lastCommit": "2026-11-05",
-      "commits": 122,
-      "source": {
-        "status": "affected",
-        "basis": "own-copy",
-        "sizeCheck": true
-      },
-      "release": null
     },
     {
       "name": "MOPE-1",
@@ -3135,12 +3482,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.4.1",
         "date": "2026-11-07",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -3155,12 +3504,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.1.3",
         "date": "2026-10-30",
-        "package": "ok"
+        "package": "ok",
+        "chips": "first"
       }
     },
     {
@@ -3175,12 +3526,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.26.19",
         "date": "2026-10-27",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -3195,13 +3548,32 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
         "tag": "v1.5.1",
         "date": "2026-11-07",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
+    },
+    {
+      "name": "FM-1 Doom",
+      "repo": "zvenson/fm1doom",
+      "forkOf": null,
+      "author": "zvenson",
+      "identity": "FM-1_985",
+      "stars": 3,
+      "lastCommit": "2026-10-07",
+      "commits": 11,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "base": "own-copy",
+        "sizeCheck": false
+      },
+      "release": null
     },
     {
       "name": "P1Onken Type P.fm1",
@@ -3215,12 +3587,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.0.7",
         "date": "2026-11-08",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -3235,6 +3609,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -3251,12 +3626,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "botanica-v0.3",
         "date": "2026-10-20",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -3271,12 +3648,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.9.2",
         "date": "2026-11-06",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -3291,6 +3670,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -3307,6 +3687,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -3316,19 +3697,21 @@
       "repo": "delirioux/daurade",
       "forkOf": null,
       "author": "delirioux",
-      "identity": "FM-1_900",
+      "identity": "FM-1_47328723",
       "stars": 2,
-      "lastCommit": "2026-11-08",
-      "commits": 20,
+      "lastCommit": "2026-11-09",
+      "commits": 24,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
-        "tag": "v1.0.1",
-        "date": "2026-11-07",
-        "package": "affected"
+        "tag": "v1.0.2",
+        "date": "2026-11-09",
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -3338,17 +3721,19 @@
       "author": "delirioux",
       "identity": "FM-1_900",
       "stars": 2,
-      "lastCommit": "2026-11-08",
-      "commits": 34,
+      "lastCommit": "2026-11-09",
+      "commits": 36,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
         "tag": "v1.1.1",
         "date": "2026-11-07",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -3363,6 +3748,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -3379,12 +3765,36 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.9.97",
         "date": "2026-11-08",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
+      }
+    },
+    {
+      "name": "VESPER",
+      "repo": "fatcatstudios-hub/vesper-fm1",
+      "forkOf": null,
+      "author": "fatcatstudios-hub",
+      "identity": "FM-1_8837202",
+      "stars": 2,
+      "lastCommit": "2026-11-09",
+      "commits": 28,
+      "source": {
+        "status": "ok",
+        "basis": "fixed-base",
+        "base": "fm1-base",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "vesper-2.0.2",
+        "date": "2026-11-09",
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -3399,12 +3809,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
         "tag": "v0.1.5",
         "date": "2026-10-22",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -3419,12 +3831,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.4.24",
         "date": "2026-10-28",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -3439,6 +3853,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -3455,6 +3870,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -3471,12 +3887,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "E1",
         "date": "2026-10-16",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -3491,12 +3909,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
         "tag": "v1.0.0",
         "date": "2026-10-17",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -3506,17 +3926,19 @@
       "author": "LIkst4",
       "identity": "FM-1_74211",
       "stars": 2,
-      "lastCommit": "2026-11-08",
-      "commits": 62,
+      "lastCommit": "2026-11-09",
+      "commits": 0,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
         "tag": "V1.1",
         "date": "2026-11-06",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -3524,19 +3946,21 @@
       "repo": "maxravedj/fm1-audio-router",
       "forkOf": null,
       "author": "maxravedj",
-      "identity": "FM-1_731000101",
+      "identity": "FM-1_731000200",
       "stars": 2,
-      "lastCommit": "2026-11-08",
-      "commits": 10,
+      "lastCommit": "2026-11-09",
+      "commits": 13,
       "source": {
         "status": "ok",
         "basis": "fixed-code",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
-        "tag": "v0.1.1",
-        "date": "2026-11-07",
-        "package": "ok"
+        "tag": "v0.2.0",
+        "date": "2026-11-09",
+        "package": "ok",
+        "chips": "first"
       }
     },
     {
@@ -3551,12 +3975,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v3.0",
         "date": "2026-11-01",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -3571,12 +3997,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.3-beta",
         "date": "2026-10-30",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -3591,6 +4019,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -3607,12 +4036,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.13.0",
         "date": "2026-11-05",
-        "package": "ok"
+        "package": "ok",
+        "chips": "first"
       }
     },
     {
@@ -3627,6 +4058,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -3643,32 +4075,58 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.1.0",
         "date": "2026-11-03",
-        "package": "ok"
+        "package": "ok",
+        "chips": "first"
       }
     },
     {
-      "name": "JamTrack",
-      "repo": "Philip-Bos/jamtrack-fm1",
-      "forkOf": null,
-      "author": "Philip-Bos",
-      "identity": "FM-1_5268000201",
+      "name": "ChoralRootFM1 (big screen)",
+      "repo": "pfkellogg/ChoralRootFM1",
+      "forkOf": "Quixotic7/ChoralRootFM1",
+      "author": "pfkellogg",
+      "identity": "FM-1_920",
       "stars": 2,
       "lastCommit": "2026-11-08",
-      "commits": 7,
+      "commits": 12,
       "source": {
-        "status": "ok",
-        "basis": "fixed-base",
+        "status": "affected",
+        "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
-        "tag": "v0.2.1",
-        "date": "2026-11-08",
-        "package": "ok"
+        "tag": "v0.29-bigscreen",
+        "date": "2026-11-02",
+        "package": "affected",
+        "chips": "first"
+      }
+    },
+    {
+      "name": "JIANT (big screen)",
+      "repo": "pfkellogg/JIANT",
+      "forkOf": "juanjiant-bit/JIANT",
+      "author": "pfkellogg",
+      "identity": "FM-1_900",
+      "stars": 2,
+      "lastCommit": "2026-11-08",
+      "commits": 11,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "base": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v10.49-bigscreen",
+        "date": "2026-11-03",
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -3683,12 +4141,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.3",
         "date": "2026-10-28",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -3699,16 +4159,18 @@
       "identity": "FM-1_47001200",
       "stars": 2,
       "lastCommit": "2026-11-09",
-      "commits": 7,
+      "commits": 14,
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.12",
         "date": "2026-10-25",
-        "package": "ok"
+        "package": "ok",
+        "chips": "first"
       }
     },
     {
@@ -3723,12 +4185,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.0.2",
         "date": "2026-11-05",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -3743,6 +4207,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -3759,12 +4224,14 @@
       "source": {
         "status": "ok",
         "basis": "pinned-v15",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
         "tag": "V1.85.2",
         "date": "2026-11-09",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -3779,6 +4246,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": null
@@ -3795,12 +4263,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.0.5",
         "date": "2026-11-07",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -3815,6 +4285,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -3831,6 +4302,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -3847,12 +4319,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.2.0",
         "date": "2026-10-29",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -3867,22 +4341,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
-        "sizeCheck": false
-      },
-      "release": null
-    },
-    {
-      "name": "FM-1 Doom",
-      "repo": "zvenson/fm1doom",
-      "forkOf": null,
-      "author": "zvenson",
-      "identity": "FM-1_985",
-      "stars": 2,
-      "lastCommit": "2026-10-07",
-      "commits": 11,
-      "source": {
-        "status": "affected",
-        "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -3899,12 +4358,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-code",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.10",
         "date": "2026-11-08",
-        "package": "other"
+        "package": "other",
+        "chips": "none"
       }
     },
     {
@@ -3919,12 +4380,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.5.1",
         "date": "2026-11-02",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -3939,12 +4402,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "0.4",
         "date": "2026-11-08",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -3959,6 +4424,7 @@
       "source": {
         "status": "ok",
         "basis": "fixed-code",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -3975,12 +4441,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.1",
         "date": "2026-10-21",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -3995,6 +4463,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -4011,12 +4480,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.0.12",
         "date": "2026-11-04",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -4031,12 +4502,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "smk-pad-lights-971",
         "date": "2026-10-22",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -4051,12 +4524,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.9.2",
         "date": "2026-11-06",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -4071,6 +4546,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -4080,19 +4556,21 @@
       "repo": "delirioux/sill",
       "forkOf": null,
       "author": "delirioux",
-      "identity": "FM-1_900",
+      "identity": "FM-1_47745500",
       "stars": 1,
-      "lastCommit": "2026-11-08",
-      "commits": 41,
+      "lastCommit": "2026-11-09",
+      "commits": 44,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
-        "tag": "v1.0.3",
-        "date": "2026-11-07",
-        "package": "affected"
+        "tag": "v1.0.4",
+        "date": "2026-11-09",
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -4100,19 +4578,21 @@
       "repo": "delirioux/snapper",
       "forkOf": null,
       "author": "delirioux",
-      "identity": "FM-1_900",
+      "identity": "FM-1_47762773",
       "stars": 1,
-      "lastCommit": "2026-11-08",
-      "commits": 11,
+      "lastCommit": "2026-11-09",
+      "commits": 14,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
-        "tag": "v0.1.1",
-        "date": "2026-11-07",
-        "package": "affected"
+        "tag": "v0.1.2",
+        "date": "2026-11-09",
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -4127,12 +4607,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.2.1",
         "date": "2026-10-16",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -4147,12 +4629,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "ci-screenshot",
         "date": "2026-10-21",
-        "package": "none"
+        "package": "none",
+        "chips": null
       }
     },
     {
@@ -4160,19 +4644,21 @@
       "repo": "doohinkus/kris-jangle",
       "forkOf": null,
       "author": "doohinkus",
-      "identity": "FM-1_20000300",
+      "identity": "FM-1_20000500",
       "stars": 1,
       "lastCommit": "2026-11-09",
-      "commits": 36,
+      "commits": 46,
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "felucca-bsp",
         "sizeCheck": false
       },
       "release": {
-        "tag": "v0.3",
+        "tag": "v0.5",
         "date": "2026-11-09",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -4187,12 +4673,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "minivision-1.0.1",
         "date": "2026-10-26",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -4207,6 +4695,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -4223,29 +4712,10 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
-    },
-    {
-      "name": "VESPER",
-      "repo": "fatcatstudios-hub/vesper-fm1",
-      "forkOf": null,
-      "author": "fatcatstudios-hub",
-      "identity": "FM-1_8837201",
-      "stars": 1,
-      "lastCommit": "2026-10-31",
-      "commits": 22,
-      "source": {
-        "status": "ok",
-        "basis": "fixed-base",
-        "sizeCheck": false
-      },
-      "release": {
-        "tag": "vesper-2.0.1",
-        "date": "2026-10-31",
-        "package": "ok"
-      }
     },
     {
       "name": "Patricktronics",
@@ -4259,6 +4729,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -4271,16 +4742,18 @@
       "identity": "FM-1_982",
       "stars": 1,
       "lastCommit": "2026-11-09",
-      "commits": 434,
+      "commits": 449,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.9.0",
         "date": "2026-11-08",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -4295,12 +4768,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.3.1-alpha",
         "date": "2026-11-04",
-        "package": "ok"
+        "package": "ok",
+        "chips": "first"
       }
     },
     {
@@ -4315,12 +4790,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.4.4-alpha",
         "date": "2026-11-09",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -4335,12 +4812,14 @@
       "source": {
         "status": "affected",
         "basis": "old-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.3",
         "date": "2026-10-22",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -4355,6 +4834,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -4371,12 +4851,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
         "tag": "v0.4.0-rc1",
         "date": "2026-10-23",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -4391,12 +4873,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.3",
         "date": "2026-11-02",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -4411,12 +4895,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.9.5",
         "date": "2026-11-08",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -4431,12 +4917,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.3",
         "date": "2026-10-25",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -4446,17 +4934,19 @@
       "author": "joakimeriksson",
       "identity": "FM-1_96300200",
       "stars": 1,
-      "lastCommit": "2026-11-08",
-      "commits": 51,
+      "lastCommit": "2026-11-09",
+      "commits": 54,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.2.0",
         "date": "2026-11-01",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -4471,6 +4961,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -4483,16 +4974,18 @@
       "identity": "FM-1_916",
       "stars": 1,
       "lastCommit": "2026-11-09",
-      "commits": 170,
+      "commits": 186,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.6.0",
         "date": "2026-11-09",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -4507,6 +5000,7 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": null
@@ -4523,12 +5017,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.5.4",
         "date": "2026-10-22",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -4543,12 +5039,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
         "tag": "sardab-v2.1-preview",
         "date": "2026-10-13",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -4563,12 +5061,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.0",
         "date": "2026-11-01",
-        "package": "ok"
+        "package": "ok",
+        "chips": "first"
       }
     },
     {
@@ -4583,12 +5083,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.5.2-beta",
         "date": "2026-11-01",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -4603,6 +5105,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": null
@@ -4619,6 +5122,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -4635,12 +5139,14 @@
       "source": {
         "status": "affected",
         "basis": "old-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.1.0",
         "date": "2026-10-30",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -4655,12 +5161,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-code",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.4.2",
         "date": "2026-10-24",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -4668,19 +5176,21 @@
       "repo": "MadMooneyham/Penumbra",
       "forkOf": null,
       "author": "MadMooneyham",
-      "identity": "FM-1_73010201",
+      "identity": "FM-1_73010300",
       "stars": 1,
-      "lastCommit": "2026-11-05",
-      "commits": 46,
+      "lastCommit": "2026-11-09",
+      "commits": 50,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
-        "tag": "v1.2.1",
-        "date": "2026-11-05",
-        "package": "affected"
+        "tag": "v1.3",
+        "date": "2026-11-09",
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -4695,12 +5205,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.2.0",
         "date": "2026-10-25",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -4715,12 +5227,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.1.0",
         "date": "2026-10-17",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -4735,12 +5249,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.0.0",
         "date": "2026-11-02",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -4755,12 +5271,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.0.0",
         "date": "2026-11-05",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -4775,6 +5293,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -4791,68 +5310,53 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
     },
     {
-      "name": "Drumlab - Microtonic Drum Machine",
-      "repo": "pbarilla/drumlab",
+      "name": "SATIE-1",
+      "repo": "OCKM-STUDIO/SATIE-1",
       "forkOf": null,
-      "author": "pbarilla",
-      "identity": "FM-1_032",
+      "author": "OCKM-STUDIO",
+      "identity": "FM-1_9980100",
+      "stars": 1,
+      "lastCommit": "2026-11-08",
+      "commits": 2,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "base": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v0.1.2-beta",
+        "date": "2026-11-08",
+        "package": "affected",
+        "chips": "both"
+      }
+    },
+    {
+      "name": "fm1wheel",
+      "repo": "ograndebe/fm1wheel",
+      "forkOf": null,
+      "author": "ograndebe",
+      "identity": null,
       "stars": 1,
       "lastCommit": "2026-11-09",
-      "commits": 5,
+      "commits": 13,
       "source": {
-        "status": "affected",
-        "basis": "own-copy",
+        "status": "ok",
+        "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
-        "tag": "v0.1.1-beta",
-        "date": "2026-11-08",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "ChoralRootFM1 (big screen)",
-      "repo": "pfkellogg/ChoralRootFM1",
-      "forkOf": "Quixotic7/ChoralRootFM1",
-      "author": "pfkellogg",
-      "identity": "FM-1_920",
-      "stars": 1,
-      "lastCommit": "2026-11-08",
-      "commits": 12,
-      "source": {
-        "status": "affected",
-        "basis": "own-copy",
-        "sizeCheck": false
-      },
-      "release": {
-        "tag": "v0.29-bigscreen",
-        "date": "2026-11-02",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "JIANT (big screen)",
-      "repo": "pfkellogg/JIANT",
-      "forkOf": "juanjiant-bit/JIANT",
-      "author": "pfkellogg",
-      "identity": "FM-1_900",
-      "stars": 1,
-      "lastCommit": "2026-11-08",
-      "commits": 11,
-      "source": {
-        "status": "affected",
-        "basis": "own-copy",
-        "sizeCheck": false
-      },
-      "release": {
-        "tag": "v10.49-bigscreen",
-        "date": "2026-11-03",
-        "package": "affected"
+        "tag": "v0.2.1",
+        "date": "2026-11-09",
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -4867,12 +5371,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.0.7",
         "date": "2026-11-01",
-        "package": "ok"
+        "package": "ok",
+        "chips": "first"
       }
     },
     {
@@ -4887,12 +5393,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.1",
         "date": "2026-11-07",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -4907,12 +5415,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v2.0.0",
         "date": "2026-10-17",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -4927,12 +5437,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.12.0-beta.14",
         "date": "2026-11-08",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -4947,12 +5459,14 @@
       "source": {
         "status": "ok",
         "basis": "pinned-v15",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
         "tag": "V1.3.1",
         "date": "2026-11-09",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -4967,6 +5481,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -4983,6 +5498,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -4999,12 +5515,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.2",
         "date": "2026-11-08",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -5019,12 +5537,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.1.0-beta.1",
         "date": "2026-10-26",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -5039,12 +5559,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.1.0",
         "date": "2026-11-09",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -5059,12 +5581,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "compas-v1.1",
         "date": "2026-11-08",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -5079,6 +5603,7 @@
       "source": {
         "status": "affected",
         "basis": "old-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": null
@@ -5095,12 +5620,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
         "tag": "v0.1",
         "date": "2026-10-18",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -5115,6 +5642,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -5131,12 +5659,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.4",
         "date": "2026-11-07",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -5151,12 +5681,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v4.3",
         "date": "2026-10-28",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -5171,6 +5703,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -5187,6 +5720,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -5203,6 +5737,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -5219,12 +5754,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.2",
         "date": "2026-11-08",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -5239,6 +5776,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -5255,12 +5793,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "pet-v0.8",
         "date": "2026-10-25",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -5270,17 +5810,19 @@
       "author": "bk40-home",
       "identity": null,
       "stars": 0,
-      "lastCommit": "2026-11-08",
-      "commits": 8,
+      "lastCommit": "2026-11-09",
+      "commits": 9,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
-        "tag": "v2.3",
-        "date": "2026-11-08",
-        "package": "affected"
+        "tag": "v2.4",
+        "date": "2026-11-09",
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -5295,12 +5837,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
         "tag": "v1.5",
         "date": "2026-11-04",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -5315,32 +5859,70 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.2.0",
         "date": "2026-10-29",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
+    },
+    {
+      "name": "genra-v3",
+      "repo": "CamilloGF/genra-v3",
+      "forkOf": null,
+      "author": "CamilloGF",
+      "identity": null,
+      "stars": 0,
+      "lastCommit": "2026-11-07",
+      "commits": 93,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "base": "own-copy",
+        "sizeCheck": false
+      },
+      "release": null
+    },
+    {
+      "name": "vcv-synthis",
+      "repo": "CamilloGF/vcv-synthis",
+      "forkOf": null,
+      "author": "CamilloGF",
+      "identity": null,
+      "stars": 0,
+      "lastCommit": "2026-11-05",
+      "commits": 8,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "base": "own-copy",
+        "sizeCheck": false
+      },
+      "release": null
     },
     {
       "name": "cord-fm1",
       "repo": "chasedeanda/cord-fm1",
       "forkOf": null,
       "author": "chasedeanda",
-      "identity": "FM-1_936",
+      "identity": "FM-1_26730001",
       "stars": 0,
-      "lastCommit": "2026-11-08",
-      "commits": 176,
+      "lastCommit": "2026-11-09",
+      "commits": 184,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
-        "tag": "v1.0.2",
-        "date": "2026-11-08",
-        "package": "affected"
+        "tag": "v1.0.3",
+        "date": "2026-11-09",
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -5355,6 +5937,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -5371,6 +5954,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -5387,6 +5971,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -5403,6 +5988,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -5419,12 +6005,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.9",
         "date": "2026-11-06",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -5439,6 +6027,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -5455,12 +6044,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "0.0.1-1793572764-06d2561",
         "date": "2026-11-01",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -5475,12 +6066,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-code",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.6",
         "date": "2026-11-06",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -5495,12 +6088,14 @@
       "source": {
         "status": "affected",
         "basis": "old-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.1",
         "date": "2026-10-21",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -5515,12 +6110,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.4",
         "date": "2026-10-31",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -5535,6 +6132,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -5551,12 +6149,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.2.0",
         "date": "2026-10-18",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -5566,17 +6166,19 @@
       "author": "delirioux",
       "identity": "FM-1_47625642",
       "stars": 0,
-      "lastCommit": "2026-11-08",
-      "commits": 102,
+      "lastCommit": "2026-11-09",
+      "commits": 103,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.4",
         "date": "2026-11-04",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -5591,12 +6193,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "felucca-bsp",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.0.6",
         "date": "2026-11-08",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -5611,12 +6215,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.1.2",
         "date": "2026-10-16",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -5631,12 +6237,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.1.1",
         "date": "2026-10-17",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -5651,12 +6259,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.1.0",
         "date": "2026-10-16",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -5671,6 +6281,7 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "felucca-bsp",
         "sizeCheck": false
       },
       "release": null
@@ -5687,6 +6298,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -5703,12 +6315,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.1",
         "date": "2026-10-23",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -5723,12 +6337,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.2.2-beta1",
         "date": "2026-10-18",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -5743,12 +6359,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.5.35-beta",
         "date": "2026-11-01",
-        "package": "ok"
+        "package": "ok",
+        "chips": "first"
       }
     },
     {
@@ -5763,12 +6381,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.23-j6",
         "date": "2026-10-13",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -5783,6 +6403,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -5799,12 +6420,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "test-build",
         "date": "2026-11-07",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -5819,12 +6442,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "preset-ab-listen-full-3c66a337",
         "date": "2026-10-26",
-        "package": "none"
+        "package": "none",
+        "chips": null
       }
     },
     {
@@ -5839,6 +6464,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -5855,6 +6481,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -5871,6 +6498,7 @@
       "source": {
         "status": "ok",
         "basis": "fixed-code",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -5887,6 +6515,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -5903,12 +6532,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.2.0-midi1",
         "date": "2026-11-03",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -5923,12 +6554,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-code",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.1.0",
         "date": "2026-11-03",
-        "package": "ok"
+        "package": "ok",
+        "chips": "first"
       }
     },
     {
@@ -5943,6 +6576,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -5959,6 +6593,7 @@
       "source": {
         "status": "ok",
         "basis": "fixed-code",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -5975,12 +6610,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.0.0-rc7",
         "date": "2026-11-02",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -5995,12 +6632,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.5",
         "date": "2026-11-01",
-        "package": "ok"
+        "package": "ok",
+        "chips": "first"
       }
     },
     {
@@ -6015,6 +6654,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -6031,6 +6671,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -6047,6 +6688,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -6063,6 +6705,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -6079,6 +6722,7 @@
       "source": {
         "status": "ok",
         "basis": "fixed-code",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -6095,12 +6739,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.1-beta",
         "date": "2026-10-28",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -6115,6 +6761,7 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": null
@@ -6131,6 +6778,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -6147,12 +6795,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.1.0a",
         "date": "2026-10-30",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -6167,6 +6817,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": null
@@ -6183,6 +6834,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -6199,6 +6851,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -6215,12 +6868,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "RC1",
         "date": "2026-11-06",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -6235,12 +6890,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.1.0",
         "date": "2026-10-23",
-        "package": "ok"
+        "package": "ok",
+        "chips": "first"
       }
     },
     {
@@ -6255,12 +6912,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.3.1",
         "date": "2026-10-19",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -6271,10 +6930,11 @@
       "identity": null,
       "stars": 0,
       "lastCommit": "2026-11-09",
-      "commits": 2,
+      "commits": 5,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -6291,12 +6951,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.4",
         "date": "2026-10-26",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -6311,12 +6973,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v4.1.4",
         "date": "2026-11-03",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -6331,6 +6995,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -6347,12 +7012,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "dev-main",
         "date": "2026-10-28",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -6367,6 +7034,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": null
@@ -6383,12 +7051,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.0.2",
         "date": "2026-11-08",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -6403,12 +7073,14 @@
       "source": {
         "status": "affected",
         "basis": "submodule",
+        "base": "submodule",
         "sizeCheck": false
       },
       "release": {
         "tag": "blackhole-remote-v0.1.0-beta.3",
         "date": "2026-11-04",
-        "package": "ok"
+        "package": "ok",
+        "chips": "first"
       }
     },
     {
@@ -6423,6 +7095,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -6439,12 +7112,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "felucca-bsp",
         "sizeCheck": false
       },
       "release": {
         "tag": "neon-latest",
         "date": "2026-11-09",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -6459,12 +7134,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.2",
         "date": "2026-11-05",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -6479,12 +7156,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.2",
         "date": "2026-11-01",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -6499,6 +7178,7 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "felucca-bsp",
         "sizeCheck": false
       },
       "release": null
@@ -6515,12 +7195,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.0.3",
         "date": "2026-11-08",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -6535,12 +7217,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "1.8",
         "date": "2026-11-05",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -6555,12 +7239,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.5.2",
         "date": "2026-11-08",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -6575,12 +7261,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.3.2-public",
         "date": "2026-10-21",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -6595,12 +7283,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.2-beta",
         "date": "2026-11-03",
-        "package": "ok"
+        "package": "ok",
+        "chips": "first"
       }
     },
     {
@@ -6615,12 +7305,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.0-rc2",
         "date": "2026-11-03",
-        "package": "ok"
+        "package": "ok",
+        "chips": "first"
       }
     },
     {
@@ -6635,6 +7327,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": null
@@ -6651,12 +7344,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "1.7.0",
         "date": "2026-11-07",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -6671,12 +7366,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v.0.5",
         "date": "2026-11-07",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -6691,12 +7388,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
         "tag": "v2.5",
         "date": "2026-10-29",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -6711,12 +7410,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.6.2",
         "date": "2026-10-30",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -6731,6 +7432,7 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "felucca-bsp",
         "sizeCheck": false
       },
       "release": null
@@ -6747,6 +7449,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": null
@@ -6763,12 +7466,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.6",
         "date": "2026-11-06",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -6783,12 +7488,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.3",
         "date": "2026-11-05",
-        "package": "ok"
+        "package": "ok",
+        "chips": "both"
       }
     },
     {
@@ -6803,6 +7510,7 @@
       "source": {
         "status": "unclear",
         "basis": "unknown",
+        "base": null,
         "sizeCheck": null
       },
       "release": null
@@ -6819,12 +7527,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.7",
         "date": "2026-10-28",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -6839,12 +7549,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.9.0",
         "date": "2026-10-24",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -6859,12 +7571,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.6.1",
         "date": "2026-11-08",
-        "package": "affected"
+        "package": "affected",
+        "chips": "none"
       }
     },
     {
@@ -6879,52 +7593,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.10.0",
         "date": "2026-10-30",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "SATIE-1",
-      "repo": "OCKM-STUDIO/SATIE-1",
-      "forkOf": null,
-      "author": "OCKM-STUDIO",
-      "identity": "FM-1_9980100",
-      "stars": 0,
-      "lastCommit": "2026-11-08",
-      "commits": 2,
-      "source": {
-        "status": "affected",
-        "basis": "own-copy",
-        "sizeCheck": false
-      },
-      "release": {
-        "tag": "v0.1.2-beta",
-        "date": "2026-11-08",
-        "package": "affected"
-      }
-    },
-    {
-      "name": "fm1wheel",
-      "repo": "ograndebe/fm1wheel",
-      "forkOf": null,
-      "author": "ograndebe",
-      "identity": null,
-      "stars": 0,
-      "lastCommit": "2026-11-09",
-      "commits": 13,
-      "source": {
-        "status": "ok",
-        "basis": "fixed-base",
-        "sizeCheck": false
-      },
-      "release": {
-        "tag": "v0.2.1",
-        "date": "2026-11-09",
-        "package": "affected"
+        "package": "affected",
+        "chips": "none"
       }
     },
     {
@@ -6939,6 +7615,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -6955,6 +7632,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -6971,6 +7649,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -6987,12 +7666,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "latest",
         "date": "2026-10-30",
-        "package": "ok"
+        "package": "ok",
+        "chips": "first"
       }
     },
     {
@@ -7003,16 +7684,18 @@
       "identity": "FM-1_303",
       "stars": 0,
       "lastCommit": "2026-11-09",
-      "commits": 22,
+      "commits": 23,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.1.1",
         "date": "2026-11-09",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -7027,6 +7710,7 @@
       "source": {
         "status": "affected",
         "basis": "old-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": null
@@ -7043,12 +7727,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "1.0.1",
         "date": "2026-11-09",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -7063,12 +7749,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.2",
         "date": "2026-11-02",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -7083,12 +7771,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.1",
         "date": "2026-11-04",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -7098,17 +7788,19 @@
       "author": "Plieuw",
       "identity": "FM-1_007",
       "stars": 0,
-      "lastCommit": "2026-11-08",
-      "commits": 134,
+      "lastCommit": "2026-11-09",
+      "commits": 165,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": {
-        "tag": "v2.0.5",
-        "date": "2026-11-08",
-        "package": "affected"
+        "tag": "v2.0.8",
+        "date": "2026-11-09",
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -7118,17 +7810,19 @@
       "author": "pssdrnk-cmyk",
       "identity": "FM-1_901",
       "stars": 0,
-      "lastCommit": "2026-11-08",
-      "commits": 849,
+      "lastCommit": "2026-11-09",
+      "commits": 984,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "stable-2026-11-03",
         "date": "2026-11-04",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -7143,12 +7837,36 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.0.0",
         "date": "2026-10-17",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
+      }
+    },
+    {
+      "name": "setBfree-fm1",
+      "repo": "R-Jeb/setBfree-fm1",
+      "forkOf": null,
+      "author": "R-Jeb",
+      "identity": "FM-1_953",
+      "stars": 0,
+      "lastCommit": "2026-11-07",
+      "commits": 47,
+      "source": {
+        "status": "affected",
+        "basis": "own-copy",
+        "base": "own-copy",
+        "sizeCheck": false
+      },
+      "release": {
+        "tag": "v0.2",
+        "date": "2026-11-05",
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -7163,6 +7881,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -7179,6 +7898,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -7195,6 +7915,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": null
@@ -7211,6 +7932,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -7227,12 +7949,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.0.0",
         "date": "2026-10-26",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -7242,17 +7966,19 @@
       "author": "saulofilho",
       "identity": "FM-1_923",
       "stars": 0,
-      "lastCommit": "2026-11-08",
-      "commits": 27,
+      "lastCommit": "2026-11-09",
+      "commits": 29,
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.1.1",
         "date": "2026-11-07",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -7262,17 +7988,19 @@
       "author": "shan-sherif",
       "identity": "FM-1_803",
       "stars": 0,
-      "lastCommit": "2026-11-04",
-      "commits": 7,
+      "lastCommit": "2026-11-09",
+      "commits": 8,
       "source": {
         "status": "ok",
         "basis": "fixed-code",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.3.0",
         "date": "2026-11-04",
-        "package": "other"
+        "package": "other",
+        "chips": "first"
       }
     },
     {
@@ -7287,6 +8015,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -7303,12 +8032,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "release",
         "date": "2026-10-31",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -7323,6 +8054,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -7339,12 +8071,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "1.0.0",
         "date": "2026-11-05",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -7359,12 +8093,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.4.0",
         "date": "2026-11-02",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -7379,12 +8115,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.0",
         "date": "2026-10-30",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -7399,6 +8137,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -7415,12 +8154,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "breakcore-2026-11-07-1",
         "date": "2026-11-07",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -7435,12 +8176,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-code",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "latest",
         "date": "2026-11-03",
-        "package": "ok"
+        "package": "ok",
+        "chips": "first"
       }
     },
     {
@@ -7455,6 +8198,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": null
@@ -7471,12 +8215,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.1",
         "date": "2026-10-25",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -7491,6 +8237,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -7507,12 +8254,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.2.5",
         "date": "2026-11-07",
-        "package": "affected"
+        "package": "affected",
+        "chips": "both"
       }
     },
     {
@@ -7527,6 +8276,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -7543,6 +8293,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -7559,12 +8310,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.3",
         "date": "2026-10-27",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -7579,12 +8332,14 @@
       "source": {
         "status": "affected",
         "basis": "submodule",
+        "base": "submodule",
         "sizeCheck": false
       },
       "release": {
         "tag": "v0.44",
         "date": "2026-10-27",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -7599,6 +8354,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -7615,6 +8371,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": true
       },
       "release": null
@@ -7631,12 +8388,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v4.0-host",
         "date": "2026-11-02",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     },
     {
@@ -7651,12 +8410,14 @@
       "source": {
         "status": "ok",
         "basis": "fixed-base",
+        "base": "fm1-base",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.2",
         "date": "2026-11-01",
-        "package": "ok"
+        "package": "ok",
+        "chips": "first"
       }
     },
     {
@@ -7671,6 +8432,7 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": null
@@ -7687,12 +8449,14 @@
       "source": {
         "status": "affected",
         "basis": "own-copy",
+        "base": "own-copy",
         "sizeCheck": false
       },
       "release": {
         "tag": "v1.1.1",
         "date": "2026-11-03",
-        "package": "affected"
+        "package": "affected",
+        "chips": "first"
       }
     }
   ],
@@ -8190,6 +8954,12 @@
       "basis": "modified"
     },
     {
+      "repo": "AVIGDOR-BERMAN/sloop-fm1-Hebrew",
+      "parent": "isod89/sloop-fm1",
+      "status": "affected",
+      "basis": "modified"
+    },
+    {
       "repo": "Cosmo-K-444/lowtide-fm1",
       "parent": "isod89/sloop-fm1",
       "status": "affected",
@@ -8334,6 +9104,12 @@
       "basis": "Felucca 1.0-1.4"
     },
     {
+      "repo": "holyymelon/fm1-dock",
+      "parent": "joakimeriksson/fm1-dock",
+      "status": "affected",
+      "basis": "modified"
+    },
+    {
       "repo": "ant25fr/JIANT",
       "parent": "juanjiant-bit/JIANT",
       "status": "affected",
@@ -8466,6 +9242,12 @@
       "basis": "modified"
     },
     {
+      "repo": "MaazBzh/Tekno-FM1-",
+      "parent": "zvenson/dinghy",
+      "status": "affected",
+      "basis": "modified"
+    },
+    {
       "repo": "MammothCheese/dinghy",
       "parent": "zvenson/dinghy",
       "status": "affected",
@@ -8484,6 +9266,12 @@
       "basis": "modified"
     },
     {
+      "repo": "R-Jeb/rdpno-fm1",
+      "parent": "zvenson/dinghy",
+      "status": "affected",
+      "basis": "modified"
+    },
+    {
       "repo": "Tobe313/Kayak",
       "parent": "zvenson/dinghy",
       "status": "affected",
@@ -8497,6 +9285,12 @@
     },
     {
       "repo": "HeyMoustache/obervave-multi",
+      "parent": "zvenson/obervave",
+      "status": "affected",
+      "basis": "modified"
+    },
+    {
+      "repo": "lionel-lints/obervave",
       "parent": "zvenson/obervave",
       "status": "affected",
       "basis": "modified"
