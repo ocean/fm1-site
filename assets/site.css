@@ -99,6 +99,23 @@ h1 {
   color: var(--muted);
 }
 
+.narrow-break {
+  display: none;
+}
+
+/* On narrow screens the themes' icons sit in the top right corner. The heading starts lower so the
+   lede's first line, which runs under the icons, stays clear of them, and the lede breaks after
+   "FM-1," in every theme. */
+@media (width <= 46rem) {
+  main {
+    padding-top: clamp(4.5rem, 14vh, 9rem);
+  }
+
+  .narrow-break {
+    display: inline;
+  }
+}
+
 /* The project list. */
 .projects {
   list-style: none;
@@ -148,6 +165,23 @@ h1 {
   font-size: 0.95rem;
 }
 
+/* The links under "Also on this site", in the same muted type as their heading. */
+.also-list {
+  margin: 0.4rem 0 0;
+  padding-left: 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.also-list li {
+  margin-bottom: 0.4rem;
+  padding-left: 0.2rem;
+}
+
+.also-list li::marker {
+  color: var(--rule);
+}
+
 /* Project pages. */
 .back {
   display: inline-block;
@@ -190,6 +224,17 @@ footer .sep {
 
 footer .licence {
   font-size: 0.75rem;
+}
+
+/* On narrow screens the byline gets its own line, and the links wrap below it. */
+@media (width <= 30rem) {
+  footer .byline {
+    display: block;
+  }
+
+  footer .sep--byline {
+    display: none;
+  }
 }
 
 .nowrap {
