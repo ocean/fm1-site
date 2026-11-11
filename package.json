@@ -15,6 +15,7 @@
     "check": "node scripts/check-site.mjs",
     "test": "node --test \"scripts/bootloader-check/*.test.mjs\" && node scripts/validate-bootloader-check.mjs",
     "ci": "npm run lint && npm run test && npm run build && npm run check",
+    "dev": "node scripts/dev.mjs",
     "preview": "npm run build && python3 -m http.server --directory dist 8788",
     "update:estampie": "node scripts/update-estampie.mjs",
     "update:fm1kit": "node scripts/update-fm1kit.mjs",
