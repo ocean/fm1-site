@@ -2,6 +2,7 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import {
+  baseOf,
   blobId,
   candidateFiles,
   classifyText,
@@ -187,4 +188,14 @@ describe("createSourceClassifier", () => {
     const github = fakeGitHub({ trees: {}, files: {} });
     await assert.rejects(createSourceClassifier(github).classify("a/fw", "c1"));
   });
+});
+
+describe("baseOf", () => {
+  it("names fm1-base before the felucca-bsp it pins", () => {
+    assert.equal(baseOf(["charlesvestal/fm1-base", "hugelton/felucca-bsp"]), "fm1-base");
+  });
+
+  it("names felucca-bsp on its own", () => assert.equal(baseOf(["hugelton/felucca-bsp"]), "felucca-bsp"));
+
+  it("calls any other firmware's code a submodule", () => assert.equal(baseOf(["charlesvestal/fm1-x0x"]), "submodule"));
 });

@@ -5,10 +5,14 @@ import {
   appAreaTable,
   appBin,
   classifyPackage,
+  combineFlashChips,
   combinePackageStatuses,
   crc16,
+  firstFlashChip,
+  flashChipSupport,
   fm1ChipKey,
   jieliCipher,
+  newerFlashChip,
   parseFwsc,
   productOf,
   stripMarkers,
@@ -174,5 +178,40 @@ describe("combinePackageStatuses", () => {
     assert.equal(combinePackageStatuses(["ok", "affected"]), "affected");
     assert.equal(combinePackageStatuses(["other", "ok"]), "ok");
     assert.equal(combinePackageStatuses(["other"]), "other");
+  });
+});
+
+describe("flashChipSupport", () => {
+  const id = (value) => {
+    const bytes = Buffer.alloc(4);
+    bytes.writeUInt32LE(value);
+    return bytes.toString("latin1");
+  };
+
+  it("finds the chips the code names, as 32-bit constants", () => {
+    assert.equal(flashChipSupport(code("..", id(firstFlashChip), "..")), "first");
+    assert.equal(flashChipSupport(code(id(firstFlashChip), "..", id(newerFlashChip))), "both");
+    assert.equal(flashChipSupport(code(id(newerFlashChip))), "both");
+    assert.equal(flashChipSupport(code("FELUCCA-LOADER-1")), "none");
+  });
+
+  it("doesn't take the ID's bytes in the wrong order", () => {
+    assert.equal(flashChipSupport(code("\x00\x85\x60\x14")), "none");
+  });
+
+  it("is given with the package's status, or null without firmware code", () => {
+    const first = classifyPackage(makePackage({ flash: makeFlash(code("FELUCCA-LOADER-1", id(firstFlashChip))) }));
+    assert.deepEqual([first.status, first.chips], ["affected", "first"]);
+    assert.equal(classifyPackage(makePackage({ flash: null })).chips, null);
+  });
+});
+
+describe("combineFlashChips", () => {
+  it("takes the fewest chips a release's packages know", () => {
+    assert.equal(combineFlashChips([]), null);
+    assert.equal(combineFlashChips([null]), null);
+    assert.equal(combineFlashChips(["both", "first"]), "first");
+    assert.equal(combineFlashChips(["both", null]), "both");
+    assert.equal(combineFlashChips(["none", "both"]), "none");
   });
 });

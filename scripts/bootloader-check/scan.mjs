@@ -3,8 +3,8 @@
 //
 // Each firmware is classified two ways:
 // - source: what its default branch's update code does now (see source.mjs);
-// - release.package: what its latest release's .fwsc does, which is what people install (see
-//   fwsc.mjs).
+// - release.package: what its latest release's .fwsc does, which is what people install, and
+//   release.chips, the flash chips that release knows (see fwsc.mjs).
 // It also looks at modified forks of Felucca and of the popular firmwares.
 //
 // What it can't find out this run is carried forward from the previous data: a repository GitHub
@@ -31,7 +31,7 @@ import {
   pushedSinceForked,
   searchRepos,
 } from "./discover.mjs";
-import { classifyPackage, combinePackageStatuses } from "./fwsc.mjs";
+import { classifyPackage, combineFlashChips, combinePackageStatuses } from "./fwsc.mjs";
 import { createGitHub, mapLimit } from "./github.mjs";
 import { blobId, classifyText, createSourceClassifier } from "./source.mjs";
 import { filesInZip } from "./zip.mjs";
@@ -237,7 +237,7 @@ await mapLimit(toScan, 4, async (candidate) => {
   const commit = meta.defaultBranchRef?.target?.oid;
   let source = null;
   if (!commit) {
-    source = { status: "unclear", basis: "unknown", sizeCheck: null, kind: null, detail: "empty repository" };
+    source = { status: "unclear", basis: "unknown", base: null, sizeCheck: null, kind: null, detail: "empty repository" };
   } else {
     try {
       source = await sources.classify(meta.nameWithOwner, commit);
@@ -312,7 +312,7 @@ async function packageStatus(repo, release) {
   const readable = own.filter((result) => result.status);
   // Packages there but none readable: not checked, rather than none.
   const status = own.length > 0 && readable.length === 0 ? null : combinePackageStatuses(readable.map((result) => result.status));
-  return { status, results };
+  return { status, chips: combineFlashChips(readable.map((result) => result.chips)), results };
 }
 
 if (!options["skip-packages"]) log("Packages");
@@ -320,15 +320,22 @@ await mapLimit([...scanned.entries()], 3, async ([repoKey, entry]) => {
   if (!entry.meta) return;
   const release = latestRelease(entry.meta);
   entry.release = release
-    ? { tag: release.tagName, date: day(release.publishedAt ?? release.createdAt), package: null }
+    ? { tag: release.tagName, date: day(release.publishedAt ?? release.createdAt), package: null, chips: null }
     : null;
   if (!release || options["skip-packages"]) return;
   // Only firmwares worth listing: ones already listed or with update code.
   if (candidates.get(repoKey).from !== "previous" && !entry.source?.kind) return;
   try {
-    const { status, results } = await packageStatus(entry.meta.nameWithOwner, release);
+    const { status, chips, results } = await packageStatus(entry.meta.nameWithOwner, release);
     entry.release.package = status;
-    entry.packages = results.map(({ name, status: result, reason, product }) => ({ name, status: result, reason, product }));
+    entry.release.chips = chips;
+    entry.packages = results.map(({ name, status: result, reason, product, chips: known }) => ({
+      name,
+      status: result,
+      reason,
+      product,
+      chips: known ?? null,
+    }));
   } catch (error) {
     note(entry.meta.nameWithOwner, "package", error);
     entry.packageFailed = true;
@@ -377,7 +384,7 @@ for (const candidate of candidates.values()) {
   let release = entry.release;
   if (release && release.package === null && before?.release?.tag === release.tag) {
     // Not checked this run (skipped or failed): keep what was found for the same release.
-    release = { ...release, package: before.release.package ?? null };
+    release = { ...release, package: before.release.package ?? null, chips: before.release.chips ?? null };
   }
   // The identity users install is in the release package's header: take it when the packages agree.
   const products = new Set((entry.packages ?? []).filter((result) => result.status && result.product).map((result) => result.product));
@@ -394,7 +401,9 @@ for (const candidate of candidates.values()) {
     stars: meta.stargazerCount,
     lastCommit: day(meta.defaultBranchRef?.target?.committedDate) ?? before?.lastCommit ?? null,
     commits: entry.commits ?? before?.commits ?? null,
-    source: source ? { status: source.status, basis, sizeCheck: source.sizeCheck ?? null } : before.source,
+    source: source
+      ? { status: source.status, basis, base: source.base ?? null, sizeCheck: source.sizeCheck ?? null }
+      : before.source,
     release,
   });
   details[repo] ??= {
@@ -521,6 +530,7 @@ const summary = {
   firmwares: firmwares.length,
   sources: count(firmwares, (entry) => `${entry.source.status}/${entry.source.basis}`),
   packages: count(firmwares, (entry) => (entry.release ? String(entry.release.package) : "no release")),
+  flashChips: count(firmwares, (entry) => (entry.release ? String(entry.release.chips ?? null) : "no release")),
   sourceChanges,
   added: added.map((entry) => `${entry.repo} (${details[entry.repo]?.from}: ${entry.source.status}/${entry.source.basis})`),
   notAdded,

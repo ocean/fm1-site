@@ -8,11 +8,15 @@
 //     or null), stars, lastCommit (YYYY-MM-DD, or null), commits (its default branch's commits, or
 //     for a fork, the ones its parent doesn't have; null when not known);
 //   - source: what its default branch does now: status ("affected", "ok" or "unclear"), basis,
-//     one of the bases below, and sizeCheck: whether its update code has Felucca 1.6.1's
-//     board-size check (-15), or null when there's no update code to look at (or not checked yet);
+//     one of the bases below, base, what its update code is built on ("fm1-base", "felucca-bsp",
+//     "own-copy" for code in the repository itself, "submodule" for another firmware's, or null
+//     when not known), and sizeCheck: whether its update code has Felucca 1.6.1's board-size check
+//     (-15), or null when there's no update code to look at (or not checked yet);
 //   - release: its latest release, or null: tag, date (YYYY-MM-DD, or null), and package, what its
 //     .fwsc does ("affected", "ok", "other" for not Felucca's update code, "none" for no .fwsc,
-//     "unclear", which only an override sets, or null when it hasn't been checked).
+//     "unclear", which only an override sets, or null when it hasn't been checked), and chips, the
+//     flash chips its firmware code checks for ("both", "first" for the first FM-1s' alone,
+//     "none" for no check, or null when there's no firmware code or it hasn't been checked).
 // - forks: modified forks, each with repo, parent, status ("affected" or "no-update-code") and
 //   basis (which Felucca its update code comes from, or null).
 //
@@ -36,6 +40,8 @@ export const bases = {
   unknown: "Update code not found",
 };
 const packages = ["affected", "ok", "other", "none", "unclear", null];
+export const builtOn = ["fm1-base", "felucca-bsp", "own-copy", "submodule", null];
+export const flashChips = ["both", "first", "none", null];
 const forkStatuses = ["affected", "no-update-code"];
 const repoPattern = /^[\w.-]+\/[\w.-]+$/;
 const datePattern = /^\d{4}-\d{2}-\d{2}$/;
@@ -45,6 +51,8 @@ const isDate = (value) => value === null || (typeof value === "string" && datePa
 function checkSource(source, check) {
   check(source && statuses.includes(source.status), "source.status isn't affected, ok or unclear");
   check(source && Object.hasOwn(bases, source.basis), "source.basis is unknown");
+  // Data from before the scan read it has no base.
+  check(source?.base === undefined || builtOn.includes(source.base), "source.base is unknown");
   check(source?.sizeCheck == null || typeof source.sizeCheck === "boolean", "source.sizeCheck isn't true, false or null");
 }
 
@@ -53,6 +61,8 @@ function checkRelease(release, check) {
   check(typeof release.tag === "string" && release.tag.length > 0, "release has no tag");
   check(isDate(release.date), "release.date isn't YYYY-MM-DD or null");
   check(packages.includes(release.package), "release.package is unknown");
+  // Data from before the flash chips were read has no chips.
+  check(release.chips === undefined || flashChips.includes(release.chips), "release.chips is unknown");
 }
 
 export function validateBootloaderCheck(dataText, overridesText) {
