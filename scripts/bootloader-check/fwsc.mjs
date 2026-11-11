@@ -1,5 +1,5 @@
 // Reads an FM-1 firmware package (.fwsc) and says whether the firmware in it has Felucca's update
-// code with the old bootloader check, the fixed check, or neither.
+// code with the old bootloader check, the fixed check, or neither, and which flash chips it knows.
 //
 // A package is untrusted data: this only parses it, and never runs anything in it.
 //
@@ -40,6 +40,10 @@ export const fm1ChipKey = 0x980f;
 export const feluccaLoaderMarker = Buffer.from("FELUCCA-LOADER-1");
 // The text the fixed update code (ota_boot_valid) looks for in an m-bootloader container.
 export const bootloaderCheckMarker = Buffer.from("AC79BLID");
+// The JEDEC IDs of the FM-1's flash chips: the first units' Puya P25Q80, and the UC25HQ80 of those
+// sold since autumn 2026.
+export const firstFlashChip = 0x856014;
+export const newerFlashChip = 0xb36014;
 // The SHA-256 of V15's flash.bin (0x93000 bytes). A firmware that accepts only the exact V15
 // image (and so puts M-VAVE's bootloader back), as SikkenWorks' B1, BEETLE and ETCH do, carries it.
 export const v15FlashDigest = Buffer.from("c1068a403c04a6378a626afb66cc217f72d13f10aa200e983b7a9817cc1dac03", "hex");
@@ -173,20 +177,40 @@ export function appBin(flash, chipKey = fm1ChipKey) {
   return appAreaBytes(flash, record.address, record.length, chipKey);
 }
 
+// A 32-bit constant as code stores it, least significant byte first.
+const constant = (value) => {
+  const bytes = Buffer.alloc(4);
+  bytes.writeUInt32LE(value);
+  return bytes;
+};
+
+// Which flash chips a firmware's code checks for, as FM1Kit's FwscPackage.flashChipSupport reads
+// it: "both" when it names the newer chip (every firmware that does names the first too), "first"
+// when it names only the first FM-1s' (on the newer chip, such a firmware usually keeps saves only
+// until it's switched off, and often can't install another firmware), or "none" when it names
+// neither, so doesn't check and should save on both.
+export function flashChipSupport(code) {
+  if (code.includes(constant(newerFlashChip))) return "both";
+  return code.includes(constant(firstFlashChip)) ? "first" : "none";
+}
+
 // Says what a package's firmware does when asked to install V15 on an FM-1 whose bootloader has
 // changed: "affected" (Felucca's update code with the old check), "ok" (with the fix, or pinning
-// V15's image) or "other" (not Felucca's update code, an installer, or not an FM-1 package).
-// Throws for a damaged file.
+// V15's image) or "other" (not Felucca's update code, an installer, or not an FM-1 package), with
+// its flash chips (see flashChipSupport; null when there's no firmware code to read). Throws for a
+// damaged file.
 //
 // It can't see a firmware that installs every package with its own loader (TransitFM1): that
 // takes an override.
 export function classifyPackage(file) {
   const fwsc = parseFwsc(file);
-  const result = (status, reason) => ({ status, reason, product: fwsc.product });
+  let chips = null;
+  const result = (status, reason) => ({ status, reason, product: fwsc.product, chips });
   if (fwsc.chip !== "AC791N") return result("other", `for the ${fwsc.chip || "unknown"} chip`);
   if (!fwsc.flash) return result("other", "no firmware image (an installer)");
   const code = appBin(fwsc.flash);
   if (!code) return result("other", "no app.bin in the firmware image");
+  chips = flashChipSupport(code);
   const felucca = code.includes(feluccaLoaderMarker);
   const fixed = code.includes(bootloaderCheckMarker);
   if (felucca && !fixed && code.includes(v15FlashDigest)) {
@@ -204,4 +228,15 @@ export function combinePackageStatuses(statuses) {
     if (statuses.includes(status)) return status;
   }
   return "other";
+}
+
+// The flash chips of a release with several packages: the fewest any of them knows, or null when
+// none could be read.
+export function combineFlashChips(chips) {
+  const known = chips.filter(Boolean);
+  if (known.length === 0) return null;
+  for (const support of ["first", "none"]) {
+    if (known.includes(support)) return support;
+  }
+  return "both";
 }

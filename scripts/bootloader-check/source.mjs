@@ -20,6 +20,15 @@ const maximumSubmoduleDepth = 3;
 // Submodules that are the platform's base (fm1-base and felucca-bsp), rather than a whole firmware.
 const basePlatform = /(^|\/)(felucca-bsp|fm1-base)$/i;
 
+// What a firmware's update code is built on, from the submodules it came through: "fm1-base"
+// (which pins its own felucca-bsp), "felucca-bsp", or "submodule" for another firmware's code.
+export function baseOf(via) {
+  for (const base of ["fm1-base", "felucca-bsp"]) {
+    if (via.some((repo) => new RegExp(`(^|/)${base}$`, "i").test(repo))) return base;
+  }
+  return "submodule";
+}
+
 // Git's blob ID for a file's contents, as in a tree listing.
 export function blobId(data) {
   return createHash("sha1").update(`blob ${data.length}\0`).update(data).digest("hex");
@@ -164,9 +173,10 @@ export function createSourceClassifier(github) {
     return submoduleCache.get(key);
   }
 
-  // Classifies a repository at a commit. Returns { status, basis, sizeCheck, path, blob, kind,
-  // detail, note } in the data's terms, sizeCheck being null without update code; throws when
-  // GitHub couldn't be asked (so the caller keeps what it had).
+  // Classifies a repository at a commit. Returns { status, basis, base, sizeCheck, path, blob, kind,
+  // detail, note } in the data's terms, base being "own-copy", baseOf's, or null and sizeCheck
+  // being null without update code; throws when GitHub couldn't be asked (so the caller keeps what
+  // it had).
   async function classify(repo, commit) {
     const tree = await treeOf(repo, commit);
     if (!tree) throw new Error(`no tree for ${repo}@${commit}`);
@@ -181,7 +191,8 @@ export function createSourceClassifier(github) {
       };
       const [status, basis] = byKind[own.kind];
       const sizeCheck = hasSizeCheck(own.text);
-      return { status, basis, sizeCheck, path: own.path, blob: own.blob, kind: own.kind, text: own.text, detail: own.path, note };
+      const base = own.kind === "update-code" ? null : "own-copy";
+      return { status, basis, base, sizeCheck, path: own.path, blob: own.blob, kind: own.kind, text: own.text, detail: own.path, note };
     }
 
     const modules = await submodulesOf(repo, commit, tree.entries);
@@ -202,9 +213,9 @@ export function createSourceClassifier(github) {
         "update-code": ["unclear", "unknown"],
       };
       const [status, basis] = byKind[result.kind];
-      return { status, basis, sizeCheck: result.sizeCheck, path: null, blob: null, kind: result.kind, detail, note };
+      return { status, basis, base: baseOf(result.via), sizeCheck: result.sizeCheck, path: null, blob: null, kind: result.kind, detail, note };
     }
-    return { status: "unclear", basis: "unknown", sizeCheck: null, path: null, blob: null, kind: null, detail: null, note };
+    return { status: "unclear", basis: "unknown", base: null, sizeCheck: null, path: null, blob: null, kind: null, detail: null, note };
   }
 
   return { classify, treeOf };

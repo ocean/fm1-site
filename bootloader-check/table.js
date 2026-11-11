@@ -1,7 +1,7 @@
 /*
- * The bootloader check's list: search, status, stars and activity filters and sorting over the rows
- * the build rendered, and the agent prompt's copy button. Without JavaScript, the whole list (most
- * starred first) and the prompt still show.
+ * The bootloader check's list: search, status, base, flash chip, stars and activity filters and
+ * sorting over the rows the build rendered, and the agent prompt's copy button. Without JavaScript,
+ * the whole list (most starred first) and the prompt still show.
  */
 (() => {
   const controls = document.querySelector(".controls");
@@ -10,6 +10,8 @@
   const sort = document.getElementById("sort");
   const stars = document.getElementById("stars");
   const activity = document.getElementById("activity");
+  const chips = document.getElementById("chips");
+  const base = document.getElementById("base");
   const body = document.getElementById("firmwares");
   const rows = [...body.querySelectorAll("tr")];
   const filters = [...document.querySelectorAll("[data-filter]")];
@@ -43,6 +45,8 @@
       const visible =
         (filter === "all" || row.dataset.status === filter) &&
         (!query || row.dataset.search.includes(query)) &&
+        (chips.value === "any" || row.dataset.chips === chips.value) &&
+        (base.value === "any" || row.dataset.base === base.value) &&
         Number(row.dataset.stars) >= minimumStars &&
         isActive(row);
       row.hidden = !visible;
@@ -68,6 +72,8 @@
   search.addEventListener("input", update);
   stars.addEventListener("change", update);
   activity.addEventListener("change", update);
+  chips.addEventListener("change", update);
+  base.addEventListener("change", update);
   sort.addEventListener("change", reorder);
   controls.hidden = false;
   update();

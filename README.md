@@ -72,7 +72,8 @@ npm run lint      # ESLint, Stylelint and html-validate
 npm run build     # copies the public files into dist/
 npm run check     # accessibility, contrast, links and console errors, in a real browser
 npm run ci        # all three, as CI runs them
-npm run preview   # build, then serve dist/ at http://localhost:8788
+npm run dev       # build, serve dist/ at http://localhost:8788, rebuild and reload on every change
+npm run preview   # build once, then serve dist/ at http://localhost:8788
 ```
 
 `npm run check` loads every page in headless Chromium: the index plain and in each project's theme, at

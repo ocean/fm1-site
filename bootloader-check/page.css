@@ -494,7 +494,7 @@ button {
 
 table {
   width: 100%;
-  min-width: 56rem;
+  min-width: 76rem;
   border-collapse: collapse;
   font-size: 0.875rem;
   line-height: 1.45;
@@ -628,6 +628,25 @@ tbody th a:hover {
 
 .forks table {
   min-width: 36rem;
+}
+
+/* The list scrolls sideways on narrower screens, keeping each firmware's name in view. */
+.firmwares tbody th,
+.firmwares thead th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  min-width: 11rem;
+  background: var(--bg);
+}
+
+.firmwares thead th:first-child {
+  z-index: 2;
+  background: var(--surface);
+}
+
+.firmwares .fix {
+  min-width: 16rem;
 }
 
 .fine {

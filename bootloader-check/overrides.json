@@ -31,7 +31,8 @@
     "keremimo/saadet": {
       "source": {
         "status": "ok",
-        "basis": "fixed-base"
+        "basis": "fixed-base",
+        "base": "fm1-base"
       },
       "reason": "Builds from fm1-base with felucca-bsp 0f08fca, which has the fix (tools/build_base.py); its firmware/src/ota.c is a leftover legacy copy."
     }
