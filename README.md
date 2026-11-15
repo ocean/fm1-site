@@ -1,18 +1,23 @@
 # fm-1.drewr.dev
 
-The site for Drew's M-VAVE FM-1 projects: a plain static site with no build step.
+The site for Drew's M-VAVE FM-1 projects: a static site that `scripts/build.mjs` copies into `dist/` for GitHub Pages.
 
 ```
 index.html               the index: links to each project
 llms.txt, llms-full.txt  what all this is, for language models (each project folder has its own llms-full.txt)
 assets/site.css          shared styles (swap the typeface with the --font variable)
-assets/flair.css, .js    the index's hover themes: FM-SWITCH's 8-bit screen, ESTAMPIE's manuscript
+assets/flair.css, .js    the index's hover themes, one in each project's look
 assets/fonts.css         the projects' typefaces: Silkscreen, Departure Mono, VT323, IM Fell
 assets/fonts/            the font files, all SIL OFL 1.1 (licences alongside)
 assets/fm-switch-icon.svg  FM-SWITCH's 32 x 32 app icon, from the pixel map in FM-SWITCH's scripts/make-icon.py
-fm-switch/               FM-SWITCH, the iOS and macOS app (../FM-SWITCH), in the app's 8-bit look
+fm-switch/               FM-SWITCH, the iOS and macOS app (../FM-SWITCH); fm-switch/retro/ is the 8-bit look
 fm1kit/                  FM1Kit, the Swift package under it (../FM1Kit), in the manner of Apple's docs
-estampie/                ESTAMPIE, the firmware (../estampie)
+estampie/                ESTAMPIE, the firmware (../estampie): a placeholder the build replaces
+bootloader-check/        the bootloader check, for firmware developers (data.json from the weekly scan)
+fm1-moment/              The FM-1 Moment, a history of the custom-firmware boom
+privacy/                 FM-SWITCH's privacy policy
+scripts/                 the build, checks, scanners and update scripts
+*.json                   pinned releases (estampie.json, fm1kit.json) and FM-SWITCH's firmwares.json
 ```
 
 Pointing at a project on the index switches the whole page into that project's look (CSS with
@@ -21,7 +26,7 @@ Only fonts, colours and things that don't change the list's size are swapped, so
 moves out from under the pointer.
 
 On touch screens, pressing a project previews its look for as long as the finger stays down, and a tap
-plays it for about half a second before opening the page, like a transition into it. A press that turns
+plays it for about half a second before opening the page. A press that turns
 into a scroll cancels the preview.
 
 ## Files the projects publish here
@@ -29,7 +34,7 @@ into a scroll cancels the preview.
 Two projects publish their own files into this site, each pinned to a release and checked by SHA-256.
 While nothing is pinned, this repository's placeholder files are used.
 
-- **ESTAMPIE's site** (its front page, browser emulator, installer, sound editor, guide, firmware and llms
+- ESTAMPIE's site (its front page, browser emulator, installer, sound editor, guide, firmware and llms
   files) is built and released from the [estampie repository](https://github.com/ocean/estampie): each
   release attaches the whole site as `estampie-site-X.Y.zip`. `estampie.json` pins one:
   `{ "version", "url", "sha256" }`. The build downloads the zip, checks it and unpacks it into
@@ -39,7 +44,7 @@ While nothing is pinned, this repository's placeholder files are used.
   shared workflow (`zvenson/fm1-build`) listed in `trustedSignerDigests` in `scripts/update-estampie.mjs`.
   That workflow lives in a repository this site doesn't control, so when it releases a new version,
   review it and add its digest there; until then, releases built with it aren't pinned.
-- **FM1Kit's `llms.txt` and `llms-full.txt`** are kept by the [FM1Kit repository](https://github.com/ocean/FM1Kit)
+- FM1Kit's `llms.txt` and `llms-full.txt` are kept by the [FM1Kit repository](https://github.com/ocean/FM1Kit)
   alongside its README and DocC. `fm1kit.json` pins a release tag and each file's SHA-256:
   `{ "tag", "files": { "llms.txt": "...", "llms-full.txt": "..." } }`. The build fetches them from that
   tag (never `main`, which can describe unreleased features) into `dist/fm1kit/`.

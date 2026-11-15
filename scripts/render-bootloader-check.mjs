@@ -170,8 +170,8 @@ export function renderBootloaderCheck(data, overrides) {
   if (chipsRead.length > 0) {
     tallies.push(tally(olderChipOnly, `of ${chipsRead.length} latest releases read only know the older flash chip, so lose saves on newer FM-1s`, "affected"));
   }
-  tallies.push(tally(forksAffected, `of ${shown.forks.length} modified forks have it too`, "affected"));
-  if (count("unclear") > 0) tallies.push(tally(count("unclear"), "use a different check, untested", "unclear"));
+  tallies.push(tally(forksAffected, `of ${shown.forks.length} modified forks have the original check too`, "affected"));
+  if (count("unclear") > 0) tallies.push(tally(count("unclear"), "use a different check that hasn't been tested", "unclear"));
 
   const checked =
     shown.method === "survey"

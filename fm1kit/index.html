@@ -88,7 +88,7 @@
 print(plan.notes, plan.warnings, plan.sectors.count)  <span class="c">// show it, then ask to confirm</span>
 <span class="k">try</span> session.write(plan) { print(<span class="s">"</span>\(<span class="t">Int</span>($0 * <span class="n">100</span>))<span class="s">%"</span>) }
 session.close()  <span class="c">// switch the FM-1 off and on to leave</span></code></pre>
-    <p>A <code>FlashPlan</code> restores a backup, installs m-bootloader or M-VAVE's bootloader, or installs a firmware, changing only the 4 KB sectors that differ. Writing works from the top of the flash down, so a firmware's start-up code is the last thing replaced, and checks the flash is still what was read, then checks every change against the chip's CRC-32. Another FM-1's backup never replaces this one's factory data, and nothing is written to flash from another model. If writing stops part-way, don't switch the FM-1 off: restore the backup.</p>
+    <p>A <code>FlashPlan</code> restores a backup, installs m-bootloader or M-VAVE's bootloader, or installs a firmware, changing only the 4 KB sectors that differ. Writing works from the top of the flash down, so a firmware's start-up code is replaced last. It checks the flash is still what was read, then checks every change against the chip's CRC-32. Another FM-1's backup never replaces this one's factory data, and nothing is written to flash from another model. If writing stops part-way, don't switch the FM-1 off: restore the backup.</p>
 
     <h2>Topics</h2>
 

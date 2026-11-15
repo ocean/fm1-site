@@ -17,7 +17,7 @@
       <p class="eyebrow">A working history &middot; as of 1 November 2026</p>
       <h1>The FM-1 Moment</h1>
       <p class="lede">In five weeks of 2026, a US$75 pocket FM synth went from one hacked firmware to about two hundred community firmwares, and its maker answered by publishing open firmware of its own.</p>
-      <p>This page sets out what happened and when, with a source for each fact, for anyone who wants to study it later. It's a working draft: dates marked <abbr title="circa">c.</abbr> are inferred, and the open questions are listed at the end. Corrections are welcome as <a href="https://github.com/ocean/fm1-site/issues">issues on GitHub</a>.</p>
+      <p>This page sets out what happened and when, with a source for each fact. It's a working draft: dates marked <abbr title="circa">c.</abbr> are inferred, and the open questions are listed at the end. Corrections are welcome as <a href="https://github.com/ocean/fm1-site/issues">issues on GitHub</a>.</p>
     </header>
 
     <ul class="facts" aria-label="Key dates">
@@ -43,18 +43,18 @@
 
     <section class="prose" aria-labelledby="device">
       <h2 id="device"><span class="num">1</span> The device: a DX7 in a pocket</h2>
-      <p>The M-VAVE FM-1 arrived in mid-2026 as a budget six-operator FM synth, not a hacker's platform. <a href="https://synthanatomy.com/2026/10/m-vave-fm-1-a-budget-friendly-dx-7-style-desktop-fm-polysynth.html">Synth Anatomy's first coverage</a> is dated 14 June; <a href="https://sonicstate.com/news/2026/07/10/m-vave-fm-1-reviews-/">Sonicstate</a> rounded up reviews on 10 July and <a href="https://www.synthtopia.com/content/2026/07/13/m-vave-introduces-fm-1-fm-pocket-synthesizer/">Synthtopia</a> announced it on 13 July, at around US$75&ndash;100.</p>
+      <p>The M-VAVE FM-1 arrived in mid-2026 as a budget six-operator FM synth. <a href="https://synthanatomy.com/2026/10/m-vave-fm-1-a-budget-friendly-dx-7-style-desktop-fm-polysynth.html">Synth Anatomy's first coverage</a> is dated 14 June; <a href="https://sonicstate.com/news/2026/07/10/m-vave-fm-1-reviews-/">Sonicstate</a> rounded up reviews on 10 July and <a href="https://www.synthtopia.com/content/2026/07/13/m-vave-introduces-fm-1-fm-pocket-synthesizer/">Synthtopia</a> announced it on 13 July, at around US$75&ndash;100.</p>
       <ul>
-        <li><b>Sound:</b> six-operator FM, 32 algorithms and 12 voices, in a DX7-style engine derived from Dexed.</li>
-        <li><b>Hardware:</b> 27 silicone keys, seven knobs and a volume control, a colour screen, a 2000 mAh battery, a speaker, USB-C, TRS MIDI in and Bluetooth MIDI.</li>
-        <li><b>Inside:</b> a JieLi AC791N system-on-chip with two pi32v2 cores, documented by the reverse-engineering project <a href="https://zeli.app/story/49994065">AL-255/FM-1-RE</a>. M-VAVE's SMK-37 Pro keyboard uses the same chip, which is why so many FM-1 firmwares were later ported to it.</li>
-        <li><b>Stock firmware:</b> V14 at launch, then V15 on 30 July. V15 was published as a separate <code>FM-1.fwsc</code> file rather than inside the Windows updater, which gave the community a clean sample of the update package (<a href="https://github.com/aroum/fm1-custom-fw/issues/1">aroum, issue 1</a>).</li>
+        <li>Six-operator FM, 32 algorithms and 12 voices, in a DX7-style engine derived from Dexed.</li>
+        <li>27 silicone keys, seven knobs and a volume control, a colour screen, a 2000 mAh battery, a speaker, USB-C, TRS MIDI in and Bluetooth MIDI.</li>
+        <li>A JieLi AC791N system-on-chip with two pi32v2 cores, documented by the reverse-engineering project <a href="https://zeli.app/story/49994065">AL-255/FM-1-RE</a>. M-VAVE's SMK-37 Pro keyboard uses the same chip, which is why so many FM-1 firmwares were later ported to it.</li>
+        <li>Stock firmware V14 at launch, then V15 on 30 July. V15 was published as a separate <code>FM-1.fwsc</code> file rather than inside the Windows updater, which gave the community a clean sample of the update package (<a href="https://github.com/aroum/fm1-custom-fw/issues/1">aroum, issue 1</a>).</li>
       </ul>
     </section>
 
     <section class="prose" aria-labelledby="opening">
       <h2 id="opening"><span class="num">2</span> Cracking it open</h2>
-      <p>The groundwork was laid in July. Between 18 and 21 July the FM-1-RE project disassembled the firmware, mapped its functions, decoded M-VAVE's update protocol and installed a demo firmware of its own. Reverse engineering was also under way in Reddit's r/synthdiy at the time (<a href="https://azat.tv/m-vave-fm-1-synthesizer-firmware-hacking-open-platform/">azat.tv</a>). A handful of projects made their first commits in early September: a poly sequencer on 3 September and Lunar Modulator on 6 September.</p>
+      <p>Between 18 and 21 July the FM-1-RE project disassembled the firmware, mapped its functions, decoded M-VAVE's update protocol and installed a demo firmware of its own. Reverse engineering was also under way in Reddit's r/synthdiy at the time (<a href="https://azat.tv/m-vave-fm-1-synthesizer-firmware-hacking-open-platform/">azat.tv</a>). A handful of projects made their first commits in early September: a poly sequencer on 3 September and Lunar Modulator on 6 September.</p>
       <p>The first public custom firmware was <a href="https://baudgirl.com/work/FM-1+VA">FM-1+VA</a> by Baud Girl, the workshop label of a developer named Madeline. Stanley Gurvich's firmware database records four test packages (FM-1_083 to FM-1_086) on 26 September and the public FM-1_089 on 27 September. It's free to use but not open source.</p>
       <p>It added a list-based menu, a virtual analogue engine with a supersaw mode beside the DX7 engine, and a 303-style 64-step sequencer with ratchets, slides and accents. <a href="https://synthanatomy.com/2026/09/baud-girl-fm-1-va-custom-m-vave-fm-1-firmware.html">Synth Anatomy</a> covered it on 28 September and <a href="https://sonicstate.com/news/2026/09/29/free-custom-firmware-for-mvave-fm-1-/">Sonicstate</a> on 29 September, and YouTube demos by DECIMA1, Stanley Gurvich, ElektroTV and NatLife Sounds followed within two days (<a href="https://www.matrixsynth.com/2026/09/m-vave-fm-1-now-is-va-synthesizer-full.html">Matrixsynth</a>).</p>
     </section>
@@ -68,11 +68,11 @@
         <li><b>6&ndash;7 October:</b> Melodee by keremimo, sloopDX by zvenson, ChoralRoot by Quixotic7, FoMni-1 by Charles Vestal, fm1-chord by math0ne, GHOULBOX by Jason Persinger, FiMba-1 by J.&nbsp;Adam Sowers and FM-1 Doom by zvenson.</li>
         <li><b>9&ndash;10 October:</b> Dinghy by zvenson, a documented base for writing new firmwares, and AMB-1, CTL-1 and Mocky by Charles Vestal.</li>
       </ul>
-      <p>Three things made that pace possible:</p>
+      <p>These made that pace possible:</p>
       <ul>
-        <li><b>A safe update path.</b> Felucca's update loader and its USB rescue mode (OCT&minus; held at power-on) were inherited by most forks, so a bad install could be undone.</li>
-        <li><b>Browser emulators.</b> Firmwares compiled to WebAssembly could be tried without risking the hardware.</li>
-        <li><b>AI coding agents.</b> Many projects say openly that they were built with LLM help; a Hacker News commenter described most of them as &ldquo;vibe-coded&rdquo; but still fun (<a href="https://zeli.app/story/49994065">zeli.app</a>).</li>
+        <li>Felucca's update loader and its USB rescue mode (OCT&minus; held at power-on) were inherited by most forks, so a bad install could be undone.</li>
+        <li>Firmwares compiled to WebAssembly could be tried in browser emulators without risking the hardware.</li>
+        <li>AI coding agents: many projects say openly that they were built with LLM help; a Hacker News commenter described most of them as &ldquo;vibe-coded&rdquo; but still fun (<a href="https://zeli.app/story/49994065">zeli.app</a>).</li>
       </ul>
       <p>The press kept up for a while: Synthtopia counted &ldquo;nearly a dozen&rdquo; firmwares on 8 October (<a href="https://www.synthtopia.com/?p=155230">FoMni</a>) and ran a <a href="https://www.synthtopia.com/?p=155069">roundup</a> of Felucca, Baud Girl, Groove OS, Lunar Modulator, SLOOP and X0X.</p>
     </section>
@@ -108,19 +108,19 @@
     </div>
 
     <div class="prose">
-      <p>Conversation happened in four kinds of place: Reddit's <a href="https://www.reddit.com/r/MVaveFM1/">r/MVaveFM1</a>, created on 25 July, two months before the first custom firmware, and the main venue for release announcements and help with bricked units; the long <a href="https://www.elektronauts.com/t/m-vave-fm-1/252170">Elektronauts thread</a>; threads on KVR, Gearspace and Hacker News; and Discord, from a community server created on 7 October, four days into the open-source wave, to servers for single projects (such as <a href="https://apiel.github.io/fm1-tribe/">fm1-tribe's</a>). On 12 October, one YouTuber wrote that new firmwares were coming out almost every day (<a href="https://www.matrixsynth.com/2026/10/m-vave-fm1-ghoulbox-firmware.html">Matrixsynth</a>).</p>
+      <p>Conversation happened on Reddit's <a href="https://www.reddit.com/r/MVaveFM1/">r/MVaveFM1</a>, created on 25 July, two months before the first custom firmware, and the main venue for release announcements and help with bricked units; in the long <a href="https://www.elektronauts.com/t/m-vave-fm-1/252170">Elektronauts thread</a>; in threads on KVR, Gearspace and Hacker News; and on Discord, in a community server created on 7 October, four days into the open-source wave, and in servers for single projects (such as <a href="https://apiel.github.io/fm1-tribe/">fm1-tribe's</a>). On 12 October, one YouTuber wrote that new firmwares were coming out almost every day (<a href="https://www.matrixsynth.com/2026/10/m-vave-fm1-ghoulbox-firmware.html">Matrixsynth</a>).</p>
     </div>
 
     <section class="prose" aria-labelledby="response">
       <h2 id="response"><span class="num">5</span> M-VAVE's response: joining in</h2>
-      <p>M-VAVE answered by publishing open firmware of its own, 19 days after the first custom firmware, and five days later shipped its biggest stock update. No takedowns or legal letters have been reported; one outlet described the company as choosing collaboration &ldquo;instead of blocking the work&rdquo; (<a href="https://azat.tv/m-vave-fm-1-synthesizer-firmware-hacking-open-platform/">azat.tv</a>).</p>
+      <p>M-VAVE published open firmware of its own 19 days after the first custom firmware, and five days later shipped its biggest stock update. No takedowns or legal letters have been reported; one outlet described the company as choosing collaboration &ldquo;instead of blocking the work&rdquo; (<a href="https://azat.tv/m-vave-fm-1-synthesizer-firmware-hacking-open-platform/">azat.tv</a>).</p>
       <ul>
-        <li><b>16 October, FM1 Open V12.</b> The first commit and tag of <a href="https://github.com/m-vave/fm1_open">m-vave/fm1_open</a>: an eight-track groovebox firmware with its source, a browser workbench and a flasher. V13 followed on 17 October and V14 on 19 October.</li>
-        <li><b>The forum post.</b> M-VAVE's announcement on its own forum (topic 4) was later removed, according to aroum's hub; why isn't recorded.</li>
-        <li><b>20 October, in the press.</b> <a href="https://www.synthtopia.com/content/2026/10/20/m-vave-officially-opens-fm-1-firmware-to-developers-with-new-workbench-sdk/">Synthtopia</a> and <a href="https://www.matrixsynth.com/2026/10/m-vave-fm1-open-v14-official-open.html">Matrixsynth</a> reported M-VAVE opening the FM-1 to developers, following the third-party firmware community.</li>
-        <li><b>What's open.</b> The repository has C source for the application and a binary SDK, while the core sound engine stays a closed binary. Its workbench can move an FM-1 from &ldquo;compatible third-party firmware&rdquo; back to V15, an official acknowledgement of the scene.</li>
-        <li><b>21 October, stock V16.</b> A free update that makes the FM-1 an eight-part multitimbral synth with 20 shared voices, a 64-step sequencer and an 8&nbsp;&times;&nbsp;8 arrangement grid (<a href="https://synthanatomy.com/2026/10/m-vave-fm-1-a-budget-friendly-dx-7-style-desktop-fm-polysynth.html">Synth Anatomy</a>). Community firmwares had been shipping features like these for three weeks.</li>
-        <li><b>FM-2.</b> M-VAVE told Sonicstate an FM-2 is in development, &ldquo;late this year, probably&rdquo; (<a href="https://synthanatomy.com/2026/10/m-vave-fm-2-is-coming-later-this-year.html">Synth Anatomy</a>).</li>
+        <li>On 16 October M-VAVE made the first commit and tag of <a href="https://github.com/m-vave/fm1_open">m-vave/fm1_open</a>, FM1 Open V12: an eight-track groovebox firmware with its source, a browser workbench and a flasher. V13 followed on 17 October and V14 on 19 October.</li>
+        <li>M-VAVE's announcement on its own forum (topic 4) was later removed, according to aroum's hub; why isn't recorded.</li>
+        <li>On 20 October <a href="https://www.synthtopia.com/content/2026/10/20/m-vave-officially-opens-fm-1-firmware-to-developers-with-new-workbench-sdk/">Synthtopia</a> and <a href="https://www.matrixsynth.com/2026/10/m-vave-fm1-open-v14-official-open.html">Matrixsynth</a> reported M-VAVE opening the FM-1 to developers, following the third-party firmware community.</li>
+        <li>The repository has C source for the application and a binary SDK, while the core sound engine stays a closed binary. M-VAVE's own workbench can move an FM-1 from &ldquo;compatible third-party firmware&rdquo; back to V15.</li>
+        <li>On 21 October M-VAVE released stock V16, a free update that makes the FM-1 an eight-part multitimbral synth with 20 shared voices, a 64-step sequencer and an 8&nbsp;&times;&nbsp;8 arrangement grid (<a href="https://synthanatomy.com/2026/10/m-vave-fm-1-a-budget-friendly-dx-7-style-desktop-fm-polysynth.html">Synth Anatomy</a>). Community firmwares had been shipping features like these for three weeks.</li>
+        <li>M-VAVE told Sonicstate an FM-2 is in development, &ldquo;late this year, probably&rdquo; (<a href="https://synthanatomy.com/2026/10/m-vave-fm-2-is-coming-later-this-year.html">Synth Anatomy</a>).</li>
       </ul>
     </section>
 
@@ -361,7 +361,7 @@
       <h2 id="method"><span class="num">9</span> Method, data and sources</h2>
       <p><b>The count.</b> On 1 November 2026 I cloned the 202 GitHub repositories listed in aroum's FM1 Resource Hub. For each firmware, the first public release is its earliest release tag of its own, rather than one inherited from Felucca, SLOOP or another firmware it forks. About 60 repositories have no tag of their own; for those I used the author's first commit, which can be earlier than a release. M-VAVE's FM1 Open and two stock-firmware patchers aren't counted; Baud Girl's FM-1+VA, which isn't on GitHub, is added by hand.</p>
       <p><b>The data.</b> <a href="releases.csv">releases.csv</a> has all 200 rows: when each firmware was first seen (UTC), its name, author, family and link, and what the date rests on (a tag, or a first commit). Please check the evidence column before relying on a single date.</p>
-      <p><b>What couldn't be checked.</b> FMDB and the Firmware Hub load their catalogues in the browser, and Reddit and Discord couldn't be read, so this page relies on their published pages and videos. The creation dates of r/MVaveFM1 (25 July) and the community Discord server (7 October) were supplied by a member of the community, not read from the platforms.</p>
+      <p><b>Unchecked sources.</b> FMDB and the Firmware Hub load their catalogues in the browser, and Reddit and Discord couldn't be read, so this page relies on their published pages and videos. The creation dates of r/MVaveFM1 (25 July) and the community Discord server (7 October) were supplied by a member of the community, not read from the platforms.</p>
       <p><b>Citing this page.</b> Robinson, D. (2026). <cite>The FM-1 Moment: a working history of the M-VAVE FM-1 custom-firmware boom</cite>. fm-1.drewr.dev/fm1-moment/, as of 1 November 2026. CC BY 4.0.</p>
 
       <h3>Sources</h3>
