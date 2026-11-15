@@ -7,12 +7,12 @@ All three are on GitHub under github.com/ocean. Installing custom firmware on an
 ## Projects
 
 - [ESTAMPIE](https://fm-1.drewr.dev/estampie/): a mediæval groovebox firmware for the FM-1, forked from GHOULBOX and Felucca (GPL-3.0). Source: https://github.com/ocean/estampie
-- [FM-SWITCH](https://fm-1.drewr.dev/fm-switch/): a SwiftUI app for iOS, iPadOS and macOS that installs FM-1 firmwares over USB. In TestFlight. Source: https://github.com/ocean/FM-SWITCH
+- [FM-SWITCH](https://fm-1.drewr.dev/fm-switch/): a SwiftUI app for iOS, iPadOS and macOS that installs FM-1 firmwares over USB. iPhone and iPad in TestFlight; the Mac app is a signed, notarised download. Source: https://github.com/ocean/FM-SWITCH
 - [FM1Kit](https://fm-1.drewr.dev/fm1kit/): a Swift package (MIT) that speaks the FM-1's firmware update protocol over USB-MIDI, installs m-bootloader, and on a Mac backs up, restores and writes the whole flash in the chip's USB download mode. Source: https://github.com/ocean/FM1Kit
 
 ## For firmware developers
 
-- [Bootloader check](https://fm-1.drewr.dev/bootloader-check/): FM-1 firmwares on Felucca's update code can trap users who have changed their bootloader (m-bootloader, or Open V12/V14's): they only install other Felucca-based firmwares over USB, and refuse V15. m-bootloader itself works correctly; the cause is a check in the firmwares' update code. Which firmwares, and the update that fixes it (port felucca-bsp afd83ede). Data: https://fm-1.drewr.dev/bootloader-check/data.json
+- [Bootloader check](https://fm-1.drewr.dev/bootloader-check/): FM-1 firmwares built on Felucca's original update code refuse V15 and V16 once the FM-1's bootloader has changed (by M-VAVE's V16, m-bootloader, or Open V12 or V14), and usually every other firmware not built on Felucca, so their users can only install Felucca-based firmwares over USB. V16 and m-bootloader work correctly; the cause is a safety check in the firmwares' update code. Many firmwares also only know the older flash chip (P25Q80), so on FM-1s sold since autumn 2026 (UC25HQ80, JEDEC ID 0xB36014) they keep saves only until the FM-1 is switched off. The page lists which firmwares, what each is built on (fm1-base, felucca-bsp or its own copy of Felucca's) and which chips each release knows, with the fixes: port felucca-bsp afd83ede, and accept 0xB36014 as Felucca's f4cbb6a2 does. Data: https://fm-1.drewr.dev/bootloader-check/data.json
 
 ## Research
 
@@ -20,7 +20,7 @@ All three are on GitHub under github.com/ocean. Installing custom firmware on an
 
 ## Full text
 
-- [llms-full.txt](https://fm-1.drewr.dev/llms-full.txt): everything below in one file
+- [llms-full.txt](https://fm-1.drewr.dev/llms-full.txt): all of the above, in more detail, in one file
 - [ESTAMPIE's own index](https://fm-1.drewr.dev/estampie/llms.txt): its pages, the firmware download and the licences
 - [ESTAMPIE in full](https://fm-1.drewr.dev/estampie/llms-full.txt)
 - [FM-SWITCH in full](https://fm-1.drewr.dev/fm-switch/llms-full.txt)

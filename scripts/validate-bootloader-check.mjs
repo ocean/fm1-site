@@ -36,7 +36,7 @@ export const bases = {
   "fixed-base": "On an updated fm1-base or felucca-bsp",
   "pinned-v15": "Accepts the exact V15 package (puts the stock bootloader back)",
   "own-loader": "Installs every package with its own loader",
-  "chip-key": "Compares the chip key instead: untested",
+  "chip-key": "Compares the chip key instead, which hasn't been tested",
   unknown: "Update code not found",
 };
 const packages = ["affected", "ok", "other", "none", "unclear", null];
