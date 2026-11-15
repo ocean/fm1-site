@@ -1,7 +1,7 @@
 {
-  "tag": "0.6.0",
+  "tag": "0.7.1",
   "files": {
-    "llms.txt": "3640e81015a0d0625278cebd9d2f57a30f8f484ef4ed34cf17d5d9214a28227a",
-    "llms-full.txt": "c2de76689e5964f5dc29df7fe6995a5730e1f34f302abffb82b3f031825809f5"
+    "llms.txt": "aa9914658b35db03ce2c17315c048abc2049f12dabbca96079545ed572378b36",
+    "llms-full.txt": "3f3d3c90645e2dcd1000b25264d764d839108f78e97086e92cd310ba7abb3ac0"
   }
 }
