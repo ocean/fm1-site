@@ -1,6 +1,10 @@
 # Builds FM-SWITCH's firmware list (firmwares.json, served at https://fm-1.drewr.dev/firmwares.json)
 # with FM-SWITCH's fm1-catalogue tool, and commits it to main when it has changed. CI then checks
-# and deploys it. On days when nothing changed, nothing is committed.
+# and deploys it. When nothing changed, nothing is committed.
+#
+# It runs every 12 hours, but The Firmware Hub's terms allow reading its catalog.json at most once
+# a day, so only the 20:41 run reads it. The 08:41 run passes --without-hub, which keeps the hub's
+# firmwares from the last published list. A manual run reads the hub only when asked to.
 #
 # Two jobs, so FM-SWITCH's code (and the packages it fetches) never holds a token that can write
 # here: "build" runs the tool with read-only permissions; "publish" runs only this repository's own
@@ -12,8 +16,14 @@ name: Update the firmware list
 
 on:
   schedule:
-    - cron: "41 20 * * *"
+    - cron: "41 20 * * *" # Reads The Firmware Hub.
+    - cron: "41 8 * * *"
   workflow_dispatch:
+    inputs:
+      read-hub:
+        description: "Read The Firmware Hub too (at most once a day: leave off if the 20:41 run has read it)"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -53,11 +63,17 @@ jobs:
         env:
           # Read-only, and only for GitHub's API rate limit.
           GITHUB_TOKEN: ${{ github.token }}
+          READS_HUB: ${{ github.event.schedule == '41 20 * * *' || inputs.read-hub == true }}
         run: |
           mkdir -p "$RUNNER_TEMP/list"
           previous=()
           if [ -f ../site/firmwares.json ]; then
             previous=(--previous ../site/firmwares.json)
+            # --without-hub keeps the hub's firmwares from --previous, so it needs a previous list.
+            if [ "$READS_HUB" != "true" ]; then
+              previous+=(--without-hub)
+              echo "The Firmware Hub isn't read on this run: its firmwares come from the last list."
+            fi
           fi
           problems="$RUNNER_TEMP/problems.txt"
           status=0
