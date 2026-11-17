@@ -12,7 +12,7 @@
   <nav class="nav" aria-label="Breadcrumbs">
     <div class="wrap">
       <span class="crumbs"><a href="../">FM-1 projects</a><span class="sep" aria-hidden="true">/</span>FM1Kit</span>
-      <span class="version">Swift package &middot; 0.6.0</span>
+      <span class="version">Swift package &middot; 0.8.0</span>
     </div>
   </nav>
 
@@ -34,16 +34,17 @@
     <h2>Overview</h2>
     <p>FM1Kit speaks the FM-1's update protocol. It reads <code>.fwsc</code> firmware packages, finds the device, answers its read requests while it stages and writes the new firmware, and checks the device reports the new firmware afterwards. It can also finish an update that was cut off, or one started from USB recovery mode, and back up M-VAVE's open firmware before switching away from it.</p>
     <p>Before a firmware is installed, it can read the package to work out how to switch away from it again later, and which way back to V15, V16, open firmware or m-bootloader that firmware allows.</p>
-    <p>From V15, it can install <a href="https://github.com/jvitkauskas/m-bootloader">m-bootloader</a>, which adds a recovery menu and the chip's USB download mode. A second library, FM1Rescue, uses download mode from a Mac to back up, restore and write the FM-1's whole flash, whatever firmware is installed.</p>
+    <p>From V15, it can install <a href="https://github.com/jvitkauskas/m-bootloader">m-bootloader</a>, which adds a recovery menu and the chip's USB download mode. A second library, FM1Rescue, uses download mode from a Mac to back up, restore and write the FM-1's whole flash, whatever firmware is installed. For an FM-1 that no firmware starts on, FM1Rescue also works through the <a href="https://github.com/kurogedelic/FM-1-transporter">FM-1 Transporter</a>.</p>
+    <p>For firmware developers, <code>PackageCheck</code> reports on a package before it's released, and fm1probe can compare two packages or backups and run a simulated FM-1 that other updaters can talk to.</p>
     <p>It sticks to the device: finding and downloading firmwares is left to your app. <a href="../fm-switch/">FM-SWITCH</a> is built on it.</p>
 
     <div class="aside">
-      <p><span class="label">Important</span>FM1Kit has been tested on one FM-1 so far, from both a Mac and an iPhone. It knows the newer flash chip in FM-1s sold since autumn 2026, but hasn't yet been tried on one. It isn't affiliated with M-VAVE, and installing custom firmware is at your own risk.</p>
+      <p><span class="label">Important</span>FM1Kit has been tested on one FM-1 so far, from both a Mac and an iPhone, and download mode, the FM-1 Transporter and firmware resources from a Mac. It knows the newer flash chip in FM-1s sold since autumn 2026, but hasn't yet been tried on one. It isn't affiliated with M-VAVE, and installing custom firmware is at your own risk.</p>
     </div>
 
     <h3>Install the package</h3>
-    <p>Add FM1Kit with Swift Package Manager. Until 1.0, minor versions may change the API, so take 0.6.x fixes but not 0.7.0.</p>
-<pre tabindex="0"><code><span class="t">.package</span>(url: <span class="s">"https://github.com/ocean/FM1Kit.git"</span>, <span class="t">.upToNextMinor</span>(from: <span class="s">"0.6.0"</span>)),</code></pre>
+    <p>Add FM1Kit with Swift Package Manager. Until 1.0, minor versions may change the API, so take 0.8.x fixes but not 0.9.0. In 0.8.0, <code>CoreMIDITransport.init(clientName:)</code> is <code>@MainActor</code>, so code off the main actor creates it with <code>await</code>, and a <code>switch</code> over <code>UpdateEvent</code> needs the new <code>writingResources</code> and <code>resourcesNotWritten</code> cases.</p>
+<pre tabindex="0"><code><span class="t">.package</span>(url: <span class="s">"https://github.com/ocean/FM1Kit.git"</span>, <span class="t">.upToNextMinor</span>(from: <span class="s">"0.8.0"</span>)),</code></pre>
 
     <p>The package has two libraries: <code>FM1Kit</code> for iOS and macOS, and <code>FM1Rescue</code> for download mode, which works on macOS only and is empty on iOS.</p>
 
@@ -70,6 +71,7 @@
     <span class="k">try await</span> updater.resume(package)
 }</code></pre>
     <p>For apps aimed at everyone, <code>InstallProgress</code> folds those events into one bar that never goes backwards, in three stages: getting ready, installing and restarting. <code>FM1Advice(for: error)</code> turns any error into a headline, an explanation, whether the FM-1 is still fine, and one thing to do next. <code>summary()</code> describes the connected FM-1: its firmware's name and version, whether it's waiting part-way through an update, its USB serial number and, where the firmware reports it, its flash chip.</p>
+    <p>Firmwares built on fm1-base can carry resources, such as sounds, in their package. After a USB-MIDI install, FM1Kit asks the new firmware to write any the update loader left out, reported as <code>writingResources</code>. If the firmware can't, the install still finishes, after <code>resourcesNotWritten</code>, and <code>writeResources(_:progress:)</code> can send them later. <code>InstallProgress</code> counts writing them as installing.</p>
     <p>An install finishes when the new firmware answers, even if the loader never asks to finish. If one is interrupted while writing, the FM-1's screen stays dark: keep it switched on and resume, as it may not start again until the update is finished.</p>
 
     <h3>Install m-bootloader</h3>
@@ -88,15 +90,22 @@
 print(plan.notes, plan.warnings, plan.sectors.count)  <span class="c">// show it, then ask to confirm</span>
 <span class="k">try</span> session.write(plan) { print(<span class="s">"</span>\(<span class="t">Int</span>($0 * <span class="n">100</span>))<span class="s">%"</span>) }
 session.close()  <span class="c">// switch the FM-1 off and on to leave</span></code></pre>
-    <p>A <code>FlashPlan</code> restores a backup, installs m-bootloader or M-VAVE's bootloader, or installs a firmware, changing only the 4 KB sectors that differ. Writing works from the top of the flash down, so a firmware's start-up code is replaced last. It checks the flash is still what was read, then checks every change against the chip's CRC-32. Another FM-1's backup never replaces this one's factory data, and nothing is written to flash from another model. If writing stops part-way, don't switch the FM-1 off: restore the backup.</p>
+    <p>A <code>FlashPlan</code> restores a backup, installs m-bootloader or M-VAVE's bootloader, or installs a firmware, changing only the 4 KB sectors that differ. Writing works from the top of the flash down, so a firmware's start-up code is replaced last. It checks the flash is still what was read, then checks every change against the chip's CRC-32. Another FM-1's backup never replaces this one's factory data, and nothing is written to flash from another model. Installing a firmware writes its resources too, or the plan's <code>afterwards</code> says to write them over USB-MIDI once it's running. If writing stops part-way, don't switch the FM-1 off: restore the backup.</p>
+
+    <h3>Rescue an FM-1 through the FM-1 Transporter</h3>
+    <p>An FM-1 that never reaches download mode, because no firmware starts on it, needs the chip's boot ROM. The <a href="https://github.com/kurogedelic/FM-1-transporter">FM-1 Transporter</a> reaches it with an RP2040 board wired to the FM-1's USB data lines. <code>Transporter</code> works with it from a Mac, with no web app and no root: it waits for the FM-1 to be switched on, starts a flash loader, backs up, and writes a plan between 0x4000 and 0x92FFF, reading it all back afterwards. The Transporter can't write the saved data above that, so a plan that changes firmware says to install again in download mode once the FM-1 starts, erasing saved data.</p>
+    <p>FM1Kit starts m-bootloader's flash loader, which needs Transporter firmware not yet in a Transporter release. With the Transporter's v0.1.0, pass jl-uboot-tool's <code>wl82loader.bin</code> instead. FM1Kit's <a href="https://github.com/ocean/FM1Kit/blob/main/RECOVERY.md">RECOVERY.md</a> walks through it.</p>
 
     <h2>Topics</h2>
 
     <h3>Packages</h3>
     <ul class="topics">
-      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>FwscPackage</a><p>Reads a <code>.fwsc</code> package: its identity, the image the device reads, its SHA-256, how it installs other firmwares, and which flash chips it supports.</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>FwscPackage</a><p>Reads a <code>.fwsc</code> package: its identity, the image the device reads, its SHA-256, how it installs other firmwares, which flash chips it supports, and its resources.</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>ResourceRegion</a><p>A firmware's resources, such as sounds, in fm1-base's format, from a package or a <code>NAME-res.bin</code> file.</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>PackageCheck</a><p>A pre-release report on a package: its enciphering, flash chips, saved data, which firmwares will install it, and how people can switch back from it.</p></li>
       <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>LeavingGuide</a><p>How to switch away from a firmware, worked out from its package before it's installed: the route to each destination, warnings to show first, and step-by-step instructions.</p></li>
       <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>OfficialFirmware</a><p>Recognises M-VAVE's releases, V15, V16 and Open V12, by size and checksum, and says which may be included in an app (only V15).</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>FlashComparison</a><p>Two packages or backups compared part by part: the boot area, each file, each saved-data region and the factory data.</p></li>
     </ul>
 
     <h3>Devices</h3>
@@ -105,14 +114,15 @@ session.close()  <span class="c">// switch the FM-1 off and on to leave</span></
       <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">enum</span>FM1FlashChip</a><p>The FM-1's flash chips: the first units' P25Q80, and the UC25HQ80 in those sold since autumn 2026.</p></li>
       <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>FM1Capability</a><p>What M-VAVE's open firmware reports about itself.</p></li>
       <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>FM1BuildID</a><p>The build ID open firmware is armed with before an update.</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>FM1MessageDescription</a><p>Names a SysEx message to or from an FM-1 and what it carries.</p></li>
     </ul>
 
     <h3>Updating</h3>
     <ul class="topics">
-      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">actor</span>FM1Updater</a><p>Finds the device, or lets the person choose one of several, checks and installs, resumes, restores V15's voices, backs up open firmware, installs m-bootloader, and reports progress.</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">actor</span>FM1Updater</a><p>Finds the device, or lets the person choose one of several, checks and installs, resumes, writes a firmware's resources, restores V15's voices, backs up open firmware, installs m-bootloader, and reports progress.</p></li>
       <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>InstallCheck</a><p>What an install would do, before it starts.</p></li>
       <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>InstallOptions</a><p>Confirms a switch of firmware, a reinstall of the identity already running, or V15 over a firmware that reports V15's identity, such as TransitFM1.</p></li>
-      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">enum</span>UpdateEvent</a><p>Progress: staging, writing, a second pass with some firmwares, and finished.</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">enum</span>UpdateEvent</a><p>Progress: staging, writing, a second pass with some firmwares, writing resources, and finished.</p></li>
       <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>InstallProgress</a><p>An install's events as one bar that never goes backwards, in three stages.</p></li>
       <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>FM1Advice</a><p>Any error in plain words: what happened, whether the FM-1 is fine, and what to do.</p></li>
       <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>FM1DeviceSummary</a><p>The connected FM-1's firmware, version, update state, serial number and flash chip.</p></li>
@@ -134,6 +144,7 @@ session.close()  <span class="c">// switch the FM-1 off and on to leave</span></
     <ul class="topics">
       <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">class</span>CoreMIDITransport</a><p>CoreMIDI connections to real devices.</p></li>
       <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">class</span>SimulatedFM1</a><p>A software FM-1 that speaks the whole protocol and open firmware's project library, for the iOS Simulator and tests.</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">class</span>CoreMIDIVirtualDevice</a><p>Publishes a simulated FM-1 as virtual CoreMIDI ports, so other apps can talk to it as to an FM-1.</p></li>
     </ul>
 
     <h3>FM1Rescue (macOS)</h3>
@@ -143,31 +154,44 @@ session.close()  <span class="c">// switch the FM-1 off and on to leave</span></
       <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>FlashBackup</a><p>A whole-flash backup: which bootloader and firmware it holds, saved as M-Flasher saves it.</p></li>
       <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">struct</span>FlashPlan</a><p>A checked change to the flash, listing the sectors it writes, with notes and warnings. Installing a firmware can also erase every firmware's saved data.</p></li>
       <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">class</span>SimulatedDownloadMode</a><p>The chip in software, erasing and writing as NOR flash does, for tests and previews.</p></li>
+      <li><a class="symbol" href="https://github.com/ocean/FM1Kit"><span class="kind">class</span>Transporter</a><p>Works with an FM-1 through the FM-1 Transporter: waits for it, starts a flash loader, backs up and writes. <code>SerialTransporterLink</code> is its serial port, and <code>SimulatedTransporter</code> stands in for it in tests.</p></li>
     </ul>
 
     <h2>fm1probe</h2>
-    <p>A Mac command-line tool for checking a setup and watching an install closely. Only <code>install</code>, <code>install-bootloader</code>, <code>restore-voices</code> and the <code>flash-</code> commands write to the device, and <code>backup</code> changes which project open firmware shows while it reads. Each asks you to type YES first, and the <code>flash-</code> commands save a backup before writing.</p>
+    <p>A Mac command-line tool for checking a setup, watching an install closely and checking firmware packages before release. In a terminal its output is styled, with warnings in colour and the next steps numbered at the end; in a pipe or with <code>NO_COLOR</code> set it's plain text. Only <code>install</code>, <code>install-bootloader</code>, <code>restore-voices</code>, <code>write-resources</code>, the <code>flash-</code> commands and <code>transporter install</code> and <code>restore</code> write to the device, and <code>backup</code> changes which project open firmware shows while it reads. Each asks you to type YES first, and the <code>flash-</code> and <code>transporter</code> commands save a backup before writing.</p>
 <pre tabindex="0"><code>swift run fm1probe ports                 <span class="c"># list MIDI ports</span>
 swift run fm1probe devices               <span class="c"># list the connected FM-1s</span>
 swift run fm1probe identify              <span class="c"># ask the FM-1 what it's running</span>
-swift run fm1probe inspect FILE.fwsc     <span class="c"># a package's identity, size, checksum and flash chips</span>
+swift run fm1probe monitor 30            <span class="c"># name each message the FM-1 sends for 30 s</span>
+swift run fm1probe replay LOG.csv        <span class="c"># print an install's --log file, naming each message</span>
+swift run fm1probe inspect FILE.fwsc     <span class="c"># a package's identity, size, checksum, flash chips and resources</span>
+swift run fm1probe check FILE.fwsc       <span class="c"># pre-release report for firmware developers (--strict for CI)</span>
+swift run fm1probe diff FIRST SECOND     <span class="c"># compare two packages or backups, part by part</span>
+swift run fm1probe simulate FILE.fwsc    <span class="c"># a simulated V15 on a virtual MIDI port, for testing updaters</span>
 swift run fm1probe install FILE.fwsc     <span class="c"># install a firmware</span>
+swift run fm1probe write-resources FILE  <span class="c"># write a firmware's resources from its NAME-res.bin or .fwsc</span>
 swift run fm1probe backup FOLDER         <span class="c"># back up open firmware's projects and samples</span>
 swift run fm1probe install-bootloader fm1-uboot.fwsc  <span class="c"># install m-bootloader from V15</span>
 swift run fm1probe download-mode         <span class="c"># ask V15 or Felucca to restart into download mode</span>
 sudo .build/debug/fm1probe flash-backup FOLDER  <span class="c"># read the whole flash</span>
 sudo .build/debug/fm1probe flash-restore BACKUP.bin FOLDER  <span class="c"># put a backup back</span>
-sudo .build/debug/fm1probe flash-install FILE.fwsc FOLDER   <span class="c"># install a firmware in download mode</span></code></pre>
+sudo .build/debug/fm1probe flash-install FILE.fwsc FOLDER  <span class="c"># install a firmware in download mode</span>
+swift run fm1probe transporter check     <span class="c"># start the flash loader through the FM-1 Transporter</span>
+swift run fm1probe transporter backup FOLDER  <span class="c"># back up through the Transporter</span>
+swift run fm1probe transporter install FILE.fwsc FOLDER  <span class="c"># install through it</span></code></pre>
     <p>The <code>flash-</code> commands take <code>--wait SECONDS</code> for an FM-1 whose firmware crashes at start-up and passes through download mode by itself, only for a few seconds each time: they catch it as soon as it appears.</p>
+    <p>There are also <code>transporter status</code>, <code>transporter restore BACKUP.bin FOLDER</code> and <code>transporter start</code>, and the <code>transporter</code> commands take <code>--loader wl82loader.bin</code> for the Transporter's v0.1.0. <code>devices</code>, <code>identify</code>, <code>inspect</code>, <code>check</code> and <code>diff</code> take <code>--json</code> for scripts and CI. <code>--port NAME</code> on the commands that talk to an FM-1 finds a firmware that renames its USB port. <code>fm1probe --version</code> prints its version and <code>fm1probe licences</code> the licences of what it contains.</p>
 
     <h2>Recovery</h2>
     <p>Whenever the FM-1 is in its update loader, whether from USB recovery mode (hold <strong>OCT&minus;</strong> while switching it on, on firmwares that offer it) or an interrupted update, <code>resume(_:events:)</code> can install a firmware.</p>
     <p>Beyond that is the chip's USB download mode, from a computer, which works whatever the firmware. FM1Rescue uses it on a Mac; iPhones and iPads can't. V15 and Felucca can be asked to switch to it, and with m-bootloader installed, holding <strong>REC</strong> while switching on starts it. m-bootloader also opens its recovery menu by itself when the firmware fails its checks. An FM-1 stuck restarting can still be caught as it passes through download mode (<code>USBDownloadModeConnection.open(waitingUpTo:)</code>).</p>
+    <p>An FM-1 that shows nothing on USB, not even download mode, needs the chip's boot ROM, which the <a href="https://github.com/kurogedelic/FM-1-transporter">FM-1 Transporter</a> reaches (see above).</p>
 
     <h2>See also</h2>
     <p><a href="https://github.com/ocean/FM1Kit">Source, documentation and changelog on GitHub</a></p>
     <p><a href="https://github.com/AL-255/FM-1-RE">FM-1-RE</a>: the reverse-engineering notes the protocol is written from.</p>
-    <p><a href="https://github.com/jvitkauskas/m-bootloader">m-bootloader</a> and <a href="https://github.com/jvitkauskas/m-flasher">M-Flasher</a>: the bootloader and download mode tools FM1Rescue follows. It bundles m-bootloader's flash loader (MIT).</p>
+    <p><a href="https://github.com/jvitkauskas/m-bootloader">m-bootloader</a> and <a href="https://github.com/jvitkauskas/m-flasher">M-Flasher</a>: the bootloader and download mode tools FM1Rescue follows. It builds in m-bootloader's flash loader (MIT), from its release v2.3.</p>
+    <p><a href="https://github.com/kurogedelic/FM-1-transporter">FM-1 Transporter</a> (MIT): the RP2040 rescue board FM1Rescue's <code>Transporter</code> works with.</p>
   </main>
 
   <footer>
