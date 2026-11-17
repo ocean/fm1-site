@@ -25,6 +25,8 @@ function urlWithScheme(value, schemes) {
   }
 }
 
+const hubCredit = "Firmware list: The Firmware Hub – thefirmwarehub.com";
+
 // Returns a list of problems; empty means the list can be published.
 export function validateFirmwares(text) {
   if (Buffer.byteLength(text) > maximumBytes) {
@@ -43,6 +45,10 @@ export function validateFirmwares(text) {
   }
   if (typeof list.builtAt !== "string" || Number.isNaN(Date.parse(list.builtAt))) {
     problems.push("builtAt isn't a date");
+  }
+  // The Firmware Hub's terms ask for this credit wherever its list is passed on.
+  if (typeof list.credit !== "string" || !list.credit.includes(hubCredit)) {
+    problems.push(`credit doesn't give The Firmware Hub's required credit ("${hubCredit}")`);
   }
   if (!Array.isArray(list.problems) || list.problems.length > 0) {
     problems.push("problems should be an empty list in a published file");
