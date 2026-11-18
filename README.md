@@ -61,10 +61,19 @@ pushes the branch and leaves opening the pull request to you.
 `firmwares.json` (served at https://fm-1.drewr.dev/firmwares.json, open to any site)
 is the FM-1 firmware list FM-SWITCH downloads. FM-SWITCH's `fm1-catalogue` tool builds it from the firmware
 hub, fm1-editor.com, aroum's FM1 Resource Hub and mutant.cloud. The "Update the firmware list" workflow
-(`.github/workflows/update-firmwares.yml`) runs it on macOS, then a separate job running only this
+(`.github/workflows/update-firmwares.yml`) runs it on macOS every 12 hours, reading The Firmware Hub's
+catalog.json only at 20:41 UTC, as the hub's terms allow it once a day; the 08:41 run keeps the hub's
+firmwares from the last list (`--without-hub`). Then a separate job running only this
 repository's code checks the result (`scripts/validate-firmwares.mjs`: the format the app reads, https for
 anything it downloads, real SHA-256 values, sane sizes) and commits it to `main` only when the list itself
 has changed. CI then checks and deploys it. FM-SWITCH's code never gets a token that can write here.
+
+The hub's list is CC BY 4.0, and its terms ask for this credit wherever it's passed on, which
+firmwares.json carries in its `credit` field and the FM-SWITCH page shows: "Firmware list: The Firmware
+Hub – thefirmwarehub.com" (https://thefirmwarehub.com), under CC BY 4.0
+(https://creativecommons.org/licenses/by/4.0/). FM-SWITCH changes it: it adds the firmwares on
+fm1-editor.com, aroum's FM1 Resource Hub and mutant.cloud, and downloads each firmware from its maker, not
+from the hub.
 
 ## Working on it
 
