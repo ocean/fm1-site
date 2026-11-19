@@ -9,6 +9,8 @@
 // three most starred firmwares are written into FM-SWITCH's page.
 // The bootloader check's data (bootloader-check/data.json, committed by its own workflow) is
 // rendered into its page, with the hand-edited corrections in overrides.json applied.
+// The FM-1 Moment's charts, daily table and directory counts are drawn from its data files
+// (fm1-moment/releases.csv, fm1-editor-daily.csv and directories.json).
 // While nothing is pinned, the placeholder files in this repository are used instead.
 // Every published page, the projects' included, then gets GoatCounter's visit counter.
 import { execFile } from "node:child_process";
@@ -16,6 +18,8 @@ import { cp, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import { join, relative } from "node:path";
 import { promisify } from "node:util";
 import { firmwareBadge } from "./firmware-badges.mjs";
+import { melbourneToday, readMomentData } from "./fm1-moment/data.mjs";
+import { fillSpans, renderMoment } from "./fm1-moment/render.mjs";
 import { fillMarkers, renderBootloaderCheck } from "./render-bootloader-check.mjs";
 import { fetchPinned, readPin, root } from "./pinned.mjs";
 
@@ -93,6 +97,15 @@ async function writeBootloaderCheck() {
   console.log("Filled in the bootloader check's page.");
 }
 
+// The FM-1 Moment's charts and tables, from its data files.
+async function writeMoment() {
+  const folder = join(dist, "fm1-moment");
+  const page = await readFile(join(folder, "index.html"), "utf8");
+  const { sections, fills } = renderMoment(await readMomentData(folder), melbourneToday());
+  await writeFile(join(folder, "index.html"), fillSpans(fillMarkers(page, sections, "The FM-1 Moment's page"), fills));
+  console.log("Drew the FM-1 Moment's charts and tables.");
+}
+
 async function unpackEstampie(pin) {
   const zipPath = await fetchPinned(pin.url, pin.sha256, `estampie-site-${pin.version}.zip`);
   const folder = join(dist, "estampie");
@@ -159,6 +172,7 @@ if (firmwares) {
 }
 await writeMostStarred(firmwares && firmwares.toString("utf8"));
 await writeBootloaderCheck();
+await writeMoment();
 
 const estampie = await readPin("estampie.json");
 if (estampie.version) {

@@ -14,7 +14,7 @@ fm-switch/               FM-SWITCH, the iOS and macOS app (../FM-SWITCH); fm-swi
 fm1kit/                  FM1Kit, the Swift package under it (../FM1Kit), in the manner of Apple's docs
 estampie/                ESTAMPIE, the firmware (../estampie): a placeholder the build replaces
 bootloader-check/        the bootloader check, for firmware developers (data.json from the weekly scan)
-fm1-moment/              The FM-1 Moment, a history of the custom-firmware boom
+fm1-moment/              The FM-1 Moment, a history of the custom-firmware boom (its data refreshed weekly)
 privacy/                 FM-SWITCH's privacy policy
 scripts/                 the build, checks, scanners and update scripts
 *.json                   pinned releases (estampie.json, fm1kit.json) and FM-SWITCH's firmwares.json
@@ -74,6 +74,27 @@ Hub – thefirmwarehub.com" (https://thefirmwarehub.com), under CC BY 4.0
 (https://creativecommons.org/licenses/by/4.0/). FM-SWITCH changes it: it adds the firmwares on
 fm1-editor.com, aroum's FM1 Resource Hub and mutant.cloud, and downloads each firmware from its maker, not
 from the hub.
+
+## The FM-1 Moment's figures
+
+The FM-1 Moment's charts, its table of daily counts and its table of what each directory counts are
+drawn at build time (`scripts/fm1-moment/render.mjs`) from three files in `fm1-moment/`: `releases.csv`
+(one row per firmware, by first public release), `fm1-editor-daily.csv` (fm1-editor.com's count at its
+last update of each day in October 2026) and `directories.json`. The page's source has a marker comment
+where each one goes, and `<span data-fill>` for each figure inside a sentence, such as the range of
+counts and how many appeared from 13 to 20 October. The growth chart runs from 27 September to the day
+the site is built, Melbourne time, until its cut-off on 30 November (`window` in
+`scripts/fm1-moment/data.mjs`); the fm1-editor.com chart stays on October.
+
+The "Refresh the FM-1 Moment" workflow (`.github/workflows/refresh-fm1-moment.yml`) runs
+`scripts/fm1-moment/refresh.mjs` every Monday morning, Melbourne time. It counts what aroum's FM1
+Resource Hub, fm1-editor.com, Leo Kuroshita's FM-1 CFW Database, FMDB and The Firmware Hub (from
+`firmwares.json`) list, and adds firmwares new to aroum's list to `releases.csv`, dated by their earliest
+GitHub release, or else their author's first commit. A sound firmware's family follows Leo Kuroshita's
+lineage where it places one. altstrument publishes no data, so its count is checked by hand, and the
+prose is never changed. Every change goes into one pull request listing it for review; while that's
+open, later refreshes wait. A firmware a review turns down goes in `fm1-moment/not-counted.json`, with a
+reason, so the refresh doesn't propose it again.
 
 ## Working on it
 

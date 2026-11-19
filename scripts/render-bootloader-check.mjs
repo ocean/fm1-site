@@ -186,12 +186,12 @@ export function renderBootloaderCheck(data, overrides) {
 }
 
 // Replaces each "<!-- name: ... -->" marker line in the page with its section.
-export function fillMarkers(page, sections) {
+export function fillMarkers(page, sections, pageName = "The bootloader check's page") {
   let filled = page;
   for (const [name, html] of Object.entries(sections)) {
     const marker = new RegExp(`^( *)<!-- ${name}: [^\\n]*-->$`, "m");
     const match = filled.match(marker);
-    if (!match) throw new Error(`The bootloader check's page has no ${name} marker`);
+    if (!match) throw new Error(`${pageName} has no ${name} marker`);
     const indented = html
       .split("\n")
       .map((line) => match[1] + line)
