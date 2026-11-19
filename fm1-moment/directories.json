@@ -1,5 +1,5 @@
 {
-  "checkedOn": "2026-11-01",
+  "checkedOn": "2026-11-18",
   "directories": [
     {
       "name": "altstrument",
@@ -14,34 +14,34 @@
       "name": "FMDB",
       "url": "https://stanleygurvich.github.io/FMDB_FM1_FirmwareDatabase/",
       "source": "fmdb",
-      "checkedOn": "2026-11-01",
-      "count": 300,
-      "label": "300+ entries",
+      "checkedOn": "2026-11-18",
+      "count": 308,
+      "label": "308 entries",
       "what": "Firmwares, mods and tools for the FM-1 and SMK-37, crawled from GitHub"
     },
     {
       "name": "FM1 Resource Hub",
       "url": "https://github.com/aroum/fm1-custom-fw",
       "source": "resource-hub",
-      "checkedOn": "2026-11-01",
-      "count": 222,
-      "label": "222 entries",
-      "what": "Curated: 209 sound firmwares and games, 11 platforms, 2 patchers"
+      "checkedOn": "2026-11-18",
+      "count": 276,
+      "label": "276 entries",
+      "what": "Curated: 262 sound firmwares and games, 12 platforms, 2 patchers"
     },
     {
       "name": "fm1-editor.com",
       "url": "https://fm1-editor.com/firmware/",
       "source": "fm1-editor",
-      "checkedOn": "2026-11-01",
-      "count": 201,
-      "label": "201 entries",
+      "checkedOn": "2026-11-18",
+      "count": 399,
+      "label": "399 entries",
       "what": "Curated by hand, updated almost daily"
     },
     {
       "name": "FM-1 CFW Database",
       "url": "https://kurogedelic.github.io/FM-1_CFW_Database/",
       "source": "cfw-database",
-      "checkedOn": "2026-11-11",
+      "checkedOn": "2026-11-18",
       "count": 374,
       "label": "374 works",
       "what": "Firmwares, ports and platforms, with each one's parent where the evidence shows it"
@@ -55,11 +55,10 @@
       "name": "The FM-1 Firmware Hub",
       "url": "https://thefirmwarehub.com/",
       "source": "firmware-hub",
-      "checkedOn": "2026-10-25",
-      "count": 91,
-      "label": "91",
-      "what": "Open source, tested on hardware and installable in one click",
-      "dateApproximate": true
+      "checkedOn": "2026-11-18",
+      "count": 253,
+      "label": "253",
+      "what": "Open source, tested on hardware and installable in one click"
     }
   ]
 }

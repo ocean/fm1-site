@@ -5,10 +5,12 @@ first_seen_utc,firmware,author,family,link,evidence
 2026-09-29T15:44Z,FM-1 NES,Keitark,Games and experiments,https://github.com/Keitark/fm1-nes,first commit
 2026-09-30T02:58Z,fm1-mdx,Keitark,Games and experiments,https://github.com/Keitark/fm1-mdx,first commit
 2026-10-02T12:09Z,Tessera,Rastapopolix,Sound (Felucca family),https://github.com/Rastapopolix/tessera,"earliest commit (shares history with the firmware it forks, so this date may be too early)"
+2026-10-02T12:09Z,RIFT,mykeln,Sound (Felucca family),https://github.com/mykeln/fm1-rift,first commit
 2026-10-03T07:06Z,Felucca,hugelton,Sound (Felucca family),https://github.com/hugelton/Felucca,tag v0.8-beta
 2026-10-04T12:59Z,X0X,Charles Vestal,Sound (Felucca family),https://github.com/charlesvestal/fm1-x0x,tag v0.1-beta
 2026-10-04T15:08Z,SLOOP,isod89,Sound (SLOOP family),https://github.com/isod89/sloop-fm1,tag v2.0
 2026-10-04T21:36Z,Jangada,zednaked,Sound (Felucca family),https://github.com/zednaked/jangada,tag v0.1-alpha
+2026-10-05T06:28Z,Felucca [Salt],ChanceTheMaker,Sound (Felucca family),https://github.com/ChanceTheMaker/Felucca,tag v0.9-salt14
 2026-10-05T16:45Z,SLOOP Floyd FM,René Bohne,Sound (SLOOP family),https://github.com/renebohne/sloop-fm1,tag v2.2-visual-fm
 2026-10-05T18:26Z,SLOOP ALG,shaw-core,Sound (SLOOP family),https://github.com/shaw-core/Sloop_ALG02,first commit
 2026-10-06T02:32Z,SLOOP DX7 Banks,majnikool,Sound (SLOOP family),https://github.com/majnikool/sloop-fm1,tag v2.4-b21-test
@@ -123,6 +125,7 @@ first_seen_utc,firmware,author,family,link,evidence
 2026-10-17T15:44Z,Vector37,genkigenki,Sound (independent),https://github.com/genkigenki/Vector37,tag v0.3
 2026-10-17T15:54Z,Carnac OS,OrbVorgis (Owen Kirby),Sound (independent),https://github.com/OwenKirby/carnac-os,tag v0.9.0
 2026-10-17T18:03Z,CS-1,twochannels,Sound (independent),https://github.com/twochannels/CS-1,tag v0.3.0
+2026-10-17T19:15Z,FM-1 Pocket Guitar,xMagElonx,Sound (M-VAVE fm1_open family),https://github.com/xMagElonx/fm1-guitar,tag b1.6.1
 2026-10-17T19:56Z,GR!MM,GRiMMBIENT,Sound (Felucca family),https://github.com/GRiMMBIENT/grimm,tag v1.0
 2026-10-17T20:37Z,AmbWave,mentalcells,Sound (Felucca family),https://github.com/mentalcells/ambwave,tag v0.1.0
 2026-10-17T21:15Z,B1 Drawbar Organ,Joppe Sikken (SikkenWorks),Sound (independent),https://github.com/SikkenWorks/B1-Drawbar-Organ,tag V2.5beta
@@ -143,6 +146,7 @@ first_seen_utc,firmware,author,family,link,evidence
 2026-10-18T17:11Z,Deal or No Deal,Kiwi3p,Games and experiments,https://github.com/Kiwi3p/fm1-deal-or-no-deal,first commit
 2026-10-18T17:36Z,kidboy,WillCMcC,Sound (independent),https://github.com/WillCMcC/kidboy-firmware,tag v0.1
 2026-10-18T17:40Z,fm_lab,jsmith13,Sound (independent),https://github.com/jsmith13/fm_lab,tag v1.0.0
+2026-10-18T17:44Z,386 DX,seajaysec,Sound (independent),https://github.com/seajaysec/386-DX-FM1-KaraokeBot,tag v1.0-RC
 2026-10-18T19:28Z,FM1 Betis Mode,cotrino,Sound (independent),https://github.com/cotrino/fm1-betis-mode,first commit
 2026-10-18T19:37Z,Doom FM-1 / SMK,Chance The Maker,Games and experiments,https://github.com/ChanceTheMaker/doom-fm1-smk,tag smk-flash-compat-17
 2026-10-18T19:37Z,GameDude,Chance The Maker,Games and experiments,https://github.com/ChanceTheMaker/gamedude-fm1-smk,tag smk-flash-compat-952
@@ -185,6 +189,7 @@ first_seen_utc,firmware,author,family,link,evidence
 2026-10-22T08:37Z,Neverhood for FM-1,snpwball,Games and experiments,https://github.com/snpwball/fm1-neverhood,first commit
 2026-10-23T01:05Z,Fart Machine One,adamcharleswilsonmusic-code,Games and experiments,https://github.com/adamcharleswilsonmusic-code/Fart-Machine-One,tag V1.1.0
 2026-10-23T13:07Z,FRASIL,styvesgoupil,Sound (independent),https://github.com/styvesgoupil/frasil,tag v1.0
+2026-10-23T19:00Z,Saadet,keremimo,Sound (Felucca family),https://github.com/keremimo/saadet,tag v0.1.0
 2026-10-24T07:02Z,FIZZ,Quixotic7,Sound (independent),https://github.com/Quixotic7/FIZZ,tag v0.11.0-beta.1
 2026-10-24T15:22Z,MOPE-1,slothpallas,Sound (FoMni family),https://github.com/slothpallas/mope-1,tag v0.1.0
 2026-10-25T00:36Z,MONO2K,Iñigo Hernández (InigoHernandez),Sound (independent),https://github.com/InigoHernandez/mono2k,tag v0.1
@@ -192,10 +197,50 @@ first_seen_utc,firmware,author,family,link,evidence
 2026-10-25T07:14Z,fm1-dock,Joakim Eriksson,Platform,https://github.com/joakimeriksson/fm1-dock,tag v0.4
 2026-10-25T09:20Z,Monohull,markterm,Sound (independent),https://github.com/markterm/monohull,tag v0.1.0
 2026-10-25T09:43Z,Blue Hare,TristanoSuriani,Sound (Felucca family),https://github.com/TristanoSuriani/fel-tracker,tag v0.40.0
+2026-10-25T18:22Z,PERF-1,deamonSLINKY,Sound (AMB-1 family),https://github.com/deamonSLINKY/PERF-1,tag v0.13.0
 2026-10-26T16:30Z,COSMOS,Gadlele,Sound (independent),https://github.com/Gadlele/COSMOS,first commit
 2026-10-27T06:38Z,Elixir,Dan Majka (dmajka),Sound (Felucca family),https://github.com/dmajka/elixir,tag v0.15
 2026-10-27T21:10Z,GLITCH,ttreu,Sound (independent),https://github.com/ttreu/fm1-glitch,tag v0.1.0-beta
+2026-10-28T10:21Z,SPAMPY,Spampy-Droid,Sound (SLOOP family),https://github.com/Spampy-Droid/SPAMPY-0.0-r949,tag r949
 2026-10-29T10:35Z,Tuna,delirioux,Sound (Felucca family),https://github.com/delirioux/tuna,tag v1.0
 2026-10-29T12:19Z,BB1,Texas Radio & The Big Beat,Sound (Felucca family),https://github.com/TexasRADIO/bb1-firmware,tag v1.2
 2026-10-29T21:38Z,ARPHONY,ttreu,Sound (independent),https://github.com/ttreu/fm1-arphony,tag v0.2.0-beta
 2026-10-29T21:38Z,GLIDER,ttreu,Sound (M-VAVE fm1_open family),https://github.com/ttreu/fm1-glider,tag v0.4.0-beta
+2026-10-30T09:05Z,CHOPPAH,profikid,Sound (independent),https://github.com/profikid/fm1-break-choppah,tag v0.1
+2026-10-30T16:45Z,KARMA,eatyourgreensstudio-dotcom,Sound (SLOOP family),https://github.com/eatyourgreensstudio-dotcom/karma-fm1,tag v3.0
+2026-10-30T18:20Z,CYMA-1,TEG-Lizard-Man,Sound (independent),https://github.com/TEG-Lizard-Man/cyma-1,tag v1.1.3
+2026-10-30T18:35Z,Beetroot Tempura,CallieSchmallie,Sound (independent),https://github.com/CallieSchmallie/Beetroot-tempura,first commit
+2026-10-30T22:02Z,AISLING,stephencummins,Sound (AMB-1 family),https://github.com/stephencummins/fm1-aisling,tag v0.1
+2026-11-01T09:24Z,MOONDAW,jaeggerr,Sound (independent),https://github.com/jaeggerr/moondaw-fm1,tag v0.1
+2026-11-01T09:41Z,FM1-TRAX,jartificer,Sound (independent),https://github.com/jartificer/fm1-trax,tag v0.9.0
+2026-11-01T10:13Z,Amenity,ejtb76,Sound (independent),https://github.com/ejtb76/amenity,tag v1.0.0
+2026-11-02T21:02Z,QUADRO,matttallison,Sound (independent),https://github.com/matttallison/quadro-fm1,tag 1.0
+2026-11-03T08:48Z,ECHOFIELD,Philip-Bos,Sound (independent),https://github.com/Philip-Bos/echofield-fm1,tag v0.2.8
+2026-11-03T15:07Z,Veffbox,galfaroth,Sound (Felucca family),https://github.com/galfaroth/veffbox,tag v0.2.2
+2026-11-04T07:24Z,FM-1 Midi-Mania,shan-sherif,Games and experiments,https://github.com/shan-sherif/fm-1-midi-mania,tag v0.1.0
+2026-11-04T13:59Z,Miku-FM,MichaelAPerry,Sound (independent),https://github.com/MichaelAPerry/MIKU-FM1,tag v0.6
+2026-11-04T16:32Z,OG Synth,mikejohnsonbeats,Sound (independent),https://github.com/mikejohnsonbeats/OG-Synth-source,tag v1.0.0
+2026-11-04T19:04Z,Microton,odshech,Sound (independent),https://github.com/odshech/microton,first commit
+2026-11-06T00:37Z,DX747,esbenvb,Sound (independent),https://github.com/esbenvb/fm1-dx747,tag v0.1
+2026-11-07T01:20Z,CORD,chasedeanda,Sound (independent),https://github.com/chasedeanda/cord-fm1,tag v0.6-chase4
+2026-11-07T14:15Z,Patchwerk,MattKuebrich,Platform,https://github.com/MattKuebrich/patchwerk,tag v1.0.0
+2026-11-07T21:32Z,LILA,apiel,Sound (independent),https://github.com/apiel/fm1-lila,first commit
+2026-11-08T05:08Z,FIENDBOX,emilystgeist,Sound (Felucca family),https://github.com/emilystgeist/fiendbox,tag fiendbox-0.4
+2026-11-08T07:51Z,M-VAVE Pocket AMP Custom Firmware (Onyx),28spawn,Sound (independent),https://github.com/28spawn/Pocket-Onyx,tag v1.18
+2026-11-08T10:03Z,SATIE-1,OCKM-STUDIO,Sound (independent),https://github.com/OCKM-STUDIO/SATIE-1,tag v0.1.0-beta
+2026-11-08T10:29Z,K-WASUB,Guizmoh,Sound (Felucca family),https://github.com/Guizmoh/K-WASUB_Firmware_for_FM1,tag v1.1.01
+2026-11-08T17:22Z,ReVo,gggguto,Sound (independent),https://github.com/gggguto/ReVo,tag v1.0.0
+2026-11-09T01:19Z,JamesOS,aarongrando,Sound (independent),https://github.com/aarongrando/JamesOS,tag v1.0a
+2026-11-09T08:19Z,RetroDash,nasonliu,Games and experiments,https://github.com/nasonliu/retrodash,tag v0.1.0-beta
+2026-11-09T12:52Z,BAILE,arrastao,Sound (independent),https://github.com/arrastao/baile-fm1,tag v0.4.0-experimental
+2026-11-09T13:51Z,ARCADE RAT,jonludwig1234,Games and experiments,https://github.com/jonludwig1234/stack-trace-arcade-rat-fm1,tag v1.0.0
+2026-11-09T15:49Z,M-PYRE,HistoryOfSky,Sound (SLOOP family),https://github.com/HistoryOfSky/m-pyre,tag v1.0
+2026-11-10T11:09Z,Compás 1.0,TexasRADIO,Sound (Felucca family),https://github.com/TexasRADIO/compas-firmware,tag compas-v1.0
+2026-11-11T10:32Z,Pocket Band,elpabl0,Sound (independent),https://github.com/elpabl0/pocketband,tag v0.4
+2026-11-11T16:15Z,KIST,78Hz,Sound (independent),https://github.com/78Hz/kist,tag v0.1
+2026-11-11T23:57Z,SPLITMILK,MammothCheese,Sound (independent),https://github.com/MammothCheese/SPLITMILK,tag v1.0
+2026-11-13T02:07Z,ObsSynth,orianbsilva,Sound (independent),https://github.com/orianbsilva/obssynth-fm1,tag v0.1.0
+2026-11-13T06:14Z,Agent Deck,kevinelliott,Games and experiments,https://github.com/kevinelliott/fm-1-agent-deck,tag v0.3
+2026-11-13T16:58Z,Adrift,romainguy,Sound (independent),https://github.com/romainguy/adrift,tag v0.1.0
+2026-11-14T09:07Z,EVIL GENIUS,Quixotic7,Sound (independent),https://github.com/Quixotic7/evilgenius,tag v0.1.0-beta.1
+2026-11-14T21:00Z,FM-1 Chimera Vocal,shan-sherif,Sound (independent),https://github.com/shan-sherif/fm-1-chimera-vocal,tag v0.4.0
