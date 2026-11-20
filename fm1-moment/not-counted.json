@@ -1,0 +1,9 @@
+{
+  "about": "Repositories in aroum's FM1 Resource Hub that the FM-1 Moment doesn't count. The weekly refresh skips them. Add one, with a reason, to keep a firmware a review turned down out of releases.csv.",
+  "repositories": [
+    {
+      "repo": "m-vave/fm1_open",
+      "reason": "M-VAVE's own open firmware, not a community firmware (see the page's method)"
+    }
+  ]
+}

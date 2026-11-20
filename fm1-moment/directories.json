@@ -1,0 +1,64 @@
+{
+  "checkedOn": "2026-11-18",
+  "directories": [
+    {
+      "name": "altstrument",
+      "url": "https://altstrument.org/devices/m-vave-fm-1",
+      "source": "hand",
+      "checkedOn": "2026-11-01",
+      "count": 322,
+      "label": "322 firmwares, 78 tools",
+      "what": "Every firmware, mod and port it can find"
+    },
+    {
+      "name": "FMDB",
+      "url": "https://stanleygurvich.github.io/FMDB_FM1_FirmwareDatabase/",
+      "source": "fmdb",
+      "checkedOn": "2026-11-18",
+      "count": 308,
+      "label": "308 entries",
+      "what": "Firmwares, mods and tools for the FM-1 and SMK-37, crawled from GitHub"
+    },
+    {
+      "name": "FM1 Resource Hub",
+      "url": "https://github.com/aroum/fm1-custom-fw",
+      "source": "resource-hub",
+      "checkedOn": "2026-11-18",
+      "count": 276,
+      "label": "276 entries",
+      "what": "Curated: 262 sound firmwares and games, 12 platforms, 2 patchers"
+    },
+    {
+      "name": "fm1-editor.com",
+      "url": "https://fm1-editor.com/firmware/",
+      "source": "fm1-editor",
+      "checkedOn": "2026-11-18",
+      "count": 399,
+      "label": "399 entries",
+      "what": "Curated by hand, updated almost daily"
+    },
+    {
+      "name": "FM-1 CFW Database",
+      "url": "https://kurogedelic.github.io/FM-1_CFW_Database/",
+      "source": "cfw-database",
+      "checkedOn": "2026-11-18",
+      "count": 374,
+      "label": "374 works",
+      "what": "Firmwares, ports and platforms, with each one's parent where the evidence shows it"
+    },
+    {
+      "name": "This page",
+      "source": "releases",
+      "what": "Firmwares with a public GitHub release or repository, plus Baud Girl's"
+    },
+    {
+      "name": "The FM-1 Firmware Hub",
+      "url": "https://thefirmwarehub.com/",
+      "source": "firmware-hub",
+      "checkedOn": "2026-11-18",
+      "count": 253,
+      "label": "253",
+      "what": "Open source, tested on hardware and installable in one click"
+    }
+  ]
+}
