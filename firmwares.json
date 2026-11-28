@@ -1,5 +1,5 @@
 {
-  "builtAt" : "2026-11-28T02:35:11Z",
+  "builtAt" : "2026-11-28T03:00:00Z",
   "credit" : "Firmware list: The Firmware Hub – thefirmwarehub.com (https://thefirmwarehub.com), under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). FM-SWITCH changes it: it adds the firmwares on fm1-editor.com, aroum's FM1 Resource Hub and mutant.cloud, and downloads each firmware from its maker, not from the hub. Each firmware's words and pictures are its maker's; its page names them and links its project.",
   "entries" : [
     {
@@ -31928,6 +31928,36 @@
       "whatSource" : "gitHub"
     },
     {
+      "author" : "Kayman18",
+      "beta" : false,
+      "date" : "2026-11-28",
+      "id" : "mutant-cloud-contagion",
+      "isOfficial" : false,
+      "kinds" : [
+
+      ],
+      "links" : [
+        {
+          "label" : "Source code",
+          "url" : "https://github.com/Kayman18/Contagion"
+        },
+        {
+          "label" : "mutant.cloud listing",
+          "url" : "https://mutant.cloud/#/p/contagion"
+        }
+      ],
+      "listing" : 8,
+      "name" : "Contagion",
+      "packageOrigin" : "githubRelease",
+      "packageURL" : "https://github.com/Kayman18/Contagion/releases/download/v1.2.0/Contagion-1.2-All-Banks-8V.fwsc",
+      "releaseURL" : "https://github.com/Kayman18/Contagion/releases/tag/v1.2.0",
+      "sha256" : "ce5f8cde064e339c8d474eba4a9fb1c42589e8cda5d21ad134954633ff596350",
+      "size" : 909247,
+      "version" : "1.2.0",
+      "what" : "An Access Virus FM1 Emulation, Based on and Inspired by Viroos",
+      "whatSource" : "gitHub"
+    },
+    {
       "author" : "EmEmArBee",
       "beta" : false,
       "date" : "2026-11-26",
@@ -31958,36 +31988,6 @@
       "size" : 611496,
       "version" : "1.1.0",
       "what" : "Fork of BLOP firmware by Obsimo; firmware for the M-VAVE FM-1 synthesizer: one-finger chord grids, chord rhythms, kick and sidechain, glide, reverb. Built on fm1-base and felucca-bsp.",
-      "whatSource" : "gitHub"
-    },
-    {
-      "author" : "Kayman18",
-      "beta" : false,
-      "date" : "2026-11-28",
-      "id" : "mutant-cloud-contagion",
-      "isOfficial" : false,
-      "kinds" : [
-
-      ],
-      "links" : [
-        {
-          "label" : "Source code",
-          "url" : "https://github.com/Kayman18/Contagion"
-        },
-        {
-          "label" : "mutant.cloud listing",
-          "url" : "https://mutant.cloud/#/p/contagion"
-        }
-      ],
-      "listing" : 8,
-      "name" : "Contagion",
-      "packageOrigin" : "githubRelease",
-      "packageURL" : "https://github.com/Kayman18/Contagion/releases/download/v1.2.0/Contagion-1.2-All-Banks-8V.fwsc",
-      "releaseURL" : "https://github.com/Kayman18/Contagion/releases/tag/v1.2.0",
-      "sha256" : "ce5f8cde064e339c8d474eba4a9fb1c42589e8cda5d21ad134954633ff596350",
-      "size" : 909247,
-      "version" : "1.2.0",
-      "what" : "An Access Virus FM1 Emulation, Based on and Inspired by Viroos",
       "whatSource" : "gitHub"
     },
     {
